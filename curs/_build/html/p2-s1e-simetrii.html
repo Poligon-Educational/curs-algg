@@ -1,0 +1,1099 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Grupuri de simetrie &#8212; Algebră liniară și aplicații</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/proof.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Inele și corpuri" href="p2-s2-inele-corpuri.html" />
+    <link rel="prev" title="Monoizi și grupuri" href="p2-s1-grupuri.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo-light-poly-only.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Algebră liniară și aplicații</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Algebră liniară și aplicații
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Elemente de istoria și filosofia matematicii
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-istorie-fil-intro.html">
+   Generalități
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-s1-rationamente.html">
+   Abstractizare și raționamente
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-s2-ist-vsp.html">
+   Istoria spațiilor vectoriale
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algebră abstractă și algebră liniară
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="p2-abstract.html">
+   Algebră abstractă și algebră liniară
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s1-grupuri.html">
+     Monoizi și grupuri
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Grupuri de simetrie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s2-inele-corpuri.html">
+     Inele și corpuri
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s3-spvect.html">
+     Spații vectoriale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s4-baza.html">
+     Bază și dimensiune
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s5-op-subsp.html">
+     Operații cu subspații
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s6-morfisme-spvect.html">
+     Morfisme de spații vectoriale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s7-ortonormare.html">
+     Produs scalar și ortonormare
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s8-vvp.html">
+     Vectori și valori proprii
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s9-quat.html">
+     Cuaternioni
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s10-afin.html">
+     Spații afine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s11-mat-decomp.html">
+     Descompuneri matriceale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s12-transf-mat.html">
+     Transformări matriceale în 2D și 3D
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s13-arii-volume.html">
+     Arii și volume
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Aplicații și implementări în programare
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="p3-aplicatii.html">
+   Aplicații și implementări în programare
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Bibliografie și lecturi suplimentare
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliografie.html">
+   Bibliografie și lecturi suplimentare
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/adimanea/linalg"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/adimanea/linalg/issues/new?title=Issue%20on%20page%20%2Fp2-s1e-simetrii.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/p2-s1e-simetrii.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#caz-abstract-permutari">
+   Caz abstract: Permutări
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ordinul-unui-element-intr-un-grup">
+   Ordinul unui element într-un grup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#caz-geometric-grupul-lui-klein">
+   Caz geometric: Grupul lui Klein
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simetrii-de-rotatie">
+   Simetrii de rotație
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ce-este-simetria">
+     Ce este simetria?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simetrii-de-reflexie">
+   Simetrii de reflexie
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grupul-diedral">
+   Grupul diedral
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Grupuri de simetrie</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#caz-abstract-permutari">
+   Caz abstract: Permutări
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ordinul-unui-element-intr-un-grup">
+   Ordinul unui element într-un grup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#caz-geometric-grupul-lui-klein">
+   Caz geometric: Grupul lui Klein
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simetrii-de-rotatie">
+   Simetrii de rotație
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ce-este-simetria">
+     Ce este simetria?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simetrii-de-reflexie">
+   Simetrii de reflexie
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grupul-diedral">
+   Grupul diedral
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="grupuri-de-simetrie">
+<h1>Grupuri de simetrie<a class="headerlink" href="#grupuri-de-simetrie" title="Permalink to this headline">#</a></h1>
+<p>Această secțiune poate fi considerată opțională la prima lectură, dar, de fapt,
+oferă informații și aplicații care clarifică importanța studiului grupurilor.
+În același timp, și din punct de vedere istoric, grupurile s-au dezvoltat începînd
+chiar cu grupurile de simetrie.</p>
+<p>Acestea au început cu grupuri de permutări (numite <em>grupuri simetrice</em>) pe exemple
+numerice, inspirate din jocuri de noroc (via Joseph Louis Lagrange și alții).
+Ulterior, studiul a luat o direcție surprinzătoare, către <em>simetrii geometrice</em>,
+care și-au găsit apoi aplicații în fizică, chimie și nu numai.</p>
+<p>Începem cu cazul standard, abstract: acela al grupurilor de permutări. Este capitolul
+care se studiază și în liceu, și ne va deschide calea către cazurile mai deosebite.
+Trebuie menționat, totuși, că, în ciuda aparențelor, exact acest caz cu care ar trebui
+să fiți familiarizați din liceu este <em>cel mai greu</em>, fiind abstract. De aceea, putem
+face observația că, din punct de vedere didactic sau dacă gradul de dificultate ori de
+complexitate sînt principalele criterii, nu este cel mai indicat punct de pornire.
+Totuși, datorită familiarității lui, am ales să începem cu el.</p>
+<section id="caz-abstract-permutari">
+<h2>Caz abstract: Permutări<a class="headerlink" href="#caz-abstract-permutari" title="Permalink to this headline">#</a></h2>
+<p>Cazul permutărilor este studiat în liceu mai întîi la capitolul numit <em>probleme de numărare</em>,
+împreună cu combinările și aranjamentele. Într-adevăr, modul de calcul al permutărilor
+este înrudit cu cel al aranjamentelor, fiind, dintre ele, cel mai simplu:
+<span class="math notranslate nohighlight">\( P(n) = n! \)</span>, adică modul în care putem „amesteca“ (<em>permuta</em>) <span class="math notranslate nohighlight">\( n \)</span> elemente este
+<span class="math notranslate nohighlight">\( n! = 1 \cdot 2 \cdot 3 \cdots n \)</span>.</p>
+<p>După această introducere, contextul abstract în care au fost întîlnite permutările
+este acela funcțional și, ulterior, algebric. Definiția fundamentală este:</p>
+<div class="proof definition admonition" id="def-permutare">
+<p class="admonition-title"><span class="caption-number">Definition 12 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Se numește <em>permutare de <span class="math notranslate nohighlight">\( n \)</span> elemente</em> o funcție bijectivă de forma:</p>
+<div class="math notranslate nohighlight">
+\[
+  \sigma : \{ 1, 2, 3, \dots, n \} \to \{ 1, 2, 3, \dots, n \}
+\]</div>
+</section>
+</div><p>Intuitiv, lucrurile sînt simple: a permuta <span class="math notranslate nohighlight">\( n \)</span> elemente înseamnă a face să corespundă
+perechi de forma <span class="math notranslate nohighlight">\( (a, b) \)</span>, cu <span class="math notranslate nohighlight">\( 1 \leq a,b \leq n \)</span>. Imaginea funcției <span class="math notranslate nohighlight">\( \sigma \)</span>
+din definiția de mai sus înseamnă un set de forma <span class="math notranslate nohighlight">\( \{ \sigma(1), \sigma(2), \dots, \sigma(n) \} \)</span>,
+pe care îl putem gîndi ca un „amestec“: obiectul (de pe poziția) <span class="math notranslate nohighlight">\( 1 \)</span> ajunge (pe poziția) <span class="math notranslate nohighlight">\( \sigma(1) \)</span>
+ș.a.m.d.</p>
+<p>Acum, faptul că am definit permutările ca funcții ne permite să lucrăm cu toate uneltele
+disponibile din studiul funcțiilor. În particular, putem defini <em>compunerea</em> permutărilor,
+așa cum definim compunerea funcțiilor: prin aplicări succesive.</p>
+<p>De pildă, dacă <span class="math notranslate nohighlight">\( \sigma \)</span> este o permutare de <span class="math notranslate nohighlight">\( n \)</span> elemente cu proprietatea că <span class="math notranslate nohighlight">\( \sigma(1) = 3 \)</span>,
+iar <span class="math notranslate nohighlight">\( \tau \)</span> este o altă permutare, tot de <span class="math notranslate nohighlight">\( n \)</span> elemente, cu proprietatea că <span class="math notranslate nohighlight">\( \tau(5) = 1 \)</span>,
+atunci are sens să considerăm permutarea <span class="math notranslate nohighlight">\( \sigma \circ \tau \)</span>, care funcționează prin aplicări
+succesive:</p>
+<div class="math notranslate nohighlight">
+\[5 \xrightarrow{\tau} 1 \xrightarrow{\sigma} 3 \Rightarrow (\sigma \circ \tau)(5) = 3.\]</div>
+<p>Așa stînd lucrurile, să notăm cu <span class="math notranslate nohighlight">\( S_n \)</span> mulțimea <span class="math notranslate nohighlight">\( \{ 1, 2, \dots, n \} \)</span>, pentru orice
+număr natural <span class="math notranslate nohighlight">\( n \)</span>. O permutare de <span class="math notranslate nohighlight">\( n \)</span> elemente devine, deci, o funcție bijectivă
+<span class="math notranslate nohighlight">\( \sigma : S_n \to S_n \)</span>. Însă compunerea funcțiilor bijective are și proprietăți algebrice
+foarte bune, pe care le prezentăm în cazul particular al permutărilor:</p>
+<ul class="simple">
+<li><p>este <em>internă</em>: compunînd două permutări <span class="math notranslate nohighlight">\( \sigma, \tau : S_n \to S_n \)</span>, rezultatul, indiferent
+de ordine, <span class="math notranslate nohighlight">\( \sigma \circ \tau \)</span> sau <span class="math notranslate nohighlight">\( \tau \circ \sigma \)</span> este o permutare din <span class="math notranslate nohighlight">\( S_n \)</span>;</p></li>
+<li><p>este <em>asociativă</em>: <span class="math notranslate nohighlight">\( \alpha \circ (\beta \circ \gamma) = (\alpha \circ \beta) \circ \gamma \)</span>,
+pentru <span class="math notranslate nohighlight">\( \alpha, \beta, \gamma : S_n \to S_n \)</span>;</p></li>
+<li><p>admite un <em>element neutru</em>, numit <em>permutarea identică</em> și notată de obicei cu <span class="math notranslate nohighlight">\( e \)</span>:
+este permutarea care nu mută nimic, adică, de fapt, o restricție a funcției identitate:
+<span class="math notranslate nohighlight">\( e(x) = x, \forall x \in S_n \)</span>;</p></li>
+<li><p><em>nu este comutativă</em> în general;</p></li>
+<li><p>orice permutare admite o <em>inversă</em>: fiind vorba despre funcții bijective, ele sînt
+inversabile. Intuitiv, permutarea inversă unei permutări <span class="math notranslate nohighlight">\( \sigma \)</span> este cea care face
+„drumul invers“. Adică, dacă, de exemplu, <span class="math notranslate nohighlight">\( \sigma(3) = 5 \)</span>, trebuie să avem <span class="math notranslate nohighlight">\( \sigma^{-1}(5) = 3 \)</span>
+ș.a.m.d.</p></li>
+</ul>
+<p>Practic, prin cele de mai sus am demonstrat:</p>
+<div class="proof theorem admonition" id="thm-sn-grup">
+<p class="admonition-title"><span class="caption-number">Theorem 6 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Operația de compunere a permutărilor definește o structură de grup (în general, necomutativ)
+pe mulțimea <span class="math notranslate nohighlight">\( S_n = \{ 1, 2, 3, \dots, n \} \)</span>.</p>
+<p>Structura rezultată, <span class="math notranslate nohighlight">\( (S_n, \circ) \)</span>, se numește de obicei <em>grupul simetric de <span class="math notranslate nohighlight">\( n \)</span> elemente</em>.</p>
+</section>
+</div><p>De aici, de obicei, în clasa a XII-a, se definesc elemente specifice, precum <em>transpozițiile, ciclurile</em>,
+<em>paritatea</em> unei permutări, <em>semnul</em> permutării ș.a.m.d. Însă vom omite aceste elemente
+și vom menționa doar <em>ordinul</em> unei permutări, noțiune foarte utilă în aplicații, împreună
+cu <em>teorema lui Lagrange</em> pentru grupuri.</p>
+</section>
+<section id="ordinul-unui-element-intr-un-grup">
+<span id="sec-ord-grup"></span><h2>Ordinul unui element într-un grup<a class="headerlink" href="#ordinul-unui-element-intr-un-grup" title="Permalink to this headline">#</a></h2>
+<div class="proof definition admonition" id="def-ord">
+<p class="admonition-title"><span class="caption-number">Definition 13 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( (A, \ast) \)</span> un grup, cu <span class="math notranslate nohighlight">\( e \)</span> elementul neutru și <span class="math notranslate nohighlight">\( a \in A \)</span> un element oarecare.</p>
+<p>Se numește <em>ordinul</em> elementului <span class="math notranslate nohighlight">\( a \)</span>, notat <span class="math notranslate nohighlight">\( \mathrm{ord}(a) \)</span>, cel mai mic
+număr natural <span class="math notranslate nohighlight">\( n \)</span> cu proprietatea că <span class="math notranslate nohighlight">\( a^{\ast n} = e \)</span>, unde prin <span class="math notranslate nohighlight">\( a^{\ast n} \)</span>
+am notat compunerea lui <span class="math notranslate nohighlight">\( a \)</span> cu el însuși de <span class="math notranslate nohighlight">\( n \)</span> ori.</p>
+</section>
+</div><p>Cu alte cuvinte, ordinul unui element într-un grup este numărul de compuneri cu sine
+ale elementului respectiv pînă (dacă!) se ajunge la elementul neutru.</p>
+<p>Două observații importante:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul class="simple">
+<li><p>Nu de la orice element se poate ajunge la elementul neutru! De exemplu, în grupul
+<span class="math notranslate nohighlight">\( (\mathbb{Z}, +) \)</span>, pornind de la <span class="math notranslate nohighlight">\( 1 \)</span>, nu putem ajunge la 0. În acest caz,
+spunem că <span class="math notranslate nohighlight">\( \mathrm{ord}(1) = \infty \)</span>;</p></li>
+<li><p>Este posibil ca o egalitate de forma <span class="math notranslate nohighlight">\( a^{\ast n} = e \)</span>, interpretată ca o ecuație,
+să aibă mai multe soluții pentru <span class="math notranslate nohighlight">\( n \)</span>, într-un grup arbitrar. Ordinul elementului <span class="math notranslate nohighlight">\( a \)</span>,
+însă, este <em>cea mai mică</em> astfel de valoare. De exemplu, în cazul
+<a class="reference internal" href="p2-s2-inele-corpuri.html"><span class="doc std std-doc">inelelor de clase de resturi</span></a>, avem în grupul <span class="math notranslate nohighlight">\( (\mathbb{Z}_6, +) \)</span>,
+că <span class="math notranslate nohighlight">\( \widehat{3} + \widehat{3} = \widehat{0} \)</span>, dar și <span class="math notranslate nohighlight">\( \widehat{3} + \widehat{3} + \widehat{3} + \widehat{3} = \widehat{0} \)</span>
+și, în general, orice sumă care conține un număr par de termeni ne conduce la <span class="math notranslate nohighlight">\( \widehat{0} \)</span>.
+Acesta este chiar un rezultat general:</p></li>
+</ul>
+</div>
+<div class="proof theorem admonition" id="thm-ordin-multiplu">
+<p class="admonition-title"><span class="caption-number">Theorem 7 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Dacă într-un grup <span class="math notranslate nohighlight">\( (A, \ast) \)</span> cu elementul neutru <span class="math notranslate nohighlight">\( e \)</span> avem <span class="math notranslate nohighlight">\( a^{\ast t} = e \)</span>
+și <span class="math notranslate nohighlight">\( \mathrm{ord}(a) = n \)</span>, atunci <span class="math notranslate nohighlight">\( n \mid t \)</span>.</p>
+</section>
+</div><p>Acest lucru rezultă imediat din definiția ordinului, în special partea privitoare
+la <em>minimalitatea</em> lui <span class="math notranslate nohighlight">\( n \)</span>.</p>
+<p>Una dintre principalele aplicații ale ordinului este <em>teorema lui Lagrange</em>.</p>
+<p>Dar pentru aceasta, mai avem nevoie de o definiție simplă.</p>
+<div class="proof definition admonition" id="def-ord-grup">
+<p class="admonition-title"><span class="caption-number">Definition 14 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Se numește <em>ordinul unui grup</em> <span class="math notranslate nohighlight">\( G \)</span>, notat <span class="math notranslate nohighlight">\( |G| \)</span> sau <span class="math notranslate nohighlight">\( \mathrm{ord}(G) \)</span>
+sau chiar <span class="math notranslate nohighlight">\( \# G \)</span> numărul de elemente ale mulțimii subiacente.</p>
+</section>
+</div><p>De exemplu, <span class="math notranslate nohighlight">\( \mathrm{ord}(\mathbb{Z}) = \infty \)</span>, iar <span class="math notranslate nohighlight">\( \mathrm{ord}(\mathbb{Z}_7) = 7 \)</span>,
+indiferent dacă lucrăm cu grupul aditiv sau multiplicativ.</p>
+<div class="proof theorem admonition" id="thm-lagrange-grupuri">
+<p class="admonition-title"><span class="caption-number">Theorem 8 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( G \)</span> un grup <em>finit</em> și <span class="math notranslate nohighlight">\( g \in G \)</span> un element oarecare.</p>
+<p>Atunci <span class="math notranslate nohighlight">\( \mathrm{ord}(g) \)</span> este un divizor al <span class="math notranslate nohighlight">\( \mathrm{ord}(G) \)</span>.</p>
+</section>
+</div><p>Altfel spus, un grup finit nu poate avea decît elemente al căror ordin este un divizor
+al ordinului grupului.</p>
+<hr class="docutils" />
+<p>În cazul grupurilor de permutări, această proprietate este utilă în mod special,
+deoarece, cum <span class="math notranslate nohighlight">\( P(n) = n! \)</span>, rezultă că <span class="math notranslate nohighlight">\( \mathrm{ord}(S_n) = n! \)</span>. Așadar,
+folosind teorema lui Lagrange, rezultă că o permutare de <span class="math notranslate nohighlight">\( n \)</span> elemente nu poate
+avea decît un ordin care să fie divizor al lui <span class="math notranslate nohighlight">\( n! \)</span>.</p>
+<hr class="docutils" />
+</section>
+<section id="caz-geometric-grupul-lui-klein">
+<span id="sec-gr-klein"></span><h2>Caz geometric: Grupul lui Klein<a class="headerlink" href="#caz-geometric-grupul-lui-klein" title="Permalink to this headline">#</a></h2>
+<p>Un anumit grup de inspirație geometrică este studiat de obicei în clasa a XII-a.
+Este vorba despre așa-numitul <em>grup al lui Klein</em>, care amintește de matematicianul
+german Felix Klein (1849-1925), unul dintre primii care au propus utilizarea metodelor
+de algebră abstractă în geometrie.</p>
+<p>Acest grup se poate defini în mai multe moduri. O variantă abstractă, care nu transmite
+foarte multe informații la prima vedere este aceasta: Vom nota cu <span class="math notranslate nohighlight">\( K \)</span> mulțimea subiacentă
+acestui grup<a class="footnote-reference brackets" href="#klein" id="id1">1</a>. În forma abstractă <span class="math notranslate nohighlight">\( K = \{ e, a, b, c : \mathbb{R}^2 \to \mathbb{R}^2 \} \)</span>,
+unde cele 4 elemente sînt definite, pentru orice <span class="math notranslate nohighlight">\( (x, y) \in \mathbb{R}^2 \)</span>, prin:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+	e(x, y) &amp;= (x, y) \\
+	a(x, y) &amp;= (-x, y) \\
+	b(x, y) &amp;= (x, -y) \\
+	c(x, y) &amp;= (-x, -y)
+\end{align*}\end{split}\]</div>
+<p>Folosind operația de compunere, adică aplicarea succesivă a acestor funcții, găsim
+următoarea tabelă:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p><span class="math notranslate nohighlight">\( \circ \)</span></p></th>
+<th class="text-align:center head"><p><span class="math notranslate nohighlight">\( e \)</span></p></th>
+<th class="text-align:center head"><p><span class="math notranslate nohighlight">\( a \)</span></p></th>
+<th class="text-align:center head"><p><span class="math notranslate nohighlight">\( b \)</span></p></th>
+<th class="text-align:center head"><p><span class="math notranslate nohighlight">\( c \)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\( e \)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\( e \)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\( a \)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\( b \)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\( c \)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><span class="math notranslate nohighlight">\( a \)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\( a \)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\( e \)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\( c \)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\( b \)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\( b \)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\( b \)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\( c \)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\( e \)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\( a \)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><span class="math notranslate nohighlight">\( c \)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\( c \)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\( b \)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\( a \)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\( e \)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>Vă puteți convinge imediat de aceste calcule foarte simplu. De exemplu:</p>
+<div class="math notranslate nohighlight">
+\[(a \circ b)(x, y) = a(b(x, y)) = a(x, -y) = (-x, y) = c(x, y).\]</div>
+<p>Se mai poate vedea, în plus, că grupul este comutativ – lucru rar întîlnit
+în cazul operației de compunere a funcțiilor.</p>
+<p>Totodată, putem observa și o aplicație simplă a teoremei lui Lagrange:
+cum <span class="math notranslate nohighlight">\( \mathrm{ord}(K) = 4 \)</span>, rezultă că fiecare element nu poate avea
+decît ordinul <span class="math notranslate nohighlight">\( 1, 2 \)</span> sau <span class="math notranslate nohighlight">\( 4 \)</span>. Elementul neutru este mereu singurul exemplu
+de element de ordinul <span class="math notranslate nohighlight">\( 1 \)</span> și observăm că toate celelalte elemente au ordinul <span class="math notranslate nohighlight">\( 2 \)</span>.
+Altfel spus,</p>
+<div class="math notranslate nohighlight">
+\[f \circ f = e, \forall f \in \{ a, b, c \} \subseteq K,\]</div>
+<p>deci fiecare element este propriul invers.</p>
+<p>Această prezentare abstractă, însă, nu este suficient de grăitoare. Mai ales fiindcă
+am menționat că Felix Klein a fost preocupat de aplicarea algebrei în geometrie.
+Așa că putem face o identificare geometrică foarte simplă: <span class="math notranslate nohighlight">\( K = \mathbb{R}^2 \)</span>
+este, de fapt, <em>planul real</em>, așa că <span class="math notranslate nohighlight">\( (x, y) \in K \)</span> înseamnă un punct din plan,
+identificat prin coordonatele sale (abscisa și ordonata). Apoi, dacă luăm un punct
+arbitrar <span class="math notranslate nohighlight">\( P(x, y) \)</span> și reprezentăm grafic imaginile lui <span class="math notranslate nohighlight">\( P \)</span> prin funcțiile
+<span class="math notranslate nohighlight">\( e, a, b, c \)</span>, constatăm:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( e(P) = P \)</span>, este transformarea identică, care nu schimbă punctul;</p></li>
+<li><p><span class="math notranslate nohighlight">\( a(P) = Q(-x, y) \)</span> este simetricul lui <span class="math notranslate nohighlight">\( P \)</span> față de axa <span class="math notranslate nohighlight">\( OY \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( b(P) = R(x, -y) \)</span> este simetricul lui <span class="math notranslate nohighlight">\( P \)</span> față de axa <span class="math notranslate nohighlight">\( OX \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( c(P) = S(-x, -y) \)</span> este simetricul lui <span class="math notranslate nohighlight">\( P \)</span> față de originea <span class="math notranslate nohighlight">\( O(0, 0) \)</span>.</p></li>
+</ul>
+<figure class="align-default" id="fig-klein">
+<img alt="_images/geogebra-klein.png" src="_images/geogebra-klein.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Acțiunea elementelor grupului Klein asupra unui punct din plan</span><a class="headerlink" href="#fig-klein" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Mai mult, din tabel, dar și din observații simple, putem vedea că o simetrie
+față de <span class="math notranslate nohighlight">\( O(0, 0) \)</span> înseamnă <em>simultan</em> o simetrie față de <span class="math notranslate nohighlight">\( OX \)</span> și de <span class="math notranslate nohighlight">\( OY \)</span>.</p>
+<p>Dacă este să fim riguroși, facem observația că nu am menționat exact ce înseamnă
+simetria (o vom face chiar în secțiunea următoare). Însă totodată, în liceu,
+am studiat <em>simetricul unui punct față de o dreaptă</em>: este punctul care se obține
+ducînd o perpendiculară din punctul inițial pe dreapta respectivă și prelungind
+perpendiculara pînă cînd distanța de la punctul inițial la dreaptă este egală
+cu distanța de la punctul căutat la dreaptă.</p>
+<figure class="align-default" id="fig-simetric-punct-dreapta">
+<img alt="_images/simetric-punct-dreapta.png" src="_images/simetric-punct-dreapta.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Simetricul punctului <span class="math notranslate nohighlight">\( P \)</span> față de dreapta <span class="math notranslate nohighlight">\( d \)</span> este <span class="math notranslate nohighlight">\( P' = S_P(d) \)</span></span><a class="headerlink" href="#fig-simetric-punct-dreapta" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>În secțiunile care urmează, vom vedea că este vorba despre o <em>simetrie de reflexie</em>.</p>
+</section>
+<section id="simetrii-de-rotatie">
+<h2>Simetrii de rotație<a class="headerlink" href="#simetrii-de-rotatie" title="Permalink to this headline">#</a></h2>
+<section id="ce-este-simetria">
+<h3>Ce este simetria?<a class="headerlink" href="#ce-este-simetria" title="Permalink to this headline">#</a></h3>
+<p>Am parcurs deja o bună parte a acestei secțiuni, dar nu am adresat nicăieri
+întrebarea fundamentală <em>Ce este o simetrie?</em> Răspunsurile sînt, în general,
+complexe, dat fiind că acest concept este foarte important în matematică,
+fizică, natură și nu numai. Dar în esență, putem reține următoarele „definiții“
+(oarecum informale)</p>
+<div class="proof definition admonition" id="def-simetrie">
+<p class="admonition-title"><span class="caption-number">Definition 15 </span></p>
+<section class="definition-content" id="proof-content">
+<p>O <em>operație de simetrie</em> este o transformare care se poate aplica unui
+obiect astfel încît starea obiectului de după aplicarea operației să fie
+identică cu cea dinaintea aplicării.</p>
+</section>
+</div><p>Exemple de transformări includ <em>rotații</em> și <em>reflexii</em>. În practică, spunem
+că un obiect are o simetrie de un anumit tip (caracterizată printr-o operație
+de simetrie) dacă i se poate aplica operația respectivă. De pildă, spunem
+că <em>un pătrat are o simetrie de rotație de 90 grade</em>, deoarece dat un pătrat,
+lui i se poate aplica o rotație de 90 grade, iar starea va fi identică cu cea
+dinaintea rotației.</p>
+<p>O observație importantă este că trebuie să gîndiți pătratul ca <em>nefiind notat</em>,
+de exemplu, <span class="math notranslate nohighlight">\( ABCD \)</span>. Dacă avem o astfel de notație și rotim pătratul cu 90 grade
+în sensul acelor de ceasornic (centrul de rotație fiind în centrul său, adică
+la intersecția diagonalelor), atunci pătratul <span class="math notranslate nohighlight">\( ABCD \)</span> devine pătratul <span class="math notranslate nohighlight">\( DABC \)</span>,
+ca în imaginea de mai jos:</p>
+<figure class="align-default" id="fig-patrat-rotatie-90">
+<img alt="_images/patrat-rotatie.png" src="_images/patrat-rotatie.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Rotația pătratului <span class="math notranslate nohighlight">\( ABCD \)</span> în jurul centrului <span class="math notranslate nohighlight">\( O \)</span> cu <span class="math notranslate nohighlight">\( 90^\circ \)</span> produce pătratul <span class="math notranslate nohighlight">\( DABC \)</span></span><a class="headerlink" href="#fig-patrat-rotatie-90" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Am putea spune că în acest caz, cele două pătrate nu sînt identice, diferența
+fiind la „identitatea“ vîrfurilor (vîrful <span class="math notranslate nohighlight">\( A \)</span> nu este același lucru cu vîrful
+<span class="math notranslate nohighlight">\( B \)</span>, de exemplu – tocmai faptul că poartă nume diferite le separă).</p>
+<p>Așadar, reținem ca idee principală că o <em>simetrie a unui obiect</em> este o transformare
+(geometrică) prin care obiectul pare că este nemodificat, adică forma sa de după
+aplicarea transformării este identică cu cea de dinaintea aplicării.</p>
+<hr class="docutils" />
+<p>Revenim acum la <em>simetria de rotație</em>. Precum intuiți, ea se referă la
+transformările de rotație în jurul unui punct fix (numit <em>centru de rotație</em>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Dacă nu se precizează altfel, toate operațiile de rotație vor fi considerate
+<em>în sens trigonometric</em>, adică în sens invers acelor de ceasornic.</p>
+</div>
+<p>Să presupunem că fixăm un obiect geometric. Pentru simplitate, vom alege
+un poligon regulat, să zicem un pătrat și centrul de rotație fiind centrul
+pătratului (intersecția diagonalelor sale). Remarcăm că el are:</p>
+<ul class="simple">
+<li><p>o simetrie de rotație de 90 grade;</p></li>
+<li><p>o simetrie de rotație de 180 grade;</p></li>
+<li><p>o simetrie de rotație de 270 grade;</p></li>
+<li><p>o simetrie de rotație de 360 grade, care, practic, este echivalentă cu
+o simetrie de rotație de 0 grade;</p></li>
+</ul>
+<p>Dar lucrurile sînt și mai interesante, deoarece <em>operațiile de rotație se pot compune</em>,
+adică aplica succesiv. Dacă aplicăm de 2 ori la rînd o rotație de 90 grade,
+de exemplu, este ca și cum am fi aplicat o rotație de 180 grade.
+Puteți vedea acest lucru imaginîndu-vă că pătratul este, totuși, notat <span class="math notranslate nohighlight">\( ABCD \)</span>,
+dar nu țineți cont de „numele“ vîrfurilor în analiza simetriei:</p>
+<ul class="simple">
+<li><p>o rotație de 90 grade produce pătratul <span class="math notranslate nohighlight">\( DABC \)</span>;</p></li>
+<li><p>încă o rotație de 90 grade aplicată succesiv produce pătratul <span class="math notranslate nohighlight">\( CDAB \)</span>;</p></li>
+<li><p>o rotație de 180 grade a pătratului <span class="math notranslate nohighlight">\( ABCD \)</span> produce pătratul <span class="math notranslate nohighlight">\( CDAB \)</span>.</p></li>
+</ul>
+<p>Pentru simplitate, vom prelua notația care se folosește de obicei în cazul rotațiilor:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Se notează cu <span class="math notranslate nohighlight">\( R_\theta \)</span> operația de rotație de unghi <span class="math notranslate nohighlight">\( \theta \)</span> a unui obiect în jurul
+unui centru de rotație stabilit.</p>
+</div>
+<p>Așadar, dacă notăm cu <span class="math notranslate nohighlight">\( \circ \)</span> operația de compunere (aplicare succesivă) a rotațiilor,
+am găsit că <span class="math notranslate nohighlight">\( R_{90^{\circ}} \circ R_{90^{\circ}} = R_{180^{\circ}} \)</span>.</p>
+<p>În esență, lucrurile nu sînt cu mult diferite de compunerea funcțiilor. Este ca și cum
+am avea o funcție definită pe „cuvîntul“ <span class="math notranslate nohighlight">\( ABCD \)</span> cu valori într-o permutare a literelor
+acestui cuvînt <span class="math notranslate nohighlight">\( f : ABCD \to P(ABCD) \)</span>, dar încă și mai interesant este ce fel de
+permutări permitem. Este vorba despre așa-numitele <em>permutări circulare</em> sau <em>cicluri</em>,
+care mută elementele într-o anumită direcție. În cazul pătratului <span class="math notranslate nohighlight">\( ABCD \)</span>, permutări
+circulare de cîte o poziție, aplicate succesiv, produc:</p>
+<div class="math notranslate nohighlight">
+\[ABCD \to BCDA \to CDAB \to DABC \to ABCD.\]</div>
+<p>Se vede în acest caz că, lucrînd cu o permutare (circulară) de 4 elemente, ea are
+ordinul 4 (a se vedea <a class="reference internal" href="#sec-ord-grup"><span class="std std-ref">ordinul unui element într-un grup</span></a>).</p>
+<p>Nu ar trebui să fie surprinzător faptul că aici este vorba despre un concept general:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Un ciclu de lungime <span class="math notranslate nohighlight">\( n \)</span> are ordinul <span class="math notranslate nohighlight">\( n \)</span>.</p>
+</div>
+<p>În exemplul de mai sus am prezentat doar cicluri de lungime <span class="math notranslate nohighlight">\( n \)</span> aplicate unor obiecte
+de aceeași lungime. Însă are sens să vorbim și despre cicluri de lungime 3 pentru o permutare
+de 7 elemente, de exemplu. Aceasta înseamnă pur și simplu că se permută circular
+3 dintre cele 7 elemente. Nu continuăm cu detalii, întrucît în cazul simetriilor,
+vom lucra doar cu cicluri care permută toate elementele.</p>
+<p>Pornind de la observația privitoare la <span class="math notranslate nohighlight">\( R_{90^{\circ}} \)</span>, putem scrie o relație mai
+generală pentru rotații:</p>
+<div class="math notranslate nohighlight" id="equation-eq-rot">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eq-rot" title="Permalink to this equation">#</a></span>\[R_\alpha \circ R_\beta = R_{2 \pi - \alpha - \beta}, \forall \alpha, \beta \in [0, 2\pi].\]</div>
+<p>Continuăm acum analiza proprietăților acestei operații și ne întoarcem la cazul
+particular al pătratului. Am văzut că el admite 4 simetrii de rotație, de unghiuri
+<span class="math notranslate nohighlight">\( 90^\circ, 180^\circ, 270^\circ \)</span> și <span class="math notranslate nohighlight">\( 360^\circ \)</span>, ultima putînd fi identificată
+cu rotația de <span class="math notranslate nohighlight">\( 0^\circ \)</span>. Cum acestea pot fi privite ca funcții<a class="footnote-reference brackets" href="#func-rot" id="id2">2</a>, avem asigurată
+și proprietatea de <em>asociativitate</em> a compunerii rotațiilor.</p>
+<p>Mai departe, un calcul direct, împreună cu intuiția, arată că rotația de unghi <span class="math notranslate nohighlight">\( 0^\circ \)</span>
+nu are niciun efect la compunere, deci, de fapt, se comportă ca un <em>element neutru</em>.</p>
+<p>Totodată, folosind ecuația <a class="reference internal" href="#equation-eq-rot">(1)</a> privitoare la compunerea rotațiilor, găsim că
+fiecare operație de rotație este inversabilă. Mai concret, inversa rotației de unghi
+<span class="math notranslate nohighlight">\( \theta \)</span> este rotația de unghi <span class="math notranslate nohighlight">\( 2 \pi - \theta \)</span>.</p>
+<p>În esență, am demonstrat că <strong>simetriile de rotație descriu o structură de grup</strong>
+pe mulțimea reprezentată de vîrfurile (sau laturile) <em>nenotate</em> ale unui pătrat.</p>
+<p>În general, în cazul grupurilor finite, este util de multe ori să realizăm <em>tabla compunerii</em>,
+care ne arată exact toate rezultatele operației. Pentru pătrat și rotații, avem:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p><span class="math notranslate nohighlight">\( \circ \)</span></p></th>
+<th class="text-align:center head"><p><span class="math notranslate nohighlight">\( R_{0^{\circ}} \)</span></p></th>
+<th class="text-align:center head"><p><span class="math notranslate nohighlight">\( R_{90^{\circ}} \)</span></p></th>
+<th class="text-align:center head"><p><span class="math notranslate nohighlight">\( R_{180^{\circ}} \)</span></p></th>
+<th class="text-align:center head"><p><span class="math notranslate nohighlight">\( R_{270^{\circ}} \)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\( R_{0^{\circ}} \)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\( R_{0^{\circ}} \)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\( R_{90^{\circ}} \)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\( R_{180^{\circ}} \)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\( R_{270^{\circ}} \)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><span class="math notranslate nohighlight">\( R_{90^{\circ}} \)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\( R_{90^{\circ}} \)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\( R_{180^{\circ}} \)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\( R_{270^{\circ}} \)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\( R_{0^{\circ}} \)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\( R_{180^{\circ}} \)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\( R_{180^{\circ}} \)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\( R_{270^{\circ}} \)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\( R_{0^{\circ}} \)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\( R_{90^{\circ}} \)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><span class="math notranslate nohighlight">\( R_{270^{\circ}} \)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\( R_{270^{\circ}} \)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\( R_{0^{\circ}} \)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\( R_{90^{\circ}} \)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\( R_{180^{\circ}} \)</span></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="simetrii-de-reflexie">
+<h2>Simetrii de reflexie<a class="headerlink" href="#simetrii-de-reflexie" title="Permalink to this headline">#</a></h2>
+<p>Operațiile de simetrie sînt ceva mai diverse pe lîngă rotații, însă. De pildă, o operație
+pe care o cunoaștem deja este cea de <em>reflexie</em>. Aceasta poate fi gîndită ca o oglindire
+într-o oglindă imaginară, plasată în lungul unei axe. De fapt, am întîlnit o astfel de situație
+într-un caz mai simplu – acela al <a class="reference internal" href="#sec-gr-klein"><span class="std std-ref">grupului lui Klein</span></a>: simetrizarea
+unui punct față de o axă înseamnă <em>reflexia</em> punctului față de o oglindă plasată chiar
+pe axa respectivă.</p>
+<p>În cazul pătratului pe care l-am analizat anterior, putem plasa 4 oglinzi:</p>
+<ul class="simple">
+<li><p>două în lungul diagonalelor;</p></li>
+<li><p>două în lungul mediatoarelor perechilor de laturi paralele:</p></li>
+</ul>
+<figure class="align-default" id="fig-patrat-refl">
+<img alt="_images/patrat-reflexie.png" src="_images/patrat-reflexie.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">„Oglinzile“ care se pot plasa pentru simetriile de reflexie ale unui pătrat</span><a class="headerlink" href="#fig-patrat-refl" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Astfel, dacă este să privim operația de „oglindire“ ca pe un fel de funcție
+aplicată vîrfurilor denumite ale unui pătrat și dacă notăm cu <span class="math notranslate nohighlight">\( d_1, d_2 \)</span>
+cele două „oglinzi“ plasate în lungul diagonalelor, respectiv cu <span class="math notranslate nohighlight">\( m_1, m_2 \)</span>
+cele două oglinzi plasate în lungul mediatoarelor, am avea:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  d_1(ABCD) &amp;= CBAD \\
+  d_2(ABCD) &amp;= ADCB \\
+  m_1(ABCD) &amp;= BADC \\
+  m_2(ABCD) &amp;= CDBA
+\end{align*}\end{split}\]</div>
+<p>Privite astfel, operațiile de simetrie se pot și compune, dar constatăm o proprietate
+aparent nefericită: aplicarea succesivă a două astfel de oglindiri nu produce
+o stare dintre cele 4 de mai sus (la care putem adăuga oricînd pe cea identică,
+adică <span class="math notranslate nohighlight">\( e(ABCD) = ABCD \)</span>). De exemplu:</p>
+<div class="math notranslate nohighlight">
+\[(d_1 \circ d_2)(ABCD) = d_1(d_2(ABCD)) = d_1(ADCB) = CDAB,\]</div>
+<p>or această configurație nu se regăsește printre cele de mai sus.</p>
+<p>Trebuie, însă, puțină atenție, pentru că rezultatul nu este întîmplător.
+De fapt, am obținut:</p>
+<div class="math notranslate nohighlight">
+\[(d_1 \circ d_2)(ABCD) = CDAB = R_{180^{\circ}}(ABCD).\]</div>
+<p>Prezentăm acum contextul general.</p>
+</section>
+<section id="grupul-diedral">
+<h2>Grupul diedral<a class="headerlink" href="#grupul-diedral" title="Permalink to this headline">#</a></h2>
+<p>Începem cu definiția abstractă, care ne va motiva să explorăm mai multe exemple.</p>
+<div class="proof definition admonition" id="def-diedral">
+<p class="admonition-title"><span class="caption-number">Definition 16 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Se numește <em>grupul diedral de ordin <span class="math notranslate nohighlight">\( n \)</span></em>, notat <span class="math notranslate nohighlight">\( D_n \)</span>, grupul operațiilor
+de simetrie – rotații și reflexii – ale unui poligon regulat cu <span class="math notranslate nohighlight">\( n \)</span> laturi,
+împreună cu operația de compunere (aplicare succesivă) a simetriilor.</p>
+</section>
+</div><p>Așadar, în cazul pătratului pe care îl studiam mai devreme, eram pe cale de a
+descoperi grupul <span class="math notranslate nohighlight">\( (D_4, \circ) \)</span>. Știind acum ce căutăm, putem să-l prezentăm
+în întregime.</p>
+<p>Grupul <span class="math notranslate nohighlight">\( D_4 \)</span> conține operațiile pe care le-am întîlnit pînă acum.
+În notațiile anterioare, mulțimea se scrie:</p>
+<div class="math notranslate nohighlight">
+\[D_4 = \{ e, R_{90^{\circ}}, R_{180^{\circ}}, R_{270^{\circ}}, d_1, d_2, m_1, m_2 \}\]</div>
+<p>El are multe proprietăți deosebite și începem cu două dintre cele mai evidente:</p>
+<ul class="simple">
+<li><p>operația care „nu face nimic“, adică operația identică, poate fi gîndită fie ca
+o rotație de unghi <span class="math notranslate nohighlight">\( 0^{\circ} = 360^{\circ} \)</span>, fie ca o reflexie într-o oglindă
+plasată nicăieri. Așadar, vom folosi o singură notație, <span class="math notranslate nohighlight">\( e \)</span>, pentru această simetrie;</p></li>
+<li><p>rotațiile sînt, de fapt, <em>generate</em> de <span class="math notranslate nohighlight">\( R_{90^{\circ}} \)</span>, în sensul că aplicarea
+succesivă a acestei rotații le produce și pe celelalte două:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  R_{90^{\circ}} \circ R_{90^{\circ}} &amp;= R_{180^{\circ}} \\ 
+  R_{90^{\circ}} \circ R_{90^{\circ}} \circ R_{90^{\circ}} &amp;= R_{270^{\circ}}
+\end{align*}\end{split}\]</div>
+<p>În plus, folosind teorema lui Lagrange (teorema <a class="reference internal" href="#thm-lagrange-grupuri">Theorem 8</a>),
+întrucît <span class="math notranslate nohighlight">\( \mathrm{ord}(D_4) = 8 \)</span>, rezultă că ordinele elementelor nu pot fi decît
+<span class="math notranslate nohighlight">\( 1, 2, 4 \)</span> sau <span class="math notranslate nohighlight">\( 8 \)</span>. Ca de obicei, <span class="math notranslate nohighlight">\( \mathrm{ord}(e) = 1 \)</span>, fiind singurul
+element de ordin <span class="math notranslate nohighlight">\( 1 \)</span>. Apoi:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \mathrm{ord}\left(R_{90^{\circ}}\right) = 4 \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( \mathrm{ord}\left(R_{180^{\circ}}\right) = 2 \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( \mathrm{ord}\left(R_{270^{\circ}}\right) = 4 \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( \mathrm{ord}(d_1) = \mathrm{ord}(d_2) = \mathrm{ord}(m_1) = \mathrm{ord}(m_2) = 2 \)</span>,
+deoarece dubla oglindire aduce la starea inițială.</p></li>
+</ul>
+<p>De asemenea, mai facem observația că grupul <span class="math notranslate nohighlight">\( D_4 \)</span> <em>nu</em> este comutativ.
+Iar pentru a-i înțelege și mai bine funcționarea, vă îndemnăm să-i alcătuiți tabla
+de compoziție.</p>
+<p><strong>#TODO: De pus aici, cu spoiler/dropdown</strong></p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="klein"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>O notație care să țină cont de istorie este cu <span class="math notranslate nohighlight">\( V \)</span>, de la cuvîntul german
+<em>Vierrengruppe</em>, adică <em>grup cu 4 elemente</em>.</p>
+</dd>
+<dt class="label" id="func-rot"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Fiind vorba de doar 4 elemente, puteți și calcula concret toate compunerile
+posibile și verificați asociativitatea direct.</p>
+</dd>
+</dl>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="p2-s1-grupuri.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Monoizi și grupuri</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="p2-s2-inele-corpuri.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Inele și corpuri</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Adrian Manea (Poligon Educational)<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,961 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Inele și corpuri &#8212; Algebră liniară și aplicații</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/proof.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Spații vectoriale" href="p2-s3-spvect.html" />
+    <link rel="prev" title="Grupuri de simetrie" href="p2-s1e-simetrii.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo-light-poly-only.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Algebră liniară și aplicații</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Algebră liniară și aplicații
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Elemente de istoria și filosofia matematicii
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-istorie-fil-intro.html">
+   Generalități
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-s1-rationamente.html">
+   Abstractizare și raționamente
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-s2-ist-vsp.html">
+   Istoria spațiilor vectoriale
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algebră abstractă și algebră liniară
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="p2-abstract.html">
+   Algebră abstractă și algebră liniară
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s1-grupuri.html">
+     Monoizi și grupuri
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s1e-simetrii.html">
+     Grupuri de simetrie
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Inele și corpuri
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s3-spvect.html">
+     Spații vectoriale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s4-baza.html">
+     Bază și dimensiune
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s5-op-subsp.html">
+     Operații cu subspații
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s6-morfisme-spvect.html">
+     Morfisme de spații vectoriale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s7-ortonormare.html">
+     Produs scalar și ortonormare
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s8-vvp.html">
+     Vectori și valori proprii
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s9-quat.html">
+     Cuaternioni
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s10-afin.html">
+     Spații afine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s11-mat-decomp.html">
+     Descompuneri matriceale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s12-transf-mat.html">
+     Transformări matriceale în 2D și 3D
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s13-arii-volume.html">
+     Arii și volume
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Aplicații și implementări în programare
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="p3-aplicatii.html">
+   Aplicații și implementări în programare
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Bibliografie și lecturi suplimentare
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliografie.html">
+   Bibliografie și lecturi suplimentare
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/adimanea/linalg"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/adimanea/linalg/issues/new?title=Issue%20on%20page%20%2Fp2-s2-inele-corpuri.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/p2-s2-inele-corpuri.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exemple-si-intuitie">
+   Exemple și intuiție
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definitii-formale">
+   Definiții formale
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unitati-si-divizori-ai-lui-zero">
+   Unități și divizori ai lui zero
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#morfisme-nucleu-imagine">
+   Morfisme, nucleu, imagine
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Inele și corpuri</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exemple-si-intuitie">
+   Exemple și intuiție
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definitii-formale">
+   Definiții formale
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unitati-si-divizori-ai-lui-zero">
+   Unități și divizori ai lui zero
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#morfisme-nucleu-imagine">
+   Morfisme, nucleu, imagine
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="inele-si-corpuri">
+<h1>Inele și corpuri<a class="headerlink" href="#inele-si-corpuri" title="Permalink to this headline">#</a></h1>
+<p>Cazul cel mai simplu al structurilor algebrice este acela al <a class="reference internal" href="p2-s1-grupuri.html"><span class="doc std std-doc">monoizilor și grupurilor</span></a>.
+Este vorba despre structurile algebrice bazate pe o singură mulțime și o singură operație binară
+între elementele ei.</p>
+<p>Dar exemplele pe care le întîlnim în mod normal rar folosesc o singură operație.
+De pildă, am văzut că între toate tipurile de numere, avem cel puțin două operații:
+adunarea și înmulțirea, care și interacționează între ele prin așa-numita regulă a
+<em>distributivității</em> sau de desfacere a parantezelor. Între numere reale, de exemplu,
+are loc:</p>
+<div class="math notranslate nohighlight">
+\[ a \cdot (b + c) = a \cdot b + a \cdot c, \quad \forall a, b, c \in \mathbb{R}, \]</div>
+<p>astfel că pentru majoritatea scopurilor practice, avem nevoie de cel puțin două operații
+care să interacționeze.</p>
+<p>Este chiar cazul inelelor și corpurilor, care sînt următoarele structuri algebrice
+pe care le prezentăm.</p>
+<section id="exemple-si-intuitie">
+<h2>Exemple și intuiție<a class="headerlink" href="#exemple-si-intuitie" title="Permalink to this headline">#</a></h2>
+<p>Cum am văzut și în secțiunile anterioare, este binevenit să pornim cu cazuri concrete,
+de unde să extragem proprietăți abstracte.</p>
+<p>Un exemplu prototipic este acela al mulțimii numerelor întregi <span class="math notranslate nohighlight">\( \mathbb{Z} \)</span>, împreună
+cu operațiile de adunare și înmulțire. Cunoștințe de bază din școală ne conduc la următoarele
+observații:</p>
+<ul class="simple">
+<li><p>în raport cu operația de adunare, mulțimea numerelor întregi are o structură de <em>grup comutativ</em>.
+Altfel spus, dacă studiem structura <span class="math notranslate nohighlight">\( (\mathbb{Z}, +) \)</span>, găsim că:</p>
+<ul>
+<li><p>adunarea este lege internă între numerele întregi, adică suma a două numere întregi este un număr întreg;</p></li>
+<li><p>adunarea numerelor întregi este comutativă și asociativă;</p></li>
+<li><p>elementul neutru al adunării este numărul 0;</p></li>
+<li><p>simetricul oricărui număr întreg <span class="math notranslate nohighlight">\( x \)</span> este <em>opusul</em> său, adică <span class="math notranslate nohighlight">\( -x \)</span>;</p></li>
+</ul>
+</li>
+<li><p>în raport cu operația de înmulțire, mulțimea numerelor întregi <em>fără 0</em> are o structură de <em>monoid comutativ</em>.
+Altfel spus, structura <span class="math notranslate nohighlight">\( (\mathbb{Z} \setminus \{ 0 \} = \mathbb{Z}^\ast, \cdot) \)</span> are proprietățile:</p>
+<ul>
+<li><p>înmulțirea numerelor întregi este o lege internă, adică produsul a două numere întregi nenule este un număr întreg nenul;</p></li>
+<li><p>înmulțirea numerelor întregi nenule este comutativă și asociativă;</p></li>
+<li><p>elementul neutru al înmulțirii este numărul 1.</p></li>
+</ul>
+</li>
+</ul>
+<p>Observăm, în plus, că niciun număr întreg nenul nu este inversabil, adică nu are un simetric
+față de înmulțire (în afara lui 1, al cărui invers este el însuși).</p>
+<p>Pe lîngă aceste proprietăți separate, mai are loc și o proprietate care ne arată interacțiunea
+între cele două operații, numită <em>distributivitate</em>, pe care o putem scrie în ambele părți,
+chiar dacă operațiile sînt comutative în acest caz (<span class="math notranslate nohighlight">\( \forall a, b, c \in \mathbb{Z}^\ast \)</span>):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \begin{align*}
+    a \cdot (b + c) &amp;= a \cdot b + a \cdot c \\
+    (b + c) \cdot a &amp;= b \cdot a + c \cdot a
+  \end{align*}
+\end{split}\]</div>
+<p>O structură cu proprietățile de mai sus se numește <strong>inel</strong>. Altfel spus, am demonstrat că
+<span class="math notranslate nohighlight">\( (\mathbb{Z}, +, \cdot) \)</span> formează un inel, care este și comutativ, deoarece ambele operații
+sînt comutative.</p>
+<p>Acum, proprietatea care lipsește – și pe care o întîlnim în multe situații binecunoscute – este
+clară: putem cere ca și în raport cu a doua operație, cea de înmulțire, să putem simetriza (inversa)
+elementele. Într-adevăr, este cazul mulțimilor precum <span class="math notranslate nohighlight">\( \mathbb{Q}, \mathbb{R}, \mathbb{C} \)</span>
+și altele, unde, practic, putem face toate cele patru operații: adunări, scăderi (= adunări cu opuse),
+înmulțiri și împărțiri (= înmulțiri cu inverse).</p>
+<p>Să luăm cazul <span class="math notranslate nohighlight">\( (\mathbb{R}, +, \cdot) \)</span>, unde constatăm că, pe lîngă proprietățile de inel de mai sus,
+avem chiar că <span class="math notranslate nohighlight">\( (\mathbb{R} \setminus \{ 0 \} = \mathbb{R}^\ast, \cdot) \)</span> are o structură chiar
+de grup comutativ, întrucît orice număr real este și inversabil: inversul lui <span class="math notranslate nohighlight">\( x \neq 0 \)</span> este
+<span class="math notranslate nohighlight">\( x^{-1} = \dfrac{1}{x} \)</span>.</p>
+<p>În acest caz, obținem structura de <strong>corp</strong>, care este chiar comutativ, pentru că ambele operații
+sînt comutative. Lucrurile funcționează identic și în cazul mulțimilor <span class="math notranslate nohighlight">\( \mathbb{Q} \)</span> și <span class="math notranslate nohighlight">\( \mathbb{C} \)</span>,
+deci avem deja 3 exemple de corpuri: <span class="math notranslate nohighlight">\( (A, +, \cdot) \)</span>, unde <span class="math notranslate nohighlight">\( A \)</span> poate fi <span class="math notranslate nohighlight">\( \mathbb{Q}, \mathbb{R}, \mathbb{C} \)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Trebuie să ținem cont de două detalii din definițiile inelelor și corpurilor:</p>
+<ul class="simple">
+<li><p>indiferent de a doua operație (în cazurile de mai sus, înmulțirea), prima operație (în cazul de mai sus, adunarea)
+<em>trebuie să fie comutativă</em>. Dacă și a doua operație este comutativă, atunci structura (inelul, corpul) se numește
+comutativă;</p></li>
+<li><p>atunci cînd studiem proprietățile celei de-a doua operații, trebuie să eliminăm elementul neutru al primei
+operații. În cazurile de mai sus, am studiat mulțimile de numere întregi, reale etc. <em>nenule</em>. În general,
+dacă <span class="math notranslate nohighlight">\( e \in A \)</span> este elementul neutru al primei operații, atunci a doua operație se studiază pe mulțimea
+<span class="math notranslate nohighlight">\( A \setminus \{ e \} \)</span>.</p></li>
+</ul>
+</div>
+<p>Ca <strong>terminologie</strong>, ca și în cazul grupurilor – de data aceasta, fiind și mai relevant – elementele
+neutre se numesc, respectiv, element nul și element unitate, indiferent de definiția
+concretă a operațiilor folosite. Mai mult, ele se și notează de obicei cu <span class="math notranslate nohighlight">\( 0 \)</span> și <span class="math notranslate nohighlight">\( 1 \)</span>,
+iar cînd există riscul de confuzie, se pot adăuga indici. De pildă, pentru o mulțime
+oarecare, împreună cu două operații generice, <span class="math notranslate nohighlight">\( (A, \ast, \circ) \)</span>, putem nota
+elementul nul cu <span class="math notranslate nohighlight">\( e_\ast \)</span> sau <span class="math notranslate nohighlight">\( 0_\ast \)</span>, iar elementul unitate cu <span class="math notranslate nohighlight">\( e_\circ \)</span>
+sau <span class="math notranslate nohighlight">\( 1_\circ \)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Dacă vă întrebați de unde provin numele acestor structuri, ele au o istorie bogată.
+Pe scurt:</p>
+<ul class="simple">
+<li><p>inelele (eng. <em>rings</em>, fr. <em>anneaux</em>, ger. <em>Ringe</em> etc.) au fost denumite astfel de matematicianul
+german David Hilbert (1862-1943), dintr-o expresie din germană și engleză, unde <em>a ring of objects</em>
+sau <em>ein Ring aus Objekten</em> însemna pur și simplu „o grupare de obiecte“;</p></li>
+<li><p>corpurile (eng. <em>fields</em>, fr. <em>corps</em>, ger. <em>Körper</em> etc.) au fost denumite astfel datorită
+aplicațiilor pe care le au în fizică. Inclusiv în română, pînă în jurul anilor 1970, corpurile
+erau denumite <em>cîmpuri</em>, deoarece se folosesc pentru a modela matematic anumite cîmpuri fizice
+(e.g. cîmpuri electromagnetice, gravitaționale etc.).</p></li>
+</ul>
+</div>
+</section>
+<section id="definitii-formale">
+<h2>Definiții formale<a class="headerlink" href="#definitii-formale" title="Permalink to this headline">#</a></h2>
+<p>Pentru claritate, vom formula acum definițiile abstracte ale inelelor și corpurilor.</p>
+<div class="proof definition admonition" id="def-inel">
+<p class="admonition-title"><span class="caption-number">Definition 17 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( A \)</span> o mulțime nevidă și <span class="math notranslate nohighlight">\( \ast, \circ \)</span> două operații binare pe <span class="math notranslate nohighlight">\( A \)</span>.
+Spunem că tripletul <span class="math notranslate nohighlight">\( (A, \ast, \circ) \)</span> formează un <em>inel</em> dacă:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( (A, \ast) \)</span> are structură de grup comutativ;</p></li>
+<li><p><span class="math notranslate nohighlight">\( (A \setminus \{ e_\ast \}, \circ) \)</span> are structură de monoid.</p></li>
+</ul>
+<p>Dacă, în plus, monoidul <span class="math notranslate nohighlight">\( (A \setminus \{ e_\ast \}, \circ) \)</span> este
+comutativ, atunci inelul <span class="math notranslate nohighlight">\( (A, \ast, \circ) \)</span> se numește <em>comutativ</em>.</p>
+</section>
+</div><div class="proof definition admonition" id="def-corp">
+<p class="admonition-title"><span class="caption-number">Definition 18 </span></p>
+<section class="definition-content" id="proof-content">
+<p>În condițiile și cu notațiile definiției anterioare, inelul <span class="math notranslate nohighlight">\( (A, \ast, \circ) \)</span>
+se numește <em>corp</em> dacă monoidul <span class="math notranslate nohighlight">\( (A \setminus \{ e_\ast \}, \circ) \)</span> are
+structură chiar de grup.</p>
+<p>Dacă, în plus, grupul <span class="math notranslate nohighlight">\( (A \setminus \{ e_\ast \}, \circ) \)</span> este comutativ,
+atunci corpul <span class="math notranslate nohighlight">\( (A, \ast, \circ) \)</span> se numește <em>comutativ</em>.</p>
+</section>
+</div><p>Acum, fiindcă am prezentat în detaliu noțiunile privitoare la <a class="reference internal" href="p2-s1-grupuri.html"><span class="doc std std-doc">grupuri și monoizi</span></a>
+într-o secțiune separată, avem avantajul de a fi deja familiarizați cu multe dintre
+noțiunile care se prezintă foarte asemănător și în cazul inelelor și corpurilor.</p>
+<p>De exemplu, o substructură (subinel, subcorp) înseamnă pur și simplu o submulțime
+care are aceeași structură. Iar fiindcă avem două operații – pe care le vom denumi
+generic <em>adunare</em> și <em>înmulțire</em> –, echivalentul teoremelor <a class="reference internal" href="p2-s1-grupuri.html#thm-subgrup">Theorem 2</a>
+și <a class="reference internal" href="p2-s1-grupuri.html#thm-submonoid">Theorem 1</a> se prezintă așa cum intuiți:</p>
+<div class="proof theorem admonition" id="thm-subinel">
+<p class="admonition-title"><span class="caption-number">Theorem 9 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( (A, +, \cdot) \)</span> un inel și <span class="math notranslate nohighlight">\( B \subseteq A \)</span> o submulțime.</p>
+<p>Atunci <span class="math notranslate nohighlight">\( (B, +, \cdot) \)</span> este <em>subinel</em> dacă:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \forall x, y \in B, x - y \in B \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( 1 \in B \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( \forall x, y \in B, x \cdot y \in B \)</span>.</p></li>
+</ul>
+<p>În cazul <em>subcorpurilor</em>, cerințele sînt:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \forall x, y \in B, x - y \in B \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( \forall x, y \in B, x \cdot y^{-1} \in B \)</span>.</p></li>
+</ul>
+</section>
+</div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>În unele cărți, se cere explicit ca substructura să preia elementele neutre.
+Astfel, în notațiile de mai sus, se adaugă explicit cerințele <span class="math notranslate nohighlight">\( 0 \in B \)</span> și
+<span class="math notranslate nohighlight">\( 1 \in B \)</span>.</p>
+<p>Dar, așa cum am văzut, dacă operația admite simetrice, elementele neutre pot fi
+obținute ca <span class="math notranslate nohighlight">\( x - x = 0 \)</span>, respectiv <span class="math notranslate nohighlight">\( x \cdot x^{-1} = 1 \)</span>, deoarece elementele
+<span class="math notranslate nohighlight">\( x \)</span> în discuție sînt arbitrare.</p>
+</div>
+<p>Nu insistăm pe exemple sofisticate și remarcăm doar că, pornind de la incluziunea
+de mulțimi:</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{Z} \subseteq \mathbb{Q} \subseteq \mathbb{R} \subseteq \mathbb{C},\]</div>
+<p>avem imediat că <span class="math notranslate nohighlight">\( (\mathbb{Z}, +, \cdot) \)</span> este subinel în oricare dintre inelele
+<span class="math notranslate nohighlight">\( \mathbb{Q}, \mathbb{R}, \mathbb{C} \)</span> (care sînt, de fapt, corpuri, însă orice
+corp este și inel). Totodată, <span class="math notranslate nohighlight">\( \mathbb{Q} \)</span> este subcorp în <span class="math notranslate nohighlight">\( \mathbb{R} \)</span>,
+care este subcorp în <span class="math notranslate nohighlight">\( \mathbb{C} \)</span> etc.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>În cazul inelelor și corpurilor, noțiunile de substructură sînt ceva mai subtile,
+în special deoarece avem cele două operații. Astfel, pe lîngă subinele și subcorpuri,
+mai există un alt tip de substructură, numit <em>ideal</em>. Nu intrăm în astfel de detalii,
+însă existența idealelor și problemele specifice sînt motivele principale pentru
+care nu detaliem alte construcții și rezultate privitoare la substructuri în cazul
+inelelor și corpurilor.</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="unitati-si-divizori-ai-lui-zero">
+<h2>Unități și divizori ai lui zero<a class="headerlink" href="#unitati-si-divizori-ai-lui-zero" title="Permalink to this headline">#</a></h2>
+<p>Această secțiune poate fi considerată opțională, deoarece prezintă două proprietăți
+deosebite ale inelelor, care sînt relevante în special în studiul aritmeticii.
+Cu toate acestea, am ales să le expunem, deoarece ilustrează fenomene aparent
+contraintuitive, dar care se manifestă destul de natural în contexte nu tocmai
+complicate.</p>
+<p>În cazul mulțimilor de numere, sîntem obișnuiți cu faptul că dacă un produs este
+nul, atunci cel puțin unul dintre factori este nul. Formal,</p>
+<div class="math notranslate nohighlight">
+\[x \cdot y = 0 \Leftrightarrow x = 0 \text{ sau } y = 0,\]</div>
+<p>oricînd <span class="math notranslate nohighlight">\( x, y \)</span> sînt numere naturale, întregi, raționale, reale sau complexe.</p>
+<p>Interpretarea acestui fenomen într-un inel oarecare ar suna așa:</p>
+<blockquote>
+<div><p>Dacă <span class="math notranslate nohighlight">\( (A, \ast, \circ) \)</span> este un inel și <span class="math notranslate nohighlight">\( x \circ y = e_\ast \)</span>, atunci
+<span class="math notranslate nohighlight">\( x = e_\ast \)</span> sau <span class="math notranslate nohighlight">\( y = e_\ast \)</span>.</p>
+</div></blockquote>
+<p>Dar lucrurile nu stau mereu așa și deja cunoaștem exemple de elemente ale căror
+produs este (elementul) nul, deși fiecare dintre ele este nenul. De exemplu,
+în cazul matricelor din <span class="math notranslate nohighlight">\( M_2(\mathbb{R}) \)</span>, avem:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}
+1 &amp; 0 \\
+0 &amp; 0
+\end{pmatrix} \cdot %
+\begin{pmatrix}
+0 &amp; 0 \\
+0 &amp; 1
+\end{pmatrix} = %
+\begin{pmatrix}
+0 &amp; 0 \\
+0 &amp; 0
+\end{pmatrix}.\end{split}\]</div>
+<p>Așadar, nu este o surpriză posibilitatea ca un produs să fie (elementul) nul, deși
+niciunul dintre factori nu este (elementul) nul. Elementele cu această proprietate
+se numesc <strong>divizori ai lui zero</strong> într-un inel oarecare. Explicația numelui este
+clară: un divizor al unui element (număr) este un element (număr) care, prin compunere
+(înmulțire), poate produce elementul (numărul) pe care îl divide. De pildă,
+<span class="math notranslate nohighlight">\( 2 \)</span> este divizor al lui <span class="math notranslate nohighlight">\( 6 \)</span>, deoarece există numărul <span class="math notranslate nohighlight">\( 3 \)</span> cu ajutorul căruia
+din <span class="math notranslate nohighlight">\( 2 \)</span> se poate obține <span class="math notranslate nohighlight">\( 6 \)</span> prin înmulțire: <span class="math notranslate nohighlight">\( 2 \cdot 3 = 6 \)</span>. Din același
+motiv, în acest exemplu, și <span class="math notranslate nohighlight">\( 3 \)</span> este divizor al lui <span class="math notranslate nohighlight">\( 6 \)</span>, evident.</p>
+<p>Rezultă că un divizor al lui zero este un element care, prin compunere cu un alt element
+(ce devine la rîndul său un divizor al lui zero), produce elementul nul. Formal, avem:</p>
+<div class="proof definition admonition" id="def-div-zero">
+<p class="admonition-title"><span class="caption-number">Definition 19 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( (A, \ast, \circ) \)</span> un inel.</p>
+<p>Elementul <span class="math notranslate nohighlight">\( x \in A \)</span> se numește <em>divizor al lui zero</em> dacă <span class="math notranslate nohighlight">\( x \neq e_\ast \)</span>
+și există un element <span class="math notranslate nohighlight">\( y \in A, y \neq e_\ast \)</span> astfel încît <span class="math notranslate nohighlight">\( x \circ y = e_\ast \)</span>.</p>
+</section>
+</div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>În cazul în care inelul nu este comutativ (adică are doar prima operație comutativă,
+nu și pe a doua), se face distincție între <em>divizor al lui zero la stînga</em>
+și <em>divizor al lui zero la dreapta</em>. De pildă, unul la stînga este cel din definiția
+de mai sus, cînd <span class="math notranslate nohighlight">\( x \)</span> poate sta doar la stînga lui <span class="math notranslate nohighlight">\( y \)</span> pentru a obține <span class="math notranslate nohighlight">\( e_\ast \)</span>.</p>
+<p>Însă nu vom insista pe asemenea detalii, întrucît majoritatea exemplelor vor fi de
+inele comutative.</p>
+</div>
+<p>Alte exemple ceva mai tehnice de divizori ai lui zero, în afară de matrice, se pot da
+în <em>inele de clase de resturi</em>. Se notează cu <span class="math notranslate nohighlight">\( \mathbb{Z}_n \)</span> sau, în cărțile anglo-saxone,
+cu <span class="math notranslate nohighlight">\( \mathbb{Z}/n\mathbb{Z} \)</span>, mulțimea claselor de resturi modulo <span class="math notranslate nohighlight">\( n \)</span>, cu <span class="math notranslate nohighlight">\( n \)</span> fixat.
+Altfel spus, <span class="math notranslate nohighlight">\( \mathbb{Z}_n \)</span> conține resturile posibile la împărțirea prin <span class="math notranslate nohighlight">\( n \)</span>.</p>
+<p>De exemplu:</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{Z}_7 = \{ \widehat{0}, \widehat{1}, \widehat{2}, \dots, \widehat{6} \}\]</div>
+<p>deoarece atunci cînd împărțim la 7, putem obține resturile din <span class="math notranslate nohighlight">\( \{ 0, \dots, 6 \} \)</span>.
+Fiecare element din mulțime este o <em>clasă de resturi</em>, adică o mulțime la rîndul
+său. În particular, <span class="math notranslate nohighlight">\( \widehat{0} \)</span> conține toți multiplii de 7 (adică numerele care dau
+restul 0 la împărțirea prin 7), <span class="math notranslate nohighlight">\( \widehat{1} \)</span> conține toate numerele de forma
+<span class="math notranslate nohighlight">\( 7k + 1, k \in \mathbb{Z} \)</span> etc.</p>
+<p>Operațiile de adunare și înmulțire pentru astfel de elemente se definesc natural:
+pentru orice <span class="math notranslate nohighlight">\( \widehat{x}, \widehat{y} \)</span> din <span class="math notranslate nohighlight">\( \mathbb{Z}_n \)</span>, cu <span class="math notranslate nohighlight">\( n \)</span> fixat, avem:</p>
+<div class="math notranslate nohighlight">
+\[\widehat{x} + \widehat{y} = \widehat{x + y} \quad \text{și} \quad \widehat{x} \cdot \widehat{y} = \widehat{x \cdot y}.\]</div>
+<p>De exemplu, în <span class="math notranslate nohighlight">\( \mathbb{Z}_7 \)</span>, avem că <span class="math notranslate nohighlight">\( \widehat{2} + \widehat{3} = \widehat{5} \)</span>
+și <span class="math notranslate nohighlight">\( \widehat{3} \cdot \widehat{5} = \widehat{15} = \widehat{1} \)</span>, deoarece <span class="math notranslate nohighlight">\( 15 \)</span> dă,
+de fapt, restul <span class="math notranslate nohighlight">\( 1 \)</span> la împărțirea prin <span class="math notranslate nohighlight">\( 7 \)</span>.</p>
+<p>Inelele de clase de resturi sînt foarte importante în aplicații de criptografie, de exemplu,
+unde sînt folosite pentru a facilita operațiile cu numere foarte mari. În ce privește
+lecția noastră, vom da doar un exemplu de divizor al lui zero.</p>
+<p>Să luăm, de pildă, inelul <span class="math notranslate nohighlight">\( \mathbb{Z}_{10} \)</span> al claselor de resturi modulo <span class="math notranslate nohighlight">\( 10 \)</span>, deci
+care conține resturile posibile la împărțirea prin <span class="math notranslate nohighlight">\( 10 \)</span>, anume <span class="math notranslate nohighlight">\( \widehat{0}, \dots, \widehat{9} \)</span>.
+Adunarea și înmulțirea fiind definite ca mai sus, elementul nul este <span class="math notranslate nohighlight">\( \widehat{0} \)</span>, iar elementul
+unitate este <span class="math notranslate nohighlight">\( \widehat{1} \)</span>. Acest inel conține divizori ai lui zero, deoarece avem, de exemplu:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \begin{align*}
+     \widehat{2} \cdot \widehat{5} &amp;= \widehat{0} \\
+     \widehat{4} \cdot \widehat{5} &amp;= \widehat{0} \\
+     \widehat{6} \cdot \widehat{5} &amp;= \widehat{0} \\
+     \widehat{8} \cdot \widehat{5} &amp;= \widehat{0}
+  \end{align*}
+\end{split}\]</div>
+<p>de unde rezultă că <span class="math notranslate nohighlight">\( \widehat{2}, \widehat{4}, \widehat{5}, \widehat{6}, \widehat{8} \)</span> sînt cu toții
+divizori ai lui zero.</p>
+<p>Noțiunea de <em>unitate</em> este una complementară divizorilor lui zero. Am spus că, în general,
+prin <em>unitate</em> se înțelege elementul neutru în cazul unei operații notate multiplicativ,
+fiind echivalentul lui <span class="math notranslate nohighlight">\( 1 \)</span>. Noțiunea poate fi generalizată și se numește unitate orice
+<em>divizor al elementului neutru-unitate</em>, adică orice element inversabil:</p>
+<div class="proof definition admonition" id="def-unitate">
+<p class="admonition-title"><span class="caption-number">Definition 20 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( (A, \ast, \circ) \)</span> un inel și <span class="math notranslate nohighlight">\( e_\circ \)</span> elementul neutru corespunzător.</p>
+<p>Elementul <span class="math notranslate nohighlight">\( x \in A \)</span> se numește <em>unitate</em> dacă <span class="math notranslate nohighlight">\( x \neq e_\circ \)</span> și există
+<span class="math notranslate nohighlight">\( y \in A, y \neq e_\circ \)</span> astfel încît <span class="math notranslate nohighlight">\( x \cdot y = e_\circ \)</span>.</p>
+</section>
+</div><p>Ca în cazul divizorilor lui zero, putem face distincția între <em>unități la stînga</em>
+și <em>unități la dreapta</em>, însă vom omite această distincție, presupunînd că lucrăm
+cu inele comutative.</p>
+<p>Mulțimea unităților unui inel <span class="math notranslate nohighlight">\( A \)</span> se notează cu <span class="math notranslate nohighlight">\( U(A) \)</span> și conține, deci,
+toate elementele inversabile. Cu alte cuvinte, în <span class="math notranslate nohighlight">\( U(A) \)</span> găsim exact elementele
+care ar face inelul să fie corp. De aceea, dat un inel <span class="math notranslate nohighlight">\( A \)</span>, putem obține foarte
+ușor un corp dacă păstrăm operațiile, dar schimbăm mulțimea <span class="math notranslate nohighlight">\( A \)</span> cu mulțimea <span class="math notranslate nohighlight">\( U(A) \)</span>.</p>
+<p>Similar, în cazul monoizilor, dacă <span class="math notranslate nohighlight">\( M \)</span> este un monoid și notăm cu <span class="math notranslate nohighlight">\( U(M) \)</span> elementele
+sale inversabile, atunci <span class="math notranslate nohighlight">\( U(M) \)</span> devine grup, cu aceeași operație.</p>
+<p>Aici putem da exemple mai simple:</p>
+<p><strong>Exemplu:</strong> Pentru inelul <span class="math notranslate nohighlight">\( (\mathbb{Z}, +, \cdot) \)</span>, avem <span class="math notranslate nohighlight">\( U(\mathbb{Z}) = \{ \pm 1 \} \)</span>.</p>
+<p><strong>Exemplu:</strong> Pentru inelul <span class="math notranslate nohighlight">\( (M_2(\mathbb{R}), +, \cdot) \)</span>, avem <span class="math notranslate nohighlight">\( U(M_2(\mathbb{R}) = GL_2(\mathbb{R}) \)</span>.</p>
+<p><strong>Exemplu:</strong> Pentru inelul <span class="math notranslate nohighlight">\( (\mathbb{Z}_{n}, +, \cdot) \)</span>, elementele inversabile au o proprietate specială.
+Fără demonstrație, bazată pe algoritmul lui Euclid extins, enunțăm:</p>
+<div class="math notranslate nohighlight">
+\[U(\mathbb{Z}_n) = \{ x \in \mathbb{Z}_{n} \mid \mathrm{cmmdc}(x, n) = 1 \}.\]</div>
+<p>Cu alte cuvinte, unitățile sînt elementele coprime cu <span class="math notranslate nohighlight">\( n \)</span>. Rezultă, de exemplu:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \begin{align*}
+    U(\mathbb{Z}_{10}) &amp;= \{ \widehat{1}, \widehat{3}, \widehat{7}, \widehat{9} \} \\
+    U(\mathbb{Z}_{13}) &amp;= \mathbb{Z}_{13}.
+  \end{align*}
+\end{split}\]</div>
+<p>Din al doilea exemplu, deducem imediat o proprietate foarte importantă,
+pe care o enunțăm fără demonstrație.</p>
+<div class="proof theorem admonition" id="thm-zn-corp">
+<p class="admonition-title"><span class="caption-number">Theorem 10 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Inelul <span class="math notranslate nohighlight">\( \mathbb{Z}_n \)</span> este corp dacă și numai dacă <span class="math notranslate nohighlight">\( n \)</span> este număr prim.</p>
+</section>
+</div><p>Ne oprim aici cu aceste noțiuni, pe care le întîlniți din abundență dacă veți studia
+elemente de criptografie și securitatea informației. Pentru scopurile noastre de geometrie
+și algebră liniară, vor prezenta interes minor.</p>
+</section>
+<hr class="docutils" />
+<section id="morfisme-nucleu-imagine">
+<h2>Morfisme, nucleu, imagine<a class="headerlink" href="#morfisme-nucleu-imagine" title="Permalink to this headline">#</a></h2>
+<p>Trecem mai departe la morfisme, care nu ar trebui să fie o surpriză că se definesc
+foarte asemănător cu cazul <a class="reference internal" href="p2-s1-grupuri.html#sec-substructuri-morfisme"><span class="std std-ref">grupurilor și monoizilor</span></a>.
+Ideea de bază – anume că morfismele sînt funcții între structuri, care respectă operațiile,
+făcînd, astfel, un <em>transport de structură</em> – se păstrează.</p>
+<div class="proof definition admonition" id="def-morfism-inele">
+<p class="admonition-title"><span class="caption-number">Definition 21 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( (A, +, \cdot) \)</span> și <span class="math notranslate nohighlight">\( (B, \ast, \circ) \)</span> două inele și <span class="math notranslate nohighlight">\( f : A \to B \)</span> o funcție.</p>
+<p><span class="math notranslate nohighlight">\( f \)</span> este <em>morfism de inele</em> dacă simultan au loc:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( f(x + y) = f(x) \ast f(y), \forall x, y \in A \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( f(x \cdot y) = f(x) \circ f(y), \forall x, y \in A \)</span>.</p></li>
+</ul>
+<p>Putem cere, suplimentar, ca <span class="math notranslate nohighlight">\( f(e_+) = e_\ast \)</span> și <span class="math notranslate nohighlight">\( f(e_\cdot) = e_\circ \)</span>,
+caz în care unele cărți denumesc morfismul <em>unitar</em>.</p>
+</section>
+</div><p>Cum din punctul de vedere al operațiilor, corpurile se definesc identic cu inelele,
+morfismele de corpuri au exact aceeași definiție cu cea pentru inele.</p>
+<p>În ce privește <em>nucleul</em> unui morfism de inele, trebuie doar să fim atenți
+cu care dintre elementele neutre lucrăm în definiție:</p>
+<div class="proof definition admonition" id="def-ker-img-inel">
+<p class="admonition-title"><span class="caption-number">Definition 22 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( (A, +, \cdot) \)</span> și <span class="math notranslate nohighlight">\( (B, \ast, \circ) \)</span> două inele (corpuri), iar
+<span class="math notranslate nohighlight">\( f : A \to B \)</span> un morfism.</p>
+<p>Se definesc:</p>
+<ul class="simple">
+<li><p><em>nucleul morfismului</em>, <span class="math notranslate nohighlight">\( \mathrm{Ker}(f) = \{ x \in A \mid f(x) = e_\ast \} \)</span>;</p></li>
+<li><p><em>imaginea morfismului</em>, <span class="math notranslate nohighlight">\( \mathrm{Im}(f) = f(A) = \{ y \in B \mid \exists x \in A, f(x) = y \} \)</span>.</p></li>
+</ul>
+</section>
+</div><p>Și tot ca în cazul monoizilor și grupurilor, avem:</p>
+<div class="proof definition admonition" id="thm-ker-inj-img-surj">
+<p class="admonition-title"><span class="caption-number">Definition 23 </span></p>
+<section class="definition-content" id="proof-content">
+<p>În condițiile și cu notațiile din definiția anterioară:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( f \)</span> este injectivă dacă și numai dacă <span class="math notranslate nohighlight">\( \mathrm{Ker}(f) = \{ e_+ \} \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( f \)</span> este surjectivă dacă și numai dacă <span class="math notranslate nohighlight">\( \mathrm{Im}(f) = B \)</span>.</p></li>
+</ul>
+</section>
+</div><p>Merită menționată o proprietate surprinzătoare privitoare la corpuri:</p>
+<div class="proof theorem admonition" id="thm-morf-corpuri-inj">
+<p class="admonition-title"><span class="caption-number">Theorem 11 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Orice morfism de corpuri este injectiv.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Fie <span class="math notranslate nohighlight">\( (A, +, \cdot) \)</span> și <span class="math notranslate nohighlight">\( (B, \ast, \circ) \)</span> două corpuri, iar <span class="math notranslate nohighlight">\( f : A \to B \)</span>
+un morfism de corpuri.</p>
+<p>Este suficient să demonstrăm că <span class="math notranslate nohighlight">\( \mathrm{Ker}(f) = \{ e_+ \} \)</span>.</p>
+<p>Presupunem, prin reducere la absurd, că există <span class="math notranslate nohighlight">\( A \ni x \neq e_+, x \in \mathrm{Ker}(f) \)</span>.
+Rezultă, prin definiție, că <span class="math notranslate nohighlight">\( f(x) = e_+ \)</span>. Dar în același timp, deoarece <span class="math notranslate nohighlight">\( A \)</span> este corp,
+rezultă că <span class="math notranslate nohighlight">\( x \)</span> este inversabil, deci există <span class="math notranslate nohighlight">\( x^{-1} \in A \)</span>.</p>
+<p>Atunci am avea:</p>
+<div class="math notranslate nohighlight">
+\[ e_\circ = f(e_{\cdot}) = f(x \cdot x^{-1}) = f(x) \circ f(x^{-1}) = e_+ \circ f(x)^{-1}, \]</div>
+<p>ceea ce este imposibil, deoarece <span class="math notranslate nohighlight">\( e_+ \)</span> nu poate fi inversabil (în cazul numerelor, ar însemna
+că am obținut o egalitate de forma <span class="math notranslate nohighlight">\( 1 = 0 \cdot t \)</span>, ceea ce este imposibil).</p>
+<p>Am obținut o contradicție, deci <span class="math notranslate nohighlight">\( f \)</span> este injectivă.</p>
+</div>
+<hr class="docutils" />
+<p>Ne oprim aici cu noțiunile abstracte privitoare la inele și corpuri și continuăm cu structurile
+mai complicate – spațiile vectoriale –, care folosesc simultan cîte două structuri deja studiate.
+În același timp, acest grad de sofisticare ne va permite și mai multă flexibilitate și aplicații,
+precum veți vedea.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="p2-s1e-simetrii.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Grupuri de simetrie</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="p2-s3-spvect.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Spații vectoriale</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Adrian Manea (Poligon Educational)<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

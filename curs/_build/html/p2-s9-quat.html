@@ -1,0 +1,1128 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Cuaternioni &#8212; Algebră liniară și aplicații</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/proof.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Spații afine" href="p2-s10-afin.html" />
+    <link rel="prev" title="Vectori și valori proprii" href="p2-s8-vvp.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo-light-poly-only.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Algebră liniară și aplicații</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Algebră liniară și aplicații
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Elemente de istoria și filosofia matematicii
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-istorie-fil-intro.html">
+   Generalități
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-s1-rationamente.html">
+   Abstractizare și raționamente
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-s2-ist-vsp.html">
+   Istoria spațiilor vectoriale
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algebră abstractă și algebră liniară
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="p2-abstract.html">
+   Algebră abstractă și algebră liniară
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s1-grupuri.html">
+     Monoizi și grupuri
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s1e-simetrii.html">
+     Grupuri de simetrie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s2-inele-corpuri.html">
+     Inele și corpuri
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s3-spvect.html">
+     Spații vectoriale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s4-baza.html">
+     Bază și dimensiune
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s5-op-subsp.html">
+     Operații cu subspații
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s6-morfisme-spvect.html">
+     Morfisme de spații vectoriale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s7-ortonormare.html">
+     Produs scalar și ortonormare
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s8-vvp.html">
+     Vectori și valori proprii
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Cuaternioni
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s10-afin.html">
+     Spații afine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s11-mat-decomp.html">
+     Descompuneri matriceale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s12-transf-mat.html">
+     Transformări matriceale în 2D și 3D
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s13-arii-volume.html">
+     Arii și volume
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Aplicații și implementări în programare
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="p3-aplicatii.html">
+   Aplicații și implementări în programare
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Bibliografie și lecturi suplimentare
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliografie.html">
+   Bibliografie și lecturi suplimentare
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/adimanea/linalg"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/adimanea/linalg/issues/new?title=Issue%20on%20page%20%2Fp2-s9-quat.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/p2-s9-quat.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numere-complexe">
+   Numere complexe
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#forme-de-prezentare-si-operatii">
+     Forme de prezentare și operații
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#paranteza-coordonate-polare">
+     Paranteză: Coordonate polare
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#corpul-si-spatiul-complex">
+     Corpul și spațiul complex
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multimea-mathbb-h">
+   Mulțimea
+   <span class="math notranslate nohighlight">
+    \( \mathbb{H} \)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numere-hipercomplexe">
+   Numere hipercomplexe
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Cuaternioni</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numere-complexe">
+   Numere complexe
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#forme-de-prezentare-si-operatii">
+     Forme de prezentare și operații
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#paranteza-coordonate-polare">
+     Paranteză: Coordonate polare
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#corpul-si-spatiul-complex">
+     Corpul și spațiul complex
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multimea-mathbb-h">
+   Mulțimea
+   <span class="math notranslate nohighlight">
+    \( \mathbb{H} \)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numere-hipercomplexe">
+   Numere hipercomplexe
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="cuaternioni">
+<span id="cap-cuat"></span><h1>Cuaternioni<a class="headerlink" href="#cuaternioni" title="Permalink to this headline">#</a></h1>
+<p>Mulțimea cuaternionilor este una foarte surprinzătoare, din mai multe
+puncte de vedere. În primul rînd, pare o structură foarte abstractă,
+care impune lucrul în dimensiune 4 și prin aceasta, din start pare ceva
+ce nu vom întîlni în „practică“. Acest lucru se va dovedi fals și de fapt,
+aplicațiile cuaternionilor nu doar că sînt remarcabile prin rafinament
+și grad de sofisticare, dar sînt și la îndemînă. Începînd cu teoria
+relativității a lui Einstein, din prima parte a secolului XX, ideea de
+a lucra cu spații de dimensiune 4 pentru situații „concrete“ a devenit
+tot mai utilizată. Apoi, numeroasele aplicații pe care și le-au găsit numerele
+complexe au invitat la încercări de generalizare, în special țintind diverse
+aplicații din algebră.</p>
+<p>Pe la jumătatea secolului al XIX-lea, matematicianul irlandez William Rowan
+Hamilton reușește să introducă structura algebrică a cuaternionilor, după
+eforturi de peste un deceniu. Acesta era în corespondență cu logicianul și
+algebristul Augustus De Morgan, schimbînd idei despre formalizarea structurii
+algebrice a cuaternionilor.</p>
+<p>Dificultatea era că legile algebrei nu permiteau cea mai naturală extindere
+a corpului numerelor complexe – de la numere care aveau o parte reală și una
+imaginară, la numere care să aibă o parte reală și <em>două</em> imaginare. Mult timp,
+Hamilton a considerat astfel de restricții nenaturale și s-a străduit să
+demonstreze că ar fi, totuși, posibil să introducă o astfel de structură, însă
+fără succes.</p>
+<p>Pînă la introducerea propriu-zisă a mulțimii și structurii cuaternionilor,
+vă propunem o scurtă recapitulare privitoare la numere complexe, pentru a înțelege
+mai bine apoi locul ocupat de cuaternioni.</p>
+<section id="numere-complexe">
+<h2>Numere complexe<a class="headerlink" href="#numere-complexe" title="Permalink to this headline">#</a></h2>
+<p>Și istoria numerelor complexe este una foarte bogată și plină de surprize și
+dificultăți. De la utilizarea lor în algebră, pentru a rezolva ecuații de gradul
+al doilea cu discriminant negativ la aplicații în analiză, dar și vizualizări
+și aplicații în geometrie și trigonometrie, numerele complexe (sau „imaginare“,
+cum au fost cunoscute mult timp) au traversat secole, iar astăzi sînt studiate
+și utilizate încă din liceu.</p>
+<p>Nu ne propunem aici o prezentare istorică a acestei mulțimi, ci mai degrabă una
+pragmatică, în care să recapitulăm principalele concepte și aplicații privitoare
+la numerele complexe, așa cum apar ele începînd cu anii de liceu și pînă la
+studii ceva mai avansate.</p>
+<section id="forme-de-prezentare-si-operatii">
+<h3>Forme de prezentare și operații<a class="headerlink" href="#forme-de-prezentare-si-operatii" title="Permalink to this headline">#</a></h3>
+<p>Prin definiție, mulțimea numerelor complexe se introduce astfel:</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{C} = \{ a + bi \mid a, b \in \mathbb{R}, i^2 = -1 \}.\]</div>
+<p>Această prezentare se mai numește <strong>forma algebrică</strong> a numerelor complexe
+și se pretează la numeroase aplicații privitoare la structura algebrică,
+așa cum vom vedea.</p>
+<p>Numărul <span class="math notranslate nohighlight">\( i \)</span> este elementul de noutate aici și se numește <em>unitate imaginară</em>.
+El are proprietatea surprinzătoare de a putea fi ridicat la pătrat și a obține
+o valoare negativă. Cu această aparentă<a class="footnote-reference brackets" href="#aparenti" id="id1">1</a> încălcare a regulilor algebrei – faptul
+că prin ridicare la o putere pară putem obține un număr negativ sau, echivalent,
+că putem extrage radical de ordin par dintr-un număr negativ (<span class="math notranslate nohighlight">\( i = \sqrt{-1} \)</span>,
+cum este introdus în unele cărți) – se construiește o nouă mulțime de numere.</p>
+<p>Acum, în forma algebrică, numerele complexe sînt ușor de utilizat, cîtă vreme
+ținem cont de faptul că nu este permis „amestecul“ părților lor reale și imaginare.
+Dacă avem <span class="math notranslate nohighlight">\( z = a + bi \in \mathbb{C} \)</span> ca mai sus, se definește <em>partea reală</em>
+a lui <span class="math notranslate nohighlight">\( z \)</span> ca fiind <span class="math notranslate nohighlight">\( \mathrm{Re}(z) = a \)</span>, iar <em>partea imaginară</em>, prin
+<span class="math notranslate nohighlight">\( \mathrm{Im}(z) = b \)</span>. Atunci, adunarea și înmulțirea numerelor complexe în forma
+reală se face imediat. Fie <span class="math notranslate nohighlight">\( z_1 = a_1 + b_1i, z_2 = a_2 + b_2i \in \mathbb{C} \)</span>.
+Avem:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  z_1 + z_2 &amp;= (a_1 + a_2) + (b_1 + b_2)i \\
+  z_1 \cdot z_2 &amp;= (a_1 a_2 - b_1b_2) + (a_1 b_2 + b_1 a_2)i
+\end{align*}\end{split}\]</div>
+<p>Formula pentru adunare se obține pur și simplu prin adunarea pe componente, iar
+formula pentru înmulțire, prin calcul direct, ținînd cont de definiția <span class="math notranslate nohighlight">\( i^2 = -1 \)</span>
+și de ne-amestecul părților reale și imaginare.</p>
+<p>În plus, se definesc <em>conjugata</em> <span class="math notranslate nohighlight">\( \overline{z} \)</span> și <em>modulul</em> <span class="math notranslate nohighlight">\( |z| \)</span> unui număr
+complex <span class="math notranslate nohighlight">\( z = a + bi \in \mathbb{C} \)</span> prin:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  \overline{z} &amp;= a - bi \\
+  |z| &amp;= \sqrt{a^2 + b^2}  = \sqrt{z \cdot \overline{z}}
+\end{align*}\end{split}\]</div>
+<p>Remarcăm că modulul aduce numerele complexe în mulțimea numerelor reale pozitive,
+astfel că se comportă ca funcția obișnuită de calcul al valorii absolute.</p>
+<hr class="docutils" />
+<p>Odată cu aplicațiile din geometrie, numerelor complexe li s-a dat și o
+<strong>formă geometrică</strong>. Astfel, se definește <em>planul complex</em> ca fiind pur și simplu
+planul real <span class="math notranslate nohighlight">\( \mathbb{R}^2 \)</span> (o analogie despre care vom discuta imediat),
+iar un punct din plan <span class="math notranslate nohighlight">\( A(a, b) \)</span> spunem că are <em>afixul</em> dat de numărul complex
+<span class="math notranslate nohighlight">\( z = a + bi \)</span>. Cu această prezentare, modulul numărului complex capătă semnificații
+geometrice, fiind lungimea segmentului care unește punctul <span class="math notranslate nohighlight">\( A(a, b) \)</span> cu originea
+sistemului de axe, dintr-o aplicație simplă a teoremei lui Pitagora, întrucît
+partea reală devine abscisa punctului, iar partea imaginară, ordonata.</p>
+<figure class="align-default" id="fig-forma-geom-complex">
+<img alt="_images/forma-geom-complex.png" src="_images/forma-geom-complex.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Forma geometrică pentru <span class="math notranslate nohighlight">\( z = 2 + 3i \)</span> și conjugatul său</span><a class="headerlink" href="#fig-forma-geom-complex" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>În acest context, operația de conjugare a unui număr complex care reprezintă afixul
+unui punct din plan schimbă semnul ordonatei și păstrează abscisa, deci corespunde
+unei simetrii față de axa <span class="math notranslate nohighlight">\( OX \)</span>.</p>
+<p>Mai mult, această prezentare permite și o analogie cu vectorii din plan, în sensul
+că numărul complex <span class="math notranslate nohighlight">\( z = a + bi \)</span>, ca afix al unui punct din plan <span class="math notranslate nohighlight">\( A(a, b) \)</span>,
+se poate asocia <em>vectorului de poziție</em> al punctului <span class="math notranslate nohighlight">\( A \)</span>, notat de obicei
+<span class="math notranslate nohighlight">\( \vec{r}_A \)</span>, și care unește originea sistemului de axe cu punctul <span class="math notranslate nohighlight">\( A \)</span>.
+Descompus în funcție de versori, avem:</p>
+<div class="math notranslate nohighlight">
+\[\vec{r}_A = a \vec{i} + b \vec{j},\]</div>
+<p>ilustrînd o dată în plus legătura dintre vectori din plan și numere complexe.</p>
+<p>Totodată, această legătură ne permite să vedem și că adunarea numerelor complexe
+corespunde la adunarea vectorilor din plan, cu aceeași observație, că părțile
+reale și imaginare nu se „amestecă“, așa cum componentele (coordonatele)
+corespunzătoare versorilor <span class="math notranslate nohighlight">\( \vec{i} \)</span> și <span class="math notranslate nohighlight">\( \vec{j} \)</span> rămîn separate.</p>
+<p>Totuși, așa cum este cazul vectorilor, o astfel de prezentare nu se pretează la
+o operație de înmulțire, astfel că nu putem descrie semnificativ din punct de
+vedere geometric operația de înmulțire a numerelor complexe<a class="footnote-reference brackets" href="#inmi" id="id2">2</a>. Produsul
+scalar care se definește între vectori din plan, de exemplu, nu are o semnificație
+aparte în cazul numerelor complexe.</p>
+<hr class="docutils" />
+<p>Legătura cu geometria poate fi extinsă și către trigonometrie. Astfel,
+numărul complex <span class="math notranslate nohighlight">\( z = a + bi \)</span>, care este afixul unui punct din plan <span class="math notranslate nohighlight">\( A(a, b) \)</span>,
+se mai poate scrie și sub <strong>formă trigonometrică</strong>, anume:</p>
+<div class="math notranslate nohighlight">
+\[z = r(\cos \theta + i \sin \theta),\]</div>
+<p>unde <span class="math notranslate nohighlight">\( r \)</span> este modulul lui <span class="math notranslate nohighlight">\( z \)</span>, adică <span class="math notranslate nohighlight">\( r = \sqrt{a^2 + b^2} \)</span>, iar
+<span class="math notranslate nohighlight">\( \theta \in [0, 2\pi) \)</span> se numește <em>argumentul principal</em> al lui <span class="math notranslate nohighlight">\( z \)</span>
+și reprezintă unghiul pe care îl descrie vectorul de poziție al punctului
+<span class="math notranslate nohighlight">\( A \)</span> cu axa <span class="math notranslate nohighlight">\( OX \)</span>, măsurat în sens invers acelor de ceasornic (numit și
+<em>sens trigonometric</em>), începînd cu cadranul I.</p>
+<figure class="align-default" id="fig-forma-trig-complex">
+<img alt="_images/forma-trig-complex.png" src="_images/forma-trig-complex.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text">Forma trigonometrică a numărului complex <span class="math notranslate nohighlight">\( z = 4 + 2i \)</span></span><a class="headerlink" href="#fig-forma-trig-complex" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="paranteza-coordonate-polare">
+<h3>Paranteză: Coordonate polare<a class="headerlink" href="#paranteza-coordonate-polare" title="Permalink to this headline">#</a></h3>
+<p>Această descriere conduce la așa-numitele <em>coordonate polare</em>, utilizate pentru
+reprezentarea punctelor din plan. Coordonatele „obișnuite“, abscisa și ordonata,
+se mai numesc și <em>carteziene</em>, fiind introduse și utilizate aprofundat de
+matematicianul francez al secolului al XVII-lea, René Descartes, al cărui nume
+latinizat era <em>Renatus Cartesius</em>. Intuitiv, coordonatele carteziene facilitează
+lucrul cu drepte și segmente și am putea spune că împart planul real într-un
+fel de sistem ortogonal similar pătrățelelor de pe foile de matematică. Însăși
+reprezentarea unui punct din plan, folosind coordonate carteziene, presupune
+lucrul cu drepte: se trasează o paralelă la <span class="math notranslate nohighlight">\( OX \)</span> în dreptul ordonatei
+și o paralelă la <span class="math notranslate nohighlight">\( OY \)</span> în dreptul abscisei. Intersecția între cele două drepte
+va fi chiar punctul căutat.</p>
+<p>Coordonatele polare, de cealaltă parte, presupun un fel de lucru cu cercuri
+concentrice. Punctului de coordonate carteziene <span class="math notranslate nohighlight">\( A(a, b) \)</span> îi corespunde punctul
+de coordonate polare <span class="math notranslate nohighlight">\( A(r, \theta) \)</span>, unde <span class="math notranslate nohighlight">\( r \)</span> este lungimea segmentului care
+unește punctul <span class="math notranslate nohighlight">\( A \)</span> cu originea – adică raza cercului centrat în origine și care
+conține punctul <span class="math notranslate nohighlight">\( A \)</span> – iar <span class="math notranslate nohighlight">\( \theta \)</span> este unghiul pe care îl face raza <span class="math notranslate nohighlight">\( OA \)</span>
+cu axa <span class="math notranslate nohighlight">\( OX \)</span>, măsurat în sens trigonometric, pornind din cadranul I.</p>
+<p>Legătura între cele două sisteme de coordonate se dă prin calcule elementare de
+trigonometrie:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  x &amp;= r \cdot \cos \theta \\
+  y &amp;= r \cdot \sin \theta
+\end{cases}\end{split}\]</div>
+<p>și în plus, avem identitatea remarcabilă că <span class="math notranslate nohighlight">\( x^2 + y^2 = r^2 \)</span>, care este tocmai
+ecuația cercului centrat în origine și cu raza <span class="math notranslate nohighlight">\( OA \)</span>.</p>
+<hr class="docutils" />
+<p>Revenind la forma trigonometrică a numerelor complexe, identități trigonometrice
+simple ne permit să facem calcule surprinzătoare. Pornind de la așa-numita
+<em>formulă a lui Moivre</em>, pentru două numere complexe scrise trigonometric
+<span class="math notranslate nohighlight">\( z_1 = r_1 (\cos \theta_1 + i \sin \theta_1) \)</span> și <span class="math notranslate nohighlight">\( z_2 = r_2(\cos \theta_2 + i\sin \theta_2) \)</span>,
+găsim:</p>
+<div class="math notranslate nohighlight">
+\[z_1 \cdot z_2 = r_1 r_2 (\cos (\theta_1 + \theta_2) + i \sin (\theta_1 + \theta_2)).\]</div>
+<p>Această formulă poate fi extinsă pentru calculul puterilor unui număr complex,
+inclusiv al puterilor reale (deci și radicali) și chiar negative, deci și pentru împărțire.</p>
+<p>Nu insistăm aici pe astfel de calcule, dar trebuie, totuși, menționat că, odată
+cu trecerea către forma geometrică a numerelor complexe, s-a deschis posibilitatea
+de a utiliza întregul aparat trigonometric, ce ne permite să ajungem la rezultate
+computaționale dificile destul de ușor.</p>
+<hr class="docutils" />
+<p>Tot legat de forma trigonometrică, într-o variantă ceva mai avansată, găsim și
+<strong>forma polară</strong>. Aceasta pornește de la definiția funcției exponențiale cu ajutorul
+unei serii de puteri, definiție care îi aparține matematicianului elvețian
+al secolului XVIII, Leonhard Euler. Fără a intra în prea multe detalii, Euler definește
+<em>funcția exponențială</em> prin:</p>
+<div class="math notranslate nohighlight">
+\[\exp(x) = \displaystyle\sum_{n \geq 0} \dfrac{1}{n!} \cdot x^n,\]</div>
+<p>iar posteritatea a denumit valoarea <span class="math notranslate nohighlight">\( \exp(1) \)</span> <em>numărul lui Euler</em>, <span class="math notranslate nohighlight">\( e \)</span><a class="footnote-reference brackets" href="#e" id="id3">3</a>.
+Dacă se aplică tehnici de bază care asociază o serie de puteri <em>oricărei funcții</em>
+<em>complexe</em>, nu doar exponențialei și nu doar în cazul real, se obține:</p>
+<div class="math notranslate nohighlight">
+\[\exp(ix) = \cos x + i \sin x,\]</div>
+<p>ceea ce face ca formei trigonometrice a numerelor complexe să i se asocieze
+forma polară:</p>
+<div class="math notranslate nohighlight">
+\[z = r \cdot \exp(i\theta),\]</div>
+<p>unde <span class="math notranslate nohighlight">\( r \)</span> și <span class="math notranslate nohighlight">\( \theta \)</span> au aceeași semnificație ca în forma trigonometrică.</p>
+<p>O astfel de prezentare are, pe lîngă avantajele formei trigonometrice, și alte
+beneficii computaționale. De exemplu, formula lui Moivre devine acum o simplă
+consecință a regulii de calcul cu puteri. Refolosind notațiile din cazul
+trigonometric, avem:</p>
+<div class="math notranslate nohighlight">
+\[z_1 \cdot z_2 = r_1 r_2 e^{\theta_1 + \theta_2}.\]</div>
+<p>În plus, forma polară deschide și calea către extinderea unor funcții reale în cazul
+complex, cum ar fi chiar logaritmul natural:</p>
+<div class="math notranslate nohighlight">
+\[z = re^{i\theta} \Rightarrow \ln z = \ln (re^{i\theta}) = \ln r + i\theta.\]</div>
+<p>Sînt mai multe dificultăți tehnice cînd trecem de la funcții reale la funcții
+complexe, pe care nu le detaliem aici, însă am arătat pe scurt cum legătura între
+funcția exponențială și numerele complexe poate fi un punct de pornire
+către rezultate spectaculoase.</p>
+<hr class="docutils" />
+<p>Există și o <strong>formă matriceală</strong> de reprezentare a numerelor complexe, însă
+trebuie avută grijă atunci cînd o exprimăm. Conform celor de mai jos, grupul
+numerelor complexe, ca spațiu vectorial real, are dimensiune 2, deci dacă ar fi
+să reprezentăm un număr complex ca o matrice din <span class="math notranslate nohighlight">\( M_2(\mathbb{R}) \)</span>, trebuie să
+ne asigurăm că o scriem ca un element al unui <em>sub</em>spațiu bidimensional al lui
+<span class="math notranslate nohighlight">\( M_2(\mathbb{R}) \)</span>.</p>
+<p>Ca indicii de pornire, este suficient să reprezentăm numărul 1 și unitatea imaginară
+sub formă matriceală, pentru că ulterior, orice număr complex poate fi scris ca o
+combinație liniară a acestora. Ne putem baza pe faptul că numărul complex 1 trebuie
+să corespundă matricei unitate și în plus, deoarece pentru numere reale avem
+<span class="math notranslate nohighlight">\( x = x \cdot 1, \forall x \in \mathbb{R} \)</span>, trebuie ca numărul real <span class="math notranslate nohighlight">\( x \)</span>
+să fie reprezentat ca matricea <span class="math notranslate nohighlight">\( xI_2 \)</span>.</p>
+<p>Folosind și proprietatea unității imaginare, <span class="math notranslate nohighlight">\( i^2 = -1 \)</span>, rezultă că trebuie
+să facem o corespondență pentru <span class="math notranslate nohighlight">\( i \)</span> sub forma unei matrice al cărei pătrat
+să fie <span class="math notranslate nohighlight">\( -1 \cdot I_2 \)</span>.</p>
+<p>După cîteva încercări, găsim corespondența generală:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}a + bi \mapsto \begin{pmatrix} a &amp; -b \\ b &amp; a \end{pmatrix}.\end{split}\]</div>
+<p>Această formă matriceală nu este la fel de folosită precum celelalte și este mai
+degrabă o ilustrare a corespondenței între <em>spațiul vectorial</em> <span class="math notranslate nohighlight">\( \mathbb{C} \)</span>
+și un subspațiu bidimensional al lui <span class="math notranslate nohighlight">\( M_2(\mathbb{R}) \)</span>, structuri despre care
+detaliem chiar acum.</p>
+</section>
+<section id="corpul-si-spatiul-complex">
+<h3>Corpul și spațiul complex<a class="headerlink" href="#corpul-si-spatiul-complex" title="Permalink to this headline">#</a></h3>
+<p>Deja din forma algebrică, dar și din cea geometrică a numerelor complexe
+putem intui că este vorba despre structuri algebrice bogate.</p>
+<p>Dacă lucrăm, de exemplu, doar cu adunarea și înmulțirea numerelor complexe
+din forma algebrică, anume:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  z_1 + z_2 &amp;= (a_1 + a_2) + (b_1 + b_2)i \\
+  z_1 \cdot z_2 &amp;= (a_1 a_2 - b_1b_2) + (a_1 b_2 + b_1 a_2)i
+\end{align*}\end{split}\]</div>
+<p>găsim imediat că:</p>
+<ul class="simple">
+<li><p>ambele operații sînt interne, evident, deci produc tot numere complexe;</p></li>
+<li><p>ambele operații sînt asociative și comutative, deoarece se definesc folosind doar
+operații elementare, asociative și comutative;</p></li>
+<li><p>elementul neutru pentru adunare este numărul complex <span class="math notranslate nohighlight">\( 0 = 0 + 0 \cdot i \)</span>;</p></li>
+<li><p>elementul neutru pentru înmulțire este numărul complex <span class="math notranslate nohighlight">\( 1 = 1 + 0 \cdot i \)</span>;</p></li>
+<li><p>opusul numărului complex <span class="math notranslate nohighlight">\( z = a + bi \)</span> este numărul complex <span class="math notranslate nohighlight">\( -z = (-a) + (-b) i \)</span>;</p></li>
+<li><p>inversul numărului complex <span class="math notranslate nohighlight">\( z = a + bi \)</span> este numărul complex
+<span class="math notranslate nohighlight">\( z^{-1} = \dfrac{a}{a^2 + b^2} - \dfrac{b}{a^2 + b^2} i \)</span>. Acesta se obține scriind
+pur și simplu <span class="math notranslate nohighlight">\( z^{-1} = \dfrac{1}{z} = \dfrac{1}{a + bi} \)</span>, iar apoi folosind
+<em>raționalizarea numitorilor</em>, adică prin amplificarea fracției cu <span class="math notranslate nohighlight">\( \overline{z} \)</span>
+și folosind identitatea <span class="math notranslate nohighlight">\( z \cdot \overline{z} = |z|^2 \)</span>.</p></li>
+</ul>
+<p>Concluzia acestor observații este că <span class="math notranslate nohighlight">\( (\mathbb{C}, +, \cdot) \)</span> este un <em>corp comutativ</em>,
+numit <em>corpul numerelor complexe</em>. În particular <span class="math notranslate nohighlight">\( (\mathbb{C}, +) \)</span> și <span class="math notranslate nohighlight">\( (\mathbb{C}, \cdot) \)</span>
+sînt grupuri comutative.</p>
+<p>Dar putem merge și mai departe. Inspirați de analogia planului complex cu cel real, putem
+găsi un izomorfism între <span class="math notranslate nohighlight">\( \mathbb{C} \)</span> și <span class="math notranslate nohighlight">\( \mathbb{R}^2 \)</span>, la nivel de corpuri comutative.
+Însă pentru ca acest izomorfism să funcționeze, trebuie să definim cu atenție operațiile
+pe <span class="math notranslate nohighlight">\( \mathbb{R}^2 \)</span>. Pentru <span class="math notranslate nohighlight">\( x = (a_1, b_1), y = (a_2, b_2) \in \mathbb{R}^2 \)</span>, definim:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  x + y &amp;= (a_1 + a_2, b_1 + b_2) \\
+  x \cdot y &amp;= (a_1 a_2 - b_1 b_2, a_1 b_2 + a_2 b_1)
+\end{align*}\end{split}\]</div>
+<p>Evident, această definiție este dată astfel încît să corespundă operațiilor cu numere complexe.
+Totuși, se poate demonstra ușor că <span class="math notranslate nohighlight">\( \mathbb{R}^2 \)</span> devine corp comutativ cu aceste operații,
+iar funcția:</p>
+<div class="math notranslate nohighlight">
+\[f : \mathbb{R}^2 \to \mathbb{C}, \quad f(a, b) = a + bi\]</div>
+<p>este un izomorfism. Folosindu-l, găsim că <span class="math notranslate nohighlight">\( f(0, 1) = i \)</span>, iar acesta poate fi un punct
+de pornire în înțelegerea unității imaginare. Mai precis, dacă analizăm cu atenție
+structura de pe <span class="math notranslate nohighlight">\( \mathbb{R}^2 \)</span>, vedem că <span class="math notranslate nohighlight">\( (0, 1) \cdot (0, 1) = (-1, 0) \)</span>
+și totodată, este evident că dacă definim submulțimea <span class="math notranslate nohighlight">\( \{ (a, 0) \in \mathbb{R}^2 \} \)</span>,
+nu avem altceva decît o „copie“ a lui <span class="math notranslate nohighlight">\( \mathbb{R} \)</span>. Așadar, numerele reale se regăsesc
+în <span class="math notranslate nohighlight">\( \mathbb{R}^2 \)</span> sub forma perechilor care au a doua componentă nulă.</p>
+<p>Egalitatea <span class="math notranslate nohighlight">\( (0, 1) \cdot (0, 1) = (-1, 0) \)</span> devine acum una specială: pătratul
+unui număr care <em>nu</em> este real (deoarece nu are a doua componentă nulă) este numărul
+real <span class="math notranslate nohighlight">\( -1 \)</span>, scris sub forma <span class="math notranslate nohighlight">\( (-1, 0) \)</span>. E drept, operația folosită pentru acest
+pătrat nu este înmulțirea standard, dar în orice caz, nu este cu mult diferită de
+aceasta.</p>
+<p>De aceea, spuneam, putem gîndi unitatea imaginară ca pe un „număr“ deosebit, însă
+nu neapărat ca pe unul care „încalcă regulile algebrei“, întrucît locul lui natural
+este într-un context unde funcția radical, de exemplu, și chiar funcția putere, dacă
+se definesc, au o semnificație ușor diferită de cele standard.</p>
+<hr class="docutils" />
+<p>Tot această legătură cu planul real, dar și structura de grup aditiv pe mulțimea
+numerelor complexe ne invită să studiem o eventuală structură de spațiu vectorial.
+Pentru simplitate, vom considera în continuare că lucrăm cu corpul real drept corp
+de scalari. Și, cum structurile interne sînt deja clare, mai definim operația
+externă cît se poate de natural:</p>
+<div class="math notranslate nohighlight">
+\[\alpha \cdot (a + bi) = \alpha a + (\alpha b) i, \forall \alpha \in \mathbb{R}, a + bi \in \mathbb{C}.\]</div>
+<p>Cu această definiție, se verifică ușor că într-adevăr <span class="math notranslate nohighlight">\( \mathbb{C} \)</span> devine un spațiu
+vectorial real. Mai mult, el are dimensiune 2, baza fiind mulțimea <span class="math notranslate nohighlight">\( \{ 1, i \} \)</span>,
+deoarece orice număr complex este o combinație liniară între unitatea reală și cea
+imaginară. Acest lucru face ca spațiul vectorial <span class="math notranslate nohighlight">\( \mathbb{C} \)</span> să fie izomorf
+(ca spațiu vectorial) cu <span class="math notranslate nohighlight">\( \mathbb{R}^2 \)</span>, corespondența pe care am remarcat-o
+anterior, la nivel de corpuri, păstrîndu-se și aici: <span class="math notranslate nohighlight">\( 1 \mapsto (1,0) \)</span> și <span class="math notranslate nohighlight">\( i \mapsto (0, 1) \)</span>,
+dacă este să definim izomorfismul pe bazele canonice. Evident, în cazul spațiului
+vectorial complex nu mai putem vorbi de înmulțirea vectorilor, iar produsul
+scalar este pur și simplu o copie a celui din <span class="math notranslate nohighlight">\( \mathbb{R}^2 \)</span>: pentru vectorii
+complecși <span class="math notranslate nohighlight">\( z_1 = a_1 + b_1 i \)</span> și <span class="math notranslate nohighlight">\( z_2 = a_2 + b_2 i \)</span>, avem produsul scalar
+euclidian:</p>
+<div class="math notranslate nohighlight">
+\[\langle z_1, z_2 \rangle = a_1 a_2 + b_1 b_2.\]</div>
+<hr class="docutils" />
+<p>Vedem, deci, că prin numerele complexe am extins pe cele reale într-un sens
+pe de o parte surprinzător (prin proprietățile unității imaginare), dar pe
+de altă parte, suficient de natural și de util, fiind vorba pur și simplu de
+o altă modalitate de a vedea planul real.</p>
+<p>Întrebarea care se pune, acum, este dacă am putea continua extinderea și către
+o mulțime care, eventual, să joace un rol similar pentru spațiul euclidian
+tridimensional. Adică să avem o nouă mulțime de numere și operații definite
+între acestea în așa fel încît să ajungem cel puțin la o structură de grup
+și de spațiu vectorial real, care să fie izomorf cu <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span>.</p>
+<p>Așa începe căutarea cuaternionilor.</p>
+</section>
+</section>
+<section id="multimea-mathbb-h">
+<span id="sec-multimea-h"></span><h2>Mulțimea <span class="math notranslate nohighlight">\( \mathbb{H} \)</span><a class="headerlink" href="#multimea-mathbb-h" title="Permalink to this headline">#</a></h2>
+<p>Ca să trecem direct la concluzii – deși povestirea istorică are meritele ei
+și o vom prezenta altundeva – Hamilton și nimeni altcineva nu au reușit să
+construiască o mulțime nouă de numere, pe modelul mulțimii numerelor complexe,
+care să fie similară într-un anume sens spațiului tridimensional real.
+Toate încercările lui Hamilton se terminau cu încălcarea unor axiome fundamentale
+ale algebrei: operațiile definite nu mai erau interne, se pierdea asociativitatea
+ș.a.m.d.</p>
+<p>Un exemplu simplu de proprietate încălcată este dacă ne gîndim la
+forma matriceală a numerelor complexe pe care am văzut-o și una similară pentru
+numere hipercomplexe pe care o putem intui. Numărul real 1 corespunde natural
+matricei unitate, indiferent de structura către care îl transportăm.
+În particular, dacă am găsi un echivalent al numerelor complexe în dimensiune 3,
+ar trebui să avem <span class="math notranslate nohighlight">\( 1 \mapsto I_3 \)</span>. Similar, proprietatea de morfism care ar
+face această legătură ar impune și că <span class="math notranslate nohighlight">\( -1 \mapsto -I_3 \)</span>. Apoi ar trebui
+să transportăm unitățile imaginare, <span class="math notranslate nohighlight">\( i \)</span> și <span class="math notranslate nohighlight">\( j \)</span>, să spunem. Dar ținînd cont
+de faptul că extindem mulțimea numerelor complexe, una dintre axiomele
+corespunzătoare acestora este <span class="math notranslate nohighlight">\( i^2 = j^2 = -1 \)</span>. Dar <span class="math notranslate nohighlight">\( \det(-I_3) = -1 \)</span>
+și nu putem găsi o matrice din <span class="math notranslate nohighlight">\( M_3(\mathbb{R}) \)</span> care să reprezinte
+unitățile imaginare și să respecte și determinanții. Dacă, de exemplu,
+matricea <span class="math notranslate nohighlight">\( J \)</span> (indiferent ce formă ar avea ea) reprezintă unitatea imaginară
+<span class="math notranslate nohighlight">\( j \)</span>, atunci <span class="math notranslate nohighlight">\( J^2 = -I_3 \)</span> și, aplicînd determinantul, rezultă
+<span class="math notranslate nohighlight">\( \det(J^2) = (\det(J))^2 = -1 \)</span>, ceea ce este imposibil pe numere reale.</p>
+<p>Pentru dimensiune 4, însă, <span class="math notranslate nohighlight">\( \det(-I_4) = 1 \)</span> și se poate face corespondența.</p>
+<p>Astfel că Hamilton a fost nevoit să accepte că nu se poate defini o astfel de
+mulțime și să încerce în dimensiune 4. Nu fără eforturi susținute, soluția a
+ieșit la iveală în 1843 prin mulțimea cuaterionilor. Notată astăzi cu <span class="math notranslate nohighlight">\( \mathbb{H} \)</span>,
+în onoarea matematicianului William Rowan Hamilton, aceasta conține numere similare
+celor complexe, însă <em>cu 3 unități imaginare</em>:</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{H} = \{ a + bi + cj + dk \mid a, b, c, d \in \mathbb{R}, i^2 = j^2 = k^2 = ijk -1 \}.\]</div>
+<p>Elementele – cuaternionii – își iau numele de la cuvîntul latinesc <em>quaternio</em>,
+însemnînd generic „cuaternar“.</p>
+<p>Pe lîngă faptul că <span class="math notranslate nohighlight">\( i, j, k \)</span> sînt unități imaginare și au pătratul egal cu <span class="math notranslate nohighlight">\( - 1 \)</span>,
+o altă proprietate definitorie este importantă, anume că <em>înmulțirea cuaternionilor</em>
+<em>nu mai este comutativă</em>, ci are o proprietate numită <em>anticomutativitate</em>.
+Este unul dintre obstacolele întîlnite de Hamilton, pe care, în final, a trebuit să-l
+accepte. Ordinea efectuării operațiilor de înmulțire între cuaternioni contează
+și anticomutativitatea se bazează pe proprietățile definitorii ale produselor dintre
+unitățile imaginare:</p>
+<div class="math notranslate nohighlight">
+\[ij = -ji = k, \quad ik = -ki = j, \quad jk = -kj = i.\]</div>
+<p>Aceste relații nu sînt întîmplătoare și ele se vor dovedi foarte importante în ce privește
+legătura cuaternionilor cu spațiul tridimensional, însă momentan, păstrăm prezentarea
+formală pentru o altă secțiune. Totodată, remarcăm că ele pot fi obținute imediat din
+relația definitorie <span class="math notranslate nohighlight">\( i^2 = j^2 = k^2 = ijk = -1 \)</span>.</p>
+<p>Din punct de vedere algebric, operațiile dintre cuaternioni se definesc natural:</p>
+<ul class="simple">
+<li><p>adunarea se face pe componente;</p></li>
+<li><p>înmulțirea se face prin extinderea anticomutativității dintre unitățile imaginare.</p></li>
+</ul>
+<p>Astfel că avem, pentru doi cuaternioni <span class="math notranslate nohighlight">\( q_1 = a_1 + b_1i + c_1j + d_1k \)</span>
+și <span class="math notranslate nohighlight">\( q_2 = a_2 + b_2i + c_2j + d_2k \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  q_1 + q_2 &amp;= (a_1 + a_2) + (b_1 + b_2)i + (c_1 + c_2)j + (d_1 + d_2)k \\
+  q_1 \cdot q_2 &amp;= (a_1 a_2 - b_1b_2 - c_1c_2 - d_1d_2) + \\
+				&amp;+ i(a_1 b_2 + a_2 b_1) + j(a_1 c_2 + a_2 c_1) + k(a_1 d_2 + a_2 d_1) + \\
+				&amp;+ ij(b_1c_2 + b_2 c_1) + ik(b_1d_2 + b_2d_1) + jk(c_1d_2 + c_2 d_1) + \\
+				&amp;+ ji(c_1b_2 + c_2b_1) + ki(d_1b_2 + d_2b_1) + kj(d_1c_2 + d_2c_1) \\
+				&amp;= (a_1a_2 - b_1b_2 - c_1c_2 - d_1d_2) + \\
+				&amp;+ i(a_1b_2 + a_2b_1 + c_1d_2 + c_2d_1 - d_1c_2 - d_2c_1) + \\
+				&amp;+ j(a_1c_2 + a_2c_1 + b_1d_2 + b_2d_1 - d_1b_2 - d_2b_1) + \\
+				&amp;+ k(a_1d_2 + a_2d_1 + b_1c_2 + b_2c_1 - c_1b_2 - c_2b_1)
+\end{align*}\end{split}\]</div>
+<p>Laborios de scris, însă calculele de mai sus rezultă doar din proprietatea de anticomutativitate
+a produsului cuaternionilor.</p>
+<p>Se definește, de asemenea, și conjugatul unui cuaternion prin schimbarea semnului părților
+imaginare, precum și modulul, printr-o formulă similară cazului complex. Dacă
+<span class="math notranslate nohighlight">\( q \in a + bi + cj + dk \in \mathbb{H} \)</span>, atunci:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  \overline{q} &amp;= a - bi - cj - dk \\
+  |q| &amp;= \sqrt{a^2 + b^2 + c^2 + d^2}
+\end{align*}\end{split}\]</div>
+<p>Studiul proprietăților algebrice ale operațiilor de mai sus ne conduce la concluzia că
+<span class="math notranslate nohighlight">\( (\mathbb{H}, +, \cdot) \)</span> este un corp, însă <em>necomutativ</em> – aici intervine anticomutativitatea
+menționată. Totuși, structura aditivă este de grup comutativ, astfel că ne putem aștepta
+la o structură de spațiu vectorial real pe <span class="math notranslate nohighlight">\( (\mathbb{H}, +) \)</span>, ceea ce și obținem foarte
+ușor, cu înmulțirea cu scalari <span class="math notranslate nohighlight">\( \alpha \in \mathbb{R} \)</span> fiind definită pentru un cuaternion
+arbitrar <span class="math notranslate nohighlight">\( q = a + bi + cj + dk \in \mathbb{R} \)</span> prin:</p>
+<div class="math notranslate nohighlight">
+\[\alpha \cdot (a + bi + cj + dk) = (\alpha a) + (\alpha b)i + (\alpha c)j + (\alpha d)k.\]</div>
+<p>Este ușor de văzut acum că <span class="math notranslate nohighlight">\( \{ 1, i, j, k \} \)</span> formează o bază a spațiului vectorial real
+al cuaternionilor, deci <span class="math notranslate nohighlight">\( \mathbb{H} \simeq \mathbb{R}^4 \)</span>, printr-un izomorfism natural,
+care face să corespundă bazele canonice:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  1 &amp;\mapsto (1, 0, 0, 0) \\
+  i &amp;\mapsto (0, 1, 0, 0) \\
+  j &amp;\mapsto (0, 0, 1, 0) \\
+  k &amp;\mapsto (0, 0, 0, 1)
+\end{align*}\end{split}\]</div>
+<p>Spre deosebire de cazul complex, unde putem separa partea reală și partea imaginară
+a unui număr, în cazul cuaternionilor, cele 3 părți imaginare formează ceea ce se cheamă
+<em>partea vectorială</em> a cuaternionului, iar prima componentă („partea reală“) se numește
+<em>partea scalară</em>. Astfel că un cuaternion se poate separa într-un scalar real și
+un vector din <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span>.</p>
+<p>Mai trebuie remarcat că, din punctul de vedere al dimensiunii spațiilor vectoriale,
+avem cu siguranță și izomorfismele de spații vectoriale:</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{H} \simeq \mathbb{C}^2 \simeq M_2(\mathbb{R}).\]</div>
+<hr class="docutils" />
+<p>Fără legătură cu aceste izomorfisme, se pot da și două forme matriceale ale cuaternionilor,
+utile în studiul structurii de corp. Astfel, un cuaternion <span class="math notranslate nohighlight">\( q = a + bi + cj + dk \)</span> se poate
+reprezenta ca o matrice <span class="math notranslate nohighlight">\( Q_{\mathbb{C}} \in M_2(\mathbb{C}) \)</span> sub forma:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}q \mapsto Q_{\mathbb{C}} = \begin{pmatrix} a + bi &amp; c + di \\ -c + di &amp; a - bi \end{pmatrix}.\end{split}\]</div>
+<p>O observație importantă, chiar dacă pare foarte tehnică este următoarea:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>În corespondența de mai sus și, în general, oricînd lucrăm simultan cu numere
+complexe și cuaternioni, <em>unitățile imaginare sînt obiecte diferite</em>!
+Astfel, unitatea imaginară complexă <span class="math notranslate nohighlight">\( i \in \mathbb{C} \)</span> este un obiect matematic
+diferit de unitatea imaginară <span class="math notranslate nohighlight">\( i \in \mathbb{H} \)</span>.</p>
+<p>De exemplu, privite în contextul spațiilor vectoriale, prima reprezintă perechea
+<span class="math notranslate nohighlight">\( (0, 1) \in \mathbb{R}^2 \)</span>, în timp ce a doua, cvadruplul <span class="math notranslate nohighlight">\( (0, 1, 0, 0) \in \mathbb{R}^4 \)</span>.</p>
+</div>
+<p>Același cuaternion se poate reprezenta și ca o matrice din <span class="math notranslate nohighlight">\( M_4(\mathbb{R}) \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}q \mapsto Q_{\mathbb{R}} = %
+\begin{pmatrix}
+a &amp; -b &amp; -c &amp; -d \\
+b &amp; a &amp; -d &amp; c \\
+c &amp; d &amp; a &amp; -b \\
+d &amp; -c &amp; b &amp; a
+\end{pmatrix}.\end{split}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Omitem detaliile demonstrației sau alte explicații suplimentare, dar precizăm că
+reprezentarea unui cuaternion ca matrice reală <em>nu este unică</em>. Într-adevăr, se poate
+arăta că pentru un cuaternion fixat, există 48 de reprezentări diferite ca matrice
+din <span class="math notranslate nohighlight">\( M_4(\mathbb{R}) \)</span>.</p>
+</div>
+<hr class="docutils" />
+<p>Vom prezenta aplicații ale cuaternionilor în geometrie și în grafica pe computer
+într-un capitol separat. În ciuda faptului că <span class="math notranslate nohighlight">\( \dim \mathbb{H} = 4 \)</span>, ca spațiu
+vectorial real, există numeroase aplicații în geometria spațială.</p>
+<p>Nu putem, totuși, să nu ne întrebăm: Putem merge mai departe? Putem construi
+încă o mulțime de numere cu parte reală și imaginară care să modeleze un spațiu
+<span class="math notranslate nohighlight">\( \mathbb{R}^n \)</span>? Iar dacă da, pentru ce <span class="math notranslate nohighlight">\( n \)</span> se poate face acest lucru?</p>
+</section>
+<section id="numere-hipercomplexe">
+<h2>Numere hipercomplexe<a class="headerlink" href="#numere-hipercomplexe" title="Permalink to this headline">#</a></h2>
+<p>Mulțimea numerelor complexe a fost introdusă pentru numeroase scopuri
+des întîlnite în matematică. Unul dintre cele mai clare este acela de rezolvare
+a ecuațiilor de gradul al doilea cu discriminant negativ. Ulterior, s-au descoperit
+numeroase alte aplicații.</p>
+<p>În ce privește mulțimea cuaternionilor, am putea argumenta că descoperirea ei
+se bazează mai mult pe o motivație algebrică. Atît Hamilton, cît și colaboratorul
+și sfătuitorului său, Augustus De Morgan, au fost cercetători de prim rang
+în algebra abstractă. Așa se explică interesul lor de a căuta structuri algebrice
+noi, pornind de la cazuri cunoscute.</p>
+<p>Dar cît de departe se poate merge, <em>dacă</em> se poate continua? Ce surprize ne
+rezervă structurile superioare, dacă ele există? Și avem, totuși, o explicație
+a faptului că nu putem face nimic în dimensiune 3?</p>
+<p>Răspunsul la aceste întrebări este unul foarte sofisticat, departe de scopurile
+acestei lucrări. Însă adăugăm două lucruri foarte importante: astfel de numere,
+începînd cu cuaternionii, poartă numele de <em>hipercomplexe</em>, fiind generalizări
+în dimensiune superioară ale numerelor complexe. Căutarea lor putem spune că
+a ajuns la final, prin așa-numita <strong>construcție Cayley-Dickson</strong>, un efort
+de aproape 100 de ani. Într-o lucrare din 1919, matematicianul american
+Leonard Eugene Dickson a introdus o construcție care conduce la „toate“ mulțimile
+de numere hipercomplexe, împreună cu structurile lor algebrice.</p>
+<p>Din construcția respectivă preluăm două proprietăți fundamentale, a căror justificare
+este extrem de sofisticată, dar poate fi găsită în lucrarea lui Dickson (<span id="id4">[<a class="reference internal" href="bibliografie.html#id10" title="Leonard Eugene Dickson. On quaternions and their generalization and the history of the eight square theorem. Annals of Mathematics, 1919.">Dickson, 1919</a>]</span>):</p>
+<ul class="simple">
+<li><p>dimensiunile structurilor nu pot avea decît puteri ale lui <span class="math notranslate nohighlight">\( 2 \)</span>, ceea ce explică de
+ce nu s-a putut găsi o structură în dimensiune <span class="math notranslate nohighlight">\( 3 \)</span> și, totodată, arată că următoarea
+după cuaternioni are dimensiune <span class="math notranslate nohighlight">\( 8 \)</span> (fiind numită mulțime de <em>octonioni</em>);</p></li>
+<li><p>dacă în cazul cuaternionilor s-a pierdut comutativitatea, în cazul octonionilor
+și a structurilor superioare se pierde chiar și asociativitatea. Astfel că rezultatele
+nu pot fi analizate în contextul structurilor algebrice studiate pînă acum, însă
+chiar și așa, au proprietăți remarcabile, care le fac, totuși, utile în algebra abstractă.</p></li>
+</ul>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="aparenti"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Menționăm că încălcarea este doar <em>aparentă</em>, pentru că, așa cum vom
+vedea, există prezentări echivalente ale mulțimii numerelor complexe care introduc
+unitatea imaginară printr-o simplă pereche de numere reale. Rădăcina pătrată
+a numerelor negative este în continuare interzisă de <em>regulile interne mulțimii</em>
+<em>numerelor reale</em>, care se pot, totuși, extinde ușor diferit în cazul complex.
+Nu insistăm pe asemenea detalii tehnice și am prefera ca accentul să cadă pe
+elementele de noutate introduse de numerele complexe, atît din punct de vedere
+algebric, cît și geometric, așa cum vom vedea.</p>
+</dd>
+<dt class="label" id="inmi"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Înmulțirea cu <span class="math notranslate nohighlight">\( i \)</span>, totuși, are o semnificație aparte în prezentarea
+geometrică, pe care vă invităm să o descoperiți. Fie <span class="math notranslate nohighlight">\( z = a + bi \)</span> afixul
+unui punct din plan. Cum ați caracteriza punctul de afix <span class="math notranslate nohighlight">\( iz \)</span>? Dar pe cel
+de afix <span class="math notranslate nohighlight">\( i^2 z = -z \)</span>? Dar punctul <span class="math notranslate nohighlight">\( i^3 z = -iz \)</span>? Puteți lucra cu exemple
+particulare, dar o componentă importantă a acestui exercițiu este să folosiți
+reprezentarea grafică, adică pozițiile din plan pentru punctele respective.</p>
+</dd>
+<dt class="label" id="e"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>În general, funcția exponențială – inversa funcției logaritmice – se definește
+cu ajutorul seriilor de puteri. Totuși, în multe lucrări se obișnuiește să se
+folosească notația <span class="math notranslate nohighlight">\( \exp(x) = e^x \)</span>, pe care o vom folosi și noi. Iar dacă vă
+întrebați despre funcții exponențiale de bază arbitrară, precum <span class="math notranslate nohighlight">\( 2^x, \pi^x, 3^x \)</span>
+ș.a.m.d., aflați că se acordă prioritate bazei logaritmilor naturali datorită
+proprietăților pe care le are, inspirate majoritatea de apariția ei în multe
+situații concrete de fizică, de la mecanică newtoniană la fizică atomică și altele.
+În plus, orice altă bază se poate folosi cu ajutorul formulei de schimbare a bazei
+din calculul logaritmic: <span class="math notranslate nohighlight">\( \log_a b = \dfrac{\ln a}{\ln b} \)</span>.</p>
+</dd>
+</dl>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="p2-s8-vvp.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Vectori și valori proprii</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="p2-s10-afin.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Spații afine</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Adrian Manea (Poligon Educational)<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

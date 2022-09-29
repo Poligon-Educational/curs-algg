@@ -1,0 +1,1180 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proof Index &#8212; Algebră liniară și aplicații</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/proof.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+
+    <script>
+      DOCUMENTATION_OPTIONS.COLLAPSE_INDEX = true;
+    </script>
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo-light-poly-only.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Algebră liniară și aplicații</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Algebră liniară și aplicații
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Elemente de istoria și filosofia matematicii
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-istorie-fil-intro.html">
+   Generalități
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-s1-rationamente.html">
+   Abstractizare și raționamente
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-s2-ist-vsp.html">
+   Istoria spațiilor vectoriale
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algebră abstractă și algebră liniară
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="p2-abstract.html">
+   Algebră abstractă și algebră liniară
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s1-grupuri.html">
+     Monoizi și grupuri
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s1e-simetrii.html">
+     Grupuri de simetrie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s2-inele-corpuri.html">
+     Inele și corpuri
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s3-spvect.html">
+     Spații vectoriale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s4-baza.html">
+     Bază și dimensiune
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s5-op-subsp.html">
+     Operații cu subspații
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s6-morfisme-spvect.html">
+     Morfisme de spații vectoriale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s7-ortonormare.html">
+     Produs scalar și ortonormare
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s8-vvp.html">
+     Vectori și valori proprii
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s9-quat.html">
+     Cuaternioni
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s10-afin.html">
+     Spații afine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s11-mat-decomp.html">
+     Descompuneri matriceale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s12-transf-mat.html">
+     Transformări matriceale în 2D și 3D
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s13-arii-volume.html">
+     Arii și volume
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Aplicații și implementări în programare
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="p3-aplicatii.html">
+   Aplicații și implementări în programare
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Bibliografie și lecturi suplimentare
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliografie.html">
+   Bibliografie și lecturi suplimentare
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/adimanea/linalg"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/adimanea/linalg/issues/new?title=Issue%20on%20page%20%2Fprf-prf.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+
+   <h1>Proof Index</h1>
+
+   <div class="modindex-jumpbox">
+   <a href="#cap-cor-izom-dim"><strong>cor-izom-dim</strong></a> | 
+   <a href="#cap-def-apl-lin"><strong>def-apl-lin</strong></a> | 
+   <a href="#cap-def-baza-dim"><strong>def-baza-dim</strong></a> | 
+   <a href="#cap-def-comb-lin"><strong>def-comb-lin</strong></a> | 
+   <a href="#cap-def-compl-ort"><strong>def-compl-ort</strong></a> | 
+   <a href="#cap-def-corp"><strong>def-corp</strong></a> | 
+   <a href="#cap-def-cos"><strong>def-cos</strong></a> | 
+   <a href="#cap-def-diedral"><strong>def-diedral</strong></a> | 
+   <a href="#cap-def-dist"><strong>def-dist</strong></a> | 
+   <a href="#cap-def-dist-eucl"><strong>def-dist-eucl</strong></a> | 
+   <a href="#cap-def-div-zero"><strong>def-div-zero</strong></a> | 
+   <a href="#cap-def-grup"><strong>def-grup</strong></a> | 
+   <a href="#cap-def-img"><strong>def-img</strong></a> | 
+   <a href="#cap-def-indep"><strong>def-indep</strong></a> | 
+   <a href="#cap-def-inductiv"><strong>def-inductiv</strong></a> | 
+   <a href="#cap-def-inel"><strong>def-inel</strong></a> | 
+   <a href="#cap-def-izo"><strong>def-izo</strong></a> | 
+   <a href="#cap-def-izomorfism"><strong>def-izomorfism</strong></a> | 
+   <a href="#cap-def-ker"><strong>def-ker</strong></a> | 
+   <a href="#cap-def-ker-apl-lin"><strong>def-ker-apl-lin</strong></a> | 
+   <a href="#cap-def-ker-img-inel"><strong>def-ker-img-inel</strong></a> | 
+   <a href="#cap-def-mat-apl"><strong>def-mat-apl</strong></a> | 
+   <a href="#cap-def-monoid"><strong>def-monoid</strong></a> | 
+   <a href="#cap-def-morfism"><strong>def-morfism</strong></a> | 
+   <a href="#cap-def-morfism-inele"><strong>def-morfism-inele</strong></a> | 
+   <a href="#cap-def-multiplicitate"><strong>def-multiplicitate</strong></a> | 
+   <a href="#cap-def-norma-perp"><strong>def-norma-perp</strong></a> | 
+   <a href="#cap-def-oplus"><strong>def-oplus</strong></a> | 
+   <a href="#cap-def-ord"><strong>def-ord</strong></a> | 
+   <a href="#cap-def-ord-grup"><strong>def-ord-grup</strong></a> | 
+   <a href="#cap-def-ortonormare"><strong>def-ortonormare</strong></a> | 
+   <a href="#cap-def-permutare"><strong>def-permutare</strong></a> | 
+   <a href="#cap-def-pol-car"><strong>def-pol-car</strong></a> | 
+   <a href="#cap-def-pr-scalar"><strong>def-pr-scalar</strong></a> | 
+   <a href="#cap-def-prod-mixt"><strong>def-prod-mixt</strong></a> | 
+   <a href="#cap-def-proiectie"><strong>def-proiectie</strong></a> | 
+   <a href="#cap-def-rang-def"><strong>def-rang-def</strong></a> | 
+   <a href="#cap-def-simetrie"><strong>def-simetrie</strong></a> | 
+   <a href="#cap-def-sist-gen"><strong>def-sist-gen</strong></a> | 
+   <a href="#cap-def-sp-vect"><strong>def-sp-vect</strong></a> | 
+   <a href="#cap-def-sp-vect-peano"><strong>def-sp-vect-peano</strong></a> | 
+   <a href="#cap-def-subgrup"><strong>def-subgrup</strong></a> | 
+   <a href="#cap-def-submonoid"><strong>def-submonoid</strong></a> | 
+   <a href="#cap-def-subspatiu"><strong>def-subspatiu</strong></a> | 
+   <a href="#cap-def-suma-sp"><strong>def-suma-sp</strong></a> | 
+   <a href="#cap-def-surj"><strong>def-surj</strong></a> | 
+   <a href="#cap-def-svd"><strong>def-svd</strong></a> | 
+   <a href="#cap-def-transf-afina"><strong>def-transf-afina</strong></a> | 
+   <a href="#cap-def-unitate"><strong>def-unitate</strong></a> | 
+   <a href="#cap-def-vvp-matrice"><strong>def-vvp-matrice</strong></a> | 
+   <a href="#cap-dev-vvp"><strong>dev-vvp</strong></a> | 
+   <a href="#cap-mat-asem"><strong>mat-asem</strong></a> | 
+   <a href="#cap-theorem-5"><strong>theorem-5</strong></a> | 
+   <a href="#cap-thm-alt"><strong>thm-alt</strong></a> | 
+   <a href="#cap-thm-apl-lin-indep"><strong>thm-apl-lin-indep</strong></a> | 
+   <a href="#cap-thm-compl-ort"><strong>thm-compl-ort</strong></a> | 
+   <a href="#cap-thm-desc-baza"><strong>thm-desc-baza</strong></a> | 
+   <a href="#cap-thm-diag"><strong>thm-diag</strong></a> | 
+   <a href="#cap-thm-exista-baza"><strong>thm-exista-baza</strong></a> | 
+   <a href="#cap-thm-extras-completat"><strong>thm-extras-completat</strong></a> | 
+   <a href="#cap-thm-grassmann"><strong>thm-grassmann</strong></a> | 
+   <a href="#cap-thm-img"><strong>thm-img</strong></a> | 
+   <a href="#cap-thm-ker"><strong>thm-ker</strong></a> | 
+   <a href="#cap-thm-ker-inj-apl-lin"><strong>thm-ker-inj-apl-lin</strong></a> | 
+   <a href="#cap-thm-ker-inj-img-surj"><strong>thm-ker-inj-img-surj</strong></a> | 
+   <a href="#cap-thm-ker-subgrup"><strong>thm-ker-subgrup</strong></a> | 
+   <a href="#cap-thm-ker-subsp"><strong>thm-ker-subsp</strong></a> | 
+   <a href="#cap-thm-lagrange-grupuri"><strong>thm-lagrange-grupuri</strong></a> | 
+   <a href="#cap-thm-lu"><strong>thm-lu</strong></a> | 
+   <a href="#cap-thm-mg-ma"><strong>thm-mg-ma</strong></a> | 
+   <a href="#cap-thm-morf-corpuri-inj"><strong>thm-morf-corpuri-inj</strong></a> | 
+   <a href="#cap-thm-op-subsp"><strong>thm-op-subsp</strong></a> | 
+   <a href="#cap-thm-oplus"><strong>thm-oplus</strong></a> | 
+   <a href="#cap-thm-ordin-multiplu"><strong>thm-ordin-multiplu</strong></a> | 
+   <a href="#cap-thm-rang-def"><strong>thm-rang-def</strong></a> | 
+   <a href="#cap-thm-sn-grup"><strong>thm-sn-grup</strong></a> | 
+   <a href="#cap-thm-subgrup"><strong>thm-subgrup</strong></a> | 
+   <a href="#cap-thm-subinel"><strong>thm-subinel</strong></a> | 
+   <a href="#cap-thm-submonoid"><strong>thm-submonoid</strong></a> | 
+   <a href="#cap-thm-subsp-inv"><strong>thm-subsp-inv</strong></a> | 
+   <a href="#cap-thm-subspatiu"><strong>thm-subspatiu</strong></a> | 
+   <a href="#cap-thm-svd"><strong>thm-svd</strong></a> | 
+   <a href="#cap-thm-zn-corp"><strong>thm-zn-corp</strong></a>
+   </div>
+
+   <table class="indextable modindextable">
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-cor-izom-dim"><td></td><td>
+       <strong>cor-izom-dim</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s6-morfisme-spvect.html#cor-izom-dim"><code class="xref">cor-izom-dim</code></a> <em>(p2-s6-morfisme-spvect)</em></td><td>
+       <em>corollary</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-apl-lin"><td></td><td>
+       <strong>def-apl-lin</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s6-morfisme-spvect.html#def-apl-lin"><code class="xref">def-apl-lin</code></a> <em>(p2-s6-morfisme-spvect)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-baza-dim"><td></td><td>
+       <strong>def-baza-dim</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s4-baza.html#def-baza-dim"><code class="xref">def-baza-dim</code></a> <em>(p2-s4-baza)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-comb-lin"><td></td><td>
+       <strong>def-comb-lin</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s3-spvect.html#def-comb-lin"><code class="xref">def-comb-lin</code></a> <em>(p2-s3-spvect)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-compl-ort"><td></td><td>
+       <strong>def-compl-ort</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s7-ortonormare.html#def-compl-ort"><code class="xref">def-compl-ort</code></a> <em>(p2-s7-ortonormare)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-corp"><td></td><td>
+       <strong>def-corp</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s2-inele-corpuri.html#def-corp"><code class="xref">def-corp</code></a> <em>(p2-s2-inele-corpuri)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-cos"><td></td><td>
+       <strong>def-cos</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s7-ortonormare.html#def-cos"><code class="xref">def-cos</code></a> <em>(p2-s7-ortonormare)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-diedral"><td></td><td>
+       <strong>def-diedral</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s1e-simetrii.html#def-diedral"><code class="xref">def-diedral</code></a> <em>(p2-s1e-simetrii)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-dist"><td></td><td>
+       <strong>def-dist</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s7-ortonormare.html#def-dist"><code class="xref">def-dist</code></a> <em>(p2-s7-ortonormare)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-dist-eucl"><td></td><td>
+       <strong>def-dist-eucl</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s7-ortonormare.html#def-dist-eucl"><code class="xref">def-dist-eucl</code></a> <em>(p2-s7-ortonormare)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-div-zero"><td></td><td>
+       <strong>def-div-zero</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s2-inele-corpuri.html#def-div-zero"><code class="xref">def-div-zero</code></a> <em>(p2-s2-inele-corpuri)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-grup"><td></td><td>
+       <strong>def-grup</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s1-grupuri.html#def-grup"><code class="xref">def-grup</code></a> <em>(p2-s1-grupuri)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-img"><td></td><td>
+       <strong>def-img</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s1-grupuri.html#def-img"><code class="xref">def-img</code></a> <em>(p2-s1-grupuri)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-indep"><td></td><td>
+       <strong>def-indep</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s4-baza.html#def-indep"><code class="xref">def-indep</code></a> <em>(p2-s4-baza)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-inductiv"><td></td><td>
+       <strong>def-inductiv</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p1-s1-rationamente.html#def-inductiv"><code class="xref">def-inductiv</code></a> <em>(p1-s1-rationamente)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-inel"><td></td><td>
+       <strong>def-inel</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s2-inele-corpuri.html#def-inel"><code class="xref">def-inel</code></a> <em>(p2-s2-inele-corpuri)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-izo"><td></td><td>
+       <strong>def-izo</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s1-grupuri.html#def-izo"><code class="xref">def-izo</code></a> <em>(p2-s1-grupuri)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-izomorfism"><td></td><td>
+       <strong>def-izomorfism</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s6-morfisme-spvect.html#def-izomorfism"><code class="xref">def-izomorfism</code></a> <em>(p2-s6-morfisme-spvect)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-ker"><td></td><td>
+       <strong>def-ker</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s1-grupuri.html#def-ker"><code class="xref">def-ker</code></a> <em>(p2-s1-grupuri)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-ker-apl-lin"><td></td><td>
+       <strong>def-ker-apl-lin</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s6-morfisme-spvect.html#def-ker-apl-lin"><code class="xref">def-ker-apl-lin</code></a> <em>(p2-s6-morfisme-spvect)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-ker-img-inel"><td></td><td>
+       <strong>def-ker-img-inel</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s2-inele-corpuri.html#def-ker-img-inel"><code class="xref">def-ker-img-inel</code></a> <em>(p2-s2-inele-corpuri)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-mat-apl"><td></td><td>
+       <strong>def-mat-apl</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s6-morfisme-spvect.html#def-mat-apl"><code class="xref">def-mat-apl</code></a> <em>(p2-s6-morfisme-spvect)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-monoid"><td></td><td>
+       <strong>def-monoid</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s1-grupuri.html#def-monoid"><code class="xref">def-monoid</code></a> <em>(p2-s1-grupuri)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-morfism"><td></td><td>
+       <strong>def-morfism</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s1-grupuri.html#def-morfism"><code class="xref">def-morfism</code></a> <em>(p2-s1-grupuri)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-morfism-inele"><td></td><td>
+       <strong>def-morfism-inele</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s2-inele-corpuri.html#def-morfism-inele"><code class="xref">def-morfism-inele</code></a> <em>(p2-s2-inele-corpuri)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-multiplicitate"><td></td><td>
+       <strong>def-multiplicitate</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s8-vvp.html#def-multiplicitate"><code class="xref">def-multiplicitate</code></a> <em>(p2-s8-vvp)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-norma-perp"><td></td><td>
+       <strong>def-norma-perp</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s7-ortonormare.html#def-norma-perp"><code class="xref">def-norma-perp</code></a> <em>(p2-s7-ortonormare)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-oplus"><td></td><td>
+       <strong>def-oplus</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s5-op-subsp.html#def-oplus"><code class="xref">def-oplus</code></a> <em>(p2-s5-op-subsp)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-ord"><td></td><td>
+       <strong>def-ord</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s1e-simetrii.html#def-ord"><code class="xref">def-ord</code></a> <em>(p2-s1e-simetrii)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-ord-grup"><td></td><td>
+       <strong>def-ord-grup</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s1e-simetrii.html#def-ord-grup"><code class="xref">def-ord-grup</code></a> <em>(p2-s1e-simetrii)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-ortonormare"><td></td><td>
+       <strong>def-ortonormare</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s7-ortonormare.html#def-ortonormare"><code class="xref">def-ortonormare</code></a> <em>(p2-s7-ortonormare)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-permutare"><td></td><td>
+       <strong>def-permutare</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s1e-simetrii.html#def-permutare"><code class="xref">def-permutare</code></a> <em>(p2-s1e-simetrii)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-pol-car"><td></td><td>
+       <strong>def-pol-car</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s8-vvp.html#def-pol-car"><code class="xref">def-pol-car</code></a> <em>(p2-s8-vvp)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-pr-scalar"><td></td><td>
+       <strong>def-pr-scalar</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s7-ortonormare.html#def-pr-scalar"><code class="xref">def-pr-scalar</code></a> <em>(p2-s7-ortonormare)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-prod-mixt"><td></td><td>
+       <strong>def-prod-mixt</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s13-arii-volume.html#def-prod-mixt"><code class="xref">def-prod-mixt</code></a> <em>(p2-s13-arii-volume)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-proiectie"><td></td><td>
+       <strong>def-proiectie</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s7-ortonormare.html#def-proiectie"><code class="xref">def-proiectie</code></a> <em>(p2-s7-ortonormare)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-rang-def"><td></td><td>
+       <strong>def-rang-def</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s6-morfisme-spvect.html#def-rang-def"><code class="xref">def-rang-def</code></a> <em>(p2-s6-morfisme-spvect)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-simetrie"><td></td><td>
+       <strong>def-simetrie</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s1e-simetrii.html#def-simetrie"><code class="xref">def-simetrie</code></a> <em>(p2-s1e-simetrii)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-sist-gen"><td></td><td>
+       <strong>def-sist-gen</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s4-baza.html#def-sist-gen"><code class="xref">def-sist-gen</code></a> <em>(p2-s4-baza)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-sp-vect"><td></td><td>
+       <strong>def-sp-vect</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s3-spvect.html#def-sp-vect"><code class="xref">def-sp-vect</code></a> <em>(p2-s3-spvect)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-sp-vect-peano"><td></td><td>
+       <strong>def-sp-vect-peano</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p1-s2-ist-vsp.html#def-sp-vect-peano"><code class="xref">def-sp-vect-peano</code></a> <em>(p1-s2-ist-vsp)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-subgrup"><td></td><td>
+       <strong>def-subgrup</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s1-grupuri.html#def-subgrup"><code class="xref">def-subgrup</code></a> <em>(p2-s1-grupuri)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-submonoid"><td></td><td>
+       <strong>def-submonoid</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s1-grupuri.html#def-submonoid"><code class="xref">def-submonoid</code></a> <em>(p2-s1-grupuri)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-subspatiu"><td></td><td>
+       <strong>def-subspatiu</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s3-spvect.html#def-subspatiu"><code class="xref">def-subspatiu</code></a> <em>(p2-s3-spvect)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-suma-sp"><td></td><td>
+       <strong>def-suma-sp</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s5-op-subsp.html#def-suma-sp"><code class="xref">def-suma-sp</code></a> <em>(p2-s5-op-subsp)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-surj"><td></td><td>
+       <strong>def-surj</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s1-grupuri.html#def-surj"><code class="xref">def-surj</code></a> <em>(p2-s1-grupuri)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-svd"><td></td><td>
+       <strong>def-svd</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s11-mat-decomp.html#def-svd"><code class="xref">def-svd</code></a> <em>(p2-s11-mat-decomp)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-transf-afina"><td></td><td>
+       <strong>def-transf-afina</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s10-afin.html#def-transf-afina"><code class="xref">def-transf-afina</code></a> <em>(p2-s10-afin)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-unitate"><td></td><td>
+       <strong>def-unitate</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s2-inele-corpuri.html#def-unitate"><code class="xref">def-unitate</code></a> <em>(p2-s2-inele-corpuri)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-def-vvp-matrice"><td></td><td>
+       <strong>def-vvp-matrice</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s8-vvp.html#def-vvp-matrice"><code class="xref">def-vvp-matrice</code></a> <em>(p2-s8-vvp)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-dev-vvp"><td></td><td>
+       <strong>dev-vvp</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s8-vvp.html#dev-vvp"><code class="xref">dev-vvp</code></a> <em>(p2-s8-vvp)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mat-asem"><td></td><td>
+       <strong>mat-asem</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s8-vvp.html#mat-asem"><code class="xref">mat-asem</code></a> <em>(p2-s8-vvp)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-theorem-5"><td></td><td>
+       <strong>theorem-5</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s5-op-subsp.html#theorem-5"><code class="xref">theorem-5</code></a> <em>(p2-s5-op-subsp)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm-alt"><td></td><td>
+       <strong>thm-alt</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s4-baza.html#thm-alt"><code class="xref">thm-alt</code></a> <em>(p2-s4-baza)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm-apl-lin-indep"><td></td><td>
+       <strong>thm-apl-lin-indep</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s6-morfisme-spvect.html#thm-apl-lin-indep"><code class="xref">thm-apl-lin-indep</code></a> <em>(p2-s6-morfisme-spvect)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm-compl-ort"><td></td><td>
+       <strong>thm-compl-ort</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s7-ortonormare.html#thm-compl-ort"><code class="xref">thm-compl-ort</code></a> <em>(p2-s7-ortonormare)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm-desc-baza"><td></td><td>
+       <strong>thm-desc-baza</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s4-baza.html#thm-desc-baza"><code class="xref">thm-desc-baza</code></a> <em>(p2-s4-baza)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm-diag"><td></td><td>
+       <strong>thm-diag</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s8-vvp.html#thm-diag"><code class="xref">thm-diag</code></a> <em>(p2-s8-vvp)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm-exista-baza"><td></td><td>
+       <strong>thm-exista-baza</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s4-baza.html#thm-exista-baza"><code class="xref">thm-exista-baza</code></a> <em>(p2-s4-baza)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm-extras-completat"><td></td><td>
+       <strong>thm-extras-completat</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s4-baza.html#thm-extras-completat"><code class="xref">thm-extras-completat</code></a> <em>(p2-s4-baza)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm-grassmann"><td></td><td>
+       <strong>thm-grassmann</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s5-op-subsp.html#thm-grassmann"><code class="xref">thm-grassmann</code></a> <em>(p2-s5-op-subsp)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm-img"><td></td><td>
+       <strong>thm-img</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s1-grupuri.html#thm-img"><code class="xref">thm-img</code></a> <em>(p2-s1-grupuri)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm-ker"><td></td><td>
+       <strong>thm-ker</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s1-grupuri.html#thm-ker"><code class="xref">thm-ker</code></a> <em>(p2-s1-grupuri)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm-ker-inj-apl-lin"><td></td><td>
+       <strong>thm-ker-inj-apl-lin</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s6-morfisme-spvect.html#thm-ker-inj-apl-lin"><code class="xref">thm-ker-inj-apl-lin</code></a> <em>(p2-s6-morfisme-spvect)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm-ker-inj-img-surj"><td></td><td>
+       <strong>thm-ker-inj-img-surj</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s2-inele-corpuri.html#thm-ker-inj-img-surj"><code class="xref">thm-ker-inj-img-surj</code></a> <em>(p2-s2-inele-corpuri)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm-ker-subgrup"><td></td><td>
+       <strong>thm-ker-subgrup</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s1-grupuri.html#thm-ker-subgrup"><code class="xref">thm-ker-subgrup</code></a> <em>(p2-s1-grupuri)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm-ker-subsp"><td></td><td>
+       <strong>thm-ker-subsp</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s6-morfisme-spvect.html#thm-ker-subsp"><code class="xref">thm-ker-subsp</code></a> <em>(p2-s6-morfisme-spvect)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm-lagrange-grupuri"><td></td><td>
+       <strong>thm-lagrange-grupuri</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s1e-simetrii.html#thm-lagrange-grupuri"><code class="xref">thm-lagrange-grupuri</code></a> <em>(p2-s1e-simetrii)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm-lu"><td></td><td>
+       <strong>thm-lu</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s11-mat-decomp.html#thm-lu"><code class="xref">thm-lu</code></a> <em>(p2-s11-mat-decomp)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm-mg-ma"><td></td><td>
+       <strong>thm-mg-ma</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s8-vvp.html#thm-mg-ma"><code class="xref">thm-mg-ma</code></a> <em>(p2-s8-vvp)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm-morf-corpuri-inj"><td></td><td>
+       <strong>thm-morf-corpuri-inj</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s2-inele-corpuri.html#thm-morf-corpuri-inj"><code class="xref">thm-morf-corpuri-inj</code></a> <em>(p2-s2-inele-corpuri)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm-op-subsp"><td></td><td>
+       <strong>thm-op-subsp</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s5-op-subsp.html#thm-op-subsp"><code class="xref">thm-op-subsp</code></a> <em>(p2-s5-op-subsp)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm-oplus"><td></td><td>
+       <strong>thm-oplus</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s5-op-subsp.html#thm-oplus"><code class="xref">thm-oplus</code></a> <em>(p2-s5-op-subsp)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm-ordin-multiplu"><td></td><td>
+       <strong>thm-ordin-multiplu</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s1e-simetrii.html#thm-ordin-multiplu"><code class="xref">thm-ordin-multiplu</code></a> <em>(p2-s1e-simetrii)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm-rang-def"><td></td><td>
+       <strong>thm-rang-def</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s6-morfisme-spvect.html#thm-rang-def"><code class="xref">thm-rang-def</code></a> <em>(p2-s6-morfisme-spvect)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm-sn-grup"><td></td><td>
+       <strong>thm-sn-grup</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s1e-simetrii.html#thm-sn-grup"><code class="xref">thm-sn-grup</code></a> <em>(p2-s1e-simetrii)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm-subgrup"><td></td><td>
+       <strong>thm-subgrup</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s1-grupuri.html#thm-subgrup"><code class="xref">thm-subgrup</code></a> <em>(p2-s1-grupuri)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm-subinel"><td></td><td>
+       <strong>thm-subinel</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s2-inele-corpuri.html#thm-subinel"><code class="xref">thm-subinel</code></a> <em>(p2-s2-inele-corpuri)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm-submonoid"><td></td><td>
+       <strong>thm-submonoid</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s1-grupuri.html#thm-submonoid"><code class="xref">thm-submonoid</code></a> <em>(p2-s1-grupuri)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm-subsp-inv"><td></td><td>
+       <strong>thm-subsp-inv</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s8-vvp.html#thm-subsp-inv"><code class="xref">thm-subsp-inv</code></a> <em>(p2-s8-vvp)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm-subspatiu"><td></td><td>
+       <strong>thm-subspatiu</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s3-spvect.html#thm-subspatiu"><code class="xref">thm-subspatiu</code></a> <em>(p2-s3-spvect)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm-svd"><td></td><td>
+       <strong>thm-svd</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s11-mat-decomp.html#thm-svd"><code class="xref">thm-svd</code></a> <em>(p2-s11-mat-decomp)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm-zn-corp"><td></td><td>
+       <strong>thm-zn-corp</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="p2-s2-inele-corpuri.html#thm-zn-corp"><code class="xref">thm-zn-corp</code></a> <em>(p2-s2-inele-corpuri)</em></td><td>
+       <em>theorem</em></td></tr>
+   </table>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Adrian Manea (Poligon Educational)<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

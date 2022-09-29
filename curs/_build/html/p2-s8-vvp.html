@@ -1,0 +1,1058 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Vectori și valori proprii &#8212; Algebră liniară și aplicații</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/proof.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Cuaternioni" href="p2-s9-quat.html" />
+    <link rel="prev" title="Produs scalar și ortonormare" href="p2-s7-ortonormare.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo-light-poly-only.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Algebră liniară și aplicații</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Algebră liniară și aplicații
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Elemente de istoria și filosofia matematicii
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-istorie-fil-intro.html">
+   Generalități
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-s1-rationamente.html">
+   Abstractizare și raționamente
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-s2-ist-vsp.html">
+   Istoria spațiilor vectoriale
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algebră abstractă și algebră liniară
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="p2-abstract.html">
+   Algebră abstractă și algebră liniară
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s1-grupuri.html">
+     Monoizi și grupuri
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s1e-simetrii.html">
+     Grupuri de simetrie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s2-inele-corpuri.html">
+     Inele și corpuri
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s3-spvect.html">
+     Spații vectoriale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s4-baza.html">
+     Bază și dimensiune
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s5-op-subsp.html">
+     Operații cu subspații
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s6-morfisme-spvect.html">
+     Morfisme de spații vectoriale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s7-ortonormare.html">
+     Produs scalar și ortonormare
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Vectori și valori proprii
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s9-quat.html">
+     Cuaternioni
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s10-afin.html">
+     Spații afine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s11-mat-decomp.html">
+     Descompuneri matriceale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s12-transf-mat.html">
+     Transformări matriceale în 2D și 3D
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s13-arii-volume.html">
+     Arii și volume
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Aplicații și implementări în programare
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="p3-aplicatii.html">
+   Aplicații și implementări în programare
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Bibliografie și lecturi suplimentare
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliografie.html">
+   Bibliografie și lecturi suplimentare
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/adimanea/linalg"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/adimanea/linalg/issues/new?title=Issue%20on%20page%20%2Fp2-s8-vvp.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/p2-s8-vvp.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motivatie">
+   Motivație
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definitii-si-metode-de-calcul">
+   Definiții și metode de calcul
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemplu-numeric-rezolvat">
+     Exemplu numeric rezolvat
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#diagonalizare">
+   Diagonalizare
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#contraexemplu-de-diagonalizare">
+     Contraexemplu de diagonalizare
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aplicatie-puterile-unei-matrice">
+     Aplicație: Puterile unei matrice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#forma-canonica-jordan">
+   Forma canonică Jordan
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Vectori și valori proprii</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motivatie">
+   Motivație
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definitii-si-metode-de-calcul">
+   Definiții și metode de calcul
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemplu-numeric-rezolvat">
+     Exemplu numeric rezolvat
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#diagonalizare">
+   Diagonalizare
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#contraexemplu-de-diagonalizare">
+     Contraexemplu de diagonalizare
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aplicatie-puterile-unei-matrice">
+     Aplicație: Puterile unei matrice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#forma-canonica-jordan">
+   Forma canonică Jordan
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="vectori-si-valori-proprii">
+<h1>Vectori și valori proprii<a class="headerlink" href="#vectori-si-valori-proprii" title="Permalink to this headline">#</a></h1>
+<section id="motivatie">
+<span id="sec-vvp-motivatie"></span><h2>Motivație<a class="headerlink" href="#motivatie" title="Permalink to this headline">#</a></h2>
+<p>Vectorii și valorile proprii – denumiți în engleză și germană, respectiv,
+<em>eigenvectors</em> și <em>eigenvalues</em> – alcătuiesc o temă fascinantă, cu numeroase
+aplicații.</p>
+<p>Înainte de definiția formală, să spunem că vectorii și valorile proprii se
+asociază unei aplicații liniare. Deci, dat un morfism de spații vectoriale,
+putem calcula vectorii și valorile proprii ale sale. Însă, așa cum știm,
+o aplicație liniară se comportă ca o matrice, asociindu-i-se în mod canonic
+matricea sa în bazele canonice ale spațiilor care alcătuiesc domeniul de
+definiție și, respectiv, codomeniul său. De aceea, putem vorbi și despre
+vectorii și valorile proprii ale unei matrice. Iar prin această legătură
+ajungem la aplicațiile esențiale.</p>
+<p>Unele dintre cele mai spectaculoase aplicații sînt, de exemplu, cele de mai jos.</p>
+<p>În <strong>fizica cuantică</strong>, starea unui sistem fizic se studiază în spații vectoriale
+complexe și sofisticate. O evoluție a unui astfel de sistem se face printr-o
+transformare dată de un morfism. Unul dintre postulatele mecanicii cuantice,
+care datează de la începutul anilor 1900, afirmă (simplificînd, desigur) că dacă
+vrem să obținem cît mai multe informații privitoare la starea sistemului
+în cazul unei astfel de evoluții, nu vom putea obține decît vectorii și valorile
+proprii asociate transformării. Un astfel de rezultat este ceea ce în unele
+scrieri de popularizare a științei se formulează prin aceea că nu putem afla
+niciodată starea unui sistem, pentru că atunci cînd aplicăm o anume măsurătoare,
+sistemul își schimbă starea.</p>
+<p>Din punct de vedere <strong>computațional</strong>, valorile proprii ale unei matrice se
+comportă similar cu numerele prime din aritmetica elementară. Altfel spus,
+dată o matrice oarecare, ea poate fi „simplificată“ într-o formă care îi
+evidențiază valorile proprii. Dacă, de exemplu, în cazul numerelor naturale,
+în loc să lucrăm cu <span class="math notranslate nohighlight">\( n = 100 \)</span>, scriem <span class="math notranslate nohighlight">\( n = 2^2 \cdot 5^2 \)</span>, obținem
+informații suplimentare și, totodată, simplificăm numărul, prin expunerea
+factorilor săi primi. În cazul matricelor, o formă simplificată se numește
+<em>forma diagonală</em>, care are elemente nenule doar pe diagonala principală.
+Nu toate matricele pot avea această formă, însă alternativa nu este cu mult
+mai sofisticată și se numește <em>forma canonică Jordan</em>.</p>
+<p>Metodele sus-menționate înlocuiesc o matrice dată cu o altă matrice, mai simplă,
+din punct de vedere computațional. Dar în alte cazuri, poate fi util să înlocuim
+o matrice cu două sau mai multe alte matrice, fiecare dintre ele mai simplă decît
+matricea inițială și, eventual, separînd, într-un anume sens, informațiile din
+matricea inițială. De pildă, dacă aplicăm o transformare sofisticată precum o rotație
+urmată de o rescalare orizontală, în loc să păstrăm ambele transformări într-o singură
+matrice, este mai eficient, dar și mai clar să le separăm. Transformarea întreagă
+se va compune, atunci, ca sumă sau produs al matricelor corespunzătoare celor două
+transformări.</p>
+<p>Faptul că matricele se pot „simplifica“, cu ajutorul valorilor proprii are
+inclusiv aplicații moderne, în <strong>inteligența artificială</strong>. De exemplu, în procesarea
+imaginilor se lucrează cu spații bidimensionale – spațiul asociat imaginii, practic.
+Multe transformări ale imaginilor (rotații, rescalări sau chiar procesări complicate
+precum transformarea în alb-negru, extragerea contururilor, modificarea contrastului)
+se pot caracteriza matriceal. Practic, transformarea este conținută într-o matrice
+de dimensiune cel mult egală cu numărul de pixeli pe care se aplică, iar informațiile
+relevante din pixelii individuali (poziția, informațiile de culoare, transparență etc.)
+se înmulțesc cu matricea transformării. Astfel de operații implică adesea
+lucrul cu milioane de numere, iar dacă luăm în considerare discipline precum
+învățarea automată, modelele se antrenează prin aplicarea transformărilor respective
+pe terrabiți de date. O metodă simplă de optimizare a calculelor este înlocuirea
+matricelor corespunzătoare transformărilor respective cu forme diagonale sau Jordan
+sau, în orice caz, cu unele care își concentrează informația în valorile proprii.</p>
+<p>În afara exemplului din fizică – pentru care ar fi nevoie de discuții lungi și tehnice
+privitoare la contextul matematic, la modul în care fizica „traduce“ în matematică
+noțiuni privitoare la starea unui sistem –, vom detalia o bună parte a celorlalte
+două aplicații.</p>
+<p>Începem cu partea matematică, urmînd ca aplicațiile în programare și inteligență
+artificială să le prezentăm în partea a treia a lucrării.</p>
+</section>
+<section id="definitii-si-metode-de-calcul">
+<h2>Definiții și metode de calcul<a class="headerlink" href="#definitii-si-metode-de-calcul" title="Permalink to this headline">#</a></h2>
+<p>După definițiile formale, accentul în această secțiune va cădea pe metode
+concrete de calcul, algoritmice aproape. Considerăm nu doar că o astfel
+de prezentare face lucrurile mai clare, dar în același timp, ne oferă și
+indicii pentru implementarea programatică din partea a treia.</p>
+<div class="proof definition admonition" id="dev-vvp">
+<p class="admonition-title"><span class="caption-number">Definition 45 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( V, W \)</span> două spații vectoriale și <span class="math notranslate nohighlight">\( f : V \to W \)</span> o aplicație liniară.</p>
+<p>Se numește <em>vector propriu</em> al lui <span class="math notranslate nohighlight">\( f \)</span>, asociat valorii proprii <span class="math notranslate nohighlight">\( \lambda \in \mathbb{R} \)</span>
+un vector <span class="math notranslate nohighlight">\( v \in V \)</span> astfel încît <span class="math notranslate nohighlight">\( f(v) = \lambda v \)</span>.</p>
+</section>
+</div><p>Altfel spus, un vector propriu este unul asupra căruia aplicația liniară are
+o acțiune foarte simplă: îl rescalează cu scalarul <span class="math notranslate nohighlight">\( \lambda \)</span>.</p>
+<p>Întrucît acțiunea unei aplicații liniare corespunde canonic înmulțirii cu
+matricea aplicației, o definiție alternativă și mai practică din punct de
+vedere computațional este următoarea:</p>
+<div class="proof definition admonition" id="def-vvp-matrice">
+<p class="admonition-title"><span class="caption-number">Definition 46 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( V, W \)</span> două spații vectoriale finit dimensionale, cu <span class="math notranslate nohighlight">\( \dim V = m, \dim W = n \)</span>.</p>
+<p>Fie <span class="math notranslate nohighlight">\( f : V \to W \)</span> o aplicație liniară și <span class="math notranslate nohighlight">\( A = M_f^{BC} \in M_{n,m}(\mathbb{R}) \)</span>,
+matricea aplicației <span class="math notranslate nohighlight">\( f \)</span> în bazele canonice.</p>
+<p>Vectorul-linie <span class="math notranslate nohighlight">\( v \in V \)</span> se numește <em>vector propriu</em> al lui <span class="math notranslate nohighlight">\( A \)</span>, asociat
+valorii proprii <span class="math notranslate nohighlight">\( \lambda \in \mathbb{R} \)</span> dacă <span class="math notranslate nohighlight">\( A \cdot v^t = \lambda v^t \)</span>,
+unde <span class="math notranslate nohighlight">\( v^t \)</span> notează vectorul-coloană obținut prin transpunerea lui <span class="math notranslate nohighlight">\( v \)</span>.</p>
+</section>
+</div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Prin definiție, se presupune că un vector propriu nu poate fi vectorul nul.
+Dar valori proprii nule sînt permise.</p>
+</div>
+<p>În această definiție pare că vectorii și valorile proprii se aleg special din acțiunea
+aplicației liniare (sau a matricei), dar așa cum vom vedea, de fapt ei (și ele)
+<em>determină</em> matricea, într-un anume sens, conțin informația esențială pe care o
+transmite matricea.</p>
+<hr class="docutils" />
+<p>Pentru calculul efectiv, vom lucra doar cu cazul matriceal și pornim de la
+definiție. Vom folosi notațiile și contextul din definiția de mai sus.
+De asemenea, pentru simplitate, vom presupune <span class="math notranslate nohighlight">\( m = n \)</span>, adică <span class="math notranslate nohighlight">\( V \)</span> și <span class="math notranslate nohighlight">\( W \)</span>
+au aceeași dimensiune. Acest lucru va face ca matricea <span class="math notranslate nohighlight">\( A \)</span> să fie pătratică
+și va ușura calculele și considerațiile teoretice.</p>
+<div class="math notranslate nohighlight">
+\[A v^t = \lambda v^t \Rightarrow Av^t - \lambda v^t = 0 \Rightarrow (A - \lambda I_n)v^t = 0.\]</div>
+<p>De remarcat că pentru ultima egalitate am folosit factorul comun, dar ținem seama
+de <em>necomutativitatea</em> înmulțirii matricelor, astfel că factorul comun este la dreapta.
+Matricea <span class="math notranslate nohighlight">\( I_n \)</span> este matricea identitate, care are 1 pe diagonala principală și 0 în rest.</p>
+<p>De aici, putem continua în mai multe moduri. De exemplu, dacă definim matricea
+<span class="math notranslate nohighlight">\( B = A - \lambda I_n \)</span>, egalitatea de mai sus implică faptul că
+<span class="math notranslate nohighlight">\( v^t \in \mathrm{Ker}(B) \)</span>. Acum, orice matrice are un nucleu, care conține
+cel puțin vectorul nul. Însă știm că un vector propriu nu poate să fie nul,
+deci dacă vrem ca <span class="math notranslate nohighlight">\( v^t \)</span> să fie vector propriu nenul, rezultă că nucleul lui <span class="math notranslate nohighlight">\( B \)</span>
+trebuie să conțină și alți vectori în afară de <span class="math notranslate nohighlight">\( 0 \)</span>. Cu alte cuvinte, transformarea
+dată de <span class="math notranslate nohighlight">\( B \)</span> <em>nu</em> trebuie să fie injectivă și atunci nu mai poate să fie inversabilă.
+Revenind la matrice, rezultă că matricea <span class="math notranslate nohighlight">\( B \)</span> nu este inversabilă, așadar
+<span class="math notranslate nohighlight">\( \det B =  \det(A - \lambda I_n) = 0 \)</span>.</p>
+<p>Astfel ajungem la următoarea noțiune teoretică importantă:</p>
+<div class="proof definition admonition" id="def-pol-car">
+<p class="admonition-title"><span class="caption-number">Definition 47 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( A \in M_n(\mathbb{R}) \)</span>. Se numește <em>polinomul caracteristic</em> al matricei
+<span class="math notranslate nohighlight">\( A \)</span> polinomul <span class="math notranslate nohighlight">\( P_A(X) = \det(A - XI_n) \)</span>.</p>
+<p>Rădăcinile acestui polinom sînt chiar valorile proprii ale matricei.</p>
+<p>Mulțimea valorilor proprii se numește <em>spectrul</em> matrice, notat <span class="math notranslate nohighlight">\( \sigma(A) \)</span>.</p>
+</section>
+</div><p>Rezultă că vom rezolva ecuația polinomială atașată <span class="math notranslate nohighlight">\( P_A(x) = 0 \)</span>, numită
+<em>ecuația caracteristică</em>, ale cărei soluții vor fi chiar valorile proprii ale lui <span class="math notranslate nohighlight">\( A \)</span>.</p>
+<p>Odată determinat spectrul matricei, vectorii proprii asociați se determină direct.</p>
+<p>Iată un exemplu.</p>
+<section id="exemplu-numeric-rezolvat">
+<h3>Exemplu numeric rezolvat<a class="headerlink" href="#exemplu-numeric-rezolvat" title="Permalink to this headline">#</a></h3>
+<p>Vom porni direct cu o matrice pătratică, de exemplu:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{pmatrix}
+1 &amp; -1 &amp; 2 \\
+1 &amp; 0 &amp; 1 \\
+2 &amp; 1 &amp; 1
+\end{pmatrix}\end{split}\]</div>
+<p>Am fi putut începe problema cu o aplicație liniară, pentru care <span class="math notranslate nohighlight">\( A \)</span> să
+fie matricea în bazele canonice:</p>
+<div class="math notranslate nohighlight">
+\[f : \mathbb{R}^3 \to \mathbb{R}^3, \quad f(a, b, c) = (a - b + 2c, a + c, 2a + b + c).\]</div>
+<p>Se vede că <span class="math notranslate nohighlight">\( A = M_f^{BC} \)</span>, așa că vom lucra direct cu matricea.</p>
+<p>Scriem polinomul său caracteristic:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}P_A(X) = \det(A - XI_3) = %
+	\begin{vmatrix}
+	1 - X &amp; -1 &amp; 2 \\
+	1 &amp; -X &amp; 1 \\
+	2 &amp; 1 &amp; 1 - X
+	\end{vmatrix} = -X^3 + 2X^2 + 3X.\end{split}\]</div>
+<p>Acum rezolvăm ecuația caracteristică:</p>
+<div class="math notranslate nohighlight">
+\[-x^3 + 2x^2 + 3x = 0 \Rightarrow x(x + 1)(x - 3) = 0 \Rightarrow \sigma(A) = \{ 0, -1, 3 \}.\]</div>
+<p>Așadar, avem 3 valori proprii distincte: <span class="math notranslate nohighlight">\( \lambda_1 = 0, \lambda_2 = -1, \lambda_3 = 3 \)</span>.</p>
+<p>Pentru vectorii proprii asociați, continuăm pe rînd.</p>
+<p>Fie <span class="math notranslate nohighlight">\( \lambda_1 = 0 \)</span> și <span class="math notranslate nohighlight">\( v = (a, b, c) \in \mathbb{R}^3 \)</span> un vector propriu asociat.
+Din definiție, rezultă:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A v^t = \lambda_1 v^t = 0 \Rightarrow %
+\begin{pmatrix}
+1 &amp; -1 &amp; 2 \\
+1 &amp; 0 &amp; 1 \\
+2 &amp; 1 &amp; 1 
+\end{pmatrix} \cdot
+\begin{pmatrix}
+a \\ b \\ c
+\end{pmatrix} = %
+\begin{pmatrix}
+a - b + 2c \\
+a + c \\
+2a + b + c
+\end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}\end{split}\]</div>
+<p>Ajungem la sistemul de ecuații:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+	a - b + 2c &amp;= 0 \\
+	a + c &amp;= 0 \\
+	2a + b + c &amp;= 0
+\end{cases}\end{split}\]</div>
+<p>Sistemul este compatibil simplu nedeterminat și se obține soluția
+<span class="math notranslate nohighlight">\( (a, b, c) \in \{ (-\alpha, \alpha, \alpha) \mid \alpha \in \mathbb{R} \} \)</span>.</p>
+<p>Așadar, vectorii proprii asociați valorii proprii <span class="math notranslate nohighlight">\( \lambda_1 = 0 \)</span> au forma de mai sus.</p>
+<p>Mai departe, pentru <span class="math notranslate nohighlight">\( \lambda_2 = -1 \)</span>, fie <span class="math notranslate nohighlight">\( v = (a, b, c) \in \mathbb{R}^3 \)</span> un vector
+propriu asociat. Procedînd exact ca mai sus, ajungem la același sistem de ecuații, doar
+cu rezultate diferite:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+	a - b + 2c &amp;= -a \\
+	a + c &amp;= -b \\
+	2a + b + c &amp;= -c
+\end{cases}\end{split}\]</div>
+<p>Sistemul este tot compatibil simplu nedeterminat, cu soluția
+<span class="math notranslate nohighlight">\( (a, b, c) \in \{ (-\alpha, 0, \alpha) \mid \alpha \in \mathbb{R} \} \)</span>, deci vectorii
+proprii asociați valorii proprii <span class="math notranslate nohighlight">\( \lambda_2 = -1 \)</span> au această formă.</p>
+<p>În fine, pentru <span class="math notranslate nohighlight">\( \lambda_3 = 3 \)</span>, procedăm la fel și ajungem la:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+	a - b + 2c &amp;= 3a \\
+	a + c &amp;= 3b \\
+	2a + b + c &amp;= 3c
+\end{cases}\end{split}\]</div>
+<p>sistem care are soluția <span class="math notranslate nohighlight">\( (a, b, c) \in \{ (5\alpha, 4 \alpha, 7\alpha) \mid \alpha \in \mathbb{R} \} \)</span>,
+deci vectorii proprii asociați valorii proprii <span class="math notranslate nohighlight">\( \lambda_3 = 3 \)</span> au această formă.</p>
+<hr class="docutils" />
+<p>Un rezultat teoretic general, care ne ava ajuta în cele ce urmează, este:</p>
+<div class="proof theorem admonition" id="thm-subsp-inv">
+<p class="admonition-title"><span class="caption-number">Theorem 26 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Mulțimea vectorilor proprii asociați unei valori proprii <span class="math notranslate nohighlight">\( \lambda \)</span> ale unei aplicații
+liniare <span class="math notranslate nohighlight">\( f : V \to W \)</span> formează un subspațiu al lui <span class="math notranslate nohighlight">\( V \)</span>, notat <span class="math notranslate nohighlight">\( V_\lambda \)</span> și numit
+<em>subspațiu propriu</em> sau <em>invariant</em>.</p>
+</section>
+</div><p>Așadar, putem scrie rezultatul exemplului de mai sus simbolic, sub forma:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+	\sigma(A) &amp;= \{ \lambda_1, \lambda_2, \lambda_3 \} = \{ 0, -1, 3 \} \\
+	V_{\lambda_1} &amp;= \{ (-\alpha, \alpha, \alpha) \mid \alpha \in \mathbb{R}^3 \} \\
+	V_{\lambda_2} &amp;= \{ (-\alpha, 0, \alpha) \mid \alpha \in \mathbb{R} \} \\
+	V_{\lambda_3} &amp;= \{ (5\alpha, 4\alpha, 7\alpha) \mid \alpha \in \mathbb{R} \}.
+\end{align*}\end{split}\]</div>
+</section>
+</section>
+<section id="diagonalizare">
+<span id="sec-diagonalizare"></span><h2>Diagonalizare<a class="headerlink" href="#diagonalizare" title="Permalink to this headline">#</a></h2>
+<p>Calculele de mai sus conduc la aplicații deosebite. Începem cu cea mai spectaculoasă,
+dar în același timp, rară: diagonalizarea.</p>
+<p>Prin definiție, spunem că o matrice este <em>diagonală</em> dacă ea conține elemente
+nenule doar pe diagonala principală. De exemplu, pentru o matrice din <span class="math notranslate nohighlight">\( M_3(\mathbb{R}) \)</span>,
+forma diagonală este:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{pmatrix}
+a &amp; 0 &amp; 0 \\
+0 &amp; b &amp; 0 \\
+0 &amp; c &amp; 0
+\end{pmatrix},\end{split}\]</div>
+<p>pentru niște numere reale <span class="math notranslate nohighlight">\( a, b, c \)</span>, formă care se mai notează <span class="math notranslate nohighlight">\( A = \mathrm{diag}(a, b, c) \)</span>.</p>
+<p>Unele matrice au proprietatea că pot fi „înlocuite“ cu matrice diagonale și, pentru majoritatea
+aplicațiilor, dau aceleași rezultate ca în forma nediagonală. Nu toate au această proprietate,
+dar pentru cele care o au, e clar că permit simplificări considerabile din punct de vedere computațional.</p>
+<p>Pînă la enunțarea <em>criteriului de diagonalizare</em>, mai avem nevoie de două noțiuni teoretice.</p>
+<p><strong>Vom presupune, în continuare, că lucrăm cu matrice pătratice.</strong></p>
+<div class="proof definition admonition" id="def-multiplicitate">
+<p class="admonition-title"><span class="caption-number">Definition 48 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( \{ \lambda_1, \lambda_2, \dots, \lambda_n \} \)</span> valorile proprii ale unei matrice
+și <span class="math notranslate nohighlight">\( V_{\lambda_1}, \dots, V_{\lambda_n} \)</span> subspațiile invariante asociate.</p>
+<ul class="simple">
+<li><p>Se numește <em>multiplicitatea algebrică</em> a valorii proprii <span class="math notranslate nohighlight">\( \lambda_i, 1 \leq i \leq n \)</span>,
+notată <span class="math notranslate nohighlight">\( m_a(\lambda_i) \)</span> sau chiar <span class="math notranslate nohighlight">\( a(\lambda_i) \)</span>, multiplicitatea rădăcinii
+<span class="math notranslate nohighlight">\( x = \lambda_i \)</span> în polinomul caracteristic. Altfel spus, este puterea maximă <span class="math notranslate nohighlight">\( m \)</span>
+astfel încît polinomul <span class="math notranslate nohighlight">\( X - \lambda_i \)</span> divide polinomul caracteristic.</p></li>
+<li><p>Se numește <em>multiplicitatea geometrică</em> a valorii proprii <span class="math notranslate nohighlight">\( \lambda_i, 1 \leq i \leq n \)</span>,
+notată <span class="math notranslate nohighlight">\( m_g(\lambda_i) \)</span> sau mai simplu <span class="math notranslate nohighlight">\( g(\lambda_i) \)</span>, dimensiunea subspațiului
+invariant asociat. În formulă, <span class="math notranslate nohighlight">\( m_g(\lambda_i) = \dim V_{\lambda_i} \)</span>.</p></li>
+</ul>
+</section>
+</div><p>În exemplul anterior, toate rădăcinile polinomului caracteristic sînt simple,
+deci <span class="math notranslate nohighlight">\( a(0) = a(-1) = a(3) = 1 \)</span>. De asemenea, se vede imediat că fiecare subspațiu
+invariant este 1-dimensional, deci <span class="math notranslate nohighlight">\( g(0) = g(-1) = g(3) = 1 \)</span>.</p>
+<p>Un rezultat simplu de enunțat, dar netrivial de demonstrat, pe care îl vom folosi de
+multe ori în exemple și exerciții este acesta:</p>
+<div class="proof theorem admonition" id="thm-mg-ma">
+<p class="admonition-title"><span class="caption-number">Theorem 27 </span></p>
+<section class="theorem-content" id="proof-content">
+<div class="math notranslate nohighlight">
+\[ a(\lambda) \geq g(\lambda), \forall \lambda \in \sigma(A). \]</div>
+</section>
+</div><p>Cu alte cuvinte, pentru orice valoare proprie, multiplicitatea algebrică este
+cel mult egală cu cea geometrică. De exemplu, putem folosi acest rezultat în
+exemplul anterior: văzînd că <span class="math notranslate nohighlight">\( a(\lambda_{1,2,3}) = 1 \)</span>, rezultă automat că
+<span class="math notranslate nohighlight">\( g(\lambda_{1,2,3}) = 1 \)</span>, pentru că o multiplicitate geometrică egală cu 0 este
+imposibilă (ar trebui ca un subspațiu invariant să fie spațiul nul, ceea ce este
+imposibil, deoarece vectori proprii nuli nu sînt permiși).</p>
+<p>Criteriul de diagonalizare pentru o matrice conține condiții echivalente pentru ca o matrice
+să poată fi adusă la forma diagonală. Teorema generală conține mai multe condiții,
+însă le vom prezenta doar pe cele ușor de verificat și de implementat.</p>
+<div class="proof theorem admonition" id="thm-diag">
+<p class="admonition-title"><span class="caption-number">Theorem 28 </span> (Criteriul de diagonalizare pentru o matrice pătratică)</p>
+<section class="theorem-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( A \in M_n(\mathbb{R}) \)</span> o matrice pătratică.</p>
+<p>Următoarele afirmații sînt echivalente:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\( A \)</span> este diagonalizabilă;</p></li>
+<li><p><span class="math notranslate nohighlight">\( a(\lambda_i) = g(\lambda_i), \forall \lambda_i \in \sigma(A) \)</span>;</p></li>
+<li><p>Există o bază a lui <span class="math notranslate nohighlight">\( \mathbb{R}^n \)</span> formată doar din vectori proprii ai lui <span class="math notranslate nohighlight">\( A \)</span>. Rezultă, în particular, că</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[ 
+  \mathbb{R}^n \simeq V_{\lambda_1} \oplus V_{\lambda_2} \oplus \dots \oplus V_{\lambda_n}, \forall \lambda_i \in \sigma(A), 1 \leq i \leq n.
+\]</div>
+<ol class="simple">
+<li><p>Există o matrice diagonală <span class="math notranslate nohighlight">\( D \)</span> și o matrice inversabilă <span class="math notranslate nohighlight">\( T \)</span> astfel încît
+<span class="math notranslate nohighlight">\( A = TDT^{-1} \)</span>. Mai mult, <span class="math notranslate nohighlight">\( D = \mathrm{diag}(\lambda_i), \lambda_i \in \sigma(A) \)</span>.</p></li>
+</ol>
+</section>
+</div><p>Ultima condiție poate părea stranie: <span class="math notranslate nohighlight">\( A = TDT^{-1} \)</span>, pe care o mai putem scrie și
+sub forma <span class="math notranslate nohighlight">\( AT = TD \)</span>. Însă ea stă la baza unei noțiuni importante în calculul
+vectorial:</p>
+<div class="proof definition admonition" id="mat-asem">
+<p class="admonition-title"><span class="caption-number">Definition 49 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Două matrice <span class="math notranslate nohighlight">\( A \)</span> și <span class="math notranslate nohighlight">\( B \)</span> se numesc <em>asemenea</em>, notat <span class="math notranslate nohighlight">\( A \sim B \)</span>,
+dacă există o matrice inversabilă <span class="math notranslate nohighlight">\( T \)</span> astfel încît <span class="math notranslate nohighlight">\( A = TDT^{-1} \)</span>.</p>
+</section>
+</div><p>Două consecințe imediate ale relației de asemănare sînt:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( A \sim B \Rightarrow \det(A) = \det(B) \)</span> (justificați!);</p></li>
+<li><p>relația de asemănare este una de echivalență: este <strong>reflexivă</strong> (<span class="math notranslate nohighlight">\( A \sim A \)</span>),
+<strong>simetrică</strong> (<span class="math notranslate nohighlight">\( A \sim B \Rightarrow B \sim A \)</span>) și <strong>tranzitivă</strong> (<span class="math notranslate nohighlight">\( A \sim B \)</span>
+și <span class="math notranslate nohighlight">\( B \sim C \)</span> implică <span class="math notranslate nohighlight">\( A \sim C \)</span>).</p></li>
+</ul>
+<p>Aceste proprietăți – deși nu conțin justificarea completă – sînt o indicație
+pentru faptul că două matrice asemenea se comportă „la fel“ în multe situații
+algebrice. De aceea, o matrice diagonalizabilă – pe care acum o înțelegem ca fiind
+<em>asemenea cu o matrice diagonală</em> – poate fi substituită de aceasta din urmă
+în „majoritatea“ calculelor algebrice. În plus, știm exact cum arată forma diagonală
+pe care o căutăm, cînd ea există: conține valorile proprii ale matricei inițiale.
+Imprecizia acestei exprimări va fi clarificată în cazul în care vom lucra cu exemple
+cînd afirmația nu este adevărată.</p>
+<hr class="docutils" />
+<p>Să revenim la exemplul pe care l-am dat și să-l continuăm pînă la diagonalizare.
+Cum valorile proprii ale matricei <span class="math notranslate nohighlight">\( A \)</span> au multiplicitățile egale cu 1, rezultă
+că matricea se poate diagonaliza. Știm chiar și care este forma ei diagonală:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A \sim \mathrm{diag}(0, -1, 3) = %
+\begin{pmatrix}
+0 &amp; 0 &amp; 0 \\
+0 &amp; -1 &amp; 0 \\
+0 &amp; 0 &amp; 3
+\end{pmatrix}\end{split}\]</div>
+<p>Dar să explorăm puțin și celelalte afirmații din criteriul de diagonalizare.
+Putem obține o bază a lui <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span> chiar din bazele subspațiilor proprii.
+Cum <span class="math notranslate nohighlight">\( V_{\lambda_1} = \{ (-\alpha, \alpha, \alpha) \mid \alpha \in \mathbb{R} \} \)</span>,
+rezultă că <span class="math notranslate nohighlight">\( v_1 = (-1, 1, 1) \)</span> este o bază în <span class="math notranslate nohighlight">\( V_{\lambda_1} \)</span>.</p>
+<p>Similar, <span class="math notranslate nohighlight">\( v_2 = (-1, 0, 1) \)</span> este o bază în <span class="math notranslate nohighlight">\( V_{\lambda_2} \)</span> și
+<span class="math notranslate nohighlight">\( v_3 = (5, 4, 7) \)</span> este o bază în <span class="math notranslate nohighlight">\( V_{\lambda_3} \)</span>.</p>
+<p>Folosind criteriul de diagonalizare și din teorema alternativei, rezultă că
+<span class="math notranslate nohighlight">\( B_\lambda = \{ v_1, v_2, v_3 \} \)</span> este o bază a lui <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span>,
+formată doar din vectori proprii ai lui <span class="math notranslate nohighlight">\( A \)</span>.</p>
+<p>Matricea <span class="math notranslate nohighlight">\( T \)</span> care apare în relația de asemănare <span class="math notranslate nohighlight">\( A \sim D \)</span> este o matrice
+specială, numită <em>matricea de trecere</em> de la baza canonică a lui <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span>
+la baza <span class="math notranslate nohighlight">\( B_\lambda \)</span> de mai sus. Ea se obține din vectorii <span class="math notranslate nohighlight">\( v_1, v_2, v_3 \)</span>,
+puși pe coloane, deci:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}T = \begin{pmatrix}
+-1 &amp; -1 &amp; 5 \\
+1 &amp; 0 &amp; 4 \\
+1 &amp; 1 &amp; 7
+\end{pmatrix}\end{split}\]</div>
+<p>Putem verifica acum că, într-adevăr, <span class="math notranslate nohighlight">\( A = TDT^{-1} \)</span>, egalitate care poate fi scrisă
+și sub forma <span class="math notranslate nohighlight">\( D = T^{-1}AT = \mathrm{diag}(0, -1, 3) \)</span>.</p>
+<section id="contraexemplu-de-diagonalizare">
+<h3>Contraexemplu de diagonalizare<a class="headerlink" href="#contraexemplu-de-diagonalizare" title="Permalink to this headline">#</a></h3>
+<p>Să vedem acum un exemplu de matrice care <em>nu</em> se diagonalizează, din cauza condițiilor
+din criteriu.</p>
+<p>Fie <span class="math notranslate nohighlight">\( A = \begin{pmatrix} 1 &amp; 2 &amp; 1 \\ 0 &amp; -1 &amp; 0 \\ -1 &amp; -2 &amp; -1 \end{pmatrix} \)</span>.</p>
+<p>Procedăm ca în cazul anterior. Calculăm valorile proprii, ca rădăcini ale polinomului
+caracteristic:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}P_A(X) = \det(A - XI_3) = %
+\begin{vmatrix}
+1 - X &amp; 2 &amp; 1 \\
+0 &amp; -1-X &amp; 0 \\
+-1 &amp; -2 &amp; -1-X
+\end{vmatrix} = X^3 + X^2\end{split}\]</div>
+<p>rezultă că ecuația caracteristică este <span class="math notranslate nohighlight">\( x^3 + x^2 = x^2(x + 1) = 0 \)</span>, cu rădăcinile
+<span class="math notranslate nohighlight">\( x = 0 \)</span> <em>rădăcină dublă</em> și <span class="math notranslate nohighlight">\( x = -1 \)</span> rădăcină simplă. Obținem
+<span class="math notranslate nohighlight">\( \sigma(A) = \{ 0, -1 \} \)</span>, cu <span class="math notranslate nohighlight">\( a(\lambda_1 = 0) = 2 \)</span> și <span class="math notranslate nohighlight">\( a(\lambda_2 = -1) = 1 \)</span>.</p>
+<p>Mai departe, vectorii proprii asociați.</p>
+<p>Pentru <span class="math notranslate nohighlight">\( \lambda_1 = 0 \)</span>, se obține subspațiul propriu
+<span class="math notranslate nohighlight">\( V_{\lambda_1} = \{ (-\alpha, 0, \alpha) \mid \alpha \in \mathbb{R} \} \)</span>,
+care are <span class="math notranslate nohighlight">\( \dim V_{\lambda_1} = 1 \)</span>, deci <span class="math notranslate nohighlight">\( g(\lambda_1) = 1 \)</span>. Putem vedea deja
+că matricea nu este diagonalizabilă, deoarece <span class="math notranslate nohighlight">\( a(\lambda_1) \neq g(\lambda_1) \)</span>.</p>
+<p>Totuși, să calculăm și vectorii proprii pentru cea de-a doua valoare proprie.
+Se obține <span class="math notranslate nohighlight">\( V_{\lambda_1} = \{ (-2\alpha, \alpha, 2\alpha) \mid \alpha \in \mathbb{R} \} \)</span>,
+deci <span class="math notranslate nohighlight">\( g(\lambda_2) = 1 \)</span> – ceea ce era oricum de așteptat, fiindcă <span class="math notranslate nohighlight">\( a(\lambda_2) = 1 \)</span>.</p>
+<p>Concluzia este că matricea nu se poate diagonaliza.</p>
+<p>Există o alternativă, care aduce, totuși, matricea la o formă care este
+ceva mai ușor de folosit – forma canonică Jordan.</p>
+</section>
+<section id="aplicatie-puterile-unei-matrice">
+<h3>Aplicație: Puterile unei matrice<a class="headerlink" href="#aplicatie-puterile-unei-matrice" title="Permalink to this headline">#</a></h3>
+<p>De obicei, dată o matrice <span class="math notranslate nohighlight">\( A \)</span>, puterile ei <span class="math notranslate nohighlight">\( A^n \)</span>, pentru <span class="math notranslate nohighlight">\( n \)</span> arbitrar
+se calculează destul de dificil. În majoritatea cazurilor, fie se caută
+o descompunere a lui <span class="math notranslate nohighlight">\( A \)</span> de forma <span class="math notranslate nohighlight">\( A = M + N \)</span>, astfel încît <span class="math notranslate nohighlight">\( M \)</span>
+și <span class="math notranslate nohighlight">\( N \)</span> să comute (adică <span class="math notranslate nohighlight">\( MN = NM \)</span>) și se aplică o formulă de tipul binomului
+lui Newton, fie se caută o astfel de descompunere în care <span class="math notranslate nohighlight">\( M \)</span> sau <span class="math notranslate nohighlight">\( N \)</span> să
+fie nilpotente – de la o putere încolo să devină matricea nulă.</p>
+<p>O altă metodă presupune ridicarea la cîteva puteri a lui <span class="math notranslate nohighlight">\( A \)</span> în speranța că
+se obține o formulă generală, care se poate enunța și demonstra apoi inductiv.</p>
+<p>Dar dacă matricea <span class="math notranslate nohighlight">\( A \)</span> se diagonalizează, avem încă o metodă la dispoziție,
+ceva mai simplă decît anterioarele. Să presupunem, deci, că <span class="math notranslate nohighlight">\( A \)</span> este diagonalizabilă,
+adică există o matrice inversabilă <span class="math notranslate nohighlight">\( T \)</span> și una diagonală <span class="math notranslate nohighlight">\( D \)</span>, cu
+<span class="math notranslate nohighlight">\( A = TDT^{-1} \)</span>, iar <span class="math notranslate nohighlight">\( D = \mathrm{diag}(\lambda_1, \dots, \lambda_n) \)</span>, unde
+<span class="math notranslate nohighlight">\( \lambda_i \in \sigma(A), \forall 1 \leq i \leq n \)</span>.</p>
+<p>Un calcul simplu de ridicare la putere arată, de pildă:</p>
+<div class="math notranslate nohighlight">
+\[A^2 = \left( TDT^{-1} \right)^2 = TDT^{-1} \cdot TDT^{-1} = TD(TT^{-1})DT^{-1} = T D^2 T^{-1},\]</div>
+<p>unde am folosit metoda generală de a înmulți două matrice, deoarece nu știm dacă <span class="math notranslate nohighlight">\( T \)</span>
+și <span class="math notranslate nohighlight">\( D \)</span> comută, în general. Similar, se poate arăta că are loc rezultatul general:</p>
+<div class="math notranslate nohighlight">
+\[A^n = T D^n T^{-1}, \forall n \geq 1\]</div>
+<p>și marele avantaj este că puterile lui <span class="math notranslate nohighlight">\( D \)</span> se calculează foarte ușor, anume:</p>
+<div class="math notranslate nohighlight">
+\[D^n = \mathrm{diag}(\lambda_i^n), \forall n \geq 1.\]</div>
+<p>Așadar, ajungem la următoarea concluzie:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>În contextul și cu notațiile de mai sus, dacă <span class="math notranslate nohighlight">\( A \)</span> este diagonalizabilă, atunci
+<span class="math notranslate nohighlight">\( \sigma(A^n) = \{ \lambda_i^n \} \)</span>, pentru orice putere <span class="math notranslate nohighlight">\( n \)</span>, unde
+<span class="math notranslate nohighlight">\( \sigma(A) = \{ \lambda_i \} \)</span>.</p>
+<p>Mai mult, <span class="math notranslate nohighlight">\( A^n = T D^n T^{-1} \)</span>, unde <span class="math notranslate nohighlight">\( D^n = \mathrm{diag}(\lambda_i^n) \)</span>.</p>
+</div>
+</section>
+</section>
+<section id="forma-canonica-jordan">
+<h2>Forma canonică Jordan<a class="headerlink" href="#forma-canonica-jordan" title="Permalink to this headline">#</a></h2>
+<p>Dacă o matrice nu poate fi diagonalizată, ea poate, totuși, să fie adusă la
+o formă mai simplă, numită <em>forma canonică Jordan</em>. Această formă este alcătuită din
+<em>blocuri Jordan</em>, care o aduc la o formă „aproape diagonală“, în sensul că, în afara
+elementelor de pe diagonala principală, mai găsim și elemente egale cu 1 deasupra
+diagonalei. De exemplu, o matrice de forma:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{pmatrix}
+3 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 3 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 5 &amp; 1 \\
+0 &amp; 0 &amp; 0 &amp; 5
+\end{pmatrix}\end{split}\]</div>
+<p>este un exemplu de formă canonică Jordan, care conține două blocuri Jordan de
+dimensiune 2: cei doi minori <span class="math notranslate nohighlight">\( \begin{pmatrix} 3 &amp; 1 \\ 0 &amp; 3 \end{pmatrix} \)</span>
+și <span class="math notranslate nohighlight">\( \begin{pmatrix} 5 &amp; 1 \\ 0 &amp; 5 \end{pmatrix} \)</span>.</p>
+<p>Pentru o matrice de dimensiune arbitrară, putem avea mai multe blocuri Jordan,
+eventual de dimensiuni diferite. Pe diagonala principală a matricei găsim
+tot valorile sale proprii, însă dimensiunea și numărul blocurilor sînt determinate
+de alți factori, pe care îi vom întîlni pe parcursul calculului din această
+secțiune.</p>
+<p>Există mai multe moduri de a aduce o matrice la această formă, mai mult sau mai
+puțin eficiente sau dificile din punct de vedere tehnic. Prezentarea noastră
+se va baza pe Appendix B din <span id="id1">[<a class="reference internal" href="bibliografie.html#id6" title="Gilbert Strang. Linear Algebra and its applications. Cengage Learning, fourth edition, 2006.">Strang, 2006</a>]</span>.</p>
+<p><strong>#TODO</strong></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="p2-s7-ortonormare.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Produs scalar și ortonormare</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="p2-s9-quat.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Cuaternioni</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Adrian Manea (Poligon Educational)<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

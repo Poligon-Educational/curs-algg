@@ -1,0 +1,1265 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Morfisme de spații vectoriale &#8212; Algebră liniară și aplicații</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/proof.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Produs scalar și ortonormare" href="p2-s7-ortonormare.html" />
+    <link rel="prev" title="Operații cu subspații" href="p2-s5-op-subsp.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo-light-poly-only.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Algebră liniară și aplicații</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Algebră liniară și aplicații
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Elemente de istoria și filosofia matematicii
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-istorie-fil-intro.html">
+   Generalități
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-s1-rationamente.html">
+   Abstractizare și raționamente
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-s2-ist-vsp.html">
+   Istoria spațiilor vectoriale
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algebră abstractă și algebră liniară
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="p2-abstract.html">
+   Algebră abstractă și algebră liniară
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s1-grupuri.html">
+     Monoizi și grupuri
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s1e-simetrii.html">
+     Grupuri de simetrie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s2-inele-corpuri.html">
+     Inele și corpuri
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s3-spvect.html">
+     Spații vectoriale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s4-baza.html">
+     Bază și dimensiune
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s5-op-subsp.html">
+     Operații cu subspații
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Morfisme de spații vectoriale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s7-ortonormare.html">
+     Produs scalar și ortonormare
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s8-vvp.html">
+     Vectori și valori proprii
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s9-quat.html">
+     Cuaternioni
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s10-afin.html">
+     Spații afine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s11-mat-decomp.html">
+     Descompuneri matriceale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s12-transf-mat.html">
+     Transformări matriceale în 2D și 3D
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s13-arii-volume.html">
+     Arii și volume
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Aplicații și implementări în programare
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="p3-aplicatii.html">
+   Aplicații și implementări în programare
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Bibliografie și lecturi suplimentare
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliografie.html">
+   Bibliografie și lecturi suplimentare
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/adimanea/linalg"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/adimanea/linalg/issues/new?title=Issue%20on%20page%20%2Fp2-s6-morfisme-spvect.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/p2-s6-morfisme-spvect.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definitie-formala">
+   Definiție formală
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nucleu-imagine">
+   Nucleu, imagine
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matricea-unei-aplicatii-liniare">
+   Matricea unei aplicații liniare
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#teorema-rang-defect">
+   Teorema rang-defect
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercitiu-rezolvat">
+   Exercițiu rezolvat
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#observatii-tehnice">
+     Observații tehnice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercitii-propuse">
+   Exerciții propuse
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Morfisme de spații vectoriale</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definitie-formala">
+   Definiție formală
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nucleu-imagine">
+   Nucleu, imagine
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matricea-unei-aplicatii-liniare">
+   Matricea unei aplicații liniare
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#teorema-rang-defect">
+   Teorema rang-defect
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercitiu-rezolvat">
+   Exercițiu rezolvat
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#observatii-tehnice">
+     Observații tehnice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercitii-propuse">
+   Exerciții propuse
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="morfisme-de-spatii-vectoriale">
+<h1>Morfisme de spații vectoriale<a class="headerlink" href="#morfisme-de-spatii-vectoriale" title="Permalink to this headline">#</a></h1>
+<section id="definitie-formala">
+<h2>Definiție formală<a class="headerlink" href="#definitie-formala" title="Permalink to this headline">#</a></h2>
+<p>Ideea pe care am folosit-o încă de cînd am vorbit pentru prima dată despre
+<a class="reference internal" href="p2-s1-grupuri.html#sec-substructuri-morfisme"><span class="std std-ref">(substructuri și) morfisme</span></a> se păstrează.
+În esență, este vorba despre <em>funcții</em> care respectă structura algebrică.
+Iar în ce privește spațiile vectoriale, am văzut de asemenea că principala
+operație este <em>combinația liniară</em>. Astfel că definiția de mai jos ar trebui
+să fie ușor de anticipat și de înțeles:</p>
+<div class="proof definition admonition" id="def-apl-lin">
+<p class="admonition-title"><span class="caption-number">Definition 32 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( V, W \)</span> două spații vectoriale peste același corp <span class="math notranslate nohighlight">\( K \)</span> și <span class="math notranslate nohighlight">\( f : V \to W \)</span>
+o funcție.</p>
+<p><span class="math notranslate nohighlight">\( f \)</span> se numește <em>morfism de spații vectoriale</em> sau <em>aplicație liniară</em>
+dacă:</p>
+<div class="math notranslate nohighlight">
+\[
+  f(\alpha x + \beta y) = \alpha f(x) + \beta f(y), \quad \forall x, y \in V, \alpha, \beta \in K.
+\]</div>
+</section>
+</div><p>Ca să fim riguroși, trebuie să atragem atenția că, deși am notat la fel
+(cu adunare și juxtapunere în loc de înmulțire), operațiile care apar în ecuația
+din definiție sînt diferite:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \alpha x \)</span> și <span class="math notranslate nohighlight">\( \beta y \)</span> din membrul stîng reprezintă înmulțirea cu scalari a vectorilor din <span class="math notranslate nohighlight">\( V \)</span>;</p></li>
+<li><p>adunarea din membrul stîng este operația pe grupul de vectori <span class="math notranslate nohighlight">\( (V, +) \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( \alpha f(x) \)</span> și <span class="math notranslate nohighlight">\( \beta f(y) \)</span> din membrul drept reprezintă înmulțirea cu scalari a vectorilor din <span class="math notranslate nohighlight">\( W \)</span>;</p></li>
+<li><p>adunarea din membrul drept este operația pe grupul de vectori <span class="math notranslate nohighlight">\( (W, +) \)</span>.</p></li>
+</ul>
+<p>În ansamblu, egalitatea respectivă transmite o proprietate similară cu cea din cazul celorlalte
+structuri, anume: fie că facem mai întîi o combinație liniară de vectori din <span class="math notranslate nohighlight">\( V \)</span> cu scalari,
+pe care o trimitem prin <span class="math notranslate nohighlight">\( f \)</span> într-un vector din <span class="math notranslate nohighlight">\( W \)</span> sau mai întîi trimitem vectorii
+din combinația din <span class="math notranslate nohighlight">\( V \)</span> prin <span class="math notranslate nohighlight">\( f \)</span> și apoi facem o combinație cu aceiași scalari în <span class="math notranslate nohighlight">\( W \)</span>,
+trebuie să obținem același lucru.</p>
+<p>În general, în exerciții, aplicațiile liniare sînt ușor de folosit, dar nu la fel de ușor
+de demonstrat că respectă proprietatea definitorie. O observație se impune, totuși:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Atributul <em>liniar</em> care apare atît în cazul combinațiilor de vectori cu scalari, cît și
+al morfismelor de spații vectoriale<a class="footnote-reference brackets" href="#sp-lin" id="id1">1</a> se referă la faptul că nu pot apărea decît
+expresii liniare, adică expresii de gradul întîi.</p>
+<p>De aceea, nu vom întîlni niciodată în spații vectoriale operații de ridicare la putere,
+exponențiere sau altele în afară de expresii de gradul întîi – adică înmulțiri cu scalari
+și adunări.</p>
+</div>
+<p>Iată și un (contra)exemplu care să justifice această afirmație. Vom defini o funcție
+între două spații vectoriale, funcție care va conține o expresie neliniară.
+Vom vedea că nu poate fi morfism, identificînd și motivul, din calcul.</p>
+<p><strong>Exemplu:</strong> Fie <span class="math notranslate nohighlight">\( f : \mathbb{R}^2 \to \mathbb{R}^2, f(x,y) = (x^2, y) \)</span>.
+Am luat un exemplu foarte simplu, care nu modifică deloc a doua componentă, iar primeia
+îi aplică o transformare neliniară – ridicarea la pătrat.</p>
+<p>Fie acum doi vectori din plan, <span class="math notranslate nohighlight">\( v_1 = (x_1, y_1) \)</span> și <span class="math notranslate nohighlight">\( v_2 = (x_2, y_2) \)</span> și
+doi scalari reali <span class="math notranslate nohighlight">\( \alpha, \beta \in \mathbb{R} \)</span>. Ar trebui să obținem că
+<span class="math notranslate nohighlight">\( f(\alpha v_1 + \beta v_2) = \alpha f(v_1) + \beta f(v_2) \)</span>. Calculăm:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  f(\alpha v_1 + \beta v_2) &amp;= f(\alpha x_1 + \beta x_2, \alpha y_1 + \beta y_2) = %
+								((\alpha x_1 + \beta x_2)^2, \alpha y_1 + \beta y_2) \\
+  \alpha f(v_1) + \beta f(v_2) &amp;= \alpha (x_1^2, y_1) + \beta (x_2^2, y_2) = %
+								(\alpha x_1^2 + \beta x_2^2, \alpha y_1 + \beta y_2)
+\end{align*}\end{split}\]</div>
+<p>Cele două expresii sînt evident diferite, tocmai din cauza primei componente.
+Cum vectorii și scalarii sînt arbitrari, avem, desigur:</p>
+<div class="math notranslate nohighlight">
+\[(\alpha x_1 + \beta x_2)^2 \neq \alpha x_1^2 + \beta x_2^2,\]</div>
+<p>așadar <span class="math notranslate nohighlight">\( f \)</span> nu poate fi aplicație liniară (morfism de spații vectoriale).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>În principiu, cum <span class="math notranslate nohighlight">\( \mathbb{R} \)</span> însuși este un spațiu vectorial real, puteam lua un
+exemplu chiar și mai simplu, anume o funcție <span class="math notranslate nohighlight">\( f : \mathbb{R} \to \mathbb{R} \)</span>,
+de pildă <span class="math notranslate nohighlight">\( f(x) = x^2 \)</span>. Proprietatea de aplicație liniară ar însemna în acest
+caz că <span class="math notranslate nohighlight">\( f(\alpha x + \beta y) = \alpha f(x) + \beta f(y) \)</span>, adică
+<span class="math notranslate nohighlight">\( (\alpha x + \beta y)^2 = \alpha x^2 + \beta y^2 \)</span>, evident fals.</p>
+</div>
+<p>Această observație ne ajută să realizăm că, dacă vrem să construim un morfism de spații
+vectoriale, neapărat trebuie să folosim doar expresii de gradul întîi. Ceea ce, în același timp,
+este și natural: oricum nu avem definită o operație de <em>înmulțire între vectori</em>, astfel că nu
+am ști ce înseamnă ridicarea la pătrat în cazul unui vector. Însă în ce privește scalarii, de exemplu,
+are sens, cel puțin în principiu, o definiție de forma:</p>
+<div class="math notranslate nohighlight">
+\[f(v) = \alpha^2 v,\]</div>
+<p>pentru un posibil morfism de spații vectoriale <span class="math notranslate nohighlight">\( f : V \to W \)</span> și <span class="math notranslate nohighlight">\( \alpha \)</span> un scalar fixat din <span class="math notranslate nohighlight">\( K \)</span>.
+Aceasta deoarece în corpul de scalari putem opera cu înmulțire.</p>
+<p>Sigur, numai faptul că avem de-a face cu o expresie de gradul întîi în cazul vectorilor
+(adică nu apar înmulțiri de vectori sau puteri) nu garantează că o funcție este și morfism.
+Iată un exemplu rezolvat pentru demonstrația completă.</p>
+<p><strong>Exemplu:</strong> Fie <span class="math notranslate nohighlight">\( f : \mathbb{R}^3 \to \mathbb{R}^2, f(x, y, z) = (3x - y, x + 2z) \)</span>.
+Arătăm că <span class="math notranslate nohighlight">\( f \)</span> este aplicație liniară, adică morfism de spații vectoriale (reale).</p>
+<p>Definiția am scris-o în varianta explicită, pentru că avem nevoie să evidențiem componentele
+(coordonatele) vectorilor. Astfel, ținînd cont de faptul că un vector <span class="math notranslate nohighlight">\( v \in \mathbb{R}^3 \)</span>
+înseamnă, de fapt, <span class="math notranslate nohighlight">\( v = (x, y, z) \)</span> și similar în cazul unui vector din <span class="math notranslate nohighlight">\( \mathbb{R}^2 \)</span>,
+care are două componente, am scris explicit definiția funcției.</p>
+<p>Acum, ca să arătăm că <span class="math notranslate nohighlight">\( f \)</span> este morfism, folosim definiția. Luăm doi scalari arbitrari
+din <span class="math notranslate nohighlight">\( \mathbb{R} \)</span>, <span class="math notranslate nohighlight">\( \alpha \)</span> și <span class="math notranslate nohighlight">\( \beta \)</span> și doi vectori arbitrari din <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span>.
+Fie aceștia <span class="math notranslate nohighlight">\( v_1 = (x_1, y_1, z_1) \)</span> și <span class="math notranslate nohighlight">\( v_2 = (x_2, y_2, z_2) \)</span>.</p>
+<p>Calculăm combinația liniară:</p>
+<div class="math notranslate nohighlight">
+\[\alpha v_1 + \beta v_2 = \dots = (\alpha x_1 + \beta x_2, \alpha y_1 + \beta y_2, \alpha z_1 + \beta z_2).\]</div>
+<p>Acum trebuie să aplicăm <span class="math notranslate nohighlight">\( f \)</span> acestei expresii, iar acțiunea sa poate fi înțeleasă cel mai bine
+interpretînd „în cuvinte“ definiția: se obține un vector cu 2 componente, în care prima
+componentă este diferența între triplul primei componente și a doua componentă din vectorul inițial,
+iar a doua componentă a rezultatului este suma între prima componentă și dublul celei de-a treia
+componente din vectorul inițial.</p>
+<p>Este mai util să înțelegem acțiunea astfel, pentru că acum, componentele au o altă formă.
+Deci în combinația liniară de mai sus, avem un fel de corespondență de forma:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  x &amp;\mapsto \alpha x_1 + \beta x_2 \\
+  y &amp;\mapsto \alpha y_1 + \beta y_2 \\
+  z &amp;\mapsto \alpha z_1 + \beta z_2
+\end{align*}.\end{split}\]</div>
+<p>Acestea fiind noile componente, găsim:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  f(\alpha x_1 + \beta x_2, \alpha y_1 + \beta y_2, \alpha z_1 + \beta z_2) &amp;= %
+    (3(\alpha x_1 + \beta x_2) - (\alpha y_1 + \beta y_2), (\alpha x_1 + \beta x_2) + 2(\alpha z_1 + \beta z_2)) \\
+    &amp;= (3\alpha x_1 + 3\beta x_2 - \alpha y_1 - \beta y_2, \alpha x_1 + \beta x_2 + 2\alpha z_1 + 2\beta z_2).
+\end{align*}\end{split}\]</div>
+<p>Această expresie alcătuiește membrul stîng al definiției aplicației liniare (termenul <span class="math notranslate nohighlight">\( f(\alpha x + \beta y) \)</span>).</p>
+<p>Pentru membrul drept, calculăm succesiv:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  f(v_1) &amp;= f(x_1, y_1, z_1) = (3x_1 - y_1, x_1 + 2z_1) \\
+  f(v_2) &amp;= f(x_2, y_2, z_2) = (3x_2 - y_2, x_2 + 2z_2) \Rightarrow \\
+  \alpha f(v_1) + \beta f(v_2) &amp;= \alpha(3x_1 - y_1, x_1 + 2z_1) + \beta(3x_2 - y_2, x_2 + 2z_2) \\
+    &amp;= (3\alpha x_1 - \alpha y_1 + 3\beta x_2 - \beta y_2, \alpha x_1 + 2\alpha z_1 + \beta x_2 + 2\beta z_2).
+\end{align*}\end{split}\]</div>
+<p>Cu atenție, vom constata că cele două expresii coincid, așadar <span class="math notranslate nohighlight">\( f \)</span> este o aplicație liniară.</p>
+<hr class="docutils" />
+<p>Am început chiar cu un exemplu de aplicație liniară între două spații vectoriale diferite
+pentru a arăta cazul cel mai interesant, cînd se transformă vectori de un anumit tip în
+vectori de alt tip. De pildă, putem avea și aplicații liniare <span class="math notranslate nohighlight">\( M_2(\mathbb{R}) \to \mathbb{R}^3 \)</span>,
+care transformă matrice în vectori din spațiul tridimensional sau aplicații liniare
+<span class="math notranslate nohighlight">\( \mathbb{R}_2[X] \to \mathbb{R}_{3}[X] \)</span>, care transformă polinoame de grad cel mult 2
+în polinoame de grad cel mult 3.</p>
+<p>Vom explora astfel de exemple ceva mai tîrziu, după ce mai introducem cîteva noțiuni importante
+privitoare la aplicații liniare.</p>
+<hr class="docutils" />
+<p>Mai adăugăm că, asemenea cazului morfismelor de grupuri sau inele, avem:</p>
+<div class="proof definition admonition" id="def-izomorfism">
+<p class="admonition-title"><span class="caption-number">Definition 33 </span></p>
+<section class="definition-content" id="proof-content">
+<ul class="simple">
+<li><p>Un morfism bijectiv se numește <em>izomorfism</em>. Dacă spațiile <span class="math notranslate nohighlight">\( V \)</span> și <span class="math notranslate nohighlight">\( W \)</span> sînt izomorfe, notăm
+acest lucru cu <span class="math notranslate nohighlight">\( V \simeq W \)</span>;</p></li>
+<li><p>Un morfism bijectiv în care domeniul de definiție și codomeniul coincid se numește <em>automorfism</em>.</p></li>
+</ul>
+</section>
+</div></section>
+<section id="nucleu-imagine">
+<h2>Nucleu, imagine<a class="headerlink" href="#nucleu-imagine" title="Permalink to this headline">#</a></h2>
+<p>Tot ca în cazul general al morfismelor, avem noțiunile de <em>nucleu</em> și <em>imagine</em>, cu definițiile
+și proprietățile așteptate.</p>
+<div class="proof definition admonition" id="def-ker-apl-lin">
+<p class="admonition-title"><span class="caption-number">Definition 34 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( f : V \to W \)</span> un morfism de <span class="math notranslate nohighlight">\( K \)</span>-spații vectoriale.</p>
+<p>Se definește <em>nucleul</em> lui <span class="math notranslate nohighlight">\( f \)</span> ca fiind:</p>
+<div class="math notranslate nohighlight">
+\[
+  \mathrm{Ker}(f) = \{ v \in V \mid f(v) = 0_W \},
+\]</div>
+<p>adică mulțimea vectorilor din <span class="math notranslate nohighlight">\( V \)</span> a căror imagine este vectorul nul din <span class="math notranslate nohighlight">\( W \)</span>.</p>
+<p>Se definește <em>imaginea</em> lui <span class="math notranslate nohighlight">\( f \)</span> ca fiind:</p>
+<div class="math notranslate nohighlight">
+\[
+  \mathrm{Im}(f) = f(V) = \{ w \in W \mid \exists v \in V, f(v) = w \}
+\]</div>
+<p>adică mulțimea valorilor efectiv luate de <span class="math notranslate nohighlight">\( f \)</span>.</p>
+</section>
+</div><div class="proof theorem admonition" id="thm-ker-inj-apl-lin">
+<p class="admonition-title"><span class="caption-number">Theorem 21 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( f : V \to W \)</span> un morfism de <span class="math notranslate nohighlight">\( K \)</span>-spații vectoriale. Atunci:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( f \)</span> este injectiv dacă și numai dacă <span class="math notranslate nohighlight">\( \mathrm{Ker}(f) = \{ 0_V \} \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( f \)</span> este surjectiv dacă și numai dacă <span class="math notranslate nohighlight">\( \mathrm{Im}(f) = W \)</span>.</p></li>
+</ul>
+</section>
+</div><p>Și, un rezultat foarte util, a cărui demonstrație vă invităm să o schițați:</p>
+<div class="proof theorem admonition" id="thm-ker-subsp">
+<p class="admonition-title"><span class="caption-number">Theorem 22 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( f : V \to W \)</span> un morfism de <span class="math notranslate nohighlight">\( K \)</span>-spații vectoriale. Atunci:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \mathrm{Ker}f \)</span> este subspațiu vectorial al lui <span class="math notranslate nohighlight">\( V \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( \mathrm{Im}f \)</span> este subspațiu vectorial al lui <span class="math notranslate nohighlight">\( W \)</span>.</p></li>
+</ul>
+</section>
+</div><p>Lucrul cu aplicații liniare, nucleu și imagine, împreună cu proprietățile lor oferă
+rezultate mai spectaculoase decît în cazul grupurilor sau inelelor, deoarece structura
+de spațiu vectorial este mai bogată.</p>
+<p>Una dintre cele mai importante aplicații este aceasta:</p>
+<div class="proof theorem admonition" id="thm-apl-lin-indep">
+<p class="admonition-title"><span class="caption-number">Theorem 23 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( f : V \to W \)</span> o aplicație liniară de <span class="math notranslate nohighlight">\( K \)</span>-spații vectoriale
+și <span class="math notranslate nohighlight">\( L \)</span> un sistem liniar independent în <span class="math notranslate nohighlight">\( V \)</span>, iar <span class="math notranslate nohighlight">\( G \)</span> un sistem de
+generatori în <span class="math notranslate nohighlight">\( V \)</span>.</p>
+<ul class="simple">
+<li><p>Dacă <span class="math notranslate nohighlight">\( f \)</span> este injectivă, atunci <span class="math notranslate nohighlight">\( f(L) \)</span> este sistem liniar independent în <span class="math notranslate nohighlight">\( W \)</span>;</p></li>
+<li><p>Dacă <span class="math notranslate nohighlight">\( f \)</span> este surjectivă, atunci <span class="math notranslate nohighlight">\( f(G) \)</span> este sistem de generatori în <span class="math notranslate nohighlight">\( W \)</span>;</p></li>
+<li><p>Dacă <span class="math notranslate nohighlight">\( f \)</span> este bijectivă și <span class="math notranslate nohighlight">\( B \)</span> este o bază a lui <span class="math notranslate nohighlight">\( V \)</span>, atunci <span class="math notranslate nohighlight">\( f(B) \)</span> este o bază
+a lui <span class="math notranslate nohighlight">\( W \)</span>. Rezultă, în particular, în acest caz, că <span class="math notranslate nohighlight">\( \dim V = \dim W \)</span>.</p></li>
+</ul>
+</section>
+</div><p>Demonstrația este utilă, deoarece ilustrează lucrul cu proprietăți importante:</p>
+<div class="proof admonition" id="proof">
+<p>Proof. Presupunem că <span class="math notranslate nohighlight">\( f \)</span> este injectivă și:</p>
+<div class="math notranslate nohighlight">
+\[
+  L = \{ x_1, x_2, \dots, x_n \}, \quad %
+  f(L) = \{ f(x_1), f(x_2), \dots, f(x_n) \}
+\]</div>
+<p>Pentru a arăta că <span class="math notranslate nohighlight">\( f(L) \)</span> este liniar independentă, prespunem că avem o combinație
+liniară nulă în <span class="math notranslate nohighlight">\( W \)</span> de forma:</p>
+<div class="math notranslate nohighlight">
+\[
+  \alpha_1 f(x_1) + \alpha_2 f(x_2) + \dots + \alpha_n f(x_n) = 0_W
+\]</div>
+<p>Dar, folosind proprietățile aplicațiilor liniare, putem rescrie aceasta sub forma:</p>
+<div class="math notranslate nohighlight">
+\[
+  f(\alpha_1 x_1 + \alpha_2 x_2 + \dots + \alpha_n x_n) = 0_W \Rightarrow %
+  \alpha_1 x_1 + \alpha_2 x_2 + \dots + \alpha_n x_n \in \mathrm{Ker}f.
+\]</div>
+<p>Cum <span class="math notranslate nohighlight">\( f \)</span> este, însă, injectivă, rezultă <span class="math notranslate nohighlight">\( \mathrm{Ker}f = \{ 0_V \} \)</span>,
+deci combinația lniiară respectivă – care este acum de vectori din <span class="math notranslate nohighlight">\( V \)</span> –
+trebuie să fie vectorul nul. Însă combinația folosește numai vectori din <span class="math notranslate nohighlight">\( L \)</span>,
+care este mulțime liniar independentă, ceea ce face ca toți scalarii <span class="math notranslate nohighlight">\( \alpha_i \)</span>
+să fie nuli <span class="math notranslate nohighlight">\( 1 \leq i \leq n \)</span>, de unde rezultă că și <span class="math notranslate nohighlight">\( f(L) \)</span> este liniar
+independentă.</p>
+<p>Pentru sistemul de generatori, mai întîi notațiile:</p>
+<div class="math notranslate nohighlight">
+\[
+  G = \{ g_1, g_2, \dots, g_t \}, \quad f(G) = \{ f(g_1), f(g_2), \dots, f(g_t) \}.
+\]</div>
+<p>Fie acum <span class="math notranslate nohighlight">\( w \in W \)</span>. Căutăm scalari <span class="math notranslate nohighlight">\( \alpha_i, 1 \leq i \leq n \)</span> astfel încît <span class="math notranslate nohighlight">\( w \)</span>
+se poate scrie ca o combinație liniară:</p>
+<div class="math notranslate nohighlight">
+\[
+  w = \alpha_1 f(g_1) + \alpha_2 f(g_2) + \dots + \alpha_t f(g_t).
+\]</div>
+<p>Dar cum <span class="math notranslate nohighlight">\( f \)</span> este surjectivă, rezultă că <span class="math notranslate nohighlight">\( w \in \mathrm{Im}f \)</span>, deci <span class="math notranslate nohighlight">\( w \)</span> se poate
+scrie ca <span class="math notranslate nohighlight">\( f(v) = w \)</span>, pentru un anume <span class="math notranslate nohighlight">\( v \in V \)</span>. În <span class="math notranslate nohighlight">\( V \)</span> avem sistemul de generatori
+<span class="math notranslate nohighlight">\( G \)</span>, rezultă că <span class="math notranslate nohighlight">\( v \)</span> se poate scrie ca o combinație liniară:</p>
+<div class="math notranslate nohighlight">
+\[
+  v = \beta_1 g_1 + \beta_2 g_2 + \dots + \beta_t g_t, \quad \beta_i \in K, 1 \leq i \leq t.
+\]</div>
+<p>Atunci nu avem decît să aplicăm morfismul <span class="math notranslate nohighlight">\( f \)</span> acestei egalități și să găsim:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \begin{align*}
+    f(v) &amp;= f(\beta_1 g_1 + \beta_2 g_2 + \dots + \beta_t g_t) \\
+       w &amp;= \beta_1 f(g_1) + \beta_2 f(g_2) + \dots + \beta_t f(g_t)
+  \end{align*}
+\end{split}\]</div>
+<p>și avem exact ceea ce căutam: scalarii <span class="math notranslate nohighlight">\( \alpha_i, 1 \leq i \leq t \)</span> sînt tocmai scalarii
+<span class="math notranslate nohighlight">\( \beta_i, 1 \leq i \leq t \)</span>.</p>
+<p>A treia afirmație este o consecință directă a primelor două.</p>
+</div>
+<p>Toate afirmațiile teoremei anterioare pot fi făcute și reciproc și vă invităm să le formulați
+și să le demonstrați.</p>
+<p>Cu acestea, avem, în particular:</p>
+<div class="proof corollary admonition" id="cor-izom-dim">
+<p class="admonition-title"><span class="caption-number">Corollary 1 </span></p>
+<section class="corollary-content" id="proof-content">
+<p>Două spații vectoriale sînt izomorfe dacă și numai dacă au aceeași dimensiune.</p>
+</section>
+</div><hr class="docutils" />
+<p>Acest ultim rezultat, deși este formulat ca un corolar, are o importanță deosebită.
+El ne arată că, <em>pînă la un izomorfism</em>, este suficient să studiem un singur spațiu
+vectorial de o dimensiune fixată.</p>
+<p>În același timp, obținem imediat izomorfisme de forma:</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{R}^4 \simeq M_2(\mathbb{R}) \simeq \mathbb{R}_3[X]\]</div>
+<p>și putem trage o concluzie precum:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Este suficient să studiem spațiile de forma <span class="math notranslate nohighlight">\( \mathbb{R}^n \)</span> pentru a înțelege
+„toate“ spațiile vectoriale finit dimensionale.</p>
+</div>
+<p>Aceasta deoarece, de pildă, în loc de o matrice cu 2 linii și 2 coloane sau polinoame
+de grad cel mult 3, putem lucra cu cvadrupluri de numere reale. Sau în loc de matrice
+cu 3 linii și 3 coloane ori de polinoame de grad cel mult 8, putem lucra cu șiruri de
+9 numere reale ș.a.m.d.</p>
+<p>În continuare, încă o construcție unificatoare, care ne va arăta motivul pentru care
+apar un fel de „coincidențe“ cînd lucrăm cu matrice în cazul spațiilor vectoriale.</p>
+</section>
+<section id="matricea-unei-aplicatii-liniare">
+<h2>Matricea unei aplicații liniare<a class="headerlink" href="#matricea-unei-aplicatii-liniare" title="Permalink to this headline">#</a></h2>
+<p>Legătura între spații vectoriale și calcul matriceal este una foarte strînsă.
+Nu doar că orice spațiu vectorial finit dimensional poate fi gîndit ca un spațiu
+de matrice<a class="footnote-reference brackets" href="#sp-mat" id="id2">2</a>, dar și din punct de vedere computațional, există multe corespondențe
+utile. De exemplu, produsul a două matrice (să le presupunem pătratice, de aceeași
+mărime, pentru simplitate) se poate interpreta ca o combinație liniară a unor
+scalari care alcătuiesc liniile primei matrice cu vectorii 1-dimensionali (scalarii)
+care alcătuiesc coloanele celei de-a doua matrice.</p>
+<p>O astfel de explicație este ușor forțată, însă legătura între <em>aplicarea unui morfism</em>
+și <em>înmulțirea cu o matrice</em> este una foarte strînsă și riguroasă. Asupra acestui
+concept ne vom concentra acum.</p>
+<div class="proof definition admonition" id="def-mat-apl">
+<p class="admonition-title"><span class="caption-number">Definition 35 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( f : V \to W \)</span> o aplicație liniară și <span class="math notranslate nohighlight">\( B_V \)</span>, respectiv <span class="math notranslate nohighlight">\( B_W \)</span> cîte o bază în <span class="math notranslate nohighlight">\( V, W \)</span>.</p>
+<p>Se numește <em>matricea aplicației <span class="math notranslate nohighlight">\( f \)</span> relativ la bazele <span class="math notranslate nohighlight">\( B_V, B_W \)</span></em>, notată
+<span class="math notranslate nohighlight">\( M_f^{B_V, B_W} \)</span>, matricea care are drept coloane coordonatele imaginilor
+vectorilor din baza <span class="math notranslate nohighlight">\( B_V \)</span> în baza <span class="math notranslate nohighlight">\( B_W \)</span>.</p>
+</section>
+</div><p>Exprimarea anterioară este destul de complicată și reprezintă un caz pe care o să-l întîlnim
+destul de rar. Să îl ilustrăm, totuși.</p>
+<p><strong>Exemplu:</strong> Fie <span class="math notranslate nohighlight">\( V = \mathbb{R}^2 \)</span> și <span class="math notranslate nohighlight">\( W = \mathbb{R}^3 \)</span>. Definim aplicația:</p>
+<div class="math notranslate nohighlight">
+\[f : V \to W, \quad f(a, b) = (2a - b, 2b - a, 3b), \forall (a, b) \in V.\]</div>
+<p>Presupunem că am demonstrat că <span class="math notranslate nohighlight">\( f \)</span> este aplicație liniară (exercițiu!).</p>
+<p>Tot pentru a ilustra cazul general, să luăm două baze, diferite de bazele canonice:</p>
+<div class="math notranslate nohighlight">
+\[B_V = \{ (1, -1), (0, 2) \}, \quad B_W = \{ (0, 1, 1), (-1, 2, 0), (1, 1, 1) \}.\]</div>
+<p>Exercițiu: Demonstrați că <span class="math notranslate nohighlight">\( B_V \)</span> este bază în <span class="math notranslate nohighlight">\( V \)</span> și <span class="math notranslate nohighlight">\( B_W \)</span> este bază în <span class="math notranslate nohighlight">\( W \)</span>.</p>
+<p>Acum, conform definiției, trebuie să calculăm imaginile vectorilor din <span class="math notranslate nohighlight">\( B_V \)</span> prin <span class="math notranslate nohighlight">\( f \)</span>,
+iar vectorii rezultați să-i exprimăm în baza <span class="math notranslate nohighlight">\( B_W \)</span>. Avem:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  f(1, -1) &amp;= (3, -4, -3) = w_1 \\
+  f(0, 2) &amp;= (-2, 4, 6) = w_2
+\end{align*}\end{split}\]</div>
+<p>Trebuie, mai departe, să găsim coordonatele vectorilor <span class="math notranslate nohighlight">\( w_1, w_2 \)</span> în baza <span class="math notranslate nohighlight">\( B_W \)</span>,
+coordonate care devin coloanele matricei căutate. Calculul este simplu, dar laborios.
+Trebuie să găsim, deci, scalarii <span class="math notranslate nohighlight">\( \alpha_1, \beta_1, \gamma_1 \)</span>, respectiv
+<span class="math notranslate nohighlight">\( \alpha_2, \beta_2, \gamma_2 \)</span> astfel încît:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  w_1 &amp;= (3, -4, -3) = \alpha_1 (0, 1, 1) + \beta_1 (-1, 2, 0) + \gamma_1 (1, 1, 1) = \dots = %
+                      (-\beta_1 + \gamma_1, \alpha_1 + 2\beta_1 + \gamma_1, \alpha_1 + \gamma_1) \\
+  w_2 &amp;= (-2, 4, 6) = \alpha_2 (0, 1, 1) + \beta_2 (-1, 2, 0) + \gamma_2 (1, 1, 1) = \dots = %
+                      (-\beta_2 + \gamma_2, \alpha_2 + 2\beta_2 + \gamma_2, \alpha_2 + \gamma_2) \\
+\end{align*}\end{split}\]</div>
+<p>Vedem că, în esență, avem de rezolvat același sistem de ecuații, cu rezultate diferite:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  -\beta_1 + \gamma_1 &amp;= 3 \\
+  \alpha_1 + 2\beta_1 + \gamma_1 &amp;= -4 \\
+  \alpha_1 + \gamma_1 &amp;= -3
+\end{cases} \quad \text{și} \quad
+\begin{cases}
+  -\beta_2 + \gamma_2 &amp;= -2 \\
+  \alpha_2 + 2\beta_2 + \gamma_2 &amp;= 4 \\
+  \alpha_2 + \gamma_2 &amp;= 6
+\end{cases}\end{split}\]</div>
+<p>Matricea ambelor sisteme este:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{pmatrix}
+0 &amp; -1 &amp; 1 \\
+1 &amp; 2 &amp; 1 \\
+1 &amp; 0 &amp; 1
+\end{pmatrix},\end{split}\]</div>
+<p>care este inversabilă, deci ambele sisteme sînt Cramer. <em>Acesta este și cazul general,</em>
+<em>pentru că matricea unei aplicații liniare este unic definită.</em></p>
+<p>Soluțiile sînt:</p>
+<div class="math notranslate nohighlight">
+\[(\alpha_1, \beta_1, \gamma_1) = \left( -\dfrac{11}{2}, -\dfrac{1}{2}, \dfrac{5}{2} \right) \quad %
+(\alpha_2, \beta_2, \gamma_2) = (9, -1, -3).\]</div>
+<p>Așadar:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}M_f^{B_V, B_W} = \begin{pmatrix}
+-11/2 &amp; 9 \\
+-1/2 &amp; -1 \\
+5/2 &amp; -3
+\end{pmatrix}\end{split}\]</div>
+<p>Cazul ilustrat este cel mai general, în care se folosesc baze oarecare, diferite
+de bazele canonice. Însă în majoritatea cazurilor, se lucrează mult mai simplu.
+Este, de aceea, potrivit să facem chiar aici o observație.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Dacă nu se precizează altfel, vom lucra numai cu bazele canonice
+în spațiile vectoriale studiate.</p>
+<p>În plus, în acest caz, vom simplifica și notația pentru matricea unei
+aplicații <span class="math notranslate nohighlight">\( f \)</span> în bazele canonice, scriind simplu <span class="math notranslate nohighlight">\( M_f \)</span>.</p>
+</div>
+<p>Pentru cazul bazelor canonice, calculele se simplifică mult:</p>
+<p><strong>Exemplu:</strong> Fie aplicația:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}f : M_2(\mathbb{R}) \to \mathbb{R}_2[X], \quad %
+f \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} = (a - d) + bX + (2c - d)X^2.\end{split}\]</div>
+<p>Ca un exercițiu simplu, arătați că <span class="math notranslate nohighlight">\( f \)</span> este aplicație liniară.</p>
+<p>Presupunem acum că lucrăm cu <a class="reference internal" href="p2-s4-baza.html#sec-baze-canonice"><span class="std std-ref">bazele canonice</span></a>. Calculăm:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  f \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix} &amp;= 1 - X^2 \\
+  f \begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{pmatrix} &amp;= X \\
+  f \begin{pmatrix} 0 &amp; 0 \\ 1 &amp; 0 \end{pmatrix} &amp;= 2X^2 \\
+  f \begin{pmatrix} 0 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} &amp;= -X^2
+\end{align*}\end{split}\]</div>
+<p>Dar, cum lucrăm cu bazele canonice, coordonatele vectorilor sînt foarte simplu de găsi:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  1 - X^2 &amp;= 1 \cdot 1 + 0 \cdot X + (-1) \cdot X^2 \\
+  X &amp;= 0 \cdot 1 + 1 \cdot X + 0 \cdot X^2 \\
+  2X^2 &amp;= 0 \cdot 1 + 0 \cdot X + 2 \cdot X^2 \\
+  -X^2 &amp;= 0 \cdot 1 + 0 \cdot X + (-1) \cdot X^2
+\end{align*}\end{split}\]</div>
+<p>Deci obținem imediat:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}M_f = \begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+-1 &amp; 0 &amp; 2 &amp; -1
+\end{pmatrix}\end{split}\]</div>
+<p>O observație importantă, care va ușura unele legături între aplicații liniare și calcule
+matriceale, este următoarea:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Dacă <span class="math notranslate nohighlight">\( f : V \to W \)</span> este o aplicație liniară, iar <span class="math notranslate nohighlight">\( A = M_f \)</span> este matricea sa în
+bazele canonice, atunci pentru orice vector <span class="math notranslate nohighlight">\( v \in V \)</span>, a calcula <span class="math notranslate nohighlight">\( f(v) \)</span> este
+același lucru cu a înmulți matricea <span class="math notranslate nohighlight">\( A \)</span> cu vectorul-coloană dat de coordonatele
+lui <span class="math notranslate nohighlight">\( v \)</span> în baza canonică a lui <span class="math notranslate nohighlight">\( V \)</span>.</p>
+</div>
+<p>Iată un exemplu:</p>
+<div class="math notranslate nohighlight">
+\[f : \mathbb{R}^3 \to \mathbb{R}^2, \quad f(a, b, c) = (2a - 2c, b + c)\]</div>
+<p>Matricea aplicației <span class="math notranslate nohighlight">\( f \)</span> în bazele canonice se obține imediat din:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  f(1, 0, 0) &amp;= (2, 0) \\
+  f(0, 1, 0) &amp;= (0, 1) \\
+  f(0, 0, 1) &amp;= (-2, 1)
+\end{align*} \Rightarrow %
+M_f = \begin{pmatrix}
+  2 &amp; 0 &amp; -2 \\
+  0 &amp; 1 &amp; 1
+  \end{pmatrix}\end{split}\]</div>
+<p>Să luăm un vector oarecare, de exemplu <span class="math notranslate nohighlight">\( v = (-2, 3, 4) \in \mathbb{R}^3 \)</span>.
+Am afirmat că acalcula <span class="math notranslate nohighlight">\( f(v) \)</span> este același lucru cu a înmulți vectorul-coloană
+<span class="math notranslate nohighlight">\( v \)</span> (care coincide cu vectorul coordonatelor sale, dat fiind că lucrăm cu bazele
+canonice) cu matricea <span class="math notranslate nohighlight">\( M_f \)</span>. Verificăm:</p>
+<div class="math notranslate nohighlight">
+\[f(v) = f(-2, 3, 4) = (-12, 7)\]</div>
+<p>Apoi:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}
+  2 &amp; 0 &amp; -2 \\
+  0 &amp; 1 &amp; 1
+\end{pmatrix} \cdot %
+\begin{pmatrix}
+-2 \\ 3 \\ 4
+\end{pmatrix} = %
+\begin{pmatrix}
+-12 \\ 7
+\end{pmatrix}\end{split}\]</div>
+<p>O astfel de legătură se va folosi atunci cînd vom calcula explicit nucleul și
+imaginea unei aplicații liniare, de pildă, putînd lucra mai simplu, cu matricea
+asociată aplicației în bazele canonice. O primă astfel de aplicație urmează.</p>
+</section>
+<section id="teorema-rang-defect">
+<h2>Teorema rang-defect<a class="headerlink" href="#teorema-rang-defect" title="Permalink to this headline">#</a></h2>
+<p>Înainte să putem prezenta aplicații mai sofisticate ale noțiunilor de pînă acum,
+avem nevoie de un rezultat tehnic, ce se va dovedi foarte util în lucrul cu nucleul
+și imaginea unei aplicații liniare. Mai întîi, o definiție de terminologie:</p>
+<div class="proof definition admonition" id="def-rang-def">
+<p class="admonition-title"><span class="caption-number">Definition 36 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( f : V \to W \)</span> o aplicație liniară.</p>
+<ul class="simple">
+<li><p>Se numește <em>rangul</em> aplicației, notat <span class="math notranslate nohighlight">\( \mathrm{rang}(f) \)</span>, dimensiunea (sub)spațiului
+<span class="math notranslate nohighlight">\( \mathrm{Im{f \leq W \)</span>.</p></li>
+<li><p>Se numește <em>defectul</em> aplicației, notat <span class="math notranslate nohighlight">\( \mathrm{def}(f) \)</span>, dimensiunea (sub)spațiului
+<span class="math notranslate nohighlight">\( \mathrm{Ker}f \leq V \)</span>.</p></li>
+</ul>
+</section>
+</div><p>Denumirea nu este întîmplătoare și avem:</p>
+<div class="proof theorem admonition" id="thm-rang-def">
+<p class="admonition-title"><span class="caption-number">Theorem 24 </span> (Teorema rang-defect)</p>
+<section class="theorem-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( f : V \to W \)</span> o aplicație liniară. Atunci:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \mathrm{rang}(f) = \mathrm{rang}M_f \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( \mathrm{rang}(f) + \mathrm{def}(f) = \dim V \)</span>.</p></li>
+</ul>
+</section>
+</div><p>Imediat vom vedea aplicații și moduri de utilizare ale acestor noțiuni.</p>
+</section>
+<section id="exercitiu-rezolvat">
+<h2>Exercițiu rezolvat<a class="headerlink" href="#exercitiu-rezolvat" title="Permalink to this headline">#</a></h2>
+<p>În continuare, un exercițiu ceva mai sofisticat, cu rezolvare (aproape) completă.
+Scopul acestei secțiuni este să punem cap la cap cît mai multe dintre noțiunile
+întîlnite, împreună cu aplicațiile lor.</p>
+<p><strong>Exemplu:</strong> Fie aplicația liniară:</p>
+<div class="math notranslate nohighlight">
+\[f : \mathbb{R}^2 \to \mathbb{R}^3, \quad f(x, y) = (3x - 2y, 2x, y - x).\]</div>
+<p>Calculăm matricea aplicației în bazele canonice:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  f(1, 0) &amp;= (3, 2, -1) \\
+  f(0, 1) &amp;= (-2, 0, 1)
+\end{align*}\end{split}\]</div>
+<p>Acum, descompunerea celor doi vectori în baza canonică a lui <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span> este
+ca și făcută, întrucît componentele vectorilor sînt chiar coordonatele lor:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  (3, 2, -1) &amp;= 3 \cdot (1, 0, 0) + 2 \cdot (0, 1, 0) + (-1) \cdot (0, 0, 1) \\
+  (-2, 0, 1) &amp;= (-2) \cdot (1, 0, 0) + 0 \cdot (0, 1, 0) + 1 \cdot (0, 0, 1).
+\end{align*}\end{split}\]</div>
+<p>Așadar, <span class="math notranslate nohighlight">\( M_f = \begin{pmatrix} 3 &amp; 2 \\ 2 &amp; 0 \\ -1 &amp; 1 \end{pmatrix} \)</span>.</p>
+<p>Mai departe, să determinăm nucleul și imaginea aplicației. Prin definiție, avem:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{Ker}f = \{ (x, y) \in \mathbb{R}^2 \mid f(x, y) = (0, 0, 0) \}\]</div>
+<p>Dacă aplicăm definiția lui <span class="math notranslate nohighlight">\( f \)</span>, obținem succesiv:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}(3x - 2y, 2x, y - x) = (0, 0, 0) \Rightarrow %
+\begin{cases}
+  3x - 2y &amp;= 0 \\
+  2x &amp;= 0 \\
+  y - x &amp;= 0
+\end{cases}\end{split}\]</div>
+<p>și se vede imediat că sistemul are doar soluția trivială, deci <span class="math notranslate nohighlight">\( \mathrm{Ker}f = \{ (0, 0) \} \)</span>.
+O consecință este că <span class="math notranslate nohighlight">\( f \)</span> <em>este injectivă</em>.</p>
+<p>Acum să determinăm și imaginea aplicației, <span class="math notranslate nohighlight">\( \mathrm{Im}f \)</span>. Din definiție, avem:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{Im}f = \{ (x, y, z) \in \mathbb{R}^3 \mid \exists (a, b) \in \mathbb{R}^2, f(a, b) = (x, y, z) \}\]</div>
+<p>Dar, conform teoremei rang-defect (teorema <a class="reference internal" href="#thm-rang-def">Theorem 24</a>), putem calcula <span class="math notranslate nohighlight">\( \dim \mathrm{Im}f \)</span>
+ca <span class="math notranslate nohighlight">\( \mathrm{rang}f = \mathrm{rang}M_f \)</span>. Se vede imediat că <span class="math notranslate nohighlight">\( \mathrm{rang}M_f = 2 \)</span>, deoarece
+avem un minor nenul, de exemplu <span class="math notranslate nohighlight">\( \begin{vmatrix} 3 &amp; 2 \\ 2 &amp; 0 \end{vmatrix} = -4 \)</span>.</p>
+<p>Așadar, <span class="math notranslate nohighlight">\( \dim \mathrm{Im}f = 2 \)</span>, ceea ce poate rezulta și din teorema rang-defect,
+întrucît cum <span class="math notranslate nohighlight">\( \mathrm{Ker}f = \{ (0, 0, 0) \} \)</span>, rezultă <span class="math notranslate nohighlight">\( \mathrm{def}f = \dim\mathrm{Ker}f = 0 \)</span>,
+așadar <span class="math notranslate nohighlight">\( \dim\mathrm{Im}f = \dim \mathbb{R}^2 = 2 \)</span>.</p>
+<p>Dacă vrem să găsim și o bază în spațiul <span class="math notranslate nohighlight">\( \mathrm{Im}f \)</span>, ne putem folosi de calculele deja făcute.
+Știm deja că a calcula <span class="math notranslate nohighlight">\( \mathrm{Im}f \)</span> este același lucru cu a vedea mulțimea
+de valori care se obțin prin înmulțirea vectorilor din <span class="math notranslate nohighlight">\( \mathbb{R}^2 \)</span> cu matricea <span class="math notranslate nohighlight">\( M_f \)</span>.
+Dar din calculul rangului, am văzut deja că cele două coloane ale matricei, pe care le putem înțelege ca
+elemente ale <span class="math notranslate nohighlight">\( \mathrm{Im}f \)</span>, deoarece:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  f(1, 0) &amp;= (3, 2, -1) \\
+  f(0, 1) &amp;= (-2, 0, 1)
+\end{align*}\end{split}\]</div>
+<p>dau rangul, deci definesc vectori liniar independenți. În plus, cum <span class="math notranslate nohighlight">\( \dim\mathrm{Im}f = 2 \)</span>,
+rezultă din teorema alternativei că acești doi vectori formează chiar o bază. În concluzie:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{Im}f = \langle f(1, 0), f(0, 1) \rangle = \langle (3, 2, -1), (-2, 0, 1) \rangle\]</div>
+<p>și avem o bază în <span class="math notranslate nohighlight">\( \mathrm{Im}f \)</span>.</p>
+<p>Remarcăm la acest punct că <span class="math notranslate nohighlight">\( f \)</span> <em>nu este surjectivă</em>, deoarece dimensiunea imaginii
+nu coincide cu dimensiunea codomeniului. Acest lucru era de așteptat, deoarece cum <span class="math notranslate nohighlight">\( f \)</span>
+este injectivă, dacă ar fi și surjectivă, ar rezulta că este bijectivă, ceea ce ar face
+ca <span class="math notranslate nohighlight">\( \mathbb{R}^2 \simeq \mathbb{R}^3 \)</span>, care este evident fals (de exemplu, din motive
+de dimensiune).</p>
+<p>Suplimentar, deoarece <span class="math notranslate nohighlight">\( \mathrm{Im}f \leq \mathbb{R}^3 \)</span>, dar este un subspațiu
+strict (de dimensiune mai mică), să presupunem că vrem să găsim un alt subspațiu
+<span class="math notranslate nohighlight">\( T \leq \mathbb{R}^3 \)</span> astfel încît <span class="math notranslate nohighlight">\( \mathrm{Im}f \oplus T \simeq \mathbb{R}^3 \)</span>.
+Un astfel de subspațiu <span class="math notranslate nohighlight">\( T \)</span> se numește <strong>complement</strong> al lui <span class="math notranslate nohighlight">\( \mathrm{Im}f \)</span> în
+<span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span>.</p>
+<p>Din motive de dimensiune (e.g. teorema lui Grassmann, <a class="reference internal" href="p2-s5-op-subsp.html#thm-grassmann">Theorem 19</a>),
+trebuie să avem <span class="math notranslate nohighlight">\( \dim T = \dim \mathbb{R}^3 - \dim \mathrm{Im}f = 3 - 2 = 1 \)</span>.
+Rezultă că <span class="math notranslate nohighlight">\( T \)</span> va avea în bază un singur vector din <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span>.
+Fie acesta <span class="math notranslate nohighlight">\( \{ (a, b, c) \} \)</span>. În plus, deoarece <span class="math notranslate nohighlight">\( T \)</span> alcătuiește sumă directă
+cu <span class="math notranslate nohighlight">\( \mathrm{Im}f \)</span>, rezultă:</p>
+<div class="math notranslate nohighlight">
+\[T \cap \mathrm{Im}f = \{ (0, 0, 0) \} \Rightarrow (a, b, c) \notin \mathrm{Im}f.\]</div>
+<p>Nu este greu de văzut că există chiar o infinitate de posibilități pentru <span class="math notranslate nohighlight">\( (a, b, c) \)</span>,
+astfel că putem alege una oarecare. Fie, de exemplu, <span class="math notranslate nohighlight">\( (a, b, c) = (1, 2, 3) \)</span>.</p>
+<p>Ne validăm alegerea dacă:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( (1, 2, 3) \notin \mathrm{Im}f \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( (1, 2, 3) \)</span> împreună cu baza lui <span class="math notranslate nohighlight">\( \mathrm{Im}f \)</span> formează o bază pentru <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span>.</p></li>
+</ul>
+<p>Să le luăm pe rînd: presupunem că <span class="math notranslate nohighlight">\( (1, 2, 3) \in \mathrm{Im}f \)</span>. Ar însemna
+că <span class="math notranslate nohighlight">\( (1, 2, 3) \)</span> se poate scrie ca un <span class="math notranslate nohighlight">\( f(x, y) \)</span>, pentru un anume vector <span class="math notranslate nohighlight">\( (x, y) \in \mathbb{R}^2 \)</span>.
+Avem:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}f(x, y) = (3x - 2y, 2x, y - x) = (1, 2, 3) \Rightarrow %
+\begin{cases}
+  3x - 2y &amp;= 1 \\
+  2x &amp;= 2 \\
+  y - x &amp;= 3
+\end{cases}\end{split}\]</div>
+<p>Se vede imediat că sistemul nu este compatibil, deoarece din a doua ecuație am obține
+<span class="math notranslate nohighlight">\( x = 1 \)</span>, din a treia, <span class="math notranslate nohighlight">\( y = 4 \)</span>, dar atunci prima nu este verificată: <span class="math notranslate nohighlight">\( 3 - 8 \neq 1 \)</span>.</p>
+<p>Așadar, nu se poate ca vectorul <span class="math notranslate nohighlight">\( (1, 2, 3) \)</span> să fie obținut ca imagine a unui vector
+din <span class="math notranslate nohighlight">\( \mathbb{R}^2 \)</span> prin morfismul <span class="math notranslate nohighlight">\( f \)</span>, deci <span class="math notranslate nohighlight">\( (1, 2, 3) \notin \mathrm{Im}f \)</span>.</p>
+<p>În fine, pentru a arăta că <span class="math notranslate nohighlight">\( (1, 2, 3) \)</span> completează baza imaginii lui <span class="math notranslate nohighlight">\( f \)</span> la o bază
+a lui <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span>, nu avem decît să alcătuim matricea cu cei trei vectori și să
+verificăm că are un determinant nenul:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}B = \begin{pmatrix}
+3 &amp; -2 &amp; 1 \\
+2 &amp; 0 &amp; 2 \\
+-1 &amp; 1 &amp; 3
+\end{pmatrix} \Rightarrow \det B = 12 \neq 0,\end{split}\]</div>
+<p>ceea ce trebuia demonstrat.</p>
+<section id="observatii-tehnice">
+<h3>Observații tehnice<a class="headerlink" href="#observatii-tehnice" title="Permalink to this headline">#</a></h3>
+<p>Exercițiul exemplificat mai sus poate fi înțeles parțial și intuitiv,
+cel puțin în ce privește proprietățile de injectivitate și surjectivitate ale
+aplicației liniare.</p>
+<p>În general, dacă <span class="math notranslate nohighlight">\( f : V \to W \)</span> este o aplicație liniară, putem fi în una dintre
+următoarele situații:</p>
+<ul class="simple">
+<li><p>dacă <span class="math notranslate nohighlight">\( \dim V &lt; \dim W \)</span>, atunci <span class="math notranslate nohighlight">\( f \)</span> nu poate fi surjectivă. Aceasta deoarece
+ar trebui ca <span class="math notranslate nohighlight">\( f(V) = \mathrm{Im}f \simeq W \)</span>. Dar <span class="math notranslate nohighlight">\( \dim \mathrm{Im}f \)</span> se obține
+din rangul <span class="math notranslate nohighlight">\( M_f \)</span>,care, la rîndul ei, are coloanele obținute din imaginile bazei
+canonice a lui <span class="math notranslate nohighlight">\( V \)</span>, care are un număr strict mai mic de elemente decît baza lui <span class="math notranslate nohighlight">\( W \)</span>.</p></li>
+<li><p>dacă <span class="math notranslate nohighlight">\( \dim V &gt; \dim W \)</span>, atunci <span class="math notranslate nohighlight">\( f \)</span> nu poate fi injectivă. Aceasta rezultă imediat
+din teorema rang-defect: <span class="math notranslate nohighlight">\( \dim \mathrm{Ker}f = \dim V - \dim \mathrm{Im}f \)</span>.
+Dacă <span class="math notranslate nohighlight">\( f \)</span> ar fi injectivă, atunci <span class="math notranslate nohighlight">\( \dim \mathrm{Ker}f = 0 \)</span>, deci <span class="math notranslate nohighlight">\( \dim V = \dim \mathrm{Im}f \)</span>,
+ceea ce este imposibil, pentru că <span class="math notranslate nohighlight">\( \mathrm{Im}f \leq W \)</span>, deci
+<span class="math notranslate nohighlight">\( \dim \mathrm{Im}f \leq \dim W &lt; \dim V \)</span>.</p></li>
+</ul>
+<p>Evident, acest lucru <em>nu</em> garantează că:</p>
+<ul class="simple">
+<li><p>dacă <span class="math notranslate nohighlight">\( \dim V &lt; \dim W \)</span>, atunci <span class="math notranslate nohighlight">\( f \)</span> este injectivă;</p></li>
+<li><p>dacă <span class="math notranslate nohighlight">\( \dim V &gt; \dim W \)</span>, atunci <span class="math notranslate nohighlight">\( f \)</span> este surjectivă;</p></li>
+<li><p>dacă <span class="math notranslate nohighlight">\( \dim V = \dim W \)</span>, atunci <span class="math notranslate nohighlight">\( f \)</span> este bijectivă.</p></li>
+</ul>
+<p>Aceste proprietăți depind de definiția explicită a funcției <span class="math notranslate nohighlight">\( f \)</span>. Dar cel puțin în
+primă fază, putem face observațiile menționate.</p>
+</section>
+</section>
+<section id="exercitii-propuse">
+<h2>Exerciții propuse<a class="headerlink" href="#exercitii-propuse" title="Permalink to this headline">#</a></h2>
+<p>Pentru fiecare dintre funcțiile următoare, <span class="math notranslate nohighlight">\( f : V \to W \)</span>:</p>
+<ul class="simple">
+<li><p>demonstrați că <span class="math notranslate nohighlight">\( f \)</span> este aplicație liniară;</p></li>
+<li><p>găsiți <span class="math notranslate nohighlight">\( M_f \)</span>;</p></li>
+<li><p>găsiți <span class="math notranslate nohighlight">\( \mathrm{Ker}f \)</span> și <span class="math notranslate nohighlight">\( \mathrm{Im}f \)</span>, precizîndu-le dimensiunea și găsiți-le cîte o bază;</p></li>
+<li><p>dacă <span class="math notranslate nohighlight">\( f \)</span> nu este bijectivă, găsiți complementul lui <span class="math notranslate nohighlight">\( \mathrm{Ker} f \)</span> în <span class="math notranslate nohighlight">\( V \)</span> sau, după caz,
+complementul lui <span class="math notranslate nohighlight">\( \mathrm{Im}f \)</span> în <span class="math notranslate nohighlight">\( W \)</span>.</p></li>
+</ul>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\( V = W = \mathbb{R}^3, f(x, y, z) = (3x - y, 0, 2z - x) \)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\( V = \mathbb{R}^3, W = \mathbb{R}^2, f(x, y, z) = (x + y + z, 0) \)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\( V = \mathbb{R}^3, W = M_2(\mathbb{R}), f(x, y, z) = \begin{pmatrix} x &amp; y \\ z &amp; 0 \end{pmatrix} \)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\( V = M_2(\mathbb{R}), W = \mathbb{R}^3, f \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} = (a + b + c + d, a, b) \)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\( V = \mathbb{R}_2[X], W = \mathbb{R}^3, f(a + bX + cX^2) = (2a - b, b + 3c, a - 3c) \)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\( V = M_2(\mathbb{R}), W = \mathbb{R}_{2}[X], f \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} = (a + d) + (b + c)X \)</span>.</p></li>
+</ol>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="sp-lin"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Chiar spațiile vectoriale înseși se mai numesc <em>spații liniare</em>, tocmai pentru a
+evidenția această proprietate. Numele de „vectorial“ amintește de exemplele prototipice, acelea
+ale vectorilor din plan, în timp ce atributul „liniar“ este mai precis, arătînd că putem face
+doar operații de gradul întîi.</p>
+</dd>
+<dt class="label" id="sp-mat"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Am spus deja că un spațiu vectorial de dimensiune <span class="math notranslate nohighlight">\( n \)</span> este, de fapt, izomorf
+cu <span class="math notranslate nohighlight">\( \mathbb{R}^n \)</span>. Dar putem face legătura și cu spații de matrice. De pildă,
+un spațiu vectorial de dimensiune 6 este același lucru (pînă la un izomorfism) cu spațiul
+<span class="math notranslate nohighlight">\( M_{2,3}(\mathbb{R}) \)</span> sau cu spațiul <span class="math notranslate nohighlight">\( M_{3,2}(\mathbb{R}) \)</span>. De fapt, aici este vorba
+despre niște subtilități aritmetice simple: dacă luăm <span class="math notranslate nohighlight">\( n = 12 \)</span>, un număr cu mulți
+divizori, atunci <span class="math notranslate nohighlight">\( \mathbb{R}^{12} \)</span> poate fi gîndit (pînă la un izomorfism) fie ca
+<span class="math notranslate nohighlight">\( M_{2,6}(\mathbb{R}) \)</span>, fie ca <span class="math notranslate nohighlight">\( M_{6,2}(\mathbb{R}) \)</span>, fie ca <span class="math notranslate nohighlight">\( M_{3,4}(\mathbb{R}) \)</span>,
+fie ca <span class="math notranslate nohighlight">\( M_{4,3}(\mathbb{R}) \)</span> sau chiar drept cazurile extreme, <span class="math notranslate nohighlight">\( M_{12,1}(\mathbb{R}) \)</span>
+ori <span class="math notranslate nohighlight">\( M_{1,12}(\mathbb{R}) \)</span>. Dacă <span class="math notranslate nohighlight">\( n \)</span> ar fi fost un număr prim, de exemplu <span class="math notranslate nohighlight">\( n = 5 \)</span>
+sau <span class="math notranslate nohighlight">\( n = 7 \)</span>, atunci am fi putut obține doar cazurile degenerate de matrice: matrice-linie
+sau matrice-coloană. Chiar și așa, însă, rămîne adevărat că un spațiu vectorial finit
+dimensional poate fi privit (pînă la un izomorfism) ca un spațiu de matrice.</p>
+</dd>
+</dl>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="p2-s5-op-subsp.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Operații cu subspații</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="p2-s7-ortonormare.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Produs scalar și ortonormare</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Adrian Manea (Poligon Educational)<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

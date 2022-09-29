@@ -1,0 +1,1375 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Spații vectoriale &#8212; Algebră liniară și aplicații</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/proof.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Bază și dimensiune" href="p2-s4-baza.html" />
+    <link rel="prev" title="Inele și corpuri" href="p2-s2-inele-corpuri.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo-light-poly-only.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Algebră liniară și aplicații</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Algebră liniară și aplicații
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Elemente de istoria și filosofia matematicii
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-istorie-fil-intro.html">
+   Generalități
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-s1-rationamente.html">
+   Abstractizare și raționamente
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-s2-ist-vsp.html">
+   Istoria spațiilor vectoriale
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algebră abstractă și algebră liniară
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="p2-abstract.html">
+   Algebră abstractă și algebră liniară
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s1-grupuri.html">
+     Monoizi și grupuri
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s1e-simetrii.html">
+     Grupuri de simetrie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s2-inele-corpuri.html">
+     Inele și corpuri
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Spații vectoriale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s4-baza.html">
+     Bază și dimensiune
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s5-op-subsp.html">
+     Operații cu subspații
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s6-morfisme-spvect.html">
+     Morfisme de spații vectoriale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s7-ortonormare.html">
+     Produs scalar și ortonormare
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s8-vvp.html">
+     Vectori și valori proprii
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s9-quat.html">
+     Cuaternioni
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s10-afin.html">
+     Spații afine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s11-mat-decomp.html">
+     Descompuneri matriceale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s12-transf-mat.html">
+     Transformări matriceale în 2D și 3D
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s13-arii-volume.html">
+     Arii și volume
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Aplicații și implementări în programare
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="p3-aplicatii.html">
+   Aplicații și implementări în programare
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Bibliografie și lecturi suplimentare
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliografie.html">
+   Bibliografie și lecturi suplimentare
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/adimanea/linalg"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/adimanea/linalg/issues/new?title=Issue%20on%20page%20%2Fp2-s3-spvect.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/p2-s3-spvect.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#intuitie">
+   Intuiție
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definitie-formala">
+   Definiție formală
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exemple">
+   Exemple
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#un-detaliu-tehnic">
+     Un detaliu tehnic
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subspatii">
+   Subspații
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Exemple
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#observatie-tehnica">
+     Observație tehnică
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alte-exemple">
+   Alte exemple
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercitii-propuse">
+   Exerciții propuse
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Spații vectoriale</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#intuitie">
+   Intuiție
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definitie-formala">
+   Definiție formală
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exemple">
+   Exemple
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#un-detaliu-tehnic">
+     Un detaliu tehnic
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subspatii">
+   Subspații
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Exemple
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#observatie-tehnica">
+     Observație tehnică
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alte-exemple">
+   Alte exemple
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercitii-propuse">
+   Exerciții propuse
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="spatii-vectoriale">
+<h1>Spații vectoriale<a class="headerlink" href="#spatii-vectoriale" title="Permalink to this headline">#</a></h1>
+<p>Spațiile vectoriale sînt următoarele structuri algebrice pe care le prezentăm.
+Formal, ele sînt cele mai complicate de pînă acum, deoarece folosesc simultan
+<em>două</em> structuri anterioare: sînt perechi alcătuite dintr-un grup și un corp.
+Dar o astfel de introducere este complet contraintuitivă și nu evidențiază deloc
+apariția „naturală“ a spațiilor vectoriale, pornind de la cazuri particulare
+la îndemînă. Astfel că vom începe tocmai prin evidențierea acestei „genealogii“,
+bazată pe noțiuni elementare de geometrie plană.</p>
+<section id="intuitie">
+<span id="sec-intuitie-spvect"></span><h2>Intuiție<a class="headerlink" href="#intuitie" title="Permalink to this headline">#</a></h2>
+<p>Cel mai bun punct de pornire este acela al vectorilor din plan, studiați
+riguros la matematica și fizica de clasa a IX-a.</p>
+<p>Remarcăm, totuși, că, deși avem la îndemînă informații geometrice, care țin
+de reprezentarea grafică a vectorilor și a operațiilor dintre ei, vom insista
+în special pe abordarea algebrică, dată fiind ținta pe care ne-o propunem.
+În orice caz, intuiția geometrică și reprezentarea plană pot servi drept
+îndrumători.</p>
+<p>Așadar, din punct de vedere geometric, un vector în plan <span class="math notranslate nohighlight">\( \vec{v} \)</span> este
+un segment orientat. El are</p>
+<ul class="simple">
+<li><p>o <em>dreaptă suport</em>, care-i dă <em>direcția</em>;</p></li>
+<li><p>un <em>punct de aplicație</em>, cum se numește de obicei la fizică, în cazul forțelor,
+sau o <em>origine</em>, în matematică;</p></li>
+<li><p>un <em>sens</em>;</p></li>
+<li><p>un <em>modul</em> sau o <em>lungime</em>, care ne arată, în fizică, mărimea forței reprezentată
+de vectorul respectiv, iar în matematică, lungimea segmentului determinat de
+originea și vîrful vectorului.</p></li>
+</ul>
+<figure class="align-default" id="fig-vec-plan">
+<img alt="_images/vector-plan.png" src="_images/vector-plan.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">Un vector în plan <span class="math notranslate nohighlight">\( \vec{v} \)</span> și elementele sale definitorii</span><a class="headerlink" href="#fig-vec-plan" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Chiar dacă o astfel de prezentare este intuitivă și ușor de vizualizat, pentru
+scopuri algebrice este mai potrivit să prezentăm vectorii într-un sistem de coordonate.
+Așadar, amintim că un vector din plan se poate descompune în funcție de <em>versorii</em>
+<span class="math notranslate nohighlight">\( \vec{i} \)</span> și <span class="math notranslate nohighlight">\( \vec{j} \)</span>, care sînt vectorii-unitate ai celor două axe de coordonate.
+Așadar, un vector în plan se scrie generic:</p>
+<div class="math notranslate nohighlight">
+\[\vec{v} = a \vec{i} + b \vec{j}, \quad a, b \in \mathbb{R}.\]</div>
+<p>Uneori, această scriere este prescurtată sub forma <span class="math notranslate nohighlight">\( \vec{v} = (a, b) \)</span>, întrucît
+versorii sînt subînțeleși. O astfel de scriere are avantajul că ne conduce
+către analogia cu punctele din plan. Pînă la urmă, un astfel de vector se prezintă
+identic cu un punct din plan, vorbind strict din punct de vedere algebric,
+deci abstract. Deci nu am greși dacă am scrie <span class="math notranslate nohighlight">\( \vec{v} = (a, b) \in \mathbb{R}^2 \)</span>.</p>
+<p>Mai departe, ne întrebăm ce operații putem face cu vectorii și găsim imediat:</p>
+<ul class="simple">
+<li><p><em>adunarea</em>, care acționează pe componente, adică:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[(a \vec{i} + b \vec{j}) + (c \vec{i} + d \vec{j}) = (a + c)\vec{i} + (b + d)\vec{j}.\]</div>
+<p>În forma similară punctelor din plan, acest lucru se scrie și mai clar:</p>
+<div class="math notranslate nohighlight">
+\[(a, b) + (c, d) = (a + c, b + d).\]</div>
+<ul class="simple">
+<li><p><em>înmulțirea vectorilor cu scalari</em>, care produce modificări ale modulului vectorului și,
+eventual, ale sensului acestuia, dacă scalarul este negativ. Pentru un scalar real <span class="math notranslate nohighlight">\( \alpha \in \mathbb{R} \)</span>,
+avem:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\alpha \cdot (a \vec{i} + b \vec{j}) = (\alpha a)\vec{i} + (\alpha b)\vec{j}\]</div>
+<p>sau, în forma din <span class="math notranslate nohighlight">\( \mathbb{R}^2 \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\alpha \cdot (a, b) = (\alpha a, \alpha b).\]</div>
+<p>Produsele dintre vectori sînt un subiect mai complicat, deoarece avem două tipuri de produse
+(scalar și vectorial), care conduc la rezultate complet diferite – unul dintre ele transformă
+doi vectori într-un scalar, iar cel de-al doilea conduce la un vector în afara planului dat
+de cei doi factori. Astfel că omitem, pentru moment, discuția privitoare la produse între vectori
+și lucrăm doar cu cele două operații de mai sus.</p>
+<p>Continuăm analiza și ne întrebăm acum ce proprietăți au cele două operații, în funcție
+de mulțimile pe care se introduc:</p>
+<ul class="simple">
+<li><p><em>adunarea vectorilor</em>, definită între vectori din plan și care, în definitiv, este <em>adunarea pe componente</em>,
+definită pe perechi de numere reale, este:</p>
+<ul>
+<li><p><em>internă</em>, deoarece suma a doi vectori din plan este un vector din același plan;</p></li>
+<li><p><em>comutativă</em>, ca orice adunare;</p></li>
+<li><p><em>asociativă</em>, din nou, ca orice adunare;</p></li>
+<li><p>admite un <em>element neutru</em>, anume vectorul nul, <span class="math notranslate nohighlight">\( (0, 0) \)</span>, întrucît <span class="math notranslate nohighlight">\( (a, b) + (0, 0) = (a, b) \)</span>,
+pentru orice vector <span class="math notranslate nohighlight">\( (a, b) \)</span>;</p></li>
+<li><p>orice vector <span class="math notranslate nohighlight">\( (a, b) \)</span> este <em>simetrizabil</em>, adică are un opus, <span class="math notranslate nohighlight">\( (-a, -b) \)</span>, pentru că
+<span class="math notranslate nohighlight">\( (a, b) + (-a, -b) = (0, 0) \)</span>.</p></li>
+</ul>
+</li>
+</ul>
+<p>Din toate acestea, rezultă imediat că adunarea vectorilor definește o <em>structură de grup</em> pe mulțimea
+vectorilor din plan. Și chiar este un grup binecunoscut<a class="footnote-reference brackets" href="#r2" id="id1">1</a>, anume <span class="math notranslate nohighlight">\( (\mathbb{R}^2, +) \)</span>.</p>
+<ul class="simple">
+<li><p><em>înmulțirea vectorilor cu scalari</em>, definită între numere reale și vectori din plan, are proprietățile:</p>
+<ul>
+<li><p>este <em>lege externă</em>, deoarece combină obiecte de două tipuri: dintr-un scalar și un vector se obține un vector,
+așadar este o operație de forma <span class="math notranslate nohighlight">\( \mathbb{R} \times \mathbb{R}^2 \to \mathbb{R}^2 \)</span>;</p></li>
+<li><p>este <em>comutativă</em>, pentru că putem înmulți cu scalari și la stînga, și la dreapta, obținînd același vector;</p></li>
+<li><p>are un <em>element neutru</em>, scalarul <span class="math notranslate nohighlight">\( 1 \)</span>, cu care, înmulțind orice vector, obținem vectorul inițial;</p></li>
+<li><p>are un <em>element distructiv</em>, scalarul <span class="math notranslate nohighlight">\( 0 \)</span>, cu care, înmulțind orice vector, obținem <em>vectorul nul</em>.</p></li>
+<li><p>are un fel de proprietate de <em>distributivitate</em>, pentru că putem înmulți cu un scalar și o sumă de vectori,
+rezultatul fiind cel așteptat.</p></li>
+</ul>
+</li>
+</ul>
+<p>În plus, dacă ne gîndim la mulțimea de scalari în sine – care este <span class="math notranslate nohighlight">\( \mathbb{R} \)</span> – știm deja că
+aceasta are o structură de corp comutativ, față de adunarea și înmulțirea numerelor reale.</p>
+<p>Observațiile de mai sus schițează, practic, tocmai definiția unui spațiu vectorial. Înainte
+de a o face riguroasă, recapitulăm: Pentru a defini un spațiu vectorial, avem nevoie de:</p>
+<ul class="simple">
+<li><p>o mulțime de vectori, care să aibă o structură de grup comutativ;</p></li>
+<li><p>o mulțime de scalari, care să aibă o structură de corp (preferabil comutativ);</p></li>
+<li><p>o operație externă, care să poată combina scalarii cu vectori, obținînd vectori, și care să aibă
+cîteva proprietăți „bune“, bazate pe doi scalari speciali (unitate și nul) și un fel de proprietate
+de desfacere a parantezelor, adică distributivitate.</p></li>
+</ul>
+<p>Cu aceste observații, putem acum să dăm definițiile riguroase.</p>
+</section>
+<section id="definitie-formala">
+<h2>Definiție formală<a class="headerlink" href="#definitie-formala" title="Permalink to this headline">#</a></h2>
+<div class="proof definition admonition" id="def-sp-vect">
+<p class="admonition-title"><span class="caption-number">Definition 24 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( (V, +) \)</span> un grup comutativ și <span class="math notranslate nohighlight">\( (K, +, \cdot) \)</span> un corp, pe care,
+pentru simplitate, îl vom presupune comutativ<a class="footnote-reference brackets" href="#operatii" id="id2">2</a>.</p>
+<p>De obicei, elementele grupului <span class="math notranslate nohighlight">\( V \)</span>, numit <em>grup de vectori</em>, se notează
+cu litere latine, iar elementele corpului <span class="math notranslate nohighlight">\( K \)</span>, numit <em>corp de scalari</em>,
+se notează cu litere grecești.</p>
+<p>Perechea <span class="math notranslate nohighlight">\( (K, V) \)</span> definește un <em>spațiu vectorial</em> sau, echivalent,
+spunem că <span class="math notranslate nohighlight">\( V \)</span> devine un <span class="math notranslate nohighlight">\( K \)</span>-spațiu vectorial sau un spațiu vectorial peste <span class="math notranslate nohighlight">\( K \)</span>
+dacă există o operație externă <span class="math notranslate nohighlight">\( K \times V \to V \)</span>, numită <em>înmulțire a vectorilor cu scalari</em>,
+cu proprietățile:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\( \alpha \cdot (v + w) = \alpha \cdot v + \alpha \cdot w, \forall \alpha \in K, v, w \in V \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( \alpha \cdot (\beta \cdot w) = (\alpha \cdot \beta) \cdot w, \forall w \in V \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( 1_K \cdot v = v, \forall v \in V \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( 0_K \cdot v = 0_V, \forall v \in V \)</span>.</p></li>
+</ol>
+</section>
+</div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Spațiile vectoriale au definiții foarte asemănătoare și pentru corpuri care nu sînt comutative,
+caz în care trebuie să facem distincția între înmulțirea cu scalari la stînga și la dreapta.</p>
+<p><strong>În toate exemplele care urmează, dacă nu precizăm altfel, presupunem că lucrăm cu corpuri comutative.</strong></p>
+</div>
+<p>Acum, definiția de mai sus pare naturală, dar conține cîteva subtilități pe care este bine să le observați:</p>
+<ul class="simple">
+<li><p>în cazul proprietății 1, în membrul stîng avem operația <span class="math notranslate nohighlight">\( \cdot \)</span> de înmulțire a scalarului <span class="math notranslate nohighlight">\( \alpha \)</span>
+cu vectorul sumă <span class="math notranslate nohighlight">\( v + w \)</span>, iar în membrul drept, între <span class="math notranslate nohighlight">\( \alpha \)</span> și <span class="math notranslate nohighlight">\( v \)</span>, respectiv <span class="math notranslate nohighlight">\( w \)</span>, este tot operația
+de înmulțire a scalarilor cu vectori, în timp ce operația <span class="math notranslate nohighlight">\( + \)</span> este cea de adunare a vectorilor;</p></li>
+<li><p>în cazul proprietății 2, cele două operații <span class="math notranslate nohighlight">\( \cdot \)</span> din membrul stîng sînt de înmulțire a scalarilor
+cu vectori, însă operația <span class="math notranslate nohighlight">\( \cdot \)</span> din paranteză din membrul drept este de înmulțire a scalarilor
+(operația din <span class="math notranslate nohighlight">\( K \)</span>), în timp ce a doua operație <span class="math notranslate nohighlight">\( \cdot \)</span> este înmulțirea scalarilor cu vectori;</p></li>
+<li><p><span class="math notranslate nohighlight">\( 1_K \)</span> este elementul unitate al corpului <span class="math notranslate nohighlight">\( K \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( 0_K \)</span> este elementul nul al corpului <span class="math notranslate nohighlight">\( K \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( 0_V \)</span> este elementul nul (vectorul nul) al grupului <span class="math notranslate nohighlight">\( V \)</span>.</p></li>
+</ul>
+</section>
+<section id="exemple">
+<h2>Exemple<a class="headerlink" href="#exemple" title="Permalink to this headline">#</a></h2>
+<p>În toate cazurile pe care le vom întîlni, nu este necesar un efort susținut de abstractizare
+pentru a identifica structura de grup pentru vectori, structura de corp pentru scalari și
+operația externă. Aceasta deoarece spațiile vectoriale cu aplicații în geometrie – care constituie
+ținta pe care ne vom concentra – au structuri destul de transparente. În esență, exemplele pe care
+le vom lista aici sînt cele pe care le vom întîlni în majoritatea cazurilor.</p>
+<p><strong>Exemplu:</strong> Cazul intuitiv al vectorilor din plan poate fi privit acum formal:</p>
+<ul class="simple">
+<li><p>grupul de vectori este <span class="math notranslate nohighlight">\( (\mathbb{R}^2, +) \)</span>, adunarea fiind definită pe componente;</p></li>
+<li><p>corpul de scalari este <span class="math notranslate nohighlight">\( \mathbb{R} \)</span>, cu adunarea și înmulțirea obișnuite;</p></li>
+<li><p>operația externă de înmulțire a vectorilor cu scalari este, de fapt, înmulțirea unei
+perechi de numere reale cu un alt număr real, înmulțire care se face pe componente.</p></li>
+</ul>
+<p>Așadar, <span class="math notranslate nohighlight">\( \mathbb{R}^2 \)</span> este un <span class="math notranslate nohighlight">\( \mathbb{R} \)</span>-spațiu vectorial (numit și spațiu vectorial real).</p>
+<p><strong>Exemplu:</strong> Cazul vectorilor din plan poate fi generalizat. Putem defini:</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{R}^n = \{ (a_1, a_2, \dots, a_n) \mid a_i \in \mathbb{R}, i \in \mathbb{N}^\ast \},\]</div>
+<p>iar pe această mulțime a <span class="math notranslate nohighlight">\( n \)</span>-tuplurilor de numere reale definim o structură de grup
+bazată pe adunarea pe componente:</p>
+<div class="math notranslate nohighlight">
+\[(a_1, a_2, \dots, a_n) + (b_1, b_2, \dots, b_n) = (a_1 + b_1, a_2 + b_2, \dots, a_n + b_n), %
+\quad \forall a_i, b_i \in \mathbb{R}, i \in \mathbb{N}^\ast.\]</div>
+<p>Evident, <span class="math notranslate nohighlight">\( (\mathbb{R}^n, +) \)</span> devine un grup comutativ, vectorul nul fiind <span class="math notranslate nohighlight">\( (0, 0, \dots, 0) \)</span>,
+șirul cu <span class="math notranslate nohighlight">\( n \)</span> componente nule.</p>
+<p>Considerînd tot corpul numerelor reale drept corp de scalari, avem o definiție naturală
+și pentru operația externă:</p>
+<div class="math notranslate nohighlight">
+\[\alpha \cdot (a_1, a_2, \dots, a_n) = (\alpha a_1, \alpha a_2, \dots, \alpha a_n), \quad %
+\forall \alpha, a_i \in \mathbb{R}, i \in \mathbb{N}^\ast.\]</div>
+<p>Se verifică imediat că <span class="math notranslate nohighlight">\( \mathbb{R}^n \)</span> devine astfel un spațiu vectorial real,
+fiind unul dintre cele mai importante exemple pe care le vom întîlni.</p>
+<p><strong>Exemplu:</strong> Considerăm grupul aditiv al matricelor <span class="math notranslate nohighlight">\( M_2(\mathbb{R}) \)</span>.
+Știm deja structura de grup (cf. <a class="reference internal" href="p2-s1-grupuri.html"><span class="doc std std-doc">secțiunii corespunzătoare</span></a>)
+și, dacă luăm din nou corpul de scalari ca fiind corpul real, nu avem decît să
+definim înmulțirea vectorilor cu scalari, în maniera așteptată:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\alpha \cdot \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} = %
+\begin{pmatrix} \alpha a &amp; \alpha b \\ \alpha c &amp; \alpha d \end{pmatrix}, \quad %
+\forall \alpha, a, b, c, d \in \mathbb{R}.\end{split}\]</div>
+<p>Cu această definiție, se verifică imediat faptul că <span class="math notranslate nohighlight">\( M_2(\mathbb{R}) \)</span> devine
+un spațiu vectorial real.</p>
+<p><strong>Exemplu:</strong> Nu numai matricele pătratice constituie spații vectoriale și nu neapărat
+peste corpul numerelor reale. Dacă luăm <span class="math notranslate nohighlight">\( V = M_{2, 5}(\mathbb{C}) \)</span> și <span class="math notranslate nohighlight">\( K = \mathbb{Q} \)</span>,
+cu operațiile obișnuite, obținem tot un spațiu vectorial, de data aceasta rațional.
+Convingeți-vă de acest lucru înțelegînd structura de grup pe <span class="math notranslate nohighlight">\( V \)</span> și operația externă.</p>
+<p><strong>Exemplu:</strong> Păstrînd doar structura aditivă, grupul <span class="math notranslate nohighlight">\( (\mathbb{R}, +) \)</span> poate fi gîndit
+ca un <span class="math notranslate nohighlight">\( \mathbb{Q} \)</span>-spațiu vectorial. Înmulțirea vectorilor cu scalari înseamnă pur și simplu
+înmulțirea unui număr real cu unul rațional, rezultatul fiind un număr real.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Tocmai acest exemplu ne arată o situație deosebită: Deoarece <span class="math notranslate nohighlight">\( \mathbb{Q} \subseteq \mathbb{R} \)</span>,
+putem considera <span class="math notranslate nohighlight">\( \mathbb{R} \)</span> ca un <span class="math notranslate nohighlight">\( \mathbb{Q} \)</span>-spațiu vectorial, deoarece înmulțind
+un număr real (vector) cu unul rațional (scalar), rezultatul este un număr real (vector).</p>
+<p>Invers, însă, <span class="math notranslate nohighlight">\( \mathbb{Q} \)</span> nu poate fi un spațiu vectorial real! Puteți vedea acest lucru
+foarte simplu: fie vectorul <span class="math notranslate nohighlight">\( v = 3 \in \mathbb{Q} \)</span> și scalarul <span class="math notranslate nohighlight">\( \alpha = \sqrt{2} \in \mathbb{R} \)</span>.</p>
+<p>Atunci înmulțirea vectorilor cu scalari produce <span class="math notranslate nohighlight">\( 3 \sqrt{2} \)</span>, care ar trebui să fie <em>vector</em>,
+deci un număr rațional, ceea ce este fals!</p>
+</div>
+<p><strong>Exemplu:</strong> Un caz ceva mai tehnic, dar destul de util, este acela al <em>polinoamelor</em>.
+Fără a intra în detalii sofisticate, <em>inelul polinoamelor într-o nedeterminată</em>,
+cu coeficienți într-un corp <span class="math notranslate nohighlight">\( K \)</span> se notează cu <span class="math notranslate nohighlight">\( K[X] \)</span> și conține expresii de forma:</p>
+<div class="math notranslate nohighlight">
+\[p = a_0 + a_1 X + a_2 X^2 + \dots + a_n X^n, \quad a_i \in K, i, n \in \mathbb{N}.\]</div>
+<p>Ați întîlnit astfel de expresii de obicei în <em>ecuații polinomiale</em>. De pildă o simplă
+ecuație de gradul al doilea, precum:</p>
+<div class="math notranslate nohighlight">
+\[3x^2 - 5x + 2 = 0\]</div>
+<p>este ecuația asociată <em>polinomului de gradul al doilea</em> <span class="math notranslate nohighlight">\( q = 3X^2 - 5X + 2 \)</span>, iar rezolvarea
+ecuației înseamnă <em>găsirea rădăcinilor (zerourilor) polinomului</em>.</p>
+<p>Puterea cea mai mare la care apare nedeterminata se numește <em>gradul</em> polinomului,
+deci <span class="math notranslate nohighlight">\( \grad(q) = 2 \)</span> în exemplul anterior și <span class="math notranslate nohighlight">\( \grad(p) = n \)</span> în forma generală
+de mai sus.</p>
+<p>În majoritatea cazurilor, vom lucra cu inelul de polinoame cu coeficienți reali, adică
+<span class="math notranslate nohighlight">\( \mathbb{R}[X] \)</span>. Structura de inel ar trebui să fie clară, dar, de fapt, pentru spații
+vectoriale, ne este suficient să înțelegem structura de grup comutativ, deci cea aditivă:</p>
+<ul class="simple">
+<li><p>suma a două polinoame se face pe componente:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[(a_0 + a_1 X + a_2 X^2 + \dots + a_n X^n) + (b_0 + b_1 X + b_2 X^2 + \dots + b_n X^n) = %
+(a_0 + b_0) + (a_1 + b_1) X + (a_2 + b_2) X^2 + \dots + (a_n + b_n) X^n, \forall a_i, b_i \in \mathbb{R}, 0 \leq i \leq n.\]</div>
+<p>Pentru simplitate, am presupus că cele două polinoame adunate mai sus au același grad.
+Dar și dacă au grade diferite, adunarea se definește similar. Gîndiți-vă, de exemplu, cum
+ați aduna un polinom de gradul 1 cu un polinom de gradul 2:</p>
+<div class="math notranslate nohighlight">
+\[(2 + X) + (5 - 3X + X^2) = (2 + 5) + (1 - 3) X + X^2\]</div>
+<p>În fapt, orice polinom poate fi făcut de orice grad, dacă i se adaugă termeni cu coeficient nul.
+În exemplul de mai sus, polinomul de gradul 1 <span class="math notranslate nohighlight">\( 2 + X \)</span> poate fi gîndit ca polinomul de gradul 2
+<span class="math notranslate nohighlight">\( 2 + X + 0 \cdot X^2 \)</span>.</p>
+<ul class="simple">
+<li><p>elementul neutru al adunării polinoamelor este polinomul nul, <span class="math notranslate nohighlight">\( p = 0 = 0 + 0 \cdot X + 0 \cdot X^2 + \dots \)</span>;</p></li>
+<li><p>opusul unui polinom este cel care are coeficienții opuși polinomului dat;</p></li>
+</ul>
+<p>Așadar, <span class="math notranslate nohighlight">\( (\mathbb{R}[X], +) \)</span> este un grup comutativ.</p>
+<p>Considerînd din nou corpul numerelor reale, obținem imediat că <span class="math notranslate nohighlight">\( \mathbb{R}[X] \)</span> devine un
+spațiu vectorial real, înmulțirea vectorilor cu scalari făcîndu-se în modul natural:</p>
+<div class="math notranslate nohighlight">
+\[\alpha \cdot (a_0 + a_1 X + a_2 X^2 + \dots + a_n X^n) = %
+(\alpha a_0) + (\alpha a_1) X + (\alpha a_2) X^2 + \dots + (\alpha a_n) X^n,
+\forall \alpha, a_i \in \mathbb{R}, 0 \leq i \leq n.\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Putem considera și cazuri particulare de inele (sau spații vectoriale) de polinoame,
+care să limiteze gradul maxim. De aceea, se notează cu <span class="math notranslate nohighlight">\( \mathbb{R}_n[X] \)</span>, de exemplu,
+mulțimea polinoamelor de grad <em>cel mult</em> <span class="math notranslate nohighlight">\( n \)</span>. De exemplu, mulțimea <span class="math notranslate nohighlight">\( \mathbb{R}_2[X] \)</span>
+conține polinoame de grad 0 (constante, adică numere reale), polinoame de grad 1
+și polinoame de grad 2.</p>
+</div>
+<hr class="docutils" />
+<section id="un-detaliu-tehnic">
+<h3>Un detaliu tehnic<a class="headerlink" href="#un-detaliu-tehnic" title="Permalink to this headline">#</a></h3>
+<p>Această secțiune poate fi omisă la o primă lectură, însă ea oferă detalii tehnice
+care pot fi interesante pentru cei care apreciază structurile abstracte și mai ales
+legăturile dintre ele.</p>
+<p>Inelele de polinoame au o structură mult mai simplă decît pare, cel puțin în ce privește
+structura aditivă. În unele cărți de matematică de liceu, chiar se introduc polinoamele
+sub forma șirurilor de numere (reale, în cazul nostru). Altfel spus, se definește o
+generalizare a produsului cartezian al mulțimii de numere reale:</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{R}^{(\mathbb{N})} = \mathbb{R} \times \mathbb{R} \times \dots,\]</div>
+<p>produsul cartezian avînd atîția factori cîte numere naturale există.</p>
+<p>Un element din această mulțime este pur și simplu o generalizare a unui
+<span class="math notranslate nohighlight">\( n \)</span>-tuplu, adică un șir de numere reale care conține atîtea elemente
+cîte numere naturale există:</p>
+<div class="math notranslate nohighlight">
+\[(a_0, a_1, a_2, \dots, a_n, \dots) \in \mathbb{R}^{(\mathbb{N})}, \quad a_i \in \mathbb{R}, i \in \mathbb{N}.\]</div>
+<p>Suma a două astfel de elemente se face pe componente, ca în orice produs cartezian.
+Elementul nul este cel care are <span class="math notranslate nohighlight">\( 0 \)</span> pe toate pozițiile. În plus, se constată că dacă
+avem un element nenul pe prima componentă și în rest <span class="math notranslate nohighlight">\( 0 \)</span>, găsim o structură
+care este chiar (izomorfă) cu mulțimea numerelor reale. Altfel spus:</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{R}^{(\mathbb{N})} \ni (a, 0, 0, 0, \dots) \mapsto a \in \mathbb{R}.\]</div>
+<p>Apoi, se definește un element special:</p>
+<div class="math notranslate nohighlight">
+\[X = (0, 1, 0, 0, \dots)\]</div>
+<p>și un produs<a class="footnote-reference brackets" href="#produs" id="id3">3</a> astfel încît:</p>
+<div class="math notranslate nohighlight">
+\[X^2 = X \cdot X = (0, 0, 1, 0, \dots), X^3 = (0, 0, 0, 1, 0, 0, \dots), \dots,\]</div>
+<p>adică în general, <span class="math notranslate nohighlight">\( X^n \)</span> are <span class="math notranslate nohighlight">\( 1 \)</span> pe poziția <span class="math notranslate nohighlight">\( n + 1 \)</span> și <span class="math notranslate nohighlight">\( 0 \)</span> în rest.</p>
+<p>Cu acestea, se poate <em>defini</em> un polinom în nedeterminata <span class="math notranslate nohighlight">\( X \)</span> ca fiind o expresie
+de forma:</p>
+<div class="math notranslate nohighlight">
+\[(a_0, a_1, a_2, a_3, \dots) = a_0 + a_1 X + a_2 X^2 + a_3 X^3 + \dots\]</div>
+<p>O astfel de prezentare, pe lîngă faptul că ne arată o nouă modalitate de a privi polinoamele,
+va fi foarte utilă atunci cînd vom studia izomorfismele de spații vectoriale.
+Anticipînd, vom vedea că spațiile de polinoame <span class="math notranslate nohighlight">\( \mathbb{R}[X] \)</span> „seamănă“ (din punct de vedere algebric)
+cu cele de forma <span class="math notranslate nohighlight">\( \mathbb{R}^n \)</span>.</p>
+<hr class="docutils" />
+<p>Revenind la definiții și exemple pentru spații vectoriale, putem găsi
+multe altele, mai mult sau mai puțin naturale sau relevante în ce privește
+aplicațiile. Pentru scopurile acestui material, ne rezumăm, totuși, la:</p>
+<ul class="simple">
+<li><p>spații de forma <span class="math notranslate nohighlight">\( \mathbb{R}^n \)</span>;</p></li>
+<li><p>spații de matrice pătratice, de forma <span class="math notranslate nohighlight">\( M_n(\mathbb{R}) \)</span>;</p></li>
+<li><p>spații de polinoame, de forma <span class="math notranslate nohighlight">\( \mathbb{R}_n[X] \)</span>.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Dacă nu se precizează altfel, vom presupune că lucrăm cu <em>spații vectoriale reale</em>.
+Așadar, corpul de scalari va fi mereu <span class="math notranslate nohighlight">\( \mathbb{R} \)</span>, iar spațiul
+vectorial va fi identificat doar prin grupul de vectori:
+<span class="math notranslate nohighlight">\( \mathbb{R}^n, M_n(\mathbb{R}) \)</span> sau <span class="math notranslate nohighlight">\( \mathbb{R}_{n}[X] \)</span>.</p>
+</div>
+</section>
+</section>
+<section id="subspatii">
+<h2>Subspații<a class="headerlink" href="#subspatii" title="Permalink to this headline">#</a></h2>
+<p>Echivalentul substructurilor din cazul monoizilor, grupurilor, inelelor,
+corpurilor este acela al <em>subspațiilor vectoriale</em>. Ca și pînă acum,
+putem formula o definiție abstractă simplă, dar, pentru motive practice, (aproape) inutilă:</p>
+<div class="proof definition admonition" id="def-subspatiu">
+<p class="admonition-title"><span class="caption-number">Definition 25 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( V \)</span> un <span class="math notranslate nohighlight">\( K \)</span>-spațiu vectorial și <span class="math notranslate nohighlight">\( W \subseteq V \)</span> o submulțime.</p>
+<p>Spunem că <span class="math notranslate nohighlight">\( W \)</span> este <em>subspațiu al lui <span class="math notranslate nohighlight">\( V \)</span></em>, notat cu <span class="math notranslate nohighlight">\( W \leq_K V \)</span>,
+dacă <span class="math notranslate nohighlight">\( W \)</span> însuși este un <span class="math notranslate nohighlight">\( K \)</span>-spațiu vectorial.</p>
+</section>
+</div><p>Observăm, totodată, în definiția de mai sus, notația care face uz explicit
+de corpul de scalari. Cum vom lucra în majoritatea cazurilor cu spații vectoriale
+reale, vom simplifica notația de la <span class="math notranslate nohighlight">\( W \leq_\mathbb{R} V \)</span> la <span class="math notranslate nohighlight">\( W \leq V \)</span>,
+pentru <span class="math notranslate nohighlight">\( W \)</span> un subspațiu al lui <span class="math notranslate nohighlight">\( V \)</span>, atunci cînd nu există riscul de confuzie.</p>
+<p>Cum spuneam, însă, nu este suficient de ușor să lucrăm cu definiția. Practic,
+ar trebui să demonstrăm din nou toate axiomele pentru <span class="math notranslate nohighlight">\( W \)</span>, deși le știm deja
+pentru mulțimea în care este conținut, <span class="math notranslate nohighlight">\( V \)</span>. Așa că avem nevoie de o metodă
+mai simplă.</p>
+<p>Totodată, dăm și o formulare simplificată a structurii algebrice de
+spațiu vectorial. Am văzut că o astfel de structură conține un grup și un corp,
+împreună cu 4 operații în total (adunarea vectorilor, adunarea și înmulțirea
+scalarilor și înmulțirea vectorilor cu scalari). Toate aceste operații pot fi concentrate
+într-una singură, numită <em>combinație liniară</em>.</p>
+<div class="proof definition admonition" id="def-comb-lin">
+<p class="admonition-title"><span class="caption-number">Definition 26 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( V \)</span> un <span class="math notranslate nohighlight">\( K \)</span>-spațiu vectorial și <span class="math notranslate nohighlight">\( v, w \in V \)</span> doi vectori, iar <span class="math notranslate nohighlight">\( \alpha, \beta \in K \)</span>
+doi scalari.</p>
+<p>Se numește <em>combinație liniară</em> de vectori cu scalari o expresie de forma:</p>
+<div class="math notranslate nohighlight">
+\[ \alpha v \pm \beta w. \]</div>
+</section>
+</div><p>Într-o astfel de expresie, avem concentrate majoritatea proprietăților
+și elementelor speciale dintr-un spațiu vectorial, ca de exemplu:</p>
+<ul class="simple">
+<li><p>luînd <span class="math notranslate nohighlight">\( \alpha = \beta = 1_K \)</span>, găsim adunarea vectorilor <span class="math notranslate nohighlight">\( v + w \)</span>;</p></li>
+<li><p>luînd <span class="math notranslate nohighlight">\( \alpha = \beta = 0_K \)</span>, găsim vectorul nul <span class="math notranslate nohighlight">\( 0_V \)</span>;</p></li>
+<li><p>pentru <span class="math notranslate nohighlight">\( \beta = 0_K \)</span>, găsim înmulțirea unui vector cu scalar, <span class="math notranslate nohighlight">\( \alpha v \)</span>;</p></li>
+</ul>
+<p>De asemenea, mai observăm că semnul <span class="math notranslate nohighlight">\( \pm \)</span> este, de fapt, inutil.
+Aceasta deoarece, cum <span class="math notranslate nohighlight">\( \alpha \)</span> și <span class="math notranslate nohighlight">\( \beta \)</span> sînt elemente arbitrare ale
+unui corp, ele sînt inversabile și au opuse. Deci putem considera oricînd
+în loc de <span class="math notranslate nohighlight">\( \beta \)</span> elementul <span class="math notranslate nohighlight">\( -\beta \)</span>, adică opusul său.</p>
+<p>În esență, pentru majoritatea scopurilor practice, este suficient să reținem „operația“
+de combinație liniară ca fiind fundamentală pentru un spațiu vectorial.</p>
+<p>Cu acestea, avem și criteriul căutat:</p>
+<div class="proof theorem admonition" id="thm-subspatiu">
+<p class="admonition-title"><span class="caption-number">Theorem 12 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( V \)</span> un <span class="math notranslate nohighlight">\( K \)</span>-spațiu vectorial și <span class="math notranslate nohighlight">\( W \subseteq V \)</span> o submulțime.</p>
+<p>Atunci <span class="math notranslate nohighlight">\( W \leq_K V \)</span> dacă și numai dacă:</p>
+<div class="math notranslate nohighlight">
+\[ \forall \alpha, \beta \in K, x, y \in W, \quad \alpha x + \beta y \in W. \]</div>
+<p>Altfel spus, <span class="math notranslate nohighlight">\( W \)</span> este <em>închis la combinații liniare</em>.</p>
+</section>
+</div><p>Ca o consecință importantă a acestei teoreme, avem că un subspațiu vectorial
+trebuie să preia vectorul nul. Aceasta este o condiție necesară, nu și suficientă.
+Ca în cazul monoizilor, grupurilor, inelelor și corpurilor, o submulțime care
+nu preia elementul neutru nu poate fi substructură.</p>
+<section id="id4">
+<h3>Exemple<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<p>Putem deja să formulăm cîteva exemple importante, printre care și unele de inspirație
+geometrică.</p>
+<p><strong>Exemplu:</strong> Considerînd spațiul vectorial <span class="math notranslate nohighlight">\( V = \mathbb{R}^2 \)</span>, putem defini
+<span class="math notranslate nohighlight">\( W = \mathbb{R} \times \{ 0 \} \)</span>, adică mulțimea de perechi de numere reale care
+au a doua componentă nulă: <span class="math notranslate nohighlight">\( W = \{ (a, 0) \mid a \in \mathbb{R} \} \)</span>.</p>
+<p>Observăm că <span class="math notranslate nohighlight">\( W \)</span> preia vectorul nul, <span class="math notranslate nohighlight">\( (0, 0) \in W \)</span>, deci condiția necesară este
+satisfăcută.</p>
+<p>Demonstrația formală procedează cam așa: Fie <span class="math notranslate nohighlight">\( \alpha, \beta \in \mathbb{R} \)</span> doi scalari
+și <span class="math notranslate nohighlight">\( v = (a, 0), w = (b, 0) \)</span> doi vectori din <span class="math notranslate nohighlight">\( W \)</span>. Trebuie să arătăm că dacă
+facem combinația liniară <span class="math notranslate nohighlight">\( \alpha v + \beta w \)</span>, găsim tot un element din <span class="math notranslate nohighlight">\( W \)</span>.</p>
+<p>Calculăm:</p>
+<div class="math notranslate nohighlight">
+\[\alpha \cdot (a, 0) + \beta \cdot (b, 0) = (\alpha a, 0) + (\beta b, 0) = (\alpha a + \beta b, 0).\]</div>
+<p>Un element din <span class="math notranslate nohighlight">\( W \)</span> se caracterizează prin faptul că are prima componentă un număr real,
+iar a doua componentă nulă. Cum exact aceasta este forma obținută, rezultă că am încheiat demonstrația.</p>
+<p><strong>Din punct de vedere geometric,</strong> putem vizualiza situația astfel: Spațiul <span class="math notranslate nohighlight">\( \mathbb{R}^2 \)</span>
+este planul real. Subspațiul <span class="math notranslate nohighlight">\( \mathbb{R} \times \{ 0 \} \)</span> conține punctele care au a doua
+componentă (ordonata) nulă, ceea ce caracterizează exact punctele de pe axa absciselor, <span class="math notranslate nohighlight">\( OX \)</span>.
+Rezultă că <span class="math notranslate nohighlight">\( W = OX \)</span> și am arătat, deci, că axa absciselor este un subspațiu al planului real.</p>
+<p>Evident, putem demonstra cu modificări minore că și axa ordonatelor, <span class="math notranslate nohighlight">\( OY = \{ 0 \} \times \mathbb{R} \)</span>
+este tot subspațiu.</p>
+<p><strong>Exemplu:</strong> Să luăm acum tot <span class="math notranslate nohighlight">\( V = \mathbb{R}^2 \)</span> și</p>
+<div class="math notranslate nohighlight">
+\[W = \{ (x, y) \in \mathbb{R}^2 \mid x = 5y \} = \{ (5y, y) \mid y \in \mathbb{R} \}.\]</div>
+<p>Lăsăm demonstrația algebrică a faptului că <span class="math notranslate nohighlight">\( W \leq V \)</span> ca un exercițiu simplu.
+Porniți cu scalarii arbitrari <span class="math notranslate nohighlight">\( \alpha, \beta \in \mathbb{R} \)</span> și vectorii
+arbitrari <span class="math notranslate nohighlight">\( v = (5a, a), w = (5b, b) \in W \)</span> și arătați că, dacă le scrieți combinația
+liniară, se obține un vector din <span class="math notranslate nohighlight">\( W \)</span>, adică unul care are prima componentă de 5 ori mai
+mare decît a doua, ambele fiind numere reale.</p>
+<p>Trecem la interpretarea geometrică. Am văzut că <span class="math notranslate nohighlight">\( \mathbb{R}^2 \)</span> este planul real.
+Punctele de forma <span class="math notranslate nohighlight">\( (5y, y) \)</span> au abscisa de 5 ori mai mare decît ordonata.
+De pildă, punctele <span class="math notranslate nohighlight">\( (0, 0), (5, 1), (1, 1/5), (-2, -2/5) \)</span> etc. se găsesc în <span class="math notranslate nohighlight">\( W \)</span>.
+O caracterizare geometrică poate fi dată reinterpretînd definiția lui <span class="math notranslate nohighlight">\( W \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[W = \left\{ (x, y) \in \mathbb{R}^2 \mid x = 5y \Leftrightarrow y = \dfrac{x}{5} \right\}.\]</div>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Amintim, pentru ecuația unei drepte plane scrisă sub forma <span class="math notranslate nohighlight">\( y = mx + n, m, n \in \mathbb{R} \)</span>,
+<span class="math notranslate nohighlight">\( m \)</span> se numește <em>panta</em> dreptei, iar <span class="math notranslate nohighlight">\( n \)</span>, <em>ordonata la origine</em>.</p>
+<p>Din punctul de vedere al interpretării geometrice, <span class="math notranslate nohighlight">\( m = \tan \alpha \)</span>, unde <span class="math notranslate nohighlight">\( \alpha \)</span>
+este unghiul de înclinare a dreptei, iar punctul de coordonate <span class="math notranslate nohighlight">\( (0, n) \)</span> este intersecția
+cu axa ordonatelor – de unde numele, de <em>ordonată</em> la origine.</p>
+</aside>
+<p>În forma aceasta, <span class="math notranslate nohighlight">\( y = \dfrac{x}{5} \)</span>, recunoaștem <em>ecuația unei drepte</em>. Ea trece
+prin origine, deoarece conține punctul <span class="math notranslate nohighlight">\( (0, 0) \)</span> și are panta (înclinarea) egală cu
+<span class="math notranslate nohighlight">\( \dfrac{1}{5} \)</span>.</p>
+<figure class="align-default" id="fig-dreapta-origine">
+<img alt="_images/dreapta-prin-origine.png" src="_images/dreapta-prin-origine.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Dreapta de ecuație <span class="math notranslate nohighlight">\( y = \dfrac{x}{5} \)</span></span><a class="headerlink" href="#fig-dreapta-origine" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Exemplu:</strong> Considerăm acum același plan real, <span class="math notranslate nohighlight">\( V = \mathbb{R}^2 \)</span> și mulțimea:</p>
+<div class="math notranslate nohighlight">
+\[W = \{ (x, y) \in \mathbb{R}^2 \mid y = x + 1 \}.\]</div>
+<p>Putem rescrie un element generic din <span class="math notranslate nohighlight">\( W \)</span> sub forma <span class="math notranslate nohighlight">\( v = (x, x + 1) \)</span> și, luînd
+un altul, <span class="math notranslate nohighlight">\( w = (y, y + 1) \)</span>, împreună cu doi scalari, <span class="math notranslate nohighlight">\( \alpha, \beta \in \mathbb{R} \)</span>,
+calculăm:</p>
+<div class="math notranslate nohighlight">
+\[\alpha v + \beta w = \dots = (\alpha x + \beta y, \alpha x + \beta y + \alpha + \beta).\]</div>
+<p>Acum, acest element aparține lui <span class="math notranslate nohighlight">\( W \)</span> dacă și numai dacă a doua componentă este
+cu 1 mai mare decît prima, adică dacă am avea:</p>
+<div class="math notranslate nohighlight">
+\[\alpha x + \beta y + \alpha + \beta = \alpha x + \beta y + 1 \Leftrightarrow \alpha + \beta = 1.\]</div>
+<p>Dar, conform teoremei <a class="reference internal" href="#thm-subspatiu">Theorem 12</a>, atît vectorii, cît și scalarii sînt arbitrari.
+Or nu este adevărat că <span class="math notranslate nohighlight">\( \alpha + \beta = 1 \)</span> <em>pentru orice scalari</em> <span class="math notranslate nohighlight">\( \alpha, \beta \)</span>.</p>
+<p>Rezultă, de aceea, că <span class="math notranslate nohighlight">\( W \)</span> nu poate fi subspațiu al lui <span class="math notranslate nohighlight">\( V \)</span>.</p>
+<p>De fapt, acest lucru putea fi observat foarte simplu din condiția necesară: <span class="math notranslate nohighlight">\( W \)</span> nu conține
+vectorul nul! Într-adevăr, <span class="math notranslate nohighlight">\( (0, 0) \)</span> nu se poate scrie sub forma <span class="math notranslate nohighlight">\( (x, x + 1) \)</span>,
+pentru niciun număr real <span class="math notranslate nohighlight">\( x \)</span>.</p>
+<p>Geometric, <span class="math notranslate nohighlight">\( W \)</span> este tot o dreaptă, de ecuație <span class="math notranslate nohighlight">\( y = x + 1 \)</span>, <em>dar care nu mai trece prin origine</em>,
+deoarece, așa cum am observat, nu conține punctul <span class="math notranslate nohighlight">\( (0, 0) \)</span>.</p>
+<p>Din aceste exemple, putem trage o concluzie (empirică, dar adevărată) a cărei justificare
+generală o omitem:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Subspațiile planului real <span class="math notranslate nohighlight">\( \mathbb{R}^2 \)</span> sînt dreptele care trec prin origine.</p>
+</div>
+<figure class="align-default" id="fig-subsp-r2">
+<img alt="_images/drepte-prin-origine.png" src="_images/drepte-prin-origine.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Subspațiile planului real <span class="math notranslate nohighlight">\( \mathbb{R}^2 \)</span> sînt dreptele care trec prin origine <span class="math notranslate nohighlight">\( y = mx, m \in \mathbb{R} \)</span></span><a class="headerlink" href="#fig-subsp-r2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Exemplu:</strong> Dacă considerăm spațiul <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span> (pe care îl numim deocamdată intuitiv
+<em>spațiu tridimensional</em>, cunoscut și ca <em>reperul</em> <span class="math notranslate nohighlight">\(Oxyz\)</span>), atunci putem observa cu o procedură
+similară celei anterioare că:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Subspațiile cubului <span class="math notranslate nohighlight">\( Oxyz = \mathbb{R}^3 \)</span> sînt dreptele și planele care trec prin origine.</p>
+</div>
+<figure class="align-default" id="fig-plane-origine-r3">
+<img alt="_images/plane-prin-origine.png" src="_images/plane-prin-origine.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Planele care trec prin origine sînt subspații ale cubului <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span> (vedere din lungul axei <span class="math notranslate nohighlight">\( Oz \)</span>)</span><a class="headerlink" href="#fig-plane-origine-r3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>De exemplu, dacă definim:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  W_1 &amp;= \{ (x, y, z) \in \mathbb{R}^3 \mid x = 2y = 3z \} \\
+  W_2 &amp;= \{ (x, y, z) \in \mathbb{R}^3 \mid x = 2y + z - 1 \},
+\end{align*}\end{split}\]</div>
+<p>putem demonstra ușor că <span class="math notranslate nohighlight">\( W_1 \)</span> este subspațiu al lui <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span>, în timp ce
+<span class="math notranslate nohighlight">\( W_2 \)</span> <em>nu</em> este subspațiu. Putem rescrie:</p>
+<div class="math notranslate nohighlight">
+\[W_1 = \{ (2y, y, 2y/3) \in \mathbb{R}^3 \mid y \in \mathbb{R} \}\]</div>
+<p>și dacă luăm doi vectori, <span class="math notranslate nohighlight">\( v = (2y, y, 2y/3), w = (2t, t, 2t/3) \in W_1 \)</span>,
+împreună cu doi scalari <span class="math notranslate nohighlight">\( \alpha, \beta \in \mathbb{R} \)</span>, calcule simple ne arată
+că o combinație liniară de forma <span class="math notranslate nohighlight">\( \alpha v + \beta w \)</span> produce tot un element din <span class="math notranslate nohighlight">\( W_1 \)</span>
+(exercițiu: completați detaliile).</p>
+<p>De cealaltă parte, <span class="math notranslate nohighlight">\( W_2 \)</span> nu conține vectorul nul <span class="math notranslate nohighlight">\( (0, 0, 0) \)</span>, deoarece pentru
+<span class="math notranslate nohighlight">\( x = y = z = 0 \)</span> nu este adevărat că <span class="math notranslate nohighlight">\( x = 2y + z - 1 \)</span>.</p>
+<figure class="align-default" id="fig-ex-subsp-r3">
+<img alt="_images/subsp-r3.png" src="_images/subsp-r3.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Reprezentarea grafică pentru mulțimile <span class="math notranslate nohighlight">\( W_1 \)</span> și <span class="math notranslate nohighlight">\( W_2 \)</span> din exercițiu</span><a class="headerlink" href="#fig-ex-subsp-r3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Exemplu:</strong> Cazurile anterioare pot fi generalizate în direcția <em>spațiilor de soluții ale sistemelor liniare, omogene</em>.
+Iată două exemple:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  W_1 &amp;= \{ (x, y, z) \in \mathbb{R}^3 \mid x + y - 2z = 0 \text{ și } 3x - y - z = 0 \} \\
+  W_2 &amp;= \{ (x, y, z, t) \in \mathbb{R}^4 \mid x - z = 0 \text{ și } 2x + z - t = 0 \text{ și } y - 3z + 2t = 0 \}
+\end{align*}\end{split}\]</div>
+<p>Rescriind elementele mulțimii <span class="math notranslate nohighlight">\( W_1 \)</span>, găsim imediat că sînt soluțiile sistemului de ecuații:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  x + y - 2z &amp;= 0 \\
+  3x - y - z &amp;= 0
+\end{cases}\end{split}\]</div>
+<p>Din cunoștințe elementare din liceu, știm că sistemul este:</p>
+<ul class="simple">
+<li><p>liniar: conține doar ecuații de gradul întîi;</p></li>
+<li><p>omogen: termenii liberi sînt nuli, i.e. sistemul nu conține constante;</p></li>
+<li><p>compatibil simplu nedeterminat: are o infinitate de soluții, exprimate în funcție de un parametru.</p></li>
+</ul>
+<p>Într-adevăr, pentru a rezolva sistemul, alegem, de pildă <span class="math notranslate nohighlight">\( y = \alpha \in \mathbb{R} \)</span> parametru
+(necunoscută secundară) și rescriem sistemul:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  x - 2z &amp;= -\alpha \\
+  3x - z &amp;= \alpha
+\end{cases}\end{split}\]</div>
+<p>După calcule simple, rezultă soluția:</p>
+<div class="math notranslate nohighlight">
+\[x = \dfrac{3}{5} \alpha, y = \alpha, z = \dfrac{4}{5} \alpha,\]</div>
+<p>ceea ce ne permite acum să rescriem prezentarea întregii mulțimi:</p>
+<div class="math notranslate nohighlight">
+\[W_1 = \left\{ \left( \dfrac{3}{5} \alpha, \alpha, \dfrac{4}{5} \alpha \right) \mid \alpha \in \mathbb{R} \right\}.\]</div>
+<p>Acum, doi vectori oarecare din <span class="math notranslate nohighlight">\( W_1 \)</span> pot avea forma:</p>
+<div class="math notranslate nohighlight">
+\[v = \left( \dfrac{3}{5} a, a, \dfrac{4}{5} a \right), w = \left( \dfrac{3}{5} b, b, \dfrac{4}{5} b \right)\]</div>
+<p>și mai avem de luat doi scalari reali <span class="math notranslate nohighlight">\( \alpha, \beta \in \mathbb{R} \)</span> și să arătăm că realizînd
+combinația liniară <span class="math notranslate nohighlight">\( \alpha v + \beta w \)</span> obținem un vector de aceeași formă cu cei din <span class="math notranslate nohighlight">\( W_1 \)</span>.
+Lăsăm aceste calcule ca exercițiu simplu.</p>
+<p>Concluzia este că <span class="math notranslate nohighlight">\( W_1 \leq \mathbb{R}^3 \)</span> și calcule similare ne permit să arătăm și că
+<span class="math notranslate nohighlight">\( W_2 \leq \mathbb{R}^4 \)</span>.</p>
+<p>Însă considerați mulțimea:</p>
+<div class="math notranslate nohighlight">
+\[W_3 = \{ (x, y, z) \in \mathbb{R}^3 \mid x + y = 1 \text{ și } x - 2z = 0 \}\]</div>
+<p>Aceasta corespunde sistemului de ecuații:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  x + y &amp;= 1 \\
+  x - 2z &amp;= 0
+\end{cases}\end{split}\]</div>
+<p>care este liniar, însă <em>nu este omogen</em>, deoarece prima ecuație are o constantă nenulă, <span class="math notranslate nohighlight">\( 1 \)</span>.</p>
+<p>Vă lăsăm ca exercițiu simplu să rezolvați sistemul și să vă convingeți că <span class="math notranslate nohighlight">\( W_3 \)</span> <em>nu</em> este un subspațiu
+vectorial al lui <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span>.</p>
+<p>Concluzia – pe care o formulăm general, însă fără demonstrație – este:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Soluțiile sistemelor liniare și omogene alcătuiesc (sub)spații vectoriale.</p>
+<p>Mai precis, soluțiile unui sistem liniar și omogen cu <span class="math notranslate nohighlight">\( n \)</span> necunoscute alcătuiesc
+un subspațiu al lui <span class="math notranslate nohighlight">\( \mathbb{R}^n \)</span>.</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="observatie-tehnica">
+<h3>Observație tehnică<a class="headerlink" href="#observatie-tehnica" title="Permalink to this headline">#</a></h3>
+<p>Aceste exemple – ale soluțiilor sistemelor omogene – nu sînt, de fapt, diferite
+de cele de mai sus, ale subspațiilor <span class="math notranslate nohighlight">\( \mathbb{R}^2 \)</span> sau <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span>.
+Motivul este oarecum subtil, de aceea îl includem în această observație suplimentară.</p>
+<p>Să ne amintim cîteva generalități de bază în teoria sistemelor de ecuații liniare.
+Mai întîi, dacă un sistem are același număr de ecuații și necunoscute, atunci
+dacă este compatibil (dacă are soluție), cu siguranță are soluție unică, adică
+este sistem Cramer. Mai mult, dacă sistemul este și omogen, cu siguranță soluția
+unică este cea nulă. De pildă, sistemul:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  x - y + 3z &amp;= 0 \\
+  2x + y - z &amp;= 0 \\
+  x + y + z &amp;= 0
+\end{cases}\end{split}\]</div>
+<p>are matricea sistemului <span class="math notranslate nohighlight">\( A = \begin{pmatrix} 1 &amp; -1 &amp; 3 \\ 2 &amp; 1 &amp; -1 \\ 1 &amp; 1 &amp; 1 \end{pmatrix} \)</span>,
+al cărei determinant este <span class="math notranslate nohighlight">\( 8 \)</span>, deci sistemul este Cramer. Cum <span class="math notranslate nohighlight">\( (0, 0, 0) \)</span> este evident soluție,
+ea trebuie să fie <em>unica</em> soluție.</p>
+<p>Pe de altă parte, dacă avem un număr de ecuații strict mai mic decît cel al necunoscutelor,
+cu siguranță vom avea un sistem compatibil nedeterminat. De exemplu, sistemul:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  x + 3y - z + t - u &amp;= 0 \\
+  2x + y + z - 3t + 2u &amp;= 0
+\end{cases}\end{split}\]</div>
+<p>are 2 ecuații și 5 necunoscute. Cum rangul matricei sistemului este evident 2, rezultă
+că ambele ecuații sînt principale, așadar sistemul va fi <em>triplu nedeterminat</em>.
+Cu alte cuvinte, soluția se va prezenta în funcție de 3 parametri, pe care îi putem
+alege ca fiind necunoscutele secundare.</p>
+<p>Așadar, soluția sistemului va fi un subspațiu al lui <span class="math notranslate nohighlight">\( \mathbb{R}^5 \)</span>.</p>
+<p>Prezentăm acum legătura cu exemplele geometrice anterioare, pe cazuri simple.
+Un punct poate fi determinat ca intersecția a două drepte. Cum dreptele din plan
+au ecuații de gradul întîi, rezultă că un sistem de ecuații de forma:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  ax + by &amp;= 0 \\
+  cx + dy &amp;= 0
+\end{cases}, \quad a, b, c, d \in \mathbb{R}, ad - bc \neq 0\end{split}\]</div>
+<p>caracterizează un punct, ca intersecția celor două drepte reprezentate de cele două
+ecuații. Condiția <span class="math notranslate nohighlight">\( ad - bc \neq 0 \)</span> spune că determinantul acestui sistem este
+nenul, deci sistemul este Cramer, de unde rezultă că soluția sistemului va fi
+soluția nulă, adică cele două drepte se intersectează în origine.</p>
+<p>Mai departe, în spațiu, o dreaptă poate fi determinată ca intersecția a două plane.
+Ecuația generală a unui plan este de forma <span class="math notranslate nohighlight">\( ax + by + cz + d = 0, a, b, c, d \in \mathbb{R} \)</span>,
+iar dacă vrem ca planul să treacă prin origine, trebuie să avem <span class="math notranslate nohighlight">\( d = 0 \)</span>.</p>
+<p>Rezultă că un sistem de ecuații de forma:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  a_1 x + b_1 y + c_1 z &amp;= 0 \\
+  a_2 x + b_2 y + c_2 z &amp;= 0
+\end{cases}, \quad a_{1,2}, b_{1,2}, c_{1,2} \in \mathbb{R}, \dfrac{a_1}{a_2} \neq \dfrac{b_1}{b_2} \neq \dfrac{c_1}{c_2}\end{split}\]</div>
+<p>caracterizează o dreaptă în spațiu, obținută ca intersecția a două plane.
+Cum planele conțin originea, iar sistemul este compatibil (simplu nedeterminat, din condiția
+cu neegalitatea rapoartelor respective), rezultă că și dreapta de intersecție va trece prin
+origine.</p>
+<p>Așadar, un sistem de 2 ecuații și 3 necunoscute va caracteriza o dreaptă în spațiu,
+ca intersecție a două plane, deci un subspațiu al lui <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span>.</p>
+<p>Similar putem generaliza și pentru mai multe necunoscute, însă lucrurile sînt mai greu
+de vizualizat. De pildă, soluția unui sistem omogen cu 3 ecuații și 4 necunoscute
+va fi un plan etc.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="alte-exemple">
+<h2>Alte exemple<a class="headerlink" href="#alte-exemple" title="Permalink to this headline">#</a></h2>
+<p>Revenim acum la exemple de subspații vectoriale, care, însă, vor avea ceva mai
+mică relevanță geometrică. Aceasta cel puțin pînă vom studia noțiunea de <em>dimensiune</em>
+a unui spațiu vectorial, cînd multe lucruri aparent diferite se vor lega strîns.</p>
+<p><strong>Exemplu:</strong> Dacă <span class="math notranslate nohighlight">\( V = M_2(\mathbb{R}) \)</span> este spațiul real de matrice pătratice
+<span class="math notranslate nohighlight">\( 2 \times 2 \)</span> cu elemente reale, atunci putem lua:</p>
+<div class="math notranslate nohighlight">
+\[W = \{ A \in M_2(\mathbb{R}) \mid A = A^t \}.\]</div>
+<p>Scriind aceasta pe componente, presupunem <span class="math notranslate nohighlight">\( A = \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} \)</span>,
+iar condiția din definiție se scrie:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}
+  a &amp; b \\
+  c &amp; d
+\end{pmatrix} = %
+\begin{pmatrix}
+  a &amp; c \\
+  b &amp; d
+\end{pmatrix}\end{split}\]</div>
+<p>de unde obținem <span class="math notranslate nohighlight">\( b = c \)</span>, deci <span class="math notranslate nohighlight">\( A = \begin{pmatrix} a &amp; b \\ b &amp; d \end{pmatrix} \)</span>.
+Astfel de matrice se numesc <em>simetrice</em>.</p>
+<p>Precum vă puteți convinge ușor, ele alcătuiesc un subspațiu al lui <span class="math notranslate nohighlight">\( V \)</span> (exercițiu!).</p>
+<p><strong>Exemplu:</strong> Dacă <span class="math notranslate nohighlight">\( V = \mathbb{R}[X] \)</span>, atunci putem lua <span class="math notranslate nohighlight">\( W = \mathbb{R}_n[X] \)</span>,
+pentru orice <span class="math notranslate nohighlight">\( n \in \mathbb{N} \)</span> și obținem, evident, un subspațiu. Cum înmulțirea
+polinoamelor nu este permisă, rezultă că gradul nu se poate modifica, așadar
+oricum am opera cu polinoame din <span class="math notranslate nohighlight">\( \mathbb{R}_{n}[X] \)</span>, rezultatul va fi un polinom
+din aceeași mulțime (grup de vectori).</p>
+<p><strong>Exemplu:</strong> Dacă <span class="math notranslate nohighlight">\( V = \mathbb{R}_3[X] \)</span> și luăm:</p>
+<div class="math notranslate nohighlight">
+\[W = \{ p \in \mathbb{R}_{3}[X] \mid p(2) = 0 \}\]</div>
+<p>obținem un subspațiu. Într-adevăr, putem scrie generic:</p>
+<div class="math notranslate nohighlight">
+\[V = \{ p = a + bX + cX^2 + dX^3 \mid a, b, c, d \in \mathbb{R} \}\]</div>
+<p>Atunci:</p>
+<div class="math notranslate nohighlight">
+\[W = \{ p = a + bX + cX^2 + dX^3 \mid a + 2b + 4c + 8d = 0 \}\]</div>
+<p>și nu e greu de observat că, de fapt, putem trata <span class="math notranslate nohighlight">\( W \)</span> ca pe spațiul soluțiilor
+unui „sistem“ liniar cu o ecuație și 4 necunoscute – care va fi compatibil
+triplu nedeterminat. Așadar, <span class="math notranslate nohighlight">\( W \leq V \)</span>.</p>
+<p><strong>Exemplu:</strong> Și fiindcă am făcut analogia anterioară, să adăugăm și că o modificare minoră
+a datelor de mai sus, precum:</p>
+<div class="math notranslate nohighlight">
+\[W = \{ p = a + bX + cX^2 + dX^3 \mid p(2) = 1 \}\]</div>
+<p>face ca <span class="math notranslate nohighlight">\( W \)</span> să nu mai fie subspațiu. Aceasta deoarece „sistemul“ la care se ajunge
+nu mai este omogen:</p>
+<div class="math notranslate nohighlight">
+\[a + 2b + 4c + 8d = 1,\]</div>
+<p>deci nu poate conține polinomul nul (<span class="math notranslate nohighlight">\(a = b = c = d = 0\)</span>).</p>
+<p><strong>Exemplu:</strong> Să încheiem cu un exemplu care arată că orice ecuație care nu este liniară
+nu poate produce subspații vectoriale. Pentru simplitate, fie <span class="math notranslate nohighlight">\( V = \mathbb{R}^2 \)</span>
+și submulțimea:</p>
+<div class="math notranslate nohighlight">
+\[W = \{ (x, y) \in \mathbb{R}^2 \mid y = x^2 \} = \{ (x, x^2) \mid x \in \mathbb{R} \}\]</div>
+<p>Arătăm că <span class="math notranslate nohighlight">\( W \nleq V \)</span>, chiar dacă, evident, conține originea. Geometric, <span class="math notranslate nohighlight">\( W \)</span>
+este reprezentat de o parabolă cu vîrful în origine și cu ramurile în sus:</p>
+<figure class="align-default" id="fig-parabola">
+<img alt="_images/parabola.png" src="_images/parabola.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Parabola <span class="math notranslate nohighlight">\( (x, x^2) \in \mathbb{R}^2 \)</span> <em>nu</em> formează un subspațiu vectorial al planului <span class="math notranslate nohighlight">\( \mathbb{R}^2 \)</span></span><a class="headerlink" href="#fig-parabola" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Să încercăm să demonstrăm că <span class="math notranslate nohighlight">\( W \)</span> ar fi subspațiu, folosind definiția. Fie, deci,
+doi vectori din <span class="math notranslate nohighlight">\( W \)</span>, <span class="math notranslate nohighlight">\( a = (x_1, y_1) \)</span> și <span class="math notranslate nohighlight">\( b = (x_2, y_2) \)</span>, cu
+<span class="math notranslate nohighlight">\( y_1 = x_1^2 \)</span> și <span class="math notranslate nohighlight">\( y_2 = x_2^2 \)</span>. Fie și doi scalari <span class="math notranslate nohighlight">\( \alpha, \beta \in \mathbb{R} \)</span>
+și scriem combinația liniară:</p>
+<div class="math notranslate nohighlight">
+\[\alpha a + \beta b = (\alpha x_1 + \beta x_2, \alpha y_1 + \beta y_2 )\]</div>
+<p>Pentru ca acest vector să aparțină lui <span class="math notranslate nohighlight">\( W \)</span>, ar trebui ca a doua componentă să fie
+egală cu pătratul primeia, ceea ce este evident fals:</p>
+<div class="math notranslate nohighlight">
+\[(\alpha x_1 + \beta x_2)^2 = \alpha^2 x_1^2 + \beta^2 x_2^2 + 2\alpha\beta x_1x_2 %
+\neq \alpha y_1 + \beta y_2\]</div>
+<p>știm deja că <span class="math notranslate nohighlight">\( x_1^2 = y_1 \)</span> și <span class="math notranslate nohighlight">\( x_2^2 = y_2 \)</span>, însă nu putem ignora termenul
+mixt <span class="math notranslate nohighlight">\( 2 \alpha\beta x_1 x_2 \)</span>. În plus, scalarii care apar la pătrat de asemenea diferă.</p>
+<p>Acest exemplu ne arată, deci, că nici în cele mai simple cazuri nu putem accepta expresii
+care nu sînt liniare (adică de gradul întîi) în spații vectoriale.</p>
+<p>În particular, rezultă că subspațiile planului <span class="math notranslate nohighlight">\( \mathbb{R}^2 \)</span> sînt <em>numai dreptele</em>
+care conțin originea și nicio altă curbă.</p>
+</section>
+<section id="exercitii-propuse">
+<h2>Exerciții propuse<a class="headerlink" href="#exercitii-propuse" title="Permalink to this headline">#</a></h2>
+<p>În fine, cîteva exerciții standard, computaționale, care se concentrează în special
+pe noțiunea de subspațiu vectorial.</p>
+<p>În toate exemplele de mai jos, studiați dacă <span class="math notranslate nohighlight">\( V \)</span> este subspațiu al lui <span class="math notranslate nohighlight">\( W \)</span>.
+Vă sugerăm să vă gîndiți la mai multe argumente, acolo unde este posibil: computațional,
+geometric, intuitiv și să faceți legături cu situații întîlnite anterior:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\( V = \{ (x, y) \in \mathbb{R}^2 \mid 3x - y = 0 \}, W = \mathbb{R}^2 \)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\( V = \{ (x, y, z) \in \mathbb{R}^3 \mid 3x - y = 0 \}, W = \mathbb{R}^3 \)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\( V = \{ (x, y, z) \in \mathbb{R}^3 \mid x = 0 \}, W = \mathbb{R}^3 \)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\( V = \{ p \in \mathbb{R}_2[X] \mid p(1) = 0 \}, W = \mathbb{R}_{3}[X] \)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\( V = \{ p \in \mathbb{R}_2[X] \mid p'(1) = 0 \}, W = \mathbb{R}_{2}[X] \)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\( V = \{ (x, y, z) \in \mathbb{R}^3 \mid 2x - y = 0 \text{ și } 3x - y + z = 0 \}, W = \mathbb{R}^3 \)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\( V \)</span> de la exercițiul anterior și <span class="math notranslate nohighlight">\( W = \mathbb{R}^7 \)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\( V = \{ A \in M_2(\mathbb{R}) \mid \mathrm{tr}(A) = 0 \}, W = M_2(\mathbb{R}) \)</span>.
+Am notat cu <span class="math notranslate nohighlight">\( \mathrm{tr}(A) \)</span> <em>urma</em> (eng. <em>trace</em>) matricei <span class="math notranslate nohighlight">\( A \)</span>, adică suma
+elementelor de pe diagonala principală: dacă <span class="math notranslate nohighlight">\( A = (a_{ij})_{1 \leq i,j \leq n} \)</span>,
+atunci <span class="math notranslate nohighlight">\( \mathrm{tr}(A) = \displaystyle\sum_{0 \leq i \leq n} a_{ii} \)</span>.</p></li>
+</ol>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="r2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Riguros, ceea ce am obținut aici este un grup <em>izomorf</em> cu <span class="math notranslate nohighlight">\( (\mathbb{R}^2, +) \)</span>,
+deoarece vectorii din plan nu <em>sînt efectiv</em> puncte din planul real <span class="math notranslate nohighlight">\( \mathbb{R}^2 \)</span> sau perechi
+de numere reale. Ca obiecte geometrice, vectorii au o definiție diferită.
+Însă asemănarea este atît de clară, încît putem chiar să nu facem nicio distincție între ele.</p>
+</dd>
+<dt class="label" id="operatii"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Cu riscul de ambiguitate, am notat toate operațiile aditiv și multiplicativ.
+Atenția la context ne va arăta despre care operație este vorba.</p>
+</dd>
+<dt class="label" id="produs"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>Definiția concretă este ceva mai complicată. Gîndiți-vă cum se înmulțesc
+două polinoame, unde trebuie să ținem cont de grad. În plus, un produs de polinoame
+va avea gradul egal cu suma gradelor celor doi factori.</p>
+</dd>
+</dl>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="p2-s2-inele-corpuri.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Inele și corpuri</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="p2-s4-baza.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Bază și dimensiune</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Adrian Manea (Poligon Educational)<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

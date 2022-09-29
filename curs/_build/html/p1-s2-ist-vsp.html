@@ -1,0 +1,934 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Istoria spațiilor vectoriale &#8212; Algebră liniară și aplicații</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/proof.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Algebră abstractă și algebră liniară" href="p2-abstract.html" />
+    <link rel="prev" title="Abstractizare și raționamente" href="p1-s1-rationamente.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo-light-poly-only.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Algebră liniară și aplicații</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Algebră liniară și aplicații
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Elemente de istoria și filosofia matematicii
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-istorie-fil-intro.html">
+   Generalități
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-s1-rationamente.html">
+   Abstractizare și raționamente
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Istoria spațiilor vectoriale
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algebră abstractă și algebră liniară
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="p2-abstract.html">
+   Algebră abstractă și algebră liniară
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s1-grupuri.html">
+     Monoizi și grupuri
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s1e-simetrii.html">
+     Grupuri de simetrie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s2-inele-corpuri.html">
+     Inele și corpuri
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s3-spvect.html">
+     Spații vectoriale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s4-baza.html">
+     Bază și dimensiune
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s5-op-subsp.html">
+     Operații cu subspații
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s6-morfisme-spvect.html">
+     Morfisme de spații vectoriale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s7-ortonormare.html">
+     Produs scalar și ortonormare
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s8-vvp.html">
+     Vectori și valori proprii
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s9-quat.html">
+     Cuaternioni
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s10-afin.html">
+     Spații afine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s11-mat-decomp.html">
+     Descompuneri matriceale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s12-transf-mat.html">
+     Transformări matriceale în 2D și 3D
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s13-arii-volume.html">
+     Arii și volume
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Aplicații și implementări în programare
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="p3-aplicatii.html">
+   Aplicații și implementări în programare
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Bibliografie și lecturi suplimentare
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliografie.html">
+   Bibliografie și lecturi suplimentare
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/adimanea/linalg"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/adimanea/linalg/issues/new?title=Issue%20on%20page%20%2Fp1-s2-ist-vsp.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/p1-s2-ist-vsp.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inspiratie-geometrica-si-algebrica">
+   Inspirație geometrică și algebrică
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sisteme-liniare">
+   Sisteme liniare
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#regula-paralelogramului">
+   Regula paralelogramului
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Istoria spațiilor vectoriale</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inspiratie-geometrica-si-algebrica">
+   Inspirație geometrică și algebrică
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sisteme-liniare">
+   Sisteme liniare
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#regula-paralelogramului">
+   Regula paralelogramului
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="istoria-spatiilor-vectoriale">
+<h1>Istoria spațiilor vectoriale<a class="headerlink" href="#istoria-spatiilor-vectoriale" title="Permalink to this headline">#</a></h1>
+<p>Astăzi, avem o perspectivă de ansamblu asupra structurilor algebrice și le privim
+ca o evoluție treptată. De la monoizi, care au o singură operație, cu cele mai
+puține proprietăți, apoi mai adăugăm o proprietate importantă și ajungem la grupuri,
+după care mai adăugăm o operație și ajungem la inele, încă o proprietate ne duce
+la corpuri și în fine<a class="footnote-reference brackets" href="#structuri" id="id1">1</a>, complicăm structura considerînd o pereche alcătuită
+dintr-un grup și un corp și obținem un spațiu vectorial ș.a.m.d.</p>
+<p>Dar nu ar trebui să surprindă pe nimeni faptul că în istorie, dezvoltarea acestor
+structuri algebrice nu a fost deloc la fel de simplă și de ramificată. Structurile
+algebrice au apărut aproape independent și pentru scopuri de multe ori aproape
+complet diferite. <a class="reference internal" href="p1-s1-rationamente.html#sec-abstractizare"><span class="std std-ref">Abstractizarea</span></a> despre care am vorbit
+într-o secțiune anterioară ne oferă ceea ce în studiul academic se numește o
+<em>citire inversă</em> (eng. <em>revese reading</em>) a lucrurilor, în sensul că înțelegem
+cu ajutorul cunoștințelor din prezent, avînd deja o perspectivă bine dezvoltată,
+lucruri din trecut. Altfel spus, aplicăm cunoștințele curente retroactiv.</p>
+<p>Însă istoria conceptelor matematice în general și a structurilor algebrice în
+particular a fost foarte rar una bine organizată. De pildă, v-ar surprinde să aflați
+că teoria mulțimilor, pe care astăzi o considerăm o ramură de bază a fundamentelor
+matematicii, împreună cu logica provine din… analiză matematică și, mai exact,
+din studiul seriilor Fourier și al seriilor trigonometrice?</p>
+<p>În ce privește structurile algebrice, apariția grupurilor, de exemplu, se datorează
+unor studii asupra permutărilor și matricelor, de către Joseph Louis Lagrange
+și Arthur Cayley în primă fază (secolele XVIII-XIX) și extinse ulterior cu
+studiul rădăcinilor ecuațiilor algebrice prin Évariste Galois (secolul XIX).</p>
+<p>Noi ne vom concentra aici pe <em>istoria spațiilor vectoriale</em>. Chiar și așa, este
+greu de făcut o legătură unică între concepte matematice atît de importante,
+pentru că tocmai prin generalitatea lor, se pretează la multiple abordări și
+aplicații, care le leagă adesea de foarte multe domenii. Mai mult, înainte chiar
+de a se fi formalizat conceptul, putem găsi frînturi ale acestor structuri în
+mai multe locuri și ne putem întreba, de pildă:</p>
+<blockquote>
+<div><p>Calculul matriceal și proprietățile operațiilor cu matrice pot fi considerate puncte
+de pornire pentru spații vectoriale? Dar transformările geometrice? Dar mecanica
+newtoniană, prin utilizarea vectorilor în plan și în spațiu?</p>
+</div></blockquote>
+<p>În cele ce urmează, vom folosi în special articolele <span id="id2">[<a class="reference internal" href="bibliografie.html#id20" title="Gregory H. Moore. The axiomatization of linear algebra: 1875-1940. Historia Mathematica, 1995.">Moore, 1995</a>]</span>, <span id="id3">[<a class="reference internal" href="bibliografie.html#id21" title="Jeremy Gray. The history of the concept of a finite-dimensional vector space. Historia Mathematica, 1980.">Gray, 1980</a>]</span>,
+<span id="id4">[<a class="reference internal" href="bibliografie.html#id22" title="Jean-Luc Dorier. A general outline of the genesis of vector space theory. Historia Mathematica, 1995.">Dorier, 1995</a>]</span> și <span id="id5">[<a class="reference internal" href="bibliografie.html#id23" title="Richard Stout. The development of algebraic structures during the nineteenth century. ACMS Conference Proceedings, 1981.">Stout, 1981</a>]</span>, în care se trasează originea conceptului de spațiu
+vectorial și din care vom extrage în special părțile legate de geometrie și
+calcul vectorial, pe care le detaliem în celelalte părți ale cursului.</p>
+<section id="inspiratie-geometrica-si-algebrica">
+<h2>Inspirație geometrică și algebrică<a class="headerlink" href="#inspiratie-geometrica-si-algebrica" title="Permalink to this headline">#</a></h2>
+<figure class="align-default" id="fig-felix-klein">
+<img alt="_images/felix_klein.png" src="_images/felix_klein.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Felix Klein (cca. 1850), via Wikipedia</span><a class="headerlink" href="#fig-felix-klein" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Felix Klein (1849-1925)</strong> a fost un matematician german ale cărui reușite merg dincolo
+de rezultate matematice propriu-zise. În 1872, Klein publică lucrarea
+<em>Vergleichende Betrachtungen über neuere geometrische Forschungen</em> (<em>Cercetări comparative</em>
+<em>asupra dezvoltărilor geometrice recente</em>), care devine un program de cercetare,
+cunoscut astăzi sub numele de <em>Programul de la Erlangen</em>, după universitatea la
+care lucra autorul.</p>
+<p>Programul propus de Klein este unul de utilizare a metodelor algebrice în studiul
+geometriei. Am putea trasa istoria acestor idei tocmai în secolul al XVII-lea,
+unde francezii François Viète și René Descartes au introdus notația pe care o
+cunoaștem astăzi pentru coordonatele punctelor din plan. Tot odată cu ei, s-a
+formalizat și notația algebrică pentru ecuații polinomiale.</p>
+<p>Klein introduce un <a class="reference internal" href="p2-s1e-simetrii.html#sec-gr-klein"><span class="std std-ref">grup de ordin 4</span></a>, <em>Vierrengruppe</em>, care astăzi
+îi poartă numele și a cărui descriere poate fi formulată cu ajutorul transformărilor
+din plan. Aceasta s-a dovedit o inițiativă deosebită pentru aplicarea metodelor
+algebrice în studiul geometriei și nu după mult timp, un mare contemporan și compatriot
+al lui Klein, <strong>David Hilbert (1862-1943)</strong>, face următorul pas foarte important,
+prin contribuțiile sale fundamentale în domeniul numit astăzi <em>geometrie algebrică</em>.</p>
+<figure class="align-default" id="fig-david-hilbert">
+<img alt="_images/Hilbert.jpg" src="_images/Hilbert.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">David Hilbert (cca. 1912), via Wikipedia</span><a class="headerlink" href="#fig-david-hilbert" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Cu ajutorul geometriei algebrice, Hilbert și colaboratorii săi – dintre care menționăm
+pe una dintre cele mai importante figuri feminine din matematică,
+<strong>Emmy Noether (1882-1935)</strong> – au dat înțelesuri precise interpretărilor geometrice
+ale structurilor algebrice. Și tot de Hilbert și contemporanii săi se leagă și
+introducerea structurilor algebrice de <em>inel</em> și <em>corp</em>, cărora le-au găsit aplicații
+fundamentale și în fizică.</p>
+<figure class="align-default" id="fig-noether">
+<img alt="_images/Noether.jpg" src="_images/Noether.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Emmy Noether (cca. 1900), via Wikipedia</span><a class="headerlink" href="#fig-noether" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Precum menționează și istoricul și matematicianul Jeremy Gray în <span id="id6">[<a class="reference internal" href="bibliografie.html#id21" title="Jeremy Gray. The history of the concept of a finite-dimensional vector space. Historia Mathematica, 1980.">Gray, 1980</a>]</span>,
+este foarte probabil ca de-a lungul istoriei, matematicienii să fi folosit concepte
+pe care astăzi le legăm în mod fundamental de spații vectoriale fără a le
+formaliza sau a le pune în acest context riguros. Operația fundamentală dintr-un spațiu
+vectorial, aceea de <em>combinație liniară</em>, a stat la baza rezolvării sistemelor de
+ecuații liniare cel puțin din timpul lui Carl Friedrich Gauss (1777-1855). De fapt,
+s-au găsit chiar dovezi că poporul chinez, în primele secole ale erei noastre,
+făcea operații cu numere tabelate într-un fel de proto-matrice și similar, rezolvau
+sisteme liniare prin metoda substituției și a reducerii. Aceste metode nu sînt altceva
+decît combinații liniare ale vectorilor care alcătuiesc liniile sau coloanele matricei
+sistemului.</p>
+<p>În plus, dacă situăm lucrurile în contextul istoric, realizăm că și
+<strong>William Rowan Hamilton (1805-1865)</strong>, cel creditat cu introducerea cuaternionilor
+a fost aproape contemporan cu Hilbert. Importanța majoră a acestui fapt este aceea
+că, așa cum <a class="reference internal" href="p2-s9-quat.html#cap-cuat"><span class="std std-ref">am arătat și noi</span></a>, cele 3 unități imaginare ale cuaternionilor
+au fost introduse tocmai pentru a respecta axiome ale structurilor algebrice.
+De aici, este clar că Hamilton și contemporanul și colaboratorul său, Augustus De Morgan,
+cunoșteau și utilizau măcar o parte a axiomelor algebrei abstracte.</p>
+<figure class="align-default" id="fig-hamilton">
+<img alt="_images/hamilton.png" src="_images/hamilton.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Sir William Rowan Hamilton (cca. 1850), via Wikipedia</span><a class="headerlink" href="#fig-hamilton" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>O altă sursă de inspirație importantă pentru istoria spațiilor vectoriale este geometria.
+Și nu ne referim numai la geometria în plan și în spațiu, eventual aplicată pentru
+rezolvarea problemelor de fizică clasică. Se arată în <span id="id7">[<a class="reference internal" href="bibliografie.html#id20" title="Gregory H. Moore. The axiomatization of linear algebra: 1875-1940. Historia Mathematica, 1995.">Moore, 1995</a>]</span> că, deși ideea de
+segment orientat a fost utilizată în fizică și geometrie încă din secolul al XVIII-lea,
+unde astronomii foloseau termenul ca sugerînd distanțe și raze ale planetelor, în
+matematică, un vector rar apărea cu un sens diferit de cel al reprezentării geometrice
+din dimensiune cel mult 3. Etimologia cuvîntului provine din latinescul <em>vectus</em>,
+care înseamnă <em>a purta, a transporta</em>, ceea ce explică utilizări ca <em>vector de poziție</em>
+sau <em>rază vectoare</em> din astronomie, făcîndu-se referire la un transport, o mișcare
+închipuită.</p>
+<p>Sensul modern al vectorilor, fundamental pentru înțelesul spațiilor vectoriale apare
+la Giuseppe Peano, în jurul anului 1890.</p>
+<p>De fapt, înainte să trecem chiar la Giuseppe Peano, mai adăugăm că mulți matematicieni
+ai finalului de secol XIX datorează foarte mult lucrărilor lui <strong>Hermann Grassmann (1809-1877)</strong>,
+un matematician german ale cărui merite au ieșit tîrziu la iveală.</p>
+<figure class="align-default" id="fig-grassmann">
+<img alt="_images/grassmann.webp" src="_images/grassmann.webp" />
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Hermann Grassmann (1809-1877), via Encyclopedia Britannica</span><a class="headerlink" href="#fig-grassmann" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>O înțelegere a genezei ideilor care au stat la baza spațiilor vectoriale nu se poate
+face fără un studiu al operei lui. Deși nu s-a bucurat de o popularitate foarte mare,
+operele lui Grassmann se pot găsi și în traduceri moderne, în engleză, cum este cazul
+<span id="id8">[<a class="reference internal" href="bibliografie.html#id24" title="Hermann Grassmann. A New Branch of Mathematics. Open Court, 1995.">Grassmann, 1995</a>]</span>, pe care o propunem pentru un studiu amănunțit.</p>
+<p>Continuăm acum cu privirea de ansamblu asupra ideilor ce au stat la baza spațiilor
+vectoriale.</p>
+</section>
+<section id="sisteme-liniare">
+<h2>Sisteme liniare<a class="headerlink" href="#sisteme-liniare" title="Permalink to this headline">#</a></h2>
+<p>Conform <span id="id9">[<a class="reference internal" href="bibliografie.html#id20" title="Gregory H. Moore. The axiomatization of linear algebra: 1875-1940. Historia Mathematica, 1995.">Moore, 1995</a>]</span>, una dintre primele apariții ale termenului de „vector“
+în algebră se datorează lui William R. Hamilton. Odată cu introducerea cuaternionilor,
+acesta a vrut să separe partea reală de cele 3 părți imaginare, astfel că
+a denumit partea reală, <em>scalară</em> și pe cea imaginară (cu toate cele 3 unități),
+<em>vectorială</em>.</p>
+<p>Matematicianul italian <strong>Giuseppe Peano (1858-1932)</strong>, căruia i se atribuie și
+lucrări care au stat la baza axiomatizării numerelor naturale, are trei încercări
+de a defini conceptul de spațiu vectorial.</p>
+<figure class="align-default" id="fig-peano">
+<img alt="_images/peano.jpg" src="_images/peano.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Giuseppe Peano, via Wikipedia</span><a class="headerlink" href="#fig-peano" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>De fapt, ceea ce face Peano este să utilizeze ingrediente pe care le considerăm
+astăzi fundamentale în teoria spațiilor vectoriale pentru scopuri diferite,
+intenția lui nefiind să introducă noi structuri algebrice. Peano scrie explicit
+că lucrările lui continuă munca lui Grassmann din așa-numita <em>teorie a extinderilor</em>
+(<em>Ausdehnungslehre</em>, în original) și introduce n-tuplurile de numere, precum
+și operațiile cu acestea, pe componente:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+	(a_1, a_2, \dots, a_n) + (b_1, b_2, \dots, b_n) &amp;= (a_1 + b_1, a_2 + b_2, \dots, a_n + b_n) \\
+	\alpha \cdot (a_1, a_2, \dots, a_n) &amp;= (\alpha a_1, \alpha a_2, \dots, \alpha a_n).
+\end{align*}\end{split}\]</div>
+<p>Lucrările lui Peano au fost traduse în engleză și se găsesc în cartea <span id="id10">[<a class="reference internal" href="bibliografie.html#id25" title="Giuseppe Peano. Geometric Calculus. Birkhäuser, 2000.">Peano, 2000</a>]</span>,
+pe care o recomandăm pentru studiu aprofundat, împreună cu colecția lui Grassmann
+(<span id="id11">[<a class="reference internal" href="bibliografie.html#id24" title="Hermann Grassmann. A New Branch of Mathematics. Open Court, 1995.">Grassmann, 1995</a>]</span>). De asemenea, două lucrări care extind și explică teoria lui
+Grassmann sînt <span id="id12">[<a class="reference internal" href="bibliografie.html#id26" title="E. W. Hyde. Directional Calculus. Ginn &amp; Company, 1890.">Hyde, 1890</a>]</span> și <span id="id13">[<a class="reference internal" href="bibliografie.html#id27" title="E. W. Hyde. Grassmann's Space Analysis. John Wiley &amp; Sons, 1906.">Hyde, 1906</a>]</span>.</p>
+<p>Metodele lui Peano au încercat să algebrizeze teoriile lui Grassmann,
+care erau strîns legate de geometrie. Ceea ce Grassmann numea <em>adunarea punctelor</em>,
+Peano a scris sub formă abstractă ca sumă de n-tupluri ca mai sus. În ultimul capitol
+din <span id="id14">[<a class="reference internal" href="bibliografie.html#id25" title="Giuseppe Peano. Geometric Calculus. Birkhäuser, 2000.">Peano, 2000</a>]</span>, intitulat <em>Transformări ale sistemelor liniare</em>, apare chiar definiția
+unui spațiu vectorial real:</p>
+<div class="proof definition admonition" id="def-sp-vect-peano">
+<p class="admonition-title"><span class="caption-number">Definition 2 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Există sisteme de obiecte pentru care se dau următoarele definiții:</p>
+<ul class="simple">
+<li><p>Există o echivalența între două obiecte ale sistemului, adică o propoziție
+notată <span class="math notranslate nohighlight">\( a = b \)</span>, […]</p></li>
+<li><p>Există o <em>sumă</em> a două obiecte <span class="math notranslate nohighlight">\( a \)</span> și <span class="math notranslate nohighlight">\( b \)</span>, adică se definește un obiect
+notat <span class="math notranslate nohighlight">\( a + b \)</span>, care aparține aceluiași sistem și care satisface condițiile:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ (a = b) \Rightarrow (a + c = b + c), a + b = b + a, a + (b + c) = (a + b) + c \]</div>
+<ul class="simple">
+<li><p>Dacă <span class="math notranslate nohighlight">\( a \)</span> este un obiect al sistemului și <span class="math notranslate nohighlight">\( m \)</span> este un întreg pozitiv, numim <span class="math notranslate nohighlight">\( ma \)</span>
+suma a <span class="math notranslate nohighlight">\( m \)</span> obiecte egale cu <span class="math notranslate nohighlight">\( a \)</span>. […]</p></li>
+<li><p>În fine, presupunem că există un obiect al sistemului, pe care îl notăm cu <span class="math notranslate nohighlight">\( 0 \)</span>,
+astfel încît, pentru orice obiect <span class="math notranslate nohighlight">\( a \)</span>, produsul <span class="math notranslate nohighlight">\( 0a = 0 \)</span>, iar dacă notăm
+<span class="math notranslate nohighlight">\( a - b = a + (-1)b \)</span>, atunci <span class="math notranslate nohighlight">\( a - a = 0, a + 0 = a \)</span>.</p></li>
+</ul>
+<p>Sistemele de obiecte care satisfac proprietățile de mai sus se numesc <em>sisteme liniare</em>.</p>
+</section>
+</div><p>Peano oferă și exemple, anume numerele reale, numerele complexe și vectorii din plan
+și din spațiu. Mai mult, cu o creativitate deosebită, Peano oferă și exemplul
+funcțiilor polinomiale de o variabilă reală și notează chiar că, dacă restrîngem
+gradul maxim al polinoamelor la <span class="math notranslate nohighlight">\( n \)</span>, atunci dimensiunea acestui sistem liniar
+va fi <span class="math notranslate nohighlight">\( n + 1 \)</span>, dar dacă nu impunem o astfel de restricție, obținem dimensiune
+infinită.</p>
+<p>Faptul că Peano ajunge atît de departe în a formaliza conceptul de spațiu vectorial
+și chiar dă exemple complet diferite de contextul „vizibil“ al geometriei este
+realmente surprinzător.</p>
+<p>Din păcate, așa cum s-a întîmplat și cu o bună parte a operei lui Grassmann,
+nici sistemele liniare ale lui Peano nu s-au bucurat de succes și utilizare pe scară
+largă din partea matematicienilor. În fapt, Peano însuși nu a acordat suficient
+de multă atenție subiectului, considerîndu-l doar un rezultat secundar, pe care l-a
+folosit în teorii mai sofisticate și nu unul care merită atenție de sine stătător.</p>
+<p>Similar l-au tratat și compatrioții și contemporanii săi, <strong>Cesare Burali-Forti</strong> și
+<strong>Roberto Marcolongo</strong>, care, deși au scris o lucrare intitulată <em>Transformări liniare</em>
+în 1912, unde menționează lucrările lui Peano, aplicațiile pe care aceștia le urmăresc
+erau în mecanică și notează numai:</p>
+<blockquote>
+<div><p>Trecem pe scurt în revistă fundamentele teoriei generale a sistemelor liniare și
+a operatorilor liniari. În general, aceste lucruri sînt binecunoscute, în mare parte.</p>
+</div></blockquote>
+<figure class="align-default" id="fig-burali-forti">
+<img alt="_images/burali-forti.jpg" src="_images/burali-forti.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Cesare Burali-Forti (1861-1931), via Wikipedia</span><a class="headerlink" href="#fig-burali-forti" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>La fel au stat lucrurile și cu analistul <strong>Salvatore Pincherle</strong>, care face, totuși,
+o remarcă în 1897 într-un articol din <em>Mathematische Annalen</em>:</p>
+<blockquote>
+<div><p>Ne rămîne doar să cităm anumite lucrări care se ocupă de calcul funcțional,
+dar care îl tratează dintr-un nou punct de vedere și care astfel fac anumite
+generalități din acest calcul foarte clare și aproape intuitive. Acesta este
+punctul de vedere al vectorilor sau al calculului geometric. […] Pe acest
+subiect, Peano a scris pagini foarte interesante unde […] dă cele mai simple
+proprietăți ale operațiilor liniare aplicate elementelor determinate de <span class="math notranslate nohighlight">\( n \)</span>
+coordonate. Autorul notează […] că se pot considera chiar și sisteme liniare
+cu un număr infinit de dimensiuni.</p>
+</div></blockquote>
+<p>Patru ani mai tîrziu, Pincherle scrie o lucrare în care reia axiomele lui Peano pentru
+spații liniare într-un context surprinzător: acela al funcțiilor analitice, despre
+care a demonstrat că este infinit dimensional.</p>
+<figure class="align-default" id="fig-pincherle">
+<img alt="_images/pincherle.jpg" src="_images/pincherle.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Salvatore Pincherle (1853-1936), via Wikipedia</span><a class="headerlink" href="#fig-pincherle" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Privind în urmă, am putea spune că motivul pentru care metodele lui Peano nu s-au
+bucurat de succesul meritat este acela că în perioada respectivă, adică în chiar
+ultimii ani ai lui 1800 și primii ai lui 1900, <em>sistemele axiomatice</em> nu erau des
+întîlnite. Matematicienii nu erau obișnuiți să lucreze cu structuri definite cu
+ajutorul unor axiome. Astfel că descrierea pe care a dat-o Peano pentru sistemele
+liniare erau greu de înțeles și mai ales, greu de apreciat la adevărata valoare.</p>
+<hr class="docutils" />
+<p>În jurul anului 1898, Peano își schimbă abordarea: în loc să se concentreze pe
+rezultate de geometrie și analiză, pentru care sistemele axiomatice să fie doar
+un produs secundar sau un ingredient, acesta pornește cu ținta explicită de a
+<em>axiomatiza geometria</em>, cu ajutorul vectorilor:</p>
+<blockquote>
+<div><p>În această lucrare îmi propun să iau în considerare ideile care se întîlnesc
+în teoria vectorilor și să le clasific în idei primitive, care sînt extrase
+din observații ale spațiului fizic și idei derivate, a căror definiție este
+dată; și să consider care propoziții pot fi presupuse primitive și care sînt
+deduse drept consecințe ale acestora, prin procese pur logice, fără apel la
+intuiție.
+Astfel, teoria vectorilor pare să fie dezvoltată fără a presupune studii
+geometrice anterioare. Și de aceea, toată geometria se poate trata cu
+ajutorul acestei teorii și rezultă posibilitatea teoretică de a înlocui
+geometria însăși cu teoria vectorilor. <span id="id15">[<a class="reference internal" href="bibliografie.html#id28" title="Giuseppe Peano. Analisi della teoria dei vettori. Atti della Accademia delle Scienze di Torino, 1898.">Peano, 1898</a>]</span></p>
+</div></blockquote>
+<p>Singurele două concepte pe care Peano le-a luat drept primitive au fost punctele
+și egalitatea segmentelor, pe care a scris-o folosind noțiuni anterioare: un segment
+era gîndit ca o diferență de puncte, deci egalitatea segmentelor <span class="math notranslate nohighlight">\( [AB] \)</span> și
+<span class="math notranslate nohighlight">\( [CD] \)</span> s-ar scrie <span class="math notranslate nohighlight">\( a - b = c - d \)</span>, unde <span class="math notranslate nohighlight">\( a,b,c,d \)</span> sînt puncte. Pe lîngă
+acestea, el a trasat 11 axiome, care acoperă chiar mult mai mult decît structura
+de spațiu vectorial, printre care chiar și structura de
+<a class="reference internal" href="p2-s7-ortonormare.html#sec-sp-eucl"><span class="std std-ref">spațiu euclidian</span></a>. El a notat produsul scalar al doi vectori
+<span class="math notranslate nohighlight">\( u \)</span> și <span class="math notranslate nohighlight">\( v \)</span> prin <span class="math notranslate nohighlight">\( u \mid v \)</span> și a scris axiomele:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  u \mid v &amp;\in \mathbb{R} \\
+  u \mid v &amp;= v \mid u \\
+  (u + v) \mid w &amp;= u \mid w + v \mid w \\
+  u \neq 0 &amp;\Rightarrow u \mid u \in (0, \infty)
+\end{align*}\end{split}\]</div>
+<p>Nici această axiomatizare nu a avut multe ecouri în comunitatea matematică,
+cu o excepție notabilă. În lucrarea sa din 1903, <em>Principiile matematicii</em>,
+fundamentală pentru ceea ce avea să devină curentul logicist (și pe care îl vom
+detalia într-un capitol ulterior), britanicul <strong>Bertrand Russell (1872-1970)</strong>
+practic traduce axiomele lui Peano (creditîndu-l corespunzător). Russell mai
+adaugă că o astfel de definiție, bazată pe axiome, se poate folosi pentru
+spații euclidiene și, chiar dacă nu este singura posibilă, în opinia lui, este
+cea mai simplă.</p>
+<figure class="align-default" id="fig-russell">
+<img alt="_images/russell.jpg" src="_images/russell.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Bertrand Russell (cca. 1957), via Wikipedia</span><a class="headerlink" href="#fig-russell" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="regula-paralelogramului">
+<h2>Regula paralelogramului<a class="headerlink" href="#regula-paralelogramului" title="Permalink to this headline">#</a></h2>
+<p>Poate surprinzător, o inițiativa de axiomatizare a calculului cu vectori a apărut
+în lucrările francezului <strong>Gaston Darboux (1842-1917)</strong>.</p>
+<figure class="align-default" id="fig-darboux">
+<img alt="_images/darboux.jpg" src="_images/darboux.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Gaston Darboux (cca. 1910), via Wikipedia</span><a class="headerlink" href="#fig-darboux" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>În 1875, Darboux publică o lucrare în care tratează rezultanta unor forțe concurente
+care acționează asupra aceluiași corp. Pentru aceasta, are nevoie de o regulă de
+compunere a forțelor, adică de adunare a vectorilor. Este ceea ce astăzi numim
+<em>regula paralelogramului</em>.</p>
+<figure class="align-default" id="fig-regula-par">
+<img alt="_images/regula-par.png" src="_images/regula-par.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Regula paralelogramului de calcul al sumei vectoriale</span><a class="headerlink" href="#fig-regula-par" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>În urma articolului respectiv, Darboux își propune să se concentreze pe problema
+calculului vectorial din punct de vedere pur geometric, axiomatic. De aceea,
+începe lucrul la propriul set de axiome care să îl ajute în acest sens (cf. <span id="id16">[<a class="reference internal" href="bibliografie.html#id29" title="Gaston Darboux. Sur la composition des forces en statiques. Bulletin des sciences mathématiques, 1875.">Darboux, 1875</a>]</span>):</p>
+<ol class="simple">
+<li><p>Rezultanta totală este unică și nu se schimbă prin permutarea ordinii rezultantelor parțiale.</p></li>
+<li><p>Rezultanta totală nu se schimbă prin rotirea segmentelor în jurul unui punct.</p></li>
+<li><p>Legea compunerii se reduce la adunarea algebrică pentru segmente care au aceeași direcție.</p></li>
+<li><p>Direcția și mărimea rezultantei sînt funcții continue în raport cu segmentele.</p></li>
+</ol>
+<p>Aceste axiome ale lui Darboux au fost preluate de alți doi matematicieni germani, Rudolf
+Schimmack și Georg Hamel, care le-au extins pentru a ține cont și de celelalte proprietăți
+de bază ale adunării: comutativitatea și asociativitatea. Pînă după 1910, lucrările lui
+Darboux, continuate de Schimmack și Hamel, dar preluate și de alți matematicieni,
+s-au amestecat cu studiul funcțiilor continue în ceea ce astăzi am numi spații vectoriale
+de funcții reale continue. În particular, s-a ajuns la conceptul de bază a unui astfel
+de spațiu, pentru care se cereau proprietăți suplimentare, dat fiind că era vorba
+despre spații de funcții. Abia în jurul anului 1929, cînd s-a demonstrat existența
+bazelor căutate putem spune că un produs colateral a fost acceptarea structurii de
+spațiu vectorial și a prezentării sale axiomatice.</p>
+<hr class="docutils" />
+<p>Pînă în jurul anului 1930, cercetările foloseau spații vectoriale implicit, de obicei
+pentru aplicații analitice sau în strînsă legătură cu geometria. O oarecare excepție
+o constituie lucrarea lui Hermann Weyl, <em>Spațiu, timp, materie</em> (1918), urmată în 1928
+de <em>Teoria grupurilor și mecanica cuantică</em>, în care aplicațiile vectorilor și ale
+spațiilor vectoriale se leagă ceva mai strîns de algebra abstractă. La fel este cazul
+și teoriilor lui Hilbert, care introduce <em>Zahlring</em>, <em>inelul numerelor (întregi)</em>,
+un punct de cotitură important, apărut chiar din 1897.</p>
+<p>Odată cu impunerea treptată a metodelor axiomatice, prin chiar figura influentă a
+lui Hilbert și apoi, prin descendenții acestuia, începe să se contureze tot mai
+clar o prezentare abstractă, axiomatică, generală, mai ales prin intervenția
+lui Abraham Fraenkel. Pornind de la conceptul de <em>Zahlring</em> al lui Hilbert, dar și
+de la numerele hipercomplexe, Fraenkel își propune o axiomatizare cît se poate
+de generală a structurilor (algebrice de numere), întrucît – considera el –
+numerele nu sînt esențiale doar pentru cei care lucrează în aritmetică.
+Formalizarea multor astfel de structuri vine, însă, de la Emmy Noether, în
+lucrarea ei din 1921, <em>Teoria idealelor în inele</em>.</p>
+<hr class="docutils" />
+<p>În concluzie, ca o privire de ansamblu, putem spune că ideile abstracte remarcabile
+ale lui Peano merită recunoscute, ca fiind printre primele încercări atît de
+generale pentru o teorie abstractă a spațiilor vectoriale. Faptul că ele nu au
+primit recunoașterea potrivită este explicabil în primul rînd prin aceea că
+matematica nu era încă familiarizată cu metoda axiomatică. De îndată ce Hilbert
+și colaboratorii săi au propus tot mai apăsat această inițiativă de prezentare
+abstractă, axiomatică – sub forma curentului pe care astăzi îl numim <em>formalism</em>
+și despre care vom discuta într-un capitol ulterior – metodele s-au diversificat
+și atenția s-a mutat tocmai asupra acestor abordări pe care, privind retrospectiv,
+le putem considera vizionare.</p>
+<p>Din punctul de vedere al fluxului ideilor, reținem că structura de spațiu vectorial
+a fost de la început strîns legată de geometrie. Legături ulterioare au arătat
+relevanța calculului vectorial în analiză, fizică, topologie și multe alte domenii.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="structuri"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>În realitate, această „zoologie“ este și mai complicată. Există
+structuri și mai obscure sau sofisticate, după necesități: magme, module, algebre
+(acestea din urmă, la rîndul lor, poartă diverse nume, care le diferențiază foarte
+mult: algebre Hopf, algebre Lie, algebre Weyl…) și multe altele.</p>
+</dd>
+</dl>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="p1-s1-rationamente.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Abstractizare și raționamente</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="p2-abstract.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Algebră abstractă și algebră liniară</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Adrian Manea (Poligon Educational)<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,1283 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Monoizi și grupuri &#8212; Algebră liniară și aplicații</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/proof.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Grupuri de simetrie" href="p2-s1e-simetrii.html" />
+    <link rel="prev" title="Algebră abstractă și algebră liniară" href="p2-abstract.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo-light-poly-only.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Algebră liniară și aplicații</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Algebră liniară și aplicații
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Elemente de istoria și filosofia matematicii
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-istorie-fil-intro.html">
+   Generalități
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-s1-rationamente.html">
+   Abstractizare și raționamente
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-s2-ist-vsp.html">
+   Istoria spațiilor vectoriale
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algebră abstractă și algebră liniară
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="p2-abstract.html">
+   Algebră abstractă și algebră liniară
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Monoizi și grupuri
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s1e-simetrii.html">
+     Grupuri de simetrie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s2-inele-corpuri.html">
+     Inele și corpuri
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s3-spvect.html">
+     Spații vectoriale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s4-baza.html">
+     Bază și dimensiune
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s5-op-subsp.html">
+     Operații cu subspații
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s6-morfisme-spvect.html">
+     Morfisme de spații vectoriale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s7-ortonormare.html">
+     Produs scalar și ortonormare
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s8-vvp.html">
+     Vectori și valori proprii
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s9-quat.html">
+     Cuaternioni
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s10-afin.html">
+     Spații afine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s11-mat-decomp.html">
+     Descompuneri matriceale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s12-transf-mat.html">
+     Transformări matriceale în 2D și 3D
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s13-arii-volume.html">
+     Arii și volume
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Aplicații și implementări în programare
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="p3-aplicatii.html">
+   Aplicații și implementări în programare
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Bibliografie și lecturi suplimentare
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliografie.html">
+   Bibliografie și lecturi suplimentare
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/adimanea/linalg"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/adimanea/linalg/issues/new?title=Issue%20on%20page%20%2Fp2-s1-grupuri.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/p2-s1-grupuri.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#terminologie-specifica">
+   Terminologie specifică
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exemple-suplimentare">
+   Exemple suplimentare
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercitii-propuse">
+   Exerciții propuse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#substructuri-si-morfisme">
+   Substructuri și morfisme
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#intuitie">
+     Intuiție
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#definitii-formale">
+     Definiții formale
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#un-truc">
+     Un truc
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   Exerciții propuse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nucleu-si-imagine">
+   Nucleu și imagine
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Monoizi și grupuri</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#terminologie-specifica">
+   Terminologie specifică
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exemple-suplimentare">
+   Exemple suplimentare
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercitii-propuse">
+   Exerciții propuse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#substructuri-si-morfisme">
+   Substructuri și morfisme
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#intuitie">
+     Intuiție
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#definitii-formale">
+     Definiții formale
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#un-truc">
+     Un truc
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   Exerciții propuse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nucleu-si-imagine">
+   Nucleu și imagine
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="monoizi-si-grupuri">
+<h1>Monoizi și grupuri<a class="headerlink" href="#monoizi-si-grupuri" title="Permalink to this headline">#</a></h1>
+<p>Monoizii și grupurile sînt primele exemple de structuri algebrice ale căror
+proprietăți se inspiră din structuri pe care le avem la îndemînă. Sînt structuri
+care folosesc o singură operație, cu anumite proprietăți, iar prototipul este
+acela al <em>mulțimii numerelor întregi</em>, împreună cu operația de adunare.</p>
+<p>Să examinăm mai întîi acest exemplu și extragem apoi proprietățile abstracte.</p>
+<p>Mulțimea numerelor întregi conține numerele naturale, împreună cu cele negative
+corespunzătoare. Așadar, vom presupune că înțelegem ce înseamnă elementele acestei
+mulțimi.</p>
+<p>Operația pe care o folosim este aceea de adunare, care în acest caz are proprietățile
+<a class="reference internal" href="p2-abstract.html"><span class="doc std std-doc">amintite</span></a>, pe care le reformulăm și completăm într-o manieră mai
+potrivită:</p>
+<ul class="simple">
+<li><p>suma oricăror două numere întregi este un număr întreg; cu alte cuvinte, cînd operăm
+cu adunarea între numere întregi, nu avem „surprize“: obținem de fiecare dată numere
+din aceeași mulțime;</p></li>
+<li><p>adunarea este comutativă, adică nu depinde de ordinea termenilor; altfel spus,
+<code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span> <span class="pre">=</span> <span class="pre">b</span> <span class="pre">+</span> <span class="pre">a</span></code>, pentru orice două numere întregi <code class="docutils literal notranslate"><span class="pre">a</span></code> și <code class="docutils literal notranslate"><span class="pre">b</span></code>;</p></li>
+<li><p>adunarea este asociativă, adică putem aplica oricîte paranteze într-o expresie
+care conține cel puțin trei termeni. De exemplu, <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">(b</span> <span class="pre">+</span> <span class="pre">c)</span> <span class="pre">=</span> <span class="pre">(a</span> <span class="pre">+</span> <span class="pre">b)</span> <span class="pre">+</span> <span class="pre">c</span></code>,
+pentru orice trei numere întregi <code class="docutils literal notranslate"><span class="pre">a,</span> <span class="pre">b,</span> <span class="pre">c</span></code>;</p></li>
+<li><p>există un element special, numărul <code class="docutils literal notranslate"><span class="pre">0</span></code>, cu proprietatea că dacă îl adunăm cu orice
+alt număr întreg, obținem tot numărul inițial. Altfel spus, <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">0</span> <span class="pre">=</span> <span class="pre">0</span> <span class="pre">+</span> <span class="pre">a</span> <span class="pre">=</span> <span class="pre">a</span></code>, pentru
+orice număr întreg <code class="docutils literal notranslate"><span class="pre">a</span></code>;</p></li>
+<li><p>pentru orice număr întreg, există unul care îl <em>anulează</em> – atît în sens propriu, cît și
+figurat. Altfel spus, pentru orice număr întreg <code class="docutils literal notranslate"><span class="pre">a</span></code>, există un alt număr întreg <code class="docutils literal notranslate"><span class="pre">b</span></code>, cu
+proprietatea că <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span> <span class="pre">=</span> <span class="pre">b</span> <span class="pre">+</span> <span class="pre">a</span> <span class="pre">=</span> <span class="pre">0</span></code>. Evident, <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">-a</span></code> și se numește <em>opusul</em> lui <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p></li>
+</ul>
+<p>Proprietățile sus-menționate constituie exact definiția structurii algebrice de grup,
+pe care formulăm riguros chiar acum.</p>
+<div class="proof definition admonition" id="def-grup">
+<p class="admonition-title"><span class="caption-number">Definition 3 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( A \)</span> o mulțime nevidă și <span class="math notranslate nohighlight">\( \ast \)</span> o operație binară<a class="footnote-reference brackets" href="#binar" id="id1">1</a> pe <span class="math notranslate nohighlight">\( A \)</span>.</p>
+<p>Spunem că perechea <span class="math notranslate nohighlight">\( (A, \ast) \)</span> formează un <em>grup</em> dacă:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \ast \)</span> este <em>lege internă</em>, adică <span class="math notranslate nohighlight">\( a \ast b \in A, \forall a, b \in A \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( \ast \)</span> este <em>asociativă</em>, adică <span class="math notranslate nohighlight">\( a \ast (b \ast c) = (a \ast b) \ast c, \forall a, b, c \in A \)</span>;</p></li>
+<li><p>există un element <span class="math notranslate nohighlight">\( e \in A \)</span>, numit <em>element neutru</em>, cu proprietatea că <span class="math notranslate nohighlight">\( a \ast e = e \ast a = a, \forall a \in A \)</span>;</p></li>
+<li><p>pentru orice element <span class="math notranslate nohighlight">\( a \in A \)</span>, există un element <span class="math notranslate nohighlight">\( b \in A \)</span>, numit <em>simetricul</em> lui <span class="math notranslate nohighlight">\( a \)</span>, cu proprietatea că <span class="math notranslate nohighlight">\( a \ast b = b \ast a = e \)</span>, elementul neutru.</p></li>
+</ul>
+<p>Dacă, în plus, operația <span class="math notranslate nohighlight">\( \ast \)</span> este și comutativă, adică <span class="math notranslate nohighlight">\( a \ast b = b \ast a, \forall a, b \in A \)</span>, atunci grupul <span class="math notranslate nohighlight">\( (A, \ast) \)</span> se numește <em>comutativ</em> sau <em>abelian</em><a class="footnote-reference brackets" href="#abelian" id="id2">2</a>.</p>
+</section>
+</div><p>Definiția de mai sus – care vine să formalizeze ceea ce am prezentat ca exemplu prin mulțimea
+numerelor întregi, împreună cu operația de adunare – este pentru o structură destul de permisivă.
+Însă putem avea și restricții mai mari. De pildă, putem renunța la condiția ca fiecare element să aibă
+un simetric și obținem <em>monoizi</em>. Definiția urmează (a se compara cu cea a grupurilor, noțiunile-cheie
+avînd exact aceleași înțelesuri):</p>
+<div class="proof definition admonition" id="def-monoid">
+<p class="admonition-title"><span class="caption-number">Definition 4 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( A \)</span> o mulțime nevidă și <span class="math notranslate nohighlight">\( \ast \)</span> o operație binară pe <span class="math notranslate nohighlight">\( A \)</span>.</p>
+<p>Spunem că perechea <span class="math notranslate nohighlight">\( (A, \ast) \)</span> formează un <em>monoid</em> dacă:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \ast \)</span> este <em>lege internă</em>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( \ast \)</span> este <em>asociativă</em>;</p></li>
+<li><p>există un element <span class="math notranslate nohighlight">\( e \in A \)</span>, numit <em>element neutru</em>, cu proprietatea că <span class="math notranslate nohighlight">\( a \ast e = e \ast a = a, \forall a \in A \)</span>.</p></li>
+</ul>
+<p>Dacă, în plus, operația este și comutativă, atunci monoidul se numește <em>comutativ</em>.</p>
+</section>
+</div><p>Un exemplu la îndemînă este acela al mulțimii numerelor <em>naturale</em> cu adunarea. În acest caz,
+elementul neutru fiind <code class="docutils literal notranslate"><span class="pre">0</span></code>, constatăm că niciun număr natural nu are un simetric. Pentru orice număr
+natural <code class="docutils literal notranslate"><span class="pre">a</span></code>, nu există un alt număr <em>natural</em> <code class="docutils literal notranslate"><span class="pre">b</span></code> astfel încît <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span> <span class="pre">=</span> <span class="pre">b</span> <span class="pre">+</span> <span class="pre">a</span> <span class="pre">=</span> <span class="pre">0</span></code>.</p>
+<p>Putem face o analiză similară folosind înmulțirea. De fapt, aceste exemple (folosind adunarea și înmulțirea)
+sînt atît de importante, încît au influențat și terminologia specifică, pe care o detaliem în continuare.</p>
+<section id="terminologie-specifica">
+<h2>Terminologie specifică<a class="headerlink" href="#terminologie-specifica" title="Permalink to this headline">#</a></h2>
+<p>Adunarea și înmulțirea numerelor (naturale, întregi, raționale, reale etc.) sînt exemple care evidențiază
+cele mai importante proprietăți. De aceea, terminologia specifică a acestora s-a transmis și în cazul general.</p>
+<p>În acest sens, avem următoarele noțiuni (pe care le exemplificăm după aceea):</p>
+<ul class="simple">
+<li><p>dacă operația pe care o folosim se definește cu ajutorul adunării, atunci elementul neutru se mai numește
+<em>elementul nul</em> sau chiar <em>zero</em> al operației;</p></li>
+<li><p>tot cînd operația pe care o folosim se definește cu ajutorul adunării, simetricul unul element se mai
+numește <em>opusul</em> său;</p></li>
+<li><p>dacă operația pe care o folosim se definește cu ajutorul înmulțirii, elementul neutru se mai numește
+<em>elementul unitate</em> sau <em>unitate</em> sau chiar <em>unu</em> al operației;</p></li>
+<li><p>tot cînd operația folosită se definește cu ajutorul înmulțirii, simetricul unui element se mai numește
+<em>inversul</em> său.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>În general, simetricul elementului <span class="math notranslate nohighlight">\( x \)</span> se notează <span class="math notranslate nohighlight">\( x' \)</span>, iar în cazurile particulare,
+opusul lui <span class="math notranslate nohighlight">\( x \)</span> se notează <span class="math notranslate nohighlight">\( -x \)</span> și inversul său, <span class="math notranslate nohighlight">\( x^{-1} \)</span>.</p>
+</div>
+<p>Iată două exemple:</p>
+<p><strong>Exemplu:</strong> Considerăm pe mulțimea numerelor reale <span class="math notranslate nohighlight">\( \mathbb{R} \)</span> operația <span class="math notranslate nohighlight">\( \ast \)</span>, definită prin:</p>
+<div class="math notranslate nohighlight">
+\[ x \ast y = x + y - 5, \forall x, y \in \mathbb{R} \]</div>
+<p>Evident, operația se definește cu ajutorul adunării. În acest caz, avem:</p>
+<ul class="simple">
+<li><p>elementul neutru – care se numește <em>element nul</em> – este numărul 5 (puteți verifica ușor că <span class="math notranslate nohighlight">\( x \ast 5 = 5 \ast x = x, \forall x \in \mathbb{R} \)</span>);</p></li>
+<li><p>simetricul unui element <span class="math notranslate nohighlight">\( x \)</span> – care se numește <em>opusul său</em> – este elementul <span class="math notranslate nohighlight">\( 10 - x \)</span> (puteți verifica ușor că <span class="math notranslate nohighlight">\( x \ast (10 - x) = (10 - x) \ast x = 5, \forall x \in \mathbb{R} \)</span>).</p></li>
+</ul>
+<p>Pentru cazul înmulțirii, putem avea similar:</p>
+<p><strong>Exemplu:</strong> Considerăm pe mulțimea numerelor raționale <span class="math notranslate nohighlight">\( \mathbb{Q} \setminus \{ 0 \} \)</span><a class="footnote-reference brackets" href="#nenul" id="id3">3</a> operația <span class="math notranslate nohighlight">\( \ast \)</span>, definită prin:</p>
+<div class="math notranslate nohighlight">
+\[ x \ast y = 3xy, \forall x, y \in \mathbb{Q} \setminus \{ 0 \} \]</div>
+<p>Evident, operația se definește cu ajutorul înmulțirii și avem (puteți verifica fiecare afirmație):</p>
+<ul class="simple">
+<li><p>elementul neutru – care se numește <em>element unitate</em> – este numărul <span class="math notranslate nohighlight">\( \dfrac{1}{3} \)</span>;</p></li>
+<li><p>simetricul unui element <span class="math notranslate nohighlight">\( x \)</span> – care se numește <em>inversul său</em> – este elementul <span class="math notranslate nohighlight">\( \dfrac{1}{9x} \)</span>.</p></li>
+</ul>
+<p>În general, dacă există riscul de confuzie, vom evita folosirea acestei terminologii.
+Dar în același timp, ea este foarte utilă pentru a ne aminti de cele mai importante exemple.</p>
+</section>
+<section id="exemple-suplimentare">
+<h2>Exemple suplimentare<a class="headerlink" href="#exemple-suplimentare" title="Permalink to this headline">#</a></h2>
+<p>Schițăm în continuare și alte exemple de monoizi și grupuri. Vă invităm să completați detaliile
+pentru a vă convinge că structurile, împreună cu operațiile respective, formează monoizi sau grupuri.</p>
+<p><strong>Exemplu:</strong> Pe mulțimea numerelor reale pozitive <span class="math notranslate nohighlight">\( \mathbb{R} \)</span> definim operația:</p>
+<div class="math notranslate nohighlight">
+\[ x \ast y = \sqrt[3]{x^3 + y^3}, \forall x, y \in \mathbb{R}. \]</div>
+<p>Vă puteți convinge ușor că avem de-a face cu un grup, unde:</p>
+<ul class="simple">
+<li><p>elementul neutru este <span class="math notranslate nohighlight">\( e = 0 \)</span>;</p></li>
+<li><p>simetricul unui element <span class="math notranslate nohighlight">\( x \in \mathbb{R} \)</span> este <span class="math notranslate nohighlight">\( -x \)</span>.</p></li>
+</ul>
+<p><strong>Exemplu:</strong> Putem lucra și cu matrice, de exemplu, fie <span class="math notranslate nohighlight">\( A = M_2(\mathbb{R}) \)</span>, operația
+fiind adunarea matricelor. Adică, pentru <span class="math notranslate nohighlight">\( X = \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} \)</span>
+și <span class="math notranslate nohighlight">\( Y = \begin{pmatrix} e &amp; f \\ g &amp; h \end{pmatrix} \)</span>, avem:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} X + Y = \begin{pmatrix} a + e &amp; b + f \\ c + g &amp; d + h \end{pmatrix} \end{split}\]</div>
+<p>În acest caz:</p>
+<ul class="simple">
+<li><p>elementul neutrul este matricea nulă, <span class="math notranslate nohighlight">\( E = 0_2 = \begin{pmatrix} 0 &amp; 0 \\ 0 &amp; 0 \end{pmatrix} \)</span>;</p></li>
+<li><p>simetrica unei matrice <span class="math notranslate nohighlight">\( X \)</span> ca mai sus este matricea <span class="math notranslate nohighlight">\( -X = \begin{pmatrix} -a &amp; -b \\ -c &amp; -d \end{pmatrix} \)</span>.</p></li>
+</ul>
+<p><strong>Exemplu:</strong> Pe de altă parte, dacă lucrăm cu înmulțirea matricelor (cu 2 linii și 2 coloane, avînd elemente reale),
+obținem doar un monoid, deoarece nu orice matrice este inversabilă (într-adevăr, elementul neutru ar fi
+matricea <span class="math notranslate nohighlight">\( I_2 \)</span>, așadar simetrica unei matrice <span class="math notranslate nohighlight">\( X \)</span> coincide cu inversa acesteia <span class="math notranslate nohighlight">\( X^{-1} \)</span>,
+care nu există decît dacă <span class="math notranslate nohighlight">\( \det(X) \neq 0 \)</span>.</p>
+<p>Putem regla acest lucru folosind doar matrice inversabile, care formează un grup denumit
+<em>grupul general liniar</em>, notat în cazul nostru <span class="math notranslate nohighlight">\( GL_2(\mathbb{R}) \)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Lucrul cu matrice, în special pătratice, din <span class="math notranslate nohighlight">\( M_2(\mathbb{R}) \)</span> sau <span class="math notranslate nohighlight">\( M_3(\mathbb{R}) \)</span>
+va fi foarte important pentru aplicațiile geometrice și de grafică pe care le vom studia
+ulterior.</p>
+<p>Pe lîngă grupul general liniar, mai există și alte cazuri particulare, precum grupul
+special liniar, ortogonal și special ortogonal, cu proprietăți și aplicații deosebite,
+pe care le vom detalia la momentul respectiv.</p>
+</div>
+</section>
+<section id="exercitii-propuse">
+<h2>Exerciții propuse<a class="headerlink" href="#exercitii-propuse" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p>Dați un alt exemplu de monoid care să nu fie grup, în afara celui al numerelor naturale
+cu adunarea și celui al numerelor întregi cu înmulțirea.</p></li>
+<li><p>Dați exemplu de un grup care să nu fie comutativ.</p></li>
+<li><p>Dați exemplu de un monoid (care nu e grup) care să nu fie comutativ.</p></li>
+<li><p>Ce proprietăți are operația <span class="math notranslate nohighlight">\( (x, y) \mapsto x \)</span>, definită pentru numere reale?</p></li>
+<li><p>Ce proprietăți are operația <span class="math notranslate nohighlight">\( (x, y) \mapsto x^2 + y^2 \)</span> definită pentru numere întregi?</p></li>
+<li><p>Demonstrați că operația <span class="math notranslate nohighlight">\( (x, y) \mapsto \dfrac{4x + 4y}{4 + xy} \)</span>, definită pe intervalul
+<span class="math notranslate nohighlight">\( A = (-2, 2) \)</span> conduce la o structură de grup comutativ.</p></li>
+<li><p>Pe mulțimea punctelor din plan (formal, <span class="math notranslate nohighlight">\( \mathbb{R}^2 = \mathbb{R} \times \mathbb{R} \)</span>)
+definim operația <span class="math notranslate nohighlight">\( P \ast Q = \)</span> mijlocul segmentului <span class="math notranslate nohighlight">\( [PQ] \)</span>, pentru orice două puncte <span class="math notranslate nohighlight">\( P, Q \in \mathbb{R}^2 \)</span>.
+Ce proprietăți are această operație?</p></li>
+<li><p>Pe mulțimea numerelor naturale se definește operația <span class="math notranslate nohighlight">\( x \ast y = (x + y) \ \mathrm{mod} \ 13, \forall x, y \in \mathbb{N} \)</span>,
+adică restul împărțirii sumei <span class="math notranslate nohighlight">\( x + y \)</span> la <span class="math notranslate nohighlight">\( 13 \)</span> (operația <em>modulo</em>, simbolizată în programare de obicei cu operatorul <code class="docutils literal notranslate"><span class="pre">%</span></code>).
+Ce proprietăți are această operație?</p></li>
+<li><p>Pe intervalul <span class="math notranslate nohighlight">\( (0, \infty) \)</span> se definește operația <span class="math notranslate nohighlight">\( x \ast y = x^{\ln y}, \forall x, y &gt; 0 \)</span>.
+Ce proprietăți are această operație?</p></li>
+</ol>
+</section>
+<section id="substructuri-si-morfisme">
+<span id="sec-substructuri-morfisme"></span><h2>Substructuri și morfisme<a class="headerlink" href="#substructuri-si-morfisme" title="Permalink to this headline">#</a></h2>
+<section id="intuitie">
+<h3>Intuiție<a class="headerlink" href="#intuitie" title="Permalink to this headline">#</a></h3>
+<p>În general, matematicienii (și nu numai) caută să obțină cît mai multe obiecte, structuri
+și informații „gratis“, adică prin particularizare sau eliminarea treptată a unor proprietăți,
+condiții, cerințe etc.</p>
+<p>Două dintre cele mai simple metode de a obține structuri noi aproape „gratis“ sînt
+cu ajutorul substructurilor și morfismelor.</p>
+<p>Substructurile se formează într-o manieră foarte simplă: se dă o structură (monoid, grup, inel, corp etc.)
+și ne întrebăm cît de multe elemente putem elimina, dar să păstrăm totuși, proprietățile structurii.
+Imaginați-vă o pictură foarte detaliată a unui animal, de pildă. Ea se identifică imediat și e clar
+dintr-o privire ce animal reprezintă. Acum ne întrebăm: ce putem elimina din pictura respectivă,
+dar imaginea de ansamblu să nu aibă de suferit, adică în continuare să fie clar că reprezintă
+animalul în cauză? Putem șterge, poate, fundalul? Putem elimina din părțile corpului animalului?</p>
+<p>De remarcat, totuși, că nu avem voie să <em>schimbăm</em> elemente ale picturii, ci doar să eliminăm
+din cele prezente. De pildă, nu este permis să schimbăm culoarea animalului – chiar dacă acest
+lucru nu l-ar face de nerecunoscut. În cazul unei picturi a unui cîine pe o pajiște înverzită,
+putem elimina iarba de pe pajiște sau putem păstra doar capul cîinelui, dar nu avem voie să
+schimbăm culoarea ierbii ori a cîinelui, să zicem.</p>
+<p>Ceea ce se obține în cazul unei astfel de eliminări este o substructură, adică un obiect
+care este <em>o parte</em> a obiectului inițial, este inclus în el.</p>
+<p>Abstract, în cazul numerelor, dacă lucrăm, de exemplu, cu mulțimea numerelor întregi și
+să presupunem că pornim cu grupul <span class="math notranslate nohighlight">\( (\mathbb{Z}, +) \)</span>, ne putem întreba ce numere putem elimina,
+dar astfel încît submulțimea lui <span class="math notranslate nohighlight">\( \mathbb{Z} \)</span> pe care o obținem încă să fie grup în raport
+cu aceeași operație de adunare.</p>
+<p>În primă fază, ne putem gîndi că eliminăm doar cîteva numere,
+să zicem <span class="math notranslate nohighlight">\( A = \mathbb{Z} \setminus \{ 1, -2, 6 \} \)</span>. Ne întrebăm: este <span class="math notranslate nohighlight">\( (A, +) \)</span> grup?
+Răspunsul destul de ușor de văzut este negativ (justificați!), iar după mai multe încercări,
+vom constata că nu este o idee bună să eliminăm doar cîteva numere oarecare, ci va trebui
+să renunțăm la submulțimi întregi, caracterizate prin anume proprietăți. De pildă,
+submulțimea notată <span class="math notranslate nohighlight">\( 2 \mathbb{Z} \)</span>, a numerelor întregi pare, formează o structură de grup
+în raport cu adunarea. Ce puteți spune despre mulțimea numerelor întregi impare (care nu are
+o notație anume)? Mai general, dacă notăm <span class="math notranslate nohighlight">\( n \mathbb{Z} = \{ nx \mid x \in \mathbb{Z} \)</span>,
+pentru <span class="math notranslate nohighlight">\( n \in \mathbb{Z} \)</span> fixat – submulțimea multiplilor unui număr fixat <span class="math notranslate nohighlight">\( n \)</span> –,
+în ce cazuri este <span class="math notranslate nohighlight">\( (n\mathbb{Z}, +) \)</span> un grup?</p>
+<p>Așadar, ca idee generală, reținem că pentru a obține o substructură, nu avem decît să
+eliminăm o parte a elementelor structurii inițiale, dar astfel încît operația cu care
+vine structura să inducă în continuare același tip de structură și pe submulțime.</p>
+<p>Simbolic, <span class="math notranslate nohighlight">\( A \)</span> formează o substructură (e.g. subgrup, submonoid) pentru structura
+(e.g. grupul, monoidul) <span class="math notranslate nohighlight">\( (B, \ast) \)</span> dacă <span class="math notranslate nohighlight">\( A \subseteq B \)</span> și <span class="math notranslate nohighlight">\( (A, \ast) \)</span> are
+aceeași structură ca <span class="math notranslate nohighlight">\( (B, \ast) \)</span>.</p>
+<p>În cazul concret de mai sus, am văzut că <span class="math notranslate nohighlight">\( 2\mathbb{Z} \)</span> este un subgrup al grupului
+<span class="math notranslate nohighlight">\( (\mathbb{Z}, +) \)</span>.</p>
+<hr class="docutils" />
+<p>În ce privește morfismele, lucrurile par complicate inițial, însă ideea este similară cu
+cea din cazul substructurilor. Cheia este, într-un fel, chiar în denumire. Cuvîntul
+<em>morfism</em> se leagă de grecescul μορφώ (<em>morpho</em>), care înseamnă, generic, „formă“.
+Așadar, un morfism este o construcție care trans-formă sau, mai general, care afectează
+sau păstrează forma unei structuri.</p>
+<p>Înainte de a da detaliile concrete, să ne mai amintim că în matematică, trans-formările
+se fac, de obicei, cu ajutorul funcțiilor. De pildă, dacă vrem să transformăm numerele
+naturale în numere pare, definim funcția <span class="math notranslate nohighlight">\( f : \mathbb{N} \to \mathbb{N}, f(x) = 2x \)</span>
+sau dacă vrem să transformăm perechile de numere întregi în numere raționale, definim
+funcția <span class="math notranslate nohighlight">\( f : \mathbb{Z} \times \mathbb{Z}^\ast \to \mathbb{Q}, f(x, y) = \dfrac{x}{y} \)</span>.</p>
+<p>La fel stau lucrurile și în ce privește structurile algebrice. Un morfism este o funcție
+care păstrează structura. Am spus la începutul acestei secțiuni că, odată obținută
+o structură, scopul ar fi să încercăm să obținem „gratis“ și altele. Pe lîngă considerarea
+substructurilor – adică eliminarea unor submulțimi din structurile inițiale – putem
+opera și cu ajutorul morfismelor, adică să trans-formăm o mulțime într-o alta, cu proprietatea
+că dacă mulțimea inițială era înzestrată cu o structură algebrică, atunci și mulțimea în care
+aceasta se transformă să aibă aceeași structură.</p>
+<p>Putem da direct un exemplu, pentru că substructura de mai sus se poate scrie și sub forma
+unui morfism. Pornim cu grupul <span class="math notranslate nohighlight">\( (\mathbb{Z}, +) \)</span> și definim funcția
+<span class="math notranslate nohighlight">\( f : \mathbb{Z} \to 2\mathbb{Z}, f(x) = 2x \)</span>, funcția de dublare. În acest caz, practic,
+facem un <em>transfer de structură</em> de la <span class="math notranslate nohighlight">\( (\mathbb{Z}, +) \)</span> la <span class="math notranslate nohighlight">\( (2\mathbb{Z}, +) \)</span>
+și obținem (aproape) „gratis“ încă un grup. Sigur, putem argumenta că motivul pentru care
+știm că <span class="math notranslate nohighlight">\( 2\mathbb{Z} \)</span> este un grup provine de la analiza substructurii, așa că morfismul
+nu mai aduce nicio informație suplimentară. Însă vom vedea imediat că, de fapt, puteam porni
+și invers: am fi putut demonstra că <span class="math notranslate nohighlight">\( (2\mathbb{Z}, +) \)</span> este un grup doar folosind
+morfismul <span class="math notranslate nohighlight">\( f \)</span>.</p>
+</section>
+<section id="definitii-formale">
+<h3>Definiții formale<a class="headerlink" href="#definitii-formale" title="Permalink to this headline">#</a></h3>
+<p>Pe baza explicațiilor intuitive de mai sus, să dăm acum definițiile formale și exemple suplimentare.</p>
+<div class="proof definition admonition" id="def-submonoid">
+<p class="admonition-title"><span class="caption-number">Definition 5 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( (A, \ast) \)</span> un monoid (comutativ) și <span class="math notranslate nohighlight">\( B \subseteq A \)</span> o submulțime a lui <span class="math notranslate nohighlight">\( A \)</span>.</p>
+<p>Spunem că <span class="math notranslate nohighlight">\( B \)</span> este un <em>submonoid</em> al lui <span class="math notranslate nohighlight">\( A \)</span> dacă <span class="math notranslate nohighlight">\( (B, \ast) \)</span> este monoid (comutativ).</p>
+</section>
+</div><p>Nu pare mare lucru ceea ce am definit mai sus și, într-adevăr, din punct de vedere practic,
+nu este eficient să demonstrăm <em>din nou</em> proprietățile monoidului pentru o submulțime, din moment
+ce știm deja proprietățile monoidului inițial. De aceea, în exerciții, cel mai adesea
+se folosesc rezultate simplificate, iar nu definiția. Ideea de bază este că unele proprietăți
+(precum comutativitatea și asociativitatea) se preiau automat la submulțimi, deci oricum
+nu trebuie verificate din nou.</p>
+<p>Varianta cea mai scurtă și practică este:</p>
+<div class="proof theorem admonition" id="thm-submonoid">
+<p class="admonition-title"><span class="caption-number">Theorem 1 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( (A, \ast) \)</span> un monoid (comutativ) și <span class="math notranslate nohighlight">\( B \subseteq A \)</span> o submulțime a lui <span class="math notranslate nohighlight">\( A \)</span>.</p>
+<p>Atunci <span class="math notranslate nohighlight">\( B \)</span> este submonoid dacă și numai dacă au loc:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( e \in B \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( \forall x, y \in B, x \ast y \in B \)</span>.</p></li>
+</ul>
+</section>
+</div><p>Altfel spus, este suficient să verificăm că <span class="math notranslate nohighlight">\( B \)</span> preia elementul neutru și proprietatea
+de lege internă.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>În general, faptul că <span class="math notranslate nohighlight">\( B \)</span> este o substructură a lui <span class="math notranslate nohighlight">\( A \)</span> se notează
+<span class="math notranslate nohighlight">\( B \leq A \)</span>, indiferent de tipul structurii (cu excepția cazului cînd structura în sine
+implică mai multe mulțimi, cum va fi cazul spațiilor vectoriale).</p>
+<p>Dacă <span class="math notranslate nohighlight">\( B \leq A \)</span> înseamnă submonoid, subgrup, subinel sau subcorp se deduce,
+de obicei, din context.</p>
+<p>În unele situații, pentru a fi și mai expliciți, se pot scrie
+și operațiile, adică putem avea, de pildă, <span class="math notranslate nohighlight">\( (B, \ast, \circ) \leq (A, \ast, \circ) \)</span>
+în cazul unui subinel sau <span class="math notranslate nohighlight">\( (B, \ast) \leq (A, \ast) \)</span> în cazul unui subgrup.</p>
+</div>
+<p>În cazul grupurilor, lucrurile stau foarte asemănător:</p>
+<div class="proof definition admonition" id="def-subgrup">
+<p class="admonition-title"><span class="caption-number">Definition 6 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( (A, \ast) \)</span> un grup (comutativ) și <span class="math notranslate nohighlight">\( B \subseteq A \)</span> o submulțime a lui <span class="math notranslate nohighlight">\( A \)</span>.</p>
+<p>Spunem că <span class="math notranslate nohighlight">\( A \)</span> este <em>subgrup</em> dacă <span class="math notranslate nohighlight">\( (A, \ast) \)</span> este grup (comutativ).</p>
+</section>
+</div><p>În practică, vom folosi:</p>
+<div class="proof theorem admonition" id="thm-subgrup">
+<p class="admonition-title"><span class="caption-number">Theorem 2 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( (A, \ast) \)</span> un grup (comutativ) și <span class="math notranslate nohighlight">\( B \subseteq A \)</span> o submulțime a lui <span class="math notranslate nohighlight">\( A \)</span>.</p>
+<p>Atunci <span class="math notranslate nohighlight">\( B \)</span> este subgrup dacă și numai dacă <span class="math notranslate nohighlight">\( x \ast y' \in B, \forall x, y \in B \)</span>.</p>
+</section>
+</div><p>În relația din teoremă avem concentrate toate proprietățile (sub)grupului:</p>
+<ul class="simple">
+<li><p>asociativitatea și, eventual, comutativitatea se preiau oricum de la grupul ambiant;</p></li>
+<li><p>elementul neutru se preia luînd <span class="math notranslate nohighlight">\( y = x \)</span>, caz în care <span class="math notranslate nohighlight">\( x \ast x' = e \)</span>;</p></li>
+<li><p>proprietatea de lege internă se preia în doi pași:</p>
+<ul>
+<li><p>mai întîi, putem lua <span class="math notranslate nohighlight">\( x = e \)</span> și avem că <span class="math notranslate nohighlight">\( y' \in B, \forall y \in B \)</span>;</p></li>
+<li><p>apoi, legea internă rezultă imediat: <span class="math notranslate nohighlight">\( x \ast y' \in B, \forall x, y' \in B \)</span>.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Exemplu:</strong> Pentru monoidul <span class="math notranslate nohighlight">\( (\mathbb{N}, +) \)</span> avem submonoidul <span class="math notranslate nohighlight">\( 2\mathbb{N} \)</span>,
+alcătuit din numerele naturale pare:</p>
+<ul class="simple">
+<li><p>într-adevăr, <span class="math notranslate nohighlight">\( 0 \in 2\mathbb{N} \)</span>, deci <span class="math notranslate nohighlight">\( 2\mathbb{N} \)</span> preia elementul neutru;</p></li>
+<li><p>suma a două numere pare este un număr par, deci <span class="math notranslate nohighlight">\( 2\mathbb{N} \)</span> preia proprietatea
+de lege internă a adunării.</p></li>
+</ul>
+<p>Așadar, <span class="math notranslate nohighlight">\( 2\mathbb{N} \leq \mathbb{N} \)</span>.</p>
+<p><strong>Exemplu:</strong> Similar se poate demonstra și că <span class="math notranslate nohighlight">\( 2 \mathbb{Z} \)</span> este submonoid al
+lui <span class="math notranslate nohighlight">\( (\mathbb{Z}, \cdot) \)</span> (exercițiu!).</p>
+<p><strong>Exemplu:</strong> Dacă considerăm, de exemplu, <span class="math notranslate nohighlight">\( 3\mathbb{Z} = \{ 3x \mid x \in \mathbb{Z} \} \)</span>,
+vom constata că nu formează un submonoid pentru <span class="math notranslate nohighlight">\( (\mathbb{Z}, \cdot) \)</span>:</p>
+<ul class="simple">
+<li><p>produsul a doi multipli de 3 este un multiplu de 3: <span class="math notranslate nohighlight">\( 3x \cdot 3y = 3 \cdot (3xy), \forall x, y \in \mathbb{Z} \)</span>;</p></li>
+<li><p>dar elementul neutru, numărul 1, nu este multiplu de 3, așadar <span class="math notranslate nohighlight">\( 1 \notin 3\mathbb{Z} \)</span>.</p></li>
+</ul>
+<p><strong>Exemplu:</strong> Pornind cu grupul matricelor inversabile, <span class="math notranslate nohighlight">\( GL_2(\mathbb{R}) \)</span>, putem defini:</p>
+<div class="math notranslate nohighlight">
+\[ A = \{ M \in GL_2(\mathbb{R}) \mid \det(A) = \text{ număr impar sau} \dfrac{1}{t}, \text{ cu } t \text{ impar} \} \]</div>
+<p>Atunci putem constata că <span class="math notranslate nohighlight">\( (A, \cdot) \leq (GL_2(\mathbb{R}), \cdot) \)</span>,
+folosind <a class="reference internal" href="#thm-subgrup">Theorem 2</a>, dacă <span class="math notranslate nohighlight">\( M, N \in A \)</span>, atunci <span class="math notranslate nohighlight">\( \det(M) \)</span> și <span class="math notranslate nohighlight">\( \det(N) \)</span> sînt
+numere impare sau inverse de numere impare. Atunci <span class="math notranslate nohighlight">\( \det(N^{-1}) = \dfrac{1}{\det(N)} \)</span>,
+care este tot un număr impar sau un invers de număr impar. În fine,
+cum <span class="math notranslate nohighlight">\( \det(M \cdot N^{-1}) = \det(M) \cdot \det(N^{-1}) \)</span>, avem concluzia.</p>
+<p>Așadar, <span class="math notranslate nohighlight">\( A \)</span> formează un subgrup al lui <span class="math notranslate nohighlight">\( GL_2(\mathbb{R}) \)</span>. Cum nici grupul inițial nu era
+comutativ, nici subgrupul <span class="math notranslate nohighlight">\( A \)</span> nu are această proprietate.</p>
+<hr class="docutils" />
+<p>Pe scurt, reținem, deci, că o substructură este o submulțime a unei structuri
+algebrice care păstrează proprietățile relevante (algebric).</p>
+<p>Așa cum vom vedea imediat, este un caz particular al morfismelor.</p>
+<hr class="docutils" />
+<p>Începem chiar cu definiția abstractă, chiar dacă impactul inițial va fi puternic.
+Însă vom clarifica lucrurile imediat.</p>
+<div class="proof definition admonition" id="def-morfism">
+<p class="admonition-title"><span class="caption-number">Definition 7 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( (A, \ast) \)</span> și <span class="math notranslate nohighlight">\( (B, \circ) \)</span> două grupuri (monoizi) și <span class="math notranslate nohighlight">\( f : A \to B \)</span> o funcție.</p>
+<p>Spunem că <span class="math notranslate nohighlight">\( f \)</span> este un <em>morfism</em> de grupuri (monoizi) dacă:</p>
+<div class="math notranslate nohighlight">
+\[ f(x \ast y) = f(x) \circ f(y), \quad \forall x, y \in A. \]</div>
+</section>
+</div><p>Dacă presupunem că avem deja date cele două structuri <span class="math notranslate nohighlight">\( A \)</span> și <span class="math notranslate nohighlight">\( B \)</span>, atunci <span class="math notranslate nohighlight">\( f \)</span>
+realizează o corespondență, un fel de „dicționar“ între acestea, dar astfel încît
+să se păstreze proprietățile algebrice. Să examinăm cu atenție definiția:</p>
+<ul class="simple">
+<li><p>pornim cu două elemente arbitrare <span class="math notranslate nohighlight">\( x, y \in A \)</span>;</p></li>
+<li><p>între ele, are sens operația <span class="math notranslate nohighlight">\( \ast \)</span>, deci calculăm <span class="math notranslate nohighlight">\( x \ast y \)</span>, care este tot un element din <span class="math notranslate nohighlight">\( A \)</span>;</p></li>
+<li><p>rezultatul îl „trimitem“ cu funcția <span class="math notranslate nohighlight">\( f \)</span>, către un element al lui <span class="math notranslate nohighlight">\( B \)</span>, adică <span class="math notranslate nohighlight">\( f(x \ast y) \in B \)</span>;</p></li>
+<li><p>pe de altă parte, putem trimite și elementele individuale, adică <span class="math notranslate nohighlight">\( f(x) \in B \)</span>, <span class="math notranslate nohighlight">\( f(y) \in B \)</span>;</p></li>
+<li><p>între aceste imagini are sens operația <span class="math notranslate nohighlight">\( \circ \)</span>, deci putem calcula <span class="math notranslate nohighlight">\( f(x) \circ f(y) \)</span>;</p></li>
+<li><p>proprietatea de morfism cere ca aceste calcule să coincidă. Altfel spus, fie că luăm două elemente
+și aplicăm operația corespunzătoare între ele, apoi trimitem rezultatul prin <span class="math notranslate nohighlight">\( f \)</span>, fie că trimitem
+mai întîi elementele și aplicăm operația corespunzătoare între imaginile lor, trebuie să obținem același lucru.</p></li>
+</ul>
+<p>Lucrurile sînt mai simple decît par: Cazul cel mai ușor este acela al funcției <em>incluziune</em>.
+Dacă, de exemplu, <span class="math notranslate nohighlight">\( A \subseteq B \)</span> și <span class="math notranslate nohighlight">\( \ast = \circ \)</span>, atunci proprietatea de morfism se satisface
+automat pentru funcția incluziune, care nu este altceva decît funcția identitate: trimitem elementele
+din mulțimea mai mică <span class="math notranslate nohighlight">\( A \)</span> către mulțimea mai mare <span class="math notranslate nohighlight">\( B \)</span> fără nicio transformare: <span class="math notranslate nohighlight">\( f(x) = x, \forall x \in A \)</span>,
+pentru că <span class="math notranslate nohighlight">\( x \)</span> deja se găsește și în <span class="math notranslate nohighlight">\( B \)</span>.</p>
+<p>Comentariul anterior ne arată că morfismul este o generalizare a substructurii. Dar, bineînțeles,
+există și alte modalități de a utiliza și evidenția un morfism. Una dintre cele mai importante
+este aceea a <em>izomorfismelor</em>, care sînt <em>morfisme bijective</em>. Pe scurt, avem:</p>
+<div class="proof definition admonition" id="def-izo">
+<p class="admonition-title"><span class="caption-number">Definition 8 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( (A, \ast) \)</span> și <span class="math notranslate nohighlight">\( (B, \circ) \)</span> două grupuri (monoizi) și <span class="math notranslate nohighlight">\( f : A \to B \)</span> un morfism.</p>
+<p>Dacă <span class="math notranslate nohighlight">\( f \)</span> este o funcție bijectivă, atunci grupurile (monoizii) <span class="math notranslate nohighlight">\( A \)</span> și <span class="math notranslate nohighlight">\( B \)</span> se numesc
+<em>izomorfe</em> și scriem <span class="math notranslate nohighlight">\( A \simeq B \)</span>.</p>
+<p>În cazul particular cînd cele două structuri coincid, deci <span class="math notranslate nohighlight">\( A = B \)</span>, izomorfismul
+se numește <em>automorfism</em>.</p>
+</section>
+</div><p>În fapt, ca să nu ne pierdem în detalii tehnice<a class="footnote-reference brackets" href="#bij" id="id4">4</a>, pentru a arăta că două grupuri <span class="math notranslate nohighlight">\( A \)</span> și <span class="math notranslate nohighlight">\( B \)</span> sînt izomorfe,
+de pildă, pornim cu o funcție (dată sau construită de noi), <span class="math notranslate nohighlight">\( f : A \to B \)</span>, pentru care arătăm:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( f \)</span> este morfism, conform definiției <a class="reference internal" href="#def-morfism">Definition 7</a>;</p></li>
+<li><p>arătăm că există <span class="math notranslate nohighlight">\( g : B \to A \)</span> o altă funcție, care:</p>
+<ul>
+<li><p>este de asemenea morfism;</p></li>
+<li><p>este inversa lui <span class="math notranslate nohighlight">\( f \)</span>, adică <span class="math notranslate nohighlight">\( f(g(x)) = g(f(x)) = x \)</span>, pentru orice element <span class="math notranslate nohighlight">\( x \)</span>.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Exemplu:</strong> Considerăm grupul aditiv al numerelor complexe, <span class="math notranslate nohighlight">\( (\mathbb{C}, +) \)</span>.
+Fie funcția <span class="math notranslate nohighlight">\( f : \mathbb{C} \to \mathbb{C}, f(z) = \overline{z} \)</span>, funcția de conjugare.</p>
+<p>Se poate verifica imediat că <span class="math notranslate nohighlight">\( f \)</span> este automorfism, întrucît:</p>
+<p><strong>#TODO: De ce nu pune <code class="docutils literal notranslate"><span class="pre">overline</span></code>-ul pe sumă??</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \overline{z + t} = \overline{z} + \overline{t}, \forall z, t \in \mathbb{C} \)</span>, deci <span class="math notranslate nohighlight">\( f \)</span> este morfism;</p></li>
+<li><p><span class="math notranslate nohighlight">\( \overline{\overline{z}} = z \)</span>, deci funcția este propria inversă.</p></li>
+</ul>
+<p><strong>Exemplu:</strong> Considerăm grupul aditiv al numerelor întregi, <span class="math notranslate nohighlight">\( (\mathbb{Z}, +) \)</span> și
+grupul aditiv al numerelor întregi pare, <span class="math notranslate nohighlight">\( (2\mathbb{Z}, +) \)</span>. Definim funcția
+<span class="math notranslate nohighlight">\( f : \mathbb{Z} \to 2\mathbb{Z}, f(x) = 2x, \forall x \in \mathbb{Z} \)</span>, funcția
+de dublare. Avem:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( 2(x + y) = 2x + 2y, \forall x, y \in \mathbb{Z} \)</span>, deci funcția este un morfism;</p></li>
+<li><p><span class="math notranslate nohighlight">\( g : 2\mathbb{Z} \to \mathbb{Z}, g(t) = \dfrac{t}{2}, \forall t \in 2\mathbb{Z} \)</span>
+este inversa lui <span class="math notranslate nohighlight">\( f \)</span>, deci <span class="math notranslate nohighlight">\( f \)</span> este bijectivă, adică realizează un izomorfism.</p></li>
+</ul>
+<p>Am arătat, așadar, că grupul <span class="math notranslate nohighlight">\( \mathbb{Z} \)</span> este izomorf cu un subgrup al său, <span class="math notranslate nohighlight">\( 2 \mathbb{Z} \)</span>.</p>
+<p>Astfel de rezultate sînt utile atunci cînd vrem să „traducem“ unele structuri în altele.
+De exemplu, un izomorfism ne poate arăta că un număr complex este „același lucru“<a class="footnote-reference brackets" href="#izo" id="id5">5</a> cu o matrice
+de un anumit tip:</p>
+<p><strong>Exemplu:</strong> Fie grupul multiplicativ al numerelor complexe de modul 1:</p>
+<div class="math notranslate nohighlight">
+\[A = \{ z \in \mathbb{C} \mid |z| = 1 \}\]</div>
+<p>și grupul de matrice:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}B = \left\{ \begin{pmatrix} \cos \alpha &amp; \sin \alpha \\ -\sin \alpha &amp; \cos \alpha \end{pmatrix} \mid \alpha \in \mathbb{R}\right\}.\end{split}\]</div>
+<p>Faptul că ambele structuri sînt grupuri comutative puteți verifica ușor (exercițiu!).</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Amintim, pentru un număr complex <span class="math notranslate nohighlight">\( z = a + bi \in \mathbb{C} \)</span> scris sub forma algebrică,
+avem și <em>forma trigonometrică</em>, <span class="math notranslate nohighlight">\( z = r(\cos \theta + i \sin \theta) \)</span>, unde
+<span class="math notranslate nohighlight">\( r = |z| = \sqrt{a^2 + b^2} \)</span>, iar <span class="math notranslate nohighlight">\( \theta = \arctan \dfrac{b}{a} = \mathrm{Arg}(z) \)</span>,
+<em>argumentul principal</em> al lui <span class="math notranslate nohighlight">\( z \)</span>.</p>
+<p>Vom reveni la aceste noțiuni în contextul transformărilor geometrice.</p>
+</aside>
+<p>Definim funcția:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}f : A \to B, \quad f(z) = \begin{pmatrix} \cos \alpha &amp; \sin \alpha \\ -\sin \alpha &amp; \cos \alpha \end{pmatrix}, \text{ unde } \alpha = \mathrm{Arg}(z),\end{split}\]</div>
+<p>care preia <em>argumentul principal</em> al numărului complex <span class="math notranslate nohighlight">\( z \)</span>.</p>
+<p>Se poate demonstra destul de ușor (exercițiu!) că funcția <span class="math notranslate nohighlight">\( f \)</span> realizează un izomorfism,
+ceea ce înseamnă că numerele complexe de modul unitate sînt „același lucru“ cu matricele
+pătratice din <span class="math notranslate nohighlight">\( B \)</span>.</p>
+<p>Un exemplu similar, mai mult sau mai puțin surprinzător, este acesta:</p>
+<p><strong>Exemplu:</strong> Fie <span class="math notranslate nohighlight">\( A = (\mathbb{R}, +) \)</span>, grupul aditiv al numerelor reale și</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}B = \left\{ M(a) = \begin{pmatrix} 1 &amp; a \\ 0 &amp; 1 \end{pmatrix} \mid a \in \mathbb{R} \right \},\end{split}\]</div>
+<p>considerat împreună cu înmulțirea.</p>
+<p>Se poate arăta ușor că <span class="math notranslate nohighlight">\( (B, \cdot) \)</span> este un grup comutativ și mai mult, că <span class="math notranslate nohighlight">\( A \simeq B \)</span>, prin funcția:</p>
+<div class="math notranslate nohighlight">
+\[f : A \to B, \quad f(a) = M(a), \forall a \in \mathbb{R},\]</div>
+<p>adică exact funcția care asociază unui număr real o matrice din <span class="math notranslate nohighlight">\( B \)</span> care depinde numai de
+acel număr real.</p>
+</section>
+<hr class="docutils" />
+<section id="un-truc">
+<h3>Un truc<a class="headerlink" href="#un-truc" title="Permalink to this headline">#</a></h3>
+<p>Fără a fi suficient, putem folosi un mic truc în cazul izomorfismelor.
+Deoarece o astfel de funcție arată, practic, faptul că două structuri sînt „la fel“
+din punct de vedere algebric, rezultă, în consecință, că și elementele lor neutre trebuie
+să corespundă. Imaginați-vă că un izomorfism este un fel de „dicționar“, care ne ajută să
+vedem cum „traducem întocmai“ elementele unei structuri în elementele alteia. Printre altele,
+și elementele neutre trebuie să corespundă.</p>
+<p>De aceea, pentru a verifica dacă o funcție este sau nu izomorfism (și chiar numai morfism),
+este necesar (nu suficient!) să verificăm că ea face elementele neutre să corespundă.
+O astfel de condiție – necesară, dar nu suficientă – poate fi foarte utilă în cazul negativ.
+Dacă elementele neutre ale două structuri <em>nu</em> corespund printr-o funcție dată, atunci funcția
+respectivă nu poate fi morfism, deci nici izomorfism.</p>
+<p>Iată două exemple:</p>
+<p><strong>Exemplu:</strong> În cazul grupurilor <span class="math notranslate nohighlight">\( A \)</span> și <span class="math notranslate nohighlight">\( B \)</span> din exemplul anterior, elementul neutru
+pentru <span class="math notranslate nohighlight">\( A \)</span> este numărul <span class="math notranslate nohighlight">\( 0 \)</span>, iar pentru <span class="math notranslate nohighlight">\( B \)</span>, este matricea unitate, <span class="math notranslate nohighlight">\( I_2 \)</span>,
+care poate fi scrisă sub forma <span class="math notranslate nohighlight">\( I_2 = M(0) \)</span>, deoarece se obține pentru <span class="math notranslate nohighlight">\( a = 0 \)</span>.</p>
+<p>Acum, funcția <span class="math notranslate nohighlight">\( f(a) = M(a) \)</span> realizează evident corespondența <span class="math notranslate nohighlight">\( f(0) = M(0) = I_2 \)</span>,
+adică face elementele neutre să corespundă. De aceea, funcția <em>are șanse</em> să fie
+(izo)morfism – fără a avea garanția că este, într-adevăr, dar a trecut un test preliminar,
+ca să spunem așa.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>În unele cărți, se cere explicit ca morfismele să respecte elementele neutre.
+Cu alte cuvinte, se adaugă încă din definiție axioma <span class="math notranslate nohighlight">\( f(e_A) = e_B \)</span>.</p>
+<p>În alte materiale, morfismele care respectă această proprietate se numesc <em>morfisme unitare</em>
+și sînt permise inclusiv cazurile cînd proprietatea nu are loc.</p>
+<p>În acest material, nu vom face astfel de distincții și vom presupune automat că orice
+morfism este unitar (cum, de altfel, poate fi și dedus din definiție dacă luăm <span class="math notranslate nohighlight">\( y = x^{-1} \)</span>
+în <a class="reference internal" href="#def-morfism">Definition 7</a>.</p>
+</div>
+<p><strong>Exemplu:</strong> Grupul multiplicativ al numerelor reale nu poate fi izomorf cu grupul aditiv
+al numerelor reale. Aceasta pentru că, dacă am avea <span class="math notranslate nohighlight">\( f : \mathbb{R} \to \mathbb{R} \)</span>
+cu această proprietate, ar trebui să avem <span class="math notranslate nohighlight">\( f(1) = 0 \)</span>. Dar <span class="math notranslate nohighlight">\( 1 \)</span> mai are o proprietate
+importantă, anume că <span class="math notranslate nohighlight">\( -1 \cdot (-1) = 1 \)</span> și, aplicînd proprietatea de morfism, obținem:</p>
+<div class="math notranslate nohighlight">
+\[f(-1 \cdot (-1)) = f(1) = 0 = f(-1) + f(-1).\]</div>
+<p>Dacă presupunem că <span class="math notranslate nohighlight">\( f(-1) = t \in \mathbb{R} \)</span>, ajungem la ecuația <span class="math notranslate nohighlight">\( t + t = 0 \Rightarrow t = 0 \)</span>,
+deci și <span class="math notranslate nohighlight">\( f(-1) = 0 \)</span>, ceea ce nu se poate (în cazul unei funcții bijective, nu se pot repeta
+valorile; cum <span class="math notranslate nohighlight">\( f(1) = 0 \)</span>, nu mai poate exista alt număr care să aibă imaginea <span class="math notranslate nohighlight">\( 0 \)</span>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>De fapt, în exemplul al doilea de mai sus, am folosit implicit o altă proprietate, aceea
+a <em>ordinului</em> unui element. Prin definiție, spunem că un element dintr-un grup are ordinul <span class="math notranslate nohighlight">\( n \)</span>
+dacă atunci cînd aplicăm operația între elementul respectiv și el însuși de <span class="math notranslate nohighlight">\( n \)</span> ori
+se obține elementul neutru. De pildă, <span class="math notranslate nohighlight">\( -1 \)</span> are ordinul 2 față de înmulțire, deoarece
+<span class="math notranslate nohighlight">\( -1 \cdot (-1) = 1 \)</span>, care este elementul neutru.</p>
+<p>Or pentru adunare, nu poate exista niciun element de ordin 2, întrucît dacă <span class="math notranslate nohighlight">\( t \)</span> ar fi
+un astfel de element, am avea <span class="math notranslate nohighlight">\( t + t = 0 \)</span>, de unde nu putem obține decît <span class="math notranslate nohighlight">\( t = 0 \)</span>.</p>
+<p>Ideea de bază este aceasta: cînd două grupuri (sau structuri, în general) sînt izomorfe,
+toate proprietățile lor algebrice „importante“ (termen vag, dar pe care nu ne folosește să-l detaliem acum)
+se preiau de la o structură la alta. În particular, elementele neutre corespund, iar
+un element de ordin <span class="math notranslate nohighlight">\( n \)</span> corespunde la un element de același ordin.</p>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id6">
+<h2>Exerciții propuse<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p>Arătați că <span class="math notranslate nohighlight">\( f : \mathbb{R} \to \mathbb{R}, f(x) = ax \)</span> este un automorfism
+al grupului aditiv <span class="math notranslate nohighlight">\( (\mathbb{R}, +) \)</span>, pentru orice <span class="math notranslate nohighlight">\( a \in \mathbb{R} \)</span>, fixat.</p></li>
+<li><p>Fie mulțimea:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}M = \left\{ A(x) = \begin{pmatrix} x &amp; x \\ 0 &amp; x \end{pmatrix} \mid x \in \mathbb{R} \right\}\end{split}\]</div>
+<ul class="simple">
+<li><p>Arătați că <span class="math notranslate nohighlight">\( (M, +) \)</span> este grup comutativ;</p></li>
+<li><p>Arătați că <span class="math notranslate nohighlight">\( f : M \to \mathbb{R}, f(A(x)) = x, \forall x \in \mathbb{R} \)</span> este un izomorfism de grupuri aditive.</p></li>
+</ul>
+<ol class="simple">
+<li><p>Arătați că grupul multiplicativ al numerelor complexe <span class="math notranslate nohighlight">\( (\mathbb{C}, \cdot) \)</span> nu poate
+fi izomorf cu grupul multiplicativ al numerelor reale <span class="math notranslate nohighlight">\( (\mathbb{R}, \cdot) \)</span>.</p></li>
+</ol>
+</section>
+<section id="nucleu-si-imagine">
+<h2>Nucleu și imagine<a class="headerlink" href="#nucleu-si-imagine" title="Permalink to this headline">#</a></h2>
+<p>Această secțiune este ceva mai tehnică, însă relevantă din cel puțin două motive:</p>
+<ul class="simple">
+<li><p>ne arată cum să obținem noi structuri, date unele anume;</p></li>
+<li><p>se va prelua aproape mot-à-mot în cazul spațiilor vectoriale.</p></li>
+</ul>
+<p><em>Nucleul</em> unui morfism <span class="math notranslate nohighlight">\( f \)</span>, denumit în engleză <em>kernel</em>, motiv pentru care se notează
+cu <span class="math notranslate nohighlight">\( \mathrm{Ker}(f) \)</span> extrage o informație importantă, însă pentru care avem nevoie
+de cîteva preliminarii. Mai întîi, definiția.</p>
+<div class="proof definition admonition" id="def-ker">
+<p class="admonition-title"><span class="caption-number">Definition 9 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( f : A \to B \)</span> un morfism (de grupuri, monoizi).</p>
+<p><em>Nucleul</em> lui <span class="math notranslate nohighlight">\( f \)</span> se definește prin:</p>
+<p>$<span class="math notranslate nohighlight">\( \mathrm{Ker}(f) = \{ x \in A \mid f(x) = e_B \} \)</span>$.</p>
+</section>
+</div><p>Cu alte cuvinte, nucleul arată ce elemente corespund elementului neutru.
+Desigur, în condițiile și cu notațiile de mai sus, avem oricum <span class="math notranslate nohighlight">\( f(e_A) = e_B \)</span>,
+deci <span class="math notranslate nohighlight">\( e_A \in \mathrm{Ker}(f) \)</span> în toate cazurile. Important este să vedem
+dacă mai găsim și alte elemente în nucleu.</p>
+<p>Un rezultat ne arată relevanța nucleului:</p>
+<div class="proof theorem admonition" id="thm-ker">
+<p class="admonition-title"><span class="caption-number">Theorem 3 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Dacă <span class="math notranslate nohighlight">\( f : A \to B \)</span> este un morfism (de grupuri, monoizi),
+atunci are loc:</p>
+<div class="math notranslate nohighlight">
+\[ \mathrm{Ker}(f) = \{ e_A \} \Leftrightarrow f \text{ injectivă}. \]</div>
+</section>
+</div><p>Cu alte cuvinte, numai atunci cînd morfismul este injectiv găsim doar elementul
+neutru în nucleu. Reciproc, dacă măcar un element diferit de elementul neutru se
+găsește în nucleu, știm sigur că morfismul nu este injectiv. Acest lucru poate
+fi ușor justificat din chiar definiția nucleului: orice element de acolo
+are proprietatea că merge în elementul neutru. Deci dacă <span class="math notranslate nohighlight">\( e_A \)</span> și <span class="math notranslate nohighlight">\( x \neq e_A \)</span>
+se găsesc în nucleu, atunci <span class="math notranslate nohighlight">\( f(e_A) = f(x) = e_B \)</span>, lucru care nu se poate întîmpla
+pentru o funcție injectivă.</p>
+<p>Și reciproca se demonstrează ușor: Presupunem că <span class="math notranslate nohighlight">\( \mathrm{Ker}(f) = \{ e_A \} \)</span>
+și mai presupunem, pentru un raționament prin reducere la absurd, că <span class="math notranslate nohighlight">\( f(x) = f(y) \)</span>,
+cu <span class="math notranslate nohighlight">\( x \neq y \)</span>. Dar, din proprietatea definitorie a morfismului, avem succesiv
+(vom presupune o notație multiplicativă):</p>
+<div class="math notranslate nohighlight">
+\[f(x) = f(y) \Leftrightarrow f(x) \cdot f(y)^{-1} = e_B \Leftrightarrow f(x) \cdot f(y^{-1}) = e_B %
+\Leftrightarrow f(xy^{-1}) = e_B \Leftrightarrow xy^{-1} \in \mathrm{Ker}(f) = \{ e_A \}.\]</div>
+<p>Așadar, <span class="math notranslate nohighlight">\( xy^{-1} = e_A \Leftrightarrow x = y \)</span>, care contrazice ipoteza de lucru.</p>
+<p>Vedem, deci, care este informația esențială pe care o extrage nucleul: ne arată cît de departe
+este un morfism de a fi injectiv.</p>
+<p>Proprietatea pe care o așteptam și care ne arată cum construim noi substructuri este următoarea:</p>
+<div class="proof theorem admonition" id="thm-ker-subgrup">
+<p class="admonition-title"><span class="caption-number">Theorem 4 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Dacă <span class="math notranslate nohighlight">\( f : A \to B \)</span> este un morfism (de grupuri, monoizi), atunci <span class="math notranslate nohighlight">\( \mathrm{Ker}(f) \leq A \)</span>.</p>
+</section>
+</div><p>Demonstrația este un exercițiu foarte util, motiv pentru care schițăm doar cîteva indicații:</p>
+<ul class="simple">
+<li><p>încercați să înțelegeți mai întîi cum funcționează structura de grup din <span class="math notranslate nohighlight">\( \mathrm{Ker}(f) \)</span>:
+ea preia operația din <span class="math notranslate nohighlight">\( A \)</span> (o putem presupun multiplicativă), precum și elementul neutru;</p></li>
+<li><p>apoi folosiți teorema <a class="reference internal" href="#thm-subgrup">Theorem 2</a>: luăm două elemente <span class="math notranslate nohighlight">\( x, y \in \mathrm{Ker}(f) \)</span>
+și demonstrăm că <span class="math notranslate nohighlight">\( xy^{-1} \in \mathrm{Ker}(f) \)</span>. Nu aveți decît să folosiți definiția: un element
+se găsește în <span class="math notranslate nohighlight">\( \mathrm{Ker}(f) \)</span> atunci cînd imaginea sa prin <span class="math notranslate nohighlight">\( f \)</span> este elementul neutru.</p></li>
+</ul>
+<hr class="docutils" />
+<p>De cealaltă parte, imaginea este un concept ceva mai cunoscut, mai ales că are
+exact același sens pe care îl are și în cazul funcțiilor obișnuite, nu neapărat
+morfisme.</p>
+<p>Prin definiție, avem:</p>
+<div class="proof definition admonition" id="def-img">
+<p class="admonition-title"><span class="caption-number">Definition 10 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Pentru o funcție <span class="math notranslate nohighlight">\( f : A \to B \)</span>, se numește <em>imaginea</em> lui <span class="math notranslate nohighlight">\( f \)</span>, notată <span class="math notranslate nohighlight">\( \mathrm{Im}(f) \)</span>
+sau <span class="math notranslate nohighlight">\( f(A) \)</span>, mulțimea valorilor funcției. Formal:</p>
+<div class="math notranslate nohighlight">
+\[ \mathrm{Im}(f) = \{ y \in B \mid \exists x \in A, f(x) = y \}. \]</div>
+</section>
+</div><p>Cu alte cuvinte, dacă o valoare din codomeniu este luată efectiv, ea se găsește în imagine.</p>
+<p>De exemplu, pentru funcția <span class="math notranslate nohighlight">\( f : \mathbb{N} \to \mathbb{N}, f(x) = 2x \)</span>,
+avem că imaginea este alcătuită doar din numere pare, pentru că funcția produce doar astfel
+de rezultate. Un număr impar precum <span class="math notranslate nohighlight">\( 5 \)</span> nu se poate găsi în imagine, deoarece nu există
+niciun număr natural care să-i corespundă prin <span class="math notranslate nohighlight">\( f \)</span> (i.e. <span class="math notranslate nohighlight">\( f(x) = 2x = 5 \)</span> nu are soluții naturale).</p>
+<p>În cazul morfismelor, definiția este identică.</p>
+<p>Relevanța imaginii este pentru proprietatea de surjectivitate a unei funcții:</p>
+<div class="proof definition admonition" id="def-surj">
+<p class="admonition-title"><span class="caption-number">Definition 11 </span></p>
+<section class="definition-content" id="proof-content">
+<p>O funcție <span class="math notranslate nohighlight">\( f : A \to B \)</span> se numește <em>surjectivă</em> dacă <span class="math notranslate nohighlight">\( \mathrm{Im}(f) = B \)</span>,
+adică <span class="math notranslate nohighlight">\( \forall y \in B, \exists x \in A, f(x) = y \)</span>.</p>
+</section>
+</div><p>De exemplu, funcția de mai sus nu este surjectivă, deoarece avem o infinitate de numere naturale
+(cele impare) care nu se găsesc în imagine.</p>
+<p>Similar, funcția <span class="math notranslate nohighlight">\( f : \mathbb{R} \to \mathbb{R}, f(x) = x^2 \)</span> nu este surjectivă,
+deoarece nu poate lua valori numere negative.</p>
+<p>Pentru structuri algebrice, avem:</p>
+<div class="proof theorem admonition" id="thm-img">
+<p class="admonition-title"><span class="caption-number">Theorem 5 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( A, B \)</span> două grupuri (monoizi) și <span class="math notranslate nohighlight">\( f : A \to B \)</span> un morfism.
+Atunci <span class="math notranslate nohighlight">\( \mathrm{Im}(f) \leq B \)</span>.</p>
+</section>
+</div><p>Demonstrația procedează folosind numai definiția (vom presupune din nou o notație multiplicativă):</p>
+<ul class="simple">
+<li><p>înțelegeți mai întîi structura de grup (monoid) de pe <span class="math notranslate nohighlight">\( \mathrm{Im}(f) \)</span>, care
+moștenește operația și elementul neutru din <span class="math notranslate nohighlight">\( B \)</span>;</p></li>
+<li><p>folosind teorema <a class="reference internal" href="#thm-subgrup">Theorem 2</a>, arătați că pentru orice două elemente
+<span class="math notranslate nohighlight">\( y, z \in \mathrm{Im}(f) \)</span>, are loc <span class="math notranslate nohighlight">\( yz^{-1} \in \mathrm{Im}(f) \)</span>. Nu uitați că
+apartenența la imagine se traduce prin faptul că există un element din domeniu care corespunde
+elementului respectiv din imagine: <span class="math notranslate nohighlight">\( y \in \mathrm{Im}(f) \Leftrightarrow \exists x \in A, f(x) = y \)</span>.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Punînd acum cap la cap informațiile din <a class="reference internal" href="#thm-ker">Theorem 3</a> și <a class="reference internal" href="#thm-img">Theorem 5</a>, obținem încă o metodă
+de a demonstra că un morfism <span class="math notranslate nohighlight">\( f : A \to B \)</span> este chiar izomorfism: trebuie să avem simultan că
+<span class="math notranslate nohighlight">\( \mathrm{Ker}(f) = \{ e_A \} \)</span> și <span class="math notranslate nohighlight">\( \mathrm{Im}(f) = B \)</span>.</p>
+</div>
+<hr class="docutils" />
+<p>În cazul grupurilor (și chiar al <a class="reference internal" href="p2-s2-inele-corpuri.html"><span class="doc std std-doc">inelelor și corpurilor</span></a>), nu e foarte
+clară aplicația pe care o au nucleul și imaginea, cu excepția exemplelor abstracte oferite.
+Însă în cazul spațiilor vectoriale, exemplele vor fi mult mai ușor de vizualizat, astfel că ne oprim
+aici cu detaliile teoretice și vom reveni asupra acestor noțiuni în capitolele despre spații vectoriale
+și geometrie.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="binar"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>O operație binară este o regulă care combină două elemente pentru a obține un al treilea.
+Nu intrăm în detalii specifice, însă adăugăm că adunarea și înmulțirea, de pildă, sînt operații binare,
+deoarece combină două elemente pentru a obține un al treilea — suma, respectiv produsul lor.</p>
+</dd>
+<dt class="label" id="abelian"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Denumirea este dată în onoarea matematicianului norvegian Niels Henrik Abel (1802-1829), unul dintre pionierii algebrei abstracte.</p>
+</dd>
+<dt class="label" id="nenul"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>De remarcat că trebuie să eliminăm numărul 0, întrucît el va încălca o proprietate definitorie
+pentru grupuri: nu va avea un simetric (justificați!).</p>
+</dd>
+<dt class="label" id="bij"><span class="brackets"><a class="fn-backref" href="#id4">4</a></span></dt>
+<dd><p>Riguros, lucrurile stau ceva mai complicat. O funcție bijectivă este o funcție care este
+simultan injectivă și surjectivă. Fiecare dintre aceste proprietăți trebuie verificată separat,
+prin metode specifice. Aici, însă, este suficient să înțelegem noțiunile de bază, la un nivel
+mai scăzut al rigorii.</p>
+</dd>
+<dt class="label" id="izo"><span class="brackets"><a class="fn-backref" href="#id5">5</a></span></dt>
+<dd><p>De fapt, etimologic, izo-morfism provine din prefixul grecesc isos (ἴσος), care înseamnă
+<em>la fel, egal</em>, atașat cuvîntului μορφή (morphe), care înseamnă <em>formă</em>.</p>
+</dd>
+</dl>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="p2-abstract.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Algebră abstractă și algebră liniară</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="p2-s1e-simetrii.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Grupuri de simetrie</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Adrian Manea (Poligon Educational)<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,1155 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Abstractizare și raționamente &#8212; Algebră liniară și aplicații</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/proof.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Istoria spațiilor vectoriale" href="p1-s2-ist-vsp.html" />
+    <link rel="prev" title="Generalități" href="p1-istorie-fil-intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo-light-poly-only.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Algebră liniară și aplicații</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Algebră liniară și aplicații
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Elemente de istoria și filosofia matematicii
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-istorie-fil-intro.html">
+   Generalități
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Abstractizare și raționamente
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-s2-ist-vsp.html">
+   Istoria spațiilor vectoriale
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algebră abstractă și algebră liniară
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="p2-abstract.html">
+   Algebră abstractă și algebră liniară
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s1-grupuri.html">
+     Monoizi și grupuri
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s1e-simetrii.html">
+     Grupuri de simetrie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s2-inele-corpuri.html">
+     Inele și corpuri
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s3-spvect.html">
+     Spații vectoriale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s4-baza.html">
+     Bază și dimensiune
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s5-op-subsp.html">
+     Operații cu subspații
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s6-morfisme-spvect.html">
+     Morfisme de spații vectoriale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s7-ortonormare.html">
+     Produs scalar și ortonormare
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s8-vvp.html">
+     Vectori și valori proprii
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s9-quat.html">
+     Cuaternioni
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s10-afin.html">
+     Spații afine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s11-mat-decomp.html">
+     Descompuneri matriceale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s12-transf-mat.html">
+     Transformări matriceale în 2D și 3D
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s13-arii-volume.html">
+     Arii și volume
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Aplicații și implementări în programare
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="p3-aplicatii.html">
+   Aplicații și implementări în programare
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Bibliografie și lecturi suplimentare
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliografie.html">
+   Bibliografie și lecturi suplimentare
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/adimanea/linalg"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/adimanea/linalg/issues/new?title=Issue%20on%20page%20%2Fp1-s1-rationamente.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/p1-s1-rationamente.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#despre-rationamente-in-general">
+   Despre raționamente, în general
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cuantificatori">
+     Cuantificatori
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deductia-inductia-abductia">
+     Deducția, inducția, abducția
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#abstractizare">
+   Abstractizare
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemplu-din-programare">
+     Exemplu din programare
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Abstractizare și raționamente</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#despre-rationamente-in-general">
+   Despre raționamente, în general
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cuantificatori">
+     Cuantificatori
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deductia-inductia-abductia">
+     Deducția, inducția, abducția
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#abstractizare">
+   Abstractizare
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemplu-din-programare">
+     Exemplu din programare
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="abstractizare-si-rationamente">
+<h1>Abstractizare și raționamente<a class="headerlink" href="#abstractizare-si-rationamente" title="Permalink to this headline">#</a></h1>
+<p>În toate ramurile matematicii, dezvoltarea teoriilor și a rezultatelor urmează anumite
+ale raționamentelor. Acestea sînt validate de fundamente ale logicii care stau la
+baza întregului nostru sistem de gîndire – fie că este vorba despre o teoremă matematică
+ori un argument dintr-un discurs din viața de zi cu zi. De aceea, este important să le
+înțelegem modul de funcționare, lucru care, în același timp, ne ajută și să depistăm
+eventuale fisuri sau inconsecvențe într-un argument sau raționament dat.</p>
+<p>Scopul acestei lecții nu este, însă, unul care privește în primul rînd gîndirea
+critică și analiza logică a raționamentelor. Principalul motiv pentru care facem
+această expunere se leagă, pe de o parte, de aplicații ulterioare, în special în ce
+privește raționamentele <em>inductive</em>, dar în același timp, și pentru a pune în context
+procedura de <em>abstractizare</em> care stă la baza algebrei liniare și nu numai.
+Modul în care pornim, de pildă, de la mulțimea numerelor întregi, împreună cu operațiile
+acesteia și construim <em>inele</em> sau <em>grupuri</em> ori <em>monoizi</em>, este unul care ține de
+<em>abstractizare</em>, de <em>generalizare</em>.</p>
+<p>Dar să mergem direct la subiect. Mai adăugăm doar că majoritatea exemplelor pe care le
+vom da vor fi triviale, foarte ușor de verificat și de înțeles. Este o decizie conștientă
+care ne va permite să ne concentrăm pe noutățile privitoare la raționamente și
+abstractizare în loc să explicăm detaliat exemple sofisticate.</p>
+<section id="despre-rationamente-in-general">
+<h2>Despre raționamente, în general<a class="headerlink" href="#despre-rationamente-in-general" title="Permalink to this headline">#</a></h2>
+<p>Într-un context științific, de obicei, afirmațiile necesită demonstrații. Dacă este
+vorba de situații particulare, demonstrațiile se pot da și explicit, prin enumerarea
+și verificarea pe rînd a tuturor instanțelor. De exemplu, dacă avem o propoziție
+precum:</p>
+<blockquote>
+<div><p>Toate elementele mulțimii <span class="math notranslate nohighlight">\( A = \{ 0, 1, 4, 9, 16 \} \)</span> sînt pătrate perfecte.</p>
+</div></blockquote>
+<p>atunci putem să verificăm explicit, fiecare element în parte. Dar foarte rare sînt
+situațiile din matematică în care lucrăm cu particularul. Majoritatea rezultatelor
+sînt <em>universale</em>, adică au valoare de <em>generalitate</em> – se doresc a fi adevărate
+pentru <em>orice</em> mulțime, element, număr, obiect ș.a.m.d.</p>
+<section id="cuantificatori">
+<h3>Cuantificatori<a class="headerlink" href="#cuantificatori" title="Permalink to this headline">#</a></h3>
+<p>Ajunși aici, este bine să începem chiar cu modul de exprimare a propozițiilor
+matematice cu ajutorul <em>cuantificatorilor</em>. În general, veți întîlni afirmații
+generale de tipul:</p>
+<blockquote>
+<div><p><em>Oricare ar fi</em> un număr <span class="math notranslate nohighlight">\( x \)</span> cu proprietatea <span class="math notranslate nohighlight">\( P \)</span>, are loc rezultatul <span class="math notranslate nohighlight">\( Q \)</span>.</p>
+</div></blockquote>
+<p>care poate fi scrisă simbolic<a class="footnote-reference brackets" href="#logicaprop" id="id1">1</a> sub forma <span class="math notranslate nohighlight">\( \forall x : P(x), Q \)</span>.</p>
+<p>Afirmația sus-menționată se numește <em>universală</em> și folosește <em>cuantificatorul</em>
+<span class="math notranslate nohighlight">\( \forall \)</span>. Aceasta înseamnă că ea exprimă o proprietate care are loc pentru toate
+obiectele <span class="math notranslate nohighlight">\( x \)</span> (în condițiile precise din afirmație), iar cuantificatorul este un
+operator logic pe care îl folosim tocmai atunci cînd vrem să arătăm gradul de
+generalitate. Cuantificatorul universal <span class="math notranslate nohighlight">\( \forall \)</span> exprimă, așa cum îi spune numele,
+o afirmație… universală. Este similar propozițiilor pe care le întîlnim în logica
+din clasa a noua, „<em>Toți</em> <span class="math notranslate nohighlight">\( S \)</span> sînt <span class="math notranslate nohighlight">\( P \)</span>.“</p>
+<p>Evident, o afirmație generală nu poate fi demonstrată <em>explicit</em>, adică enumerînd
+instanțele pentru care ar trebui să fie adevărată. De aceea, avem nevoie de metode
+generale de demonstrație, care să funcționeze <em>oricare ar fi</em> obiectul pe care îl
+analizăm.</p>
+<p>Un al doilea cuantificator pe care îl întîlnim se numește <em>existențial</em> și apare
+în propoziții precum:</p>
+<blockquote>
+<div><p><em>Există</em> un obiect <span class="math notranslate nohighlight">\( x \)</span> care are proprietate <span class="math notranslate nohighlight">\( P \)</span> astfel încît are loc rezultatul <span class="math notranslate nohighlight">\( Q \)</span>.</p>
+</div></blockquote>
+<p>care poate fi scrisă simbolic sub forma <span class="math notranslate nohighlight">\( \exists x : P(x), Q \)</span>.
+Afirmațiile existențiale au și variația de <em>existență unică</em>, adică:</p>
+<blockquote>
+<div><p><em>Există și este unic</em> (<em>există un singur</em>) obiect <span class="math notranslate nohighlight">\( x \)</span> care are proprietatea <span class="math notranslate nohighlight">\( P \)</span>…</p>
+</div></blockquote>
+<p>care se scrie simbolic sub forma <span class="math notranslate nohighlight">\( \exists! x : P(x),... \)</span>.</p>
+<p>Ar trebui să fie clară distincția între cuantificatorul universal <span class="math notranslate nohighlight">\( \forall \)</span> și cel
+existențial <span class="math notranslate nohighlight">\( \exists \)</span>, în primul rînd pe baza propozițiilor și contextelor în care
+apar. Exemple concrete sînt:</p>
+<ul class="simple">
+<li><p>Orice număr natural par este divizibil cu <span class="math notranslate nohighlight">\( 2 \)</span>.
+Simbolic,</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\forall x \in \mathbb{N}, x = 2k, k \in \mathbb{N}, x \ \vdots \ 2.\]</div>
+<ul class="simple">
+<li><p>Există un număr natural impar care este mai mare decît 1000.
+Simbolic,</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\exists x \in \mathbb{N}: x = 2k + 1, k \in \mathbb{N}, x &gt; 1000.\]</div>
+<ul class="simple">
+<li><p>Există un unic număr natural par care este mai mare decît 11 și mai mic decît 13.
+Simbolic,</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\exists! \ x \in \mathbb{N}: x = 2k, k \in \mathbb{N}, (x &gt; 11 \land x &lt; 13).\]</div>
+<p>Evident, modul de exprimare a propozițiilor respective – atît în forma simbolică,
+cît și cea în limbaj natural – nu este unic. De exemplu, paritatea poate fi definită
+chiar prin divizibilitatea cu 2. Sau dacă luăm o propoziție precum:</p>
+<blockquote>
+<div><p>Există un unic număr prim între 10 și 12.</p>
+</div></blockquote>
+<p>ar trebui să o exprimăm cu ajutorul unei proprietăți care nu are un simbol anume.
+Faptul că un număr este prim se poate scrie ad-hoc prin <span class="math notranslate nohighlight">\( x \in \mathbb{N}, \mathrm{Prim}(x) \)</span>,
+dar nu este o notație standard. Adică ar trebui să explicăm (să definim, de fapt) ce înseamnă
+proprietatea <span class="math notranslate nohighlight">\( \mathrm{Prim}(x) \)</span>. Am scrie, de exemplu:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{Prim}(x) \Leftrightarrow \forall d \in \mathbb{N} : d \mid x \Rightarrow d \in \{ 1, x \}.\]</div>
+<p>Dacă în cazul propozițiilor universale, este evident că nu putem avea o demonstrație
+prin instanțiere, adică prin enumerarea obiectelor și verificarea lor unul cîte unul,
+pentru propozițiile existențiale, lucrurile sînt ceva mai complicate. De fapt, tocmai
+această discuție privitoare la demonstrațiile prin instanțiere și cele generale,
+abstracte, a condus la probleme filosofice fascinante, pe care le vom detalia pe
+parcurs. Deocamdată, este clar că în cazul exemplelor de mai sus este ușor să demonstrăm
+prin instanțiere.</p>
+<ul class="simple">
+<li><p>Un număr natural impar mai mare decît 1000 este 1001. Nu trebuie decît să găsim
+cel puțin unul.</p></li>
+<li><p>Numărul natural par mai mare decît 11 și mai mic decît 13 este 12,
+care este unic tocmai prin definiția relației de ordine dintre numere naturale.</p></li>
+<li><p>Numărul prim dintre 10 și 12 este 11, a cărui unicitate rezultă, din nou, din modul
+de funcționare a relației de ordine dintre numere naturale.</p></li>
+</ul>
+<p>Însă cu totul altfel stau lucrurile dacă am avea o propoziție existențială mai greu
+de instanțiat (sau chiar imposibil, în unele cazuri). Să luăm, de exemplu:</p>
+<blockquote>
+<div><p>Există un număr par mai mare decît 2 care nu poate fi scris ca suma a două numere prime.</p>
+</div></blockquote>
+<p>În primul rînd, o astfel de afirmație este imposibil de demonstrat prin verificare.
+Mulțimea numerelor naturale este infinită (la fel și mulțimea numerelor pare).
+Afirmația sus-menționată este cunoscută sub numele de <a class="reference external" href="https://en.wikipedia.org/wiki/Goldbach%27s_conjecture">Conjectura lui Goldbach</a>.
+De fapt, este negația acesteia și este nedemonstrată încă, din secolul al XVIII-lea.
+În zilele noastre, putem folosi supercomputere care să încerce să găsească
+un contraexemplu al conjecturii – ceea ce ar face ca varianta negată pe care am formulat-o
+mai sus să fie adevărată. Aceasta ar fi o demonstrație prin instanțiere. Dar dacă
+afirmația este falsă? Nu am ști niciodată, pentru că mereu am putea căuta instanțe,
+dar ar lipsi o demonstrație generală. Nu mai vorbim de cazurile cînd propozițiile sînt
+și mai abstracte, adică nu folosesc numere. De exemplu, o afirmație precum:</p>
+<blockquote>
+<div><p>Există un cerc în care nu se pot înscrie 4 triunghiuri obtuzunghice.</p>
+</div></blockquote>
+<p>nu ar putea fi demonstrată (sau contrazisă) direct, pentru că nu avem cum să căutăm
+prin „mulțimea tuturor cercurilor“. În schimb, propoziția va trebui să fie reformulată
+într-o variantă care să se preteze căutărilor. De pildă, putem să o transformăm într-una
+numerică făcînd apel la aria triunghiului, respectiv aria cercului și să ajungem
+să demonstrăm o <em>afirmație echivalentă</em>, dar scrisă numeric.</p>
+<p>Evident, exemplele pe care le-am dat sînt doar cazuri foarte simple. În matematica de
+nivel înalt, afirmațiile de demonstrat, chiar și cele existențiale, sînt cu mult mai
+greu de exprimat și de verificat.</p>
+<p>Iar aici ajungem la problema filosofică pe care am menționat-o. În prima parte a
+secolului XX, matematicianul german David Hilbert a demonstrat o afirmație existențială
+din geometria algebrică (a cărei dificultate ne împiedică să o formulăm aici,
+dar puteți citi, de exemplu, <a class="reference external" href="https://en.wikipedia.org/wiki/Hilbert%27s_basis_theorem">pagina de Wikipedia</a>).
+Unul dintre colaboratorii lui Hilbert, germanul Paul Gordan, ar fi afirmat, la vederea
+demonstrației că <em>Aceasta nu este matematică, este teologie!</em>. Gordan se referea
+la faptul că un argument esențial din demonstrația lui Hilbert era pentru o afirmație
+existențială, însă care nu instanția obiectul în cauză. Astfel că Gordan a simțit că
+„trebuie să creadă“ că <span class="math notranslate nohighlight">\( x \)</span> există, cu proprietatea cerută, fără a-l vedea instanțiat,
+situație pe care a asemănat-o cu teologia.</p>
+<p>O astfel de situație a fost generalizată apoi în inițiativele de filosofie a științei
+numite <em>constructivism</em> și <em>intuiționism</em>, pe care le vom detalia ulterior. În esență,
+susținătorii acestor curente considerau că este inadmisibil să avem o demonstrație
+pentru o afirmație existențială care să nu conțină o instanțiere <em>chiar și în principiu</em>.
+Această observație din urmă se referă la faptul că, deși uneori poate fi imposibil de
+instanțiat sau de construit <em>efectiv</em> un exemplu care să satisfacă propoziția,
+trebuie să existe o metodă care să-l poată construi, de exemplu, folosind <strong>inducția</strong>
+<strong>matematică</strong>. Adică să fie clar că există măcar o metodă de construcție, chiar dacă
+această metodă nu poate fi implementată efectiv, de exemplu din cauza faptului că lucrează
+cu mulțimi infinite. În cazul unei demonstrații asistate de computer, de exemplu,
+putem spune că avem o metodă efectivă de construcție, întrucît programul care a găsit
+(contra)exemplul se bazează pe un algoritm care are un număr finit de pași.</p>
+<p>Vom reveni asupra acestei discuții în secțiuni ulterioare.</p>
+</section>
+<section id="deductia-inductia-abductia">
+<h3>Deducția, inducția, abducția<a class="headerlink" href="#deductia-inductia-abductia" title="Permalink to this headline">#</a></h3>
+<p>Raționamentele, mecanismele prin care putem construi argumente, sînt, în general,
+de 3 feluri, clasificate după relația pe care o stabilesc între <em>particular</em> și <em>general</em>:</p>
+<ul class="simple">
+<li><p>raționamente deductive (<strong>deducții</strong>)</p></li>
+<li><p>raționamente inductive (<strong>inducții</strong>);</p></li>
+<li><p>raționamente abductive (<strong>abducții</strong>).</p></li>
+</ul>
+<p>Dintre acestea, cel mai des utilizată în metoda științifică este <em>deducția</em>.
+Prin <em>metodă științifică</em> se înțelege procedura, care adesea combină teoria
+cu practica, prin care se produce un avans științific de un anume fel.
+Poate fi vorba despre procedura de descoperire și demonstrație a unei teoreme
+de matematică, de alcătuire și descriere a unui compus chimic, de pregătire
+și implementare a unui experiment de fizică ș.a.m.d.</p>
+<p>Deducția este metoda prin care se face trecerea <em>de la general către particular</em>.
+Altfel spus, cunoscută fiind o situație generală, descrisă de o teoremă, postulat
+sau un altfel de rezultat științific, <em>putem deduce</em> că rezultatul respectiv
+se va aplica și unei situații particulare în care ne aflăm.</p>
+<p>Un exemplu simplu: Este cunoscut faptul că orice număr par se împarte exact la 2.
+<em>Deducem</em> de aici că și numărul 100004, care este par, se împarte exact la 2.
+Rezultatul particular pe care l-am obținut se bazează pe o simplă particularizare
+a rezultatului general.</p>
+<p>Evident, situația în care majoritatea raționamentelor sînt de tip deductiv
+este una ideală, pentru că ar însemna că avem deja toate informațiile necesare
+pe cazul general și nu ne rămîne decît să le particularizăm. Dacă știm totul despre
+o anumită mulțime de numere sau de obiecte matematice, atunci nu avansăm nicăieri
+din punctul de vedere al cunoașterii dacă numai deducem că numere sau obiecte
+particulare din acea mulțime au proprietățile pe care le știam deja.</p>
+<p>Totuși, deducția este foarte utilă și apare în demonstrațiile matematice în situații
+mai sofisticate. De exemplu, poate să nu fie evident că un obiect cu care lucrăm
+este parte a unei mulțimi despre care știm deja că are anume proprietăți. Astfel că
+avem de îndeplinit sarcina mai complicată de a demonstra mai întîi că obiectul
+respectiv aparține mulțimii și în fine, deducția ne ajută să tragem concluzia finală.</p>
+<p>Simplificînd masiv, putem da următorul exemplu: Presupunem cunoscută afirmația generală:</p>
+<blockquote>
+<div><p>Orice număr prim mai mare decît 2 este impar.</p>
+</div></blockquote>
+<p>Pornim acum cu numărul 124111. Dacă demonstrăm că este prim, vom putea <em>deduce</em>, folosind
+afirmația de mai sus, că este impar. Evident că în acest exemplu este mult mai greu să
+demonstrăm că numărul dat este prim decît că este impar. Dar esențialmente, este un caz
+în care putem aplica deducția în concluzia finală.</p>
+<p>În esență, schema după care funcționează un raționament deductiv se poate formula astfel:</p>
+<ul class="simple">
+<li><p>Dacă știm că o proprietate <span class="math notranslate nohighlight">\( P \)</span> este adevărată pentru orice obiecte de tipul <span class="math notranslate nohighlight">\( T \)</span> și</p></li>
+<li><p>Dacă știm că obiectul <span class="math notranslate nohighlight">\( x \)</span> are proprietatea <span class="math notranslate nohighlight">\( T \)</span>,</p></li>
+<li><p>Atunci rezultă că obiectul <span class="math notranslate nohighlight">\( x \)</span> are proprietatea <span class="math notranslate nohighlight">\( P \)</span>.</p></li>
+</ul>
+<p>Evidențiem în această schemă simplificată faptul că proprietatea <span class="math notranslate nohighlight">\( P \)</span> cunoscută
+din ipoteză este una <em>generală</em>, iar demonstrația pe care o facem este pentru un
+<em>obiect particular</em>.</p>
+<hr class="docutils" />
+<p>Un al doilea tip de raționament este acela <em>inductiv</em>, care face trecerea
+<em>de la particular la general</em>. Este genul de raționament care se folosește foarte des
+atunci cînd se începe construcția unei teorii sau chiar în cazul abstractizării
+din algebră, așa cum vom vedea.</p>
+<p>Schema simplificată a unui raționament inductiv este aceasta:</p>
+<ul class="simple">
+<li><p>Dacă știm că o proprietate <span class="math notranslate nohighlight">\( P \)</span> este adevărată pentru o mulțime finită de obiecte <span class="math notranslate nohighlight">\( M \)</span> și</p></li>
+<li><p>Dacă avem o metodă clară și demonstrată care ne permite să adăugăm noi obiecte mulțimii <span class="math notranslate nohighlight">\( M \)</span>,</p></li>
+<li><p>Atunci proprietatea <span class="math notranslate nohighlight">\( P \)</span> este adevărată pentru toate obiectele din <span class="math notranslate nohighlight">\( M \)</span>.</p></li>
+</ul>
+<p>În general, demonstrațiile inductive au 2 pași bine stabiliți, conform schemei de mai sus:</p>
+<ol class="simple">
+<li><p><em>Pasul de verificare</em>, în care se arată că proprietatea dorită este adevărată pentru cîteva elemente particulare;</p></li>
+<li><p><em>Pasul de inducție</em>, în care se presupune că proprietatea este adevărată pentru oricîte elemente și se demonstrează că ea rămîne adevărată și cînd adăugăm noi obiecte, conform metodei.</p></li>
+</ol>
+<p>De exemplu, dacă am vrea să demonstrăm prin inducție că orice număr par este divizibil cu 2,
+am putea proceda astfel:</p>
+<ol class="simple">
+<li><p>Pasul de verificare: luăm, în particular, numerele 2, 4, 6. Observăm că ele sînt divizibile cu 2, adică se împart fără rest.</p></li>
+<li><p>Pasul de inducție: presupunem că avem un număr arbitrar de numere pare și că toate sînt divizibile cu 2. Care este metoda de a mai adăuga încă un număr mulțimii? Adunarea cu 2. Altfel spus, trebuie să demonstrăm că dacă <span class="math notranslate nohighlight">\( n \)</span> aparține mulțimii (deci este divizibil cu 2), atunci și <span class="math notranslate nohighlight">\( n + 2 \)</span> aparține mulțimii. Deci <span class="math notranslate nohighlight">\( n = 2k \)</span>, pentru un anumit număr natural <span class="math notranslate nohighlight">\( k \)</span>. Atunci <span class="math notranslate nohighlight">\( n + 2 = 2k + 2 = 2(k + 1) \)</span>, care este evident divizibil cu 2 și am terminat.</p></li>
+</ol>
+<p>Concluzia este că putem adăuga oricîte numere mulțimii, folosind regula de adunare cu 2
+și toate vor avea proprietatea căutată, deci am demonstrat afirmația <em>în general</em>.</p>
+<p>Metoda inducției matematice se bazează pe un principiu care stă la baza construcției
+mulțimii numerelor naturale. De fapt, este una dintre metodele de a <em>defini</em> mulțimea
+<span class="math notranslate nohighlight">\( \mathbb{N} \)</span>, a numerelor naturale. În general, avem următoarea:</p>
+<div class="proof definition admonition" id="def-inductiv">
+<p class="admonition-title"><span class="caption-number">Definition 1 </span></p>
+<section class="definition-content" id="proof-content">
+<p>O mulțime <span class="math notranslate nohighlight">\( A \)</span> se numește <em>inductivă</em> dacă are proprietățile:</p>
+<ul class="simple">
+<li><p>conține 2 elemente fixate;</p></li>
+<li><p>se poate defini o funcție <em>succesor</em>, <span class="math notranslate nohighlight">\( S : A \to A \)</span>, astfel încît
+să aibă loc <span class="math notranslate nohighlight">\( \forall x \in A, S(x) \in A \)</span>.</p></li>
+</ul>
+</section>
+</div><p>Se poate demonstra că mulțimea numerelor naturale este inductivă, fiind
+descrisă prin așa-numitul <em>triplet Peano</em>, denumit după matematicianul italian
+Giuseppe Peano (1858-1932), care conține:</p>
+<ul class="simple">
+<li><p>două elemente fixate, numerele <span class="math notranslate nohighlight">\( 0 \)</span> și <span class="math notranslate nohighlight">\( 1 \)</span>;</p></li>
+<li><p>funcția succesor, <span class="math notranslate nohighlight">\( S(x) = x + 1 \)</span>, cu proprietatea din definiție.</p></li>
+</ul>
+<p>Se <em>definesc</em>, apoi numerele <span class="math notranslate nohighlight">\( 2 = S(1), 3 = S(2) = S(S(1)) \)</span> ș.a.m.d.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Aici, de fapt, lucrurile sînt mai delicate, în general. Putem adresa întrebări precum:</p>
+<ul class="simple">
+<li><p>Dar ce sînt 0 și 1 și de unde știm că ele există pentru a le lua ca puncte de pornire?</p></li>
+<li><p>De unde știm că funcția succesor are proprietatea din definiție, adică faptul că orice
+succesor al unui număr natural este tot număr natural?</p></li>
+<li><p>Ce sînt, de fapt, <em>numerele</em>?</p></li>
+</ul>
+<p>și multe altele, la care filosofia matematicii a răspuns în felurite moduri încă
+din secolul al XIX-lea. Evident, aici am prezentat o variantă ultrasimplificată a discuției,
+dar încurajăm astfel de întrebări și căutări pentru răspunsurile lor.</p>
+</div>
+<p>La prima vedere, poate părea că metoda inducției matematice nu este una suficient de
+riguroasă sau nu poate constitui baza unor demonstrații formale. Însă acest lucru
+nu este adevărat și există un <em>principiu al inducției matematice</em> care arată exact
+faptul că o demonstrație prin inducție este validă. Intuitiv, esența rezidă în
+regula care ne permite să adăugăm încă un element la mulțime; acolo se regăsește
+mare parte din esența unor astfel de demonstrații. Dar și pasul de verificare este
+unul fundamental. Este celebră în acest sens următoarea „demonstrație“ pentru
+„teorema“:</p>
+<blockquote>
+<div><p>Toți caii sînt albi.</p>
+</div></blockquote>
+<p>„Demonstrația“ prin inducție funcționează cam așa:</p>
+<ol class="simple">
+<li><p>Pasul de verificare: Alegem un cal alb.</p></li>
+<li><p>Pasul de inducție: Presupunem că avem deja o mulțime de cai despre care știm că
+sînt albi (ipoteza de inducție) și demonstrăm că, adăugînd încă unul la mulțime,
+cu toții vor fi albi. Modul în care se adaugă încă un cal este… standard, nu avem
+o metodă anume. Să presupunem, deci, că avem o mulțime de <span class="math notranslate nohighlight">\( n \)</span> cai care sînt albi
+și separat, pe al <span class="math notranslate nohighlight">\( n + 1 \)</span>-lea, pe care am vrea să-l adăugăm. Procedăm astfel:
+scoatem unul dintre cei <span class="math notranslate nohighlight">\( n \)</span> cai albi din mulțime și rămîn <span class="math notranslate nohighlight">\( n - 1 \)</span>, apoi îl adăugăm
+pe cel pe care îl avem în plus. Împreună cu el, vom avea din nou o mulțime de <span class="math notranslate nohighlight">\( n \)</span> cai,
+despre care știm deja că sînt albi. Acum cel pe care îl avem separat este deja alb
+(făcea parte din vechea mulțime), deci avem <span class="math notranslate nohighlight">\( n + 1 \)</span> cai care sînt albi și am
+terminat demonstrația.</p></li>
+</ol>
+<p>Surprinzător sau nu, greșeala în acest raționament <em>nu</em> este la pasul de inducție,
+ci la pasul de verificare. Faptul că există cel puțin un cal alb ne permite să
+alegem <em>unul</em>. Dar conform principiului inducției matematice, ar trebui să putem
+alege și <em>oricare 2</em> sau <em>oricare 3</em>, ceea ce, evident, nu putem. Cînd demonstrăm
+că toate numerele pare sînt divizibile cu 2, de exemplu, am ales să începem cu
+2, 4 și 6. Dar afirmația rămîne adevărată și dacă am fi început cu oricare număr
+par, oricare două numere pare, oricare 3 numere pare etc.</p>
+<p>Încă o observație foarte importantă privitoare la metoda inducției matematice
+este că ea se poate aplica doar pentru proprietăți care pot conține <em>enumerări</em>.
+Exemplele pe care le-am dat se bazau pe numere naturale. Nu este obligatoriu
+ca obiectele despre care demonstrăm să fie chiar numere naturale, dar trebuie
+ca proprietățile demonstrate să poată fi enumerate cu numere naturale.
+De exemplu, în „demonstrația“ despre cai: animalele nu sînt numere naturale,
+dar am lucrat cu numărul lor, de fapt.</p>
+<hr class="docutils" />
+<p>În fine, modul de funcționare al inducției matematice este unul foarte des
+întîlnit în rezultatele matematice și nu numai. Situația în sine este aceasta,
+dacă este să simplificăm:</p>
+<ul class="simple">
+<li><p>pornim cu o afirmație care ar putea fi adevărată, de exemplu, după ce am observat
+un fel de tipar pentru un calcul anume;</p></li>
+<li><p>formulăm afirmația în general și folosim calculele particulare anterioare
+pentru pasul de verificare;</p></li>
+<li><p>demonstrăm pasul de inducție.</p></li>
+</ul>
+<p>Iată un exemplu tipic. Cunoașteți, cu siguranță, așa-numita <em>sumă a lui Gauss</em>,
+adică suma primelor <span class="math notranslate nohighlight">\( n \)</span> numere naturale:</p>
+<div class="math notranslate nohighlight">
+\[S_n = 1 + 2 + 3 + 4 + \dots + n\]</div>
+<p>Presupunem că nu ne amintim rezultatul și vrem să descoperim valoarea
+acestei sume. Calculăm cîteva exemple:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( n = 1 \Rightarrow S_1 = 1 \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( n = 2 \Rightarrow S_2 = 1 + 2 = 3 \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( n = 3 \Rightarrow S_3 = 1 + 2 + 3 = 6 \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( n = 4 \Rightarrow S_4 = 1 + 2 + 3 + 4 = 10 \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( n = 5 \Rightarrow S_5 = 1 + 2 + 3 + 4 + 5 = 15 \)</span>.</p></li>
+</ul>
+<p>De fiecare dată, este recomandabil să facem legătura între indicele pasului
+la care ne aflăm (<span class="math notranslate nohighlight">\(n\)</span>) și valoarea obținută. Astfel că avem perechi
+de forma <span class="math notranslate nohighlight">\( (1, 1), (2, 3), (3, 6), (4, 10), (5, 15) \)</span>.</p>
+<p>Neavînd o formulă dată, trebuie să o găsim noi. Primele 3 cazuri nu ne dau
+suficiente indicii, sînt prea multe moduri în care putem obține <span class="math notranslate nohighlight">\( (1, 1) \)</span>,
+apoi <span class="math notranslate nohighlight">\( (2, 3) \)</span>, apoi <span class="math notranslate nohighlight">\( (3, 6) \)</span>. Dar de la <span class="math notranslate nohighlight">\( 4 \)</span> la <span class="math notranslate nohighlight">\( 10 \)</span> putem ajunge,
+de exemplu, dublînd succesorul lui <span class="math notranslate nohighlight">\( 4 \)</span>. Dacă încercăm aceeași idee pentru
+<span class="math notranslate nohighlight">\( n = 5 \)</span>, ar trebui să obținem <span class="math notranslate nohighlight">\( 6 \cdot 2 = 12 \)</span>, iar nu <span class="math notranslate nohighlight">\( 15 \)</span>.
+Dar poate dublarea nu este operația generală, ci s-a aplicat doar în cazul
+respectiv, unde eram la pasul 4. Deci poate, în general, succesorul pasului
+nu se înmulțește cu 2 mereu, ci cu jumătatea pasului la care ne aflăm,
+adică vom încerca formula <span class="math notranslate nohighlight">\( S_n = \dfrac{n}{2} \cdot (n + 1) \)</span>. Dacă testăm
+pentru <span class="math notranslate nohighlight">\( n \in \{ 1, 2, 3, 4, 5 \} \)</span>, găsim că formula este adevărată.
+Deci are șanse să funcționeze <em>în general</em>, iar calculele de mai sus sînt deja
+pasul de verificare.</p>
+<p>Pentru pasul de inducție, presupunem că avem deja <span class="math notranslate nohighlight">\( S_n = \dfrac{n}{2} \cdot (n + 1) \)</span>
+și vrem să vedem cum mai adăugăm încă un număr la sumă. Cu alte cuvinte,
+vrem să calculăm <span class="math notranslate nohighlight">\( S_{n + 1} \)</span>, cu o formulă similară.</p>
+<p>Dar putem vedea că <span class="math notranslate nohighlight">\( S_{n + 1} = S_n + (n + 1) \)</span> și, deoarece știm deja formula
+pentru <span class="math notranslate nohighlight">\( S_n \)</span>, o putem folosi:</p>
+<div class="math notranslate nohighlight">
+\[S_{n + 1} = S_n + (n + 1) = \dfrac{n}{2} \cdot (n + 1) + (n + 1) = %
+(n + 1) \left( \dfrac{n}{2} + 1 \right) = (n + 1) \cdot \dfrac{n + 2}{2},\]</div>
+<p>care este exact rezultatul căutat, așadar <span class="math notranslate nohighlight">\( S_{n + 1} = \dfrac{n + 1}{2} \cdot (n + 2) \)</span>,
+deci formula pe care am „ghicit-o“ funcționează <em>în general</em>.</p>
+<p>Un raționament de tipul acesta este des întîlnit în metoda științifică,
+pentru că formulele generale nu se dau, de obicei. Astfel că trebuie să încercăm
+diverse posibilități pînă o găsim pe cea corectă, a cărei corectitudine, apoi,
+o demonstrăm.</p>
+<hr class="docutils" />
+<p>Al treilea tip de raționament, cu mult diferit de celelalte, se numește <em>abducție</em>.
+Unul dintre motivele pentru care acesta este diferit de deducție și de inducție
+este că în matematică, nu se folosește niciodată. Aceasta deoarece abducția
+sau <em>raționamentul abductiv</em> oferă cele mai probabile concluzii, nu neapărat pe
+cele sigure. Însăși etimologia cuvîntului provine din latină, unde <em>ab</em> și <em>duco</em>
+înseamnă <em>ceva care duce alături</em>, care distrage, am putea spune.</p>
+<p>Din punctul de vedere al relației între particular și general, am putea spune că
+abducția face legătura între particular și particular. Aceasta deoarece ea caută
+o cauză pentru un anume eveniment particular. În funcție de evenimentul observat,
+cauzele pot fi particulare sau generale, cum rezultă din exemplele de mai jos.</p>
+<p>Iată un exemplu. Să presupunem că într-o dimineață, priviți pe fereastră și vedeți
+strada udă. Prin abducție, ați putea spune că azi-noapte trebuie să fi plouat.
+Dar aceasta nu este singura explicație și nici nu putem accepta afirmația ca fiind
+adevărată. Pot exista mai multe cauze, cum ar fi roua dimineții sau mașina de
+salubritate să fi udat strada. A fi plouat este o condiție <em>suficientă</em> ca strada să
+fie udă, dar <em>nu este necesară</em>. Mai mult, în cazul de față se poate argumenta că
+nici măcar nu este cea mai probabilă.</p>
+<p>Situația aceasta este una în care s-a făcut legătura între un eveniment particular
+(ploaia) și un altul, tot particular (faptul că vedem strada udă).</p>
+<p>Dar, de exemplu, dacă un candelabru care atîrna din tavan cade și raționăm prin
+abducție că e pur și simplu vina gravitației, atunci am făcut legătura între
+un eveniment particular și un altul, general. Evident că în acest caz este și mai
+puțin probabil ca gravitația să fie cauza adevărată a căderii candelabrului,
+dat fiind că în majoritatea cazurilor, cel puțin, candelabrele sînt susținute de
+structuri destul de puternice tocmai pentru a împiedica efectele gravitației.
+Dar în orice caz, a spune că gravitația este cauza poate fi un raționament abductiv
+ce leagă o cauză generală de un efect particular observat.</p>
+<p>Totuși, raționamentul abductiv este foarte des utilizat „în viața reală“. În situații
+critice, precum urgențe medicale sau în cele în care o demonstrație generală ori o
+analiză completă ar necesita mult prea mult timp și resurse, cum este în cazul
+inteligenței artificiale, abducția poate fi o metodă acceptabilă. Faptul că ne gîndim
+la <em>cea mai probabilă cauză pentru un anume rezultat</em> nu este neapărat greșit și,
+în funcție de situație, poate să aibă o rată de succes destul de mare.</p>
+<p>Se poate gîndi chiar un cadru teoretic sofisticat în care să se calculeze probabilitatea
+de succes pentru o anume inferență și atunci abducția poate fi justificată matematic.
+Dar cum într-o teorie avem nevoie de o cauză (ipoteză) sigură, abducția nu este o
+metodă utilizabilă.</p>
+</section>
+</section>
+<section id="abstractizare">
+<span id="sec-abstractizare"></span><h2>Abstractizare<a class="headerlink" href="#abstractizare" title="Permalink to this headline">#</a></h2>
+<p>Mai departe, nu atît un tip de raționament, ci o tehnică pe care o putem folosi
+pentru a înțelege sau a modela unele lucruri.</p>
+<p>În limbajul comun, a spune despre ceva că este <em>abstract</em> înseamnă de multe ori
+că este <em>dificil, greu de înțeles</em>, cauza fiind de cele mai multe ori faptul
+că se folosesc concepte imaginare, științifice, tehnice sofisticate. Însă
+DEX-ul ne dă următoarea explicație:</p>
+<blockquote>
+<div><p>Care este gândit în mod separat de înfățișarea materială, de exemplele
+particulare, de ansamblul concret (senzorial) din care face parte; care este
+detașat de obiecte, de fenomene sau de relațiile în care există în realitate.</p>
+</div></blockquote>
+<p>În matematică și nu numai, <em>a abstractiza</em> este adesea sinonim cu <em>a generaliza</em>
+sau <em>a modela</em>, întrucît prin atingerea generalității sau prin modelare se ajunge
+la un concept care este <em>separat de înfățișarea materială, de exemplele particulare</em>.</p>
+<p>Evident, ca în toate cazurile din istoria ideilor, drumul s-a făcut dinspre
+particular către general. Un exemplu este chiar în ce privește raționamentele prin
+inducție. Dar un alt exemplu, la care inducția nu ne ajută, însă abstractizarea,
+da, este acesta. Presupunem că analizăm proprietățile adunării numerelor naturale.
+Observăm că ordinea adunării nu contează, pe cazuri particulare: <span class="math notranslate nohighlight">\( 3 + 5 = 5 + 3 \)</span>,
+<span class="math notranslate nohighlight">\( 1 + 7 = 7 + 1 \)</span>, <span class="math notranslate nohighlight">\( 100 + 1000 = 1000 + 100 \)</span> ș.a.m.d. Din aceste cazuri particulare,
+<em>generalizăm</em>, afirmînd că <span class="math notranslate nohighlight">\( a + b = b + a, \forall a, b \in \mathbb{N} \)</span>,
+proprietate care se numește <em>comutativitatea</em> adunării.</p>
+<p>Atunci cînd generalizăm, o putem face către o teoremă sau un rezultat care
+trebuie demonstrat sau o axiomă ori postulat, fiind afirmații care nu se demonstrează.
+Exemplul de mai sus, care privește comutativitatea, poate fi demonstrat, surprinzător
+sau nu. În plus, fiind vorba despre numere naturale, poate fi chiar demonstrat
+prin inducție, însă nu insistăm pe aceste detalii și ne concentrăm pe procedura
+de abstractizare.</p>
+<p>Ideea de bază este aceasta: studiem cazuri particulare, concrete, apoi ne întrebăm,
+treptat, dacă nu cumva proprietățile pe care le observăm în cazul particular sînt
+adevărate și pentru situații mai generale. Cu cît ajungem la un nivel de generalitate
+mai mare, cu atît mai bine. De exemplu, comutativitatea despre care am comentat
+mai sus ne putem întreba dacă este adevărată și pentru adunarea numerelor întregi
+sau raționale sau reale sau complexe.</p>
+<hr class="docutils" />
+<p>O scurtă paranteză istorică și filosofică, însă strîns legată de subiect, este
+aceasta. În prima parte a secolului al XX-lea, cînd se puneau bazele teoriei
+mulțimilor, părea că orice generalizare se termină la mulțimi. În momentul în care
+se formula o propoziție care arăta o proprietate <em>pentru orice mulțime</em>, atunci
+aceea atingea gradul maximum de generalitate, pentru că nu erau concepute obiecte
+care să nu fie mulțimi. Dacă rezultatul era adevărat pentru orice mulțime, atunci
+era adevărat <em>în general</em>, în sensul cel mai larg cu putință în matematică.</p>
+<p>Însă apoi a apărut așa-numitul <em>paradox al lui Russell</em> (care, însă, fusese descoperit
+sub forme echivalente și de alți matematicieni, însă Bertrand Russell l-a popularizat
+cel mai mult). În cadrul acestui paradox, se întreabă dacă mulțimea care conține
+toate mulțimile (și care poate fi închipuită, deci prin această proprietate este
+destul de clar definită) este o mulțime. Posibilitatea ca răspunsul să fie negativ
+era înspăimîntătoare, pentru că obiecte matematice care să <em>nu</em> fie mulțimi erau
+foarte greu de închipuit și cu atît mai greu de formalizat, tocmai pentru că definiția
+axiomatică a mulțimilor era atît de generală, încît părea că nu mai lasă loc de nimic
+altceva. Dacă un obiect matematic nu este o mulțime… nu poate fi ceva suficient de
+riguros definit, deci nu merită studiat din punct de vedere matematic.</p>
+<p>Rezultatul a fost surprinzător: mulțimea tuturor mulțimilor nu putea fi o mulțime,
+așa că a fost necesară tratarea cu cît mai multă rigoare a obiectelor care nu au
+această proprietate (nu sînt mulțimi). Este vorba despre așa-numitele <em>clase proprii</em>.
+Scopul acestei paranteze nu este să detaliem despre structura claselor proprii,
+ci să reținem această trecere treptată către abstract, unde mulțimile nu au fost
+frontierele finale.</p>
+<p>Studiul a continuat, chiar, și mai mult către generalitate. Ideea de mulțime însăși
+putem spune că este o încununare a eforturilor de abstractizare. În esență, o mulțime
+este orice colecție de obiecte (matematice sau nu neapărat) care au ca principală
+proprietate faptul că pot fi distinse între ele. Cu alte cuvinte, dacă este clar
+unde „se termină“ un obiect și „începe“ un altul, adică nu există niciun risc de
+confuzie între (oricare) două obiecte, atunci obiectele respective alcătuiesc o mulțime.
+Este motivul pentru care, de exemplu, într-o mulțime nu contează ordinea elementelor
+și nici nu se acceptă elemente repetate. Un contraexemplu simplu de mulțime este,
+de pildă <span class="math notranslate nohighlight">\( \{ 1, 2, 2, 3 \} \)</span>.</p>
+<p>Acum începe partea ceva mai tehnică. Mulțimea tuturor mulțimilor s-a demonstrat
+că nu este o mulțime. Dar ce putem spune despre… grupul tuturor grupurilor,
+de exemplu? Din punctul de vedere al structurii subiacente, este destul de clar:
+obiectele sînt grupuri (v. <a class="reference internal" href="p2-s1-grupuri.html#def-grup">Definition 2</a>), iar operațiile dintre ele sînt date de
+<a class="reference internal" href="p2-s1-grupuri.html#sec-substructuri-morfisme"><span class="std std-ref">morfisme</span></a> de grupuri. Similar, întrebările se pot
+pune și despre inele, corpuri, spații vectoriale și alte tipuri de structuri algebrice.
+Informația abstractă care ne interesează aici pornește de la tiparul grupurilor:
+vrem să știm care este mulțimea de obiecte și în ce mod putem opera între aceste
+obiecte.</p>
+<p>Pentru aceste situații au apărut noi obiecte matematice numite <em>categorii</em>.
+Unul dintre principalii cercetători care au lucrat la această structură nouă
+a fost americanul Saunders MacLane (1909-2005). Ce legătură are aceasta cu
+abstractizarea? În afara faptului că în introducerea categoriilor s-a folosit
+tehnica de abstractizare pe care am întîlnit-o pînă acum, mai circulă o anecdotă
+conform căreia teoria categoriilor și chiar, în general, această inițiativă de
+abstractizare era denumită de unii matematicieni <em>abstract nonsense</em>
+(<em>fleacuri abstracte</em>, în traducere liberă). Ba chiar s-au scris articole ori
+notițe de curs, precum <a class="reference external" href="https://people.math.harvard.edu/~elkies/M55a.05/nonsense.html">acesta</a>,
+al profesorului de la Harvard Noam Elkies, care se referă la argumentele
+bazate pe teoria categoriilor <em>abstract nonsense</em>.</p>
+<hr class="docutils" />
+<p>Reținem, deci, că prin procedeul de abstractizare se extrag informațiile
+esențiale și generale ale unui obiect. Cu cît informațiile extrase
+(<em>abstrase</em>, am putea spune) se aplică unei clase mai mari de obiecte, cu atît
+generalizarea este mai utilă.</p>
+<section id="exemplu-din-programare">
+<h3>Exemplu din programare<a class="headerlink" href="#exemplu-din-programare" title="Permalink to this headline">#</a></h3>
+<p>Ideea de abstractizare nu este specifică numai matematicii. Este chiar un concept
+pe care îl întîlnim în programare și în implementarea multor limbaje.
+În esență, lucrurile funcționează ca în matematică: dacă avem o structură cît mai
+generală, care ne oferă o perspectivă de ansamblu care depinde cît mai puțin
+de cazuri particulare, atunci avem o abstracțiune.</p>
+<p>Un exemplu concret și cel mai simplu este în cazul funcțiilor. În Python, de pildă,
+putem scrie o funcție care calculează valorile unei expresii de gradul al doilea
+<span class="math notranslate nohighlight">\( f(x) = ax^2 + bx + c \)</span>, atunci cînd se dau parametrii <span class="math notranslate nohighlight">\( a, b, c \)</span> și argumentul
+<span class="math notranslate nohighlight">\( x \)</span>. Codul ar putea arăta cam așa:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># definim funcția de gradul al doilea, cu parametri și argument real</span>
+<span class="k">def</span> <span class="nf">quadratic</span><span class="p">(</span><span class="n">a</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">,</span> <span class="n">b</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">,</span> <span class="n">c</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">,</span> <span class="n">x</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Putem să nu vedem această implementare și în program, o putem apela direct:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># afișăm valorile funcției f(x) = 5x^2 + 7x + 3</span>
+<span class="c1"># pentru x = -2, -1, 0, 1, 2, 3, 4, 5</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">quadratic</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Folosită astfel, funcția <code class="docutils literal notranslate"><span class="pre">quadratic</span></code> este o abstracțiune. Putem să nu îi vedem
+exact implementarea – mai precis, limbajul ne permite să o ascundem, să
+„facem abstracție de ea“ și să o folosim direct pentru rezultate.</p>
+<p>Similar funcționează lucrurile și în cazul claselor, definite în limbaje care permit
+programare orientată pe obiecte. Și acestea abstractizează („ascund“) implementarea
+unor concepte, oferindu-ne doar o <em>interfață</em> care ne permite să interacționăm
+cu conceptul care a fost abstractizat. În exemplul de mai jos, creăm o clasă
+<code class="docutils literal notranslate"><span class="pre">Point</span></code>, care ne permite să stocăm cele 2 coordonate ale unui punct din plan.
+Clasa are un <em>constructor</em> (<code class="docutils literal notranslate"><span class="pre">__init__</span></code>) prin care se creează un punct
+și un <em>destructor</em> (<code class="docutils literal notranslate"><span class="pre">__del__</span></code>) prin care se șterge.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">xx</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">yy</span>
+
+    <span class="k">def</span> <span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span>
+</pre></div>
+</div>
+<p>Acum putem lucra foarte ușor direct cu „abstracția“ <code class="docutils literal notranslate"><span class="pre">Point</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">myPoint</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ideea generală, așadar, a abstractizării este aceasta: oricînd putem
+porni de la situații particulare, strîns legate de concret, de exemple,
+către formulări și structuri generale, care să depindă de cît mai puține
+obiecte sau condiții, spunem că <em>generalizăm</em> sau <em>abstractizăm</em>. Tehnica
+se poate aplica în matematică, în cazul unor proprietăți sau rezultate sau
+în programare, cînd printr-o interfață se ascunde construcția propriu-zisă,
+la care avem acces printr-o variantă simplificată, (aparent) generală.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="logicaprop"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Astfel de reprezentări simbolice fac obiectul logicii matematice
+și mai precis, a logicii propoziționale. Nu intrăm în detalii privitoare la acest
+lucru aici, însă în afară de simbolurile obișnuite pe care le întîlnim adesea
+în propozițiile matematice (<span class="math notranslate nohighlight">\( \forall, \exists, \to \)</span> etc.), am folosit aici și o
+proprietate a unui obiect. Acest lucru se notează, de obicei, funcțional: <span class="math notranslate nohighlight">\( P(x) \)</span>
+desemnează o proprietate <span class="math notranslate nohighlight">\( P \)</span>, care se aplică unui obiect <span class="math notranslate nohighlight">\( x \)</span>.</p>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="p1-istorie-fil-intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Generalități</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="p1-s2-ist-vsp.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Istoria spațiilor vectoriale</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Adrian Manea (Poligon Educational)<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

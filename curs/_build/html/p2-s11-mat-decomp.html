@@ -1,0 +1,1100 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Descompuneri matriceale &#8212; Algebră liniară și aplicații</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/proof.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Transformări matriceale în 2D și 3D" href="p2-s12-transf-mat.html" />
+    <link rel="prev" title="Spații afine" href="p2-s10-afin.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo-light-poly-only.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Algebră liniară și aplicații</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Algebră liniară și aplicații
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Elemente de istoria și filosofia matematicii
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-istorie-fil-intro.html">
+   Generalități
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-s1-rationamente.html">
+   Abstractizare și raționamente
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-s2-ist-vsp.html">
+   Istoria spațiilor vectoriale
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algebră abstractă și algebră liniară
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="p2-abstract.html">
+   Algebră abstractă și algebră liniară
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s1-grupuri.html">
+     Monoizi și grupuri
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s1e-simetrii.html">
+     Grupuri de simetrie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s2-inele-corpuri.html">
+     Inele și corpuri
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s3-spvect.html">
+     Spații vectoriale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s4-baza.html">
+     Bază și dimensiune
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s5-op-subsp.html">
+     Operații cu subspații
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s6-morfisme-spvect.html">
+     Morfisme de spații vectoriale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s7-ortonormare.html">
+     Produs scalar și ortonormare
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s8-vvp.html">
+     Vectori și valori proprii
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s9-quat.html">
+     Cuaternioni
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s10-afin.html">
+     Spații afine
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Descompuneri matriceale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s12-transf-mat.html">
+     Transformări matriceale în 2D și 3D
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s13-arii-volume.html">
+     Arii și volume
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Aplicații și implementări în programare
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="p3-aplicatii.html">
+   Aplicații și implementări în programare
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Bibliografie și lecturi suplimentare
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliografie.html">
+   Bibliografie și lecturi suplimentare
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/adimanea/linalg"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/adimanea/linalg/issues/new?title=Issue%20on%20page%20%2Fp2-s11-mat-decomp.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/p2-s11-mat-decomp.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#descompunerea-cu-valori-singulare-svd">
+   Descompunerea cu valori singulare (SVD)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemplu-de-calcul">
+     Exemplu de calcul
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eliminare-gaussiana">
+   Eliminare gaussiană
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#descompunere-lu">
+   Descompunere LU
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#descompunere-qr">
+   Descompunere QR
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Descompuneri matriceale</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#descompunerea-cu-valori-singulare-svd">
+   Descompunerea cu valori singulare (SVD)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemplu-de-calcul">
+     Exemplu de calcul
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eliminare-gaussiana">
+   Eliminare gaussiană
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#descompunere-lu">
+   Descompunere LU
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#descompunere-qr">
+   Descompunere QR
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="descompuneri-matriceale">
+<h1>Descompuneri matriceale<a class="headerlink" href="#descompuneri-matriceale" title="Permalink to this headline">#</a></h1>
+<p>Tema acestei secțiuni este să explorăm modalități de a descompune matrice.
+Motivul pentru care sîntem interesați de acest subiect seamănă foarte mult
+cu cel din cadrul discuției privitoare la
+<a class="reference internal" href="p2-s8-vvp.html#sec-vvp-motivatie"><span class="std std-ref">diagonalizare sau, mai general, la vectori și valori proprii</span></a>:
+din punct de vedere computațional, calculele sînt mai simple atunci cînd lucrăm
+cu obiecte descompuse. Diagonalizarea este metoda cea mai eficientă de a simplifica
+forma unei matrice și calculele ulterioare, dar nu orice matrice poate fi adusă la
+forma diagonală. Apoi, forma canonică Jordan este dificil de calculat, în general
+și există metode care nu doar simplifică matricea inițială, dar componentele pe care
+le vom folosi au semnificații aparte, uneori utile chiar ca atare.</p>
+<p>Mai trebuie să adăugăm că în majoritatea situațiilor practice, astăzi avem nevoie
+foarte rar de a face aceste calcule manual și detaliat. Mai mult, pot exista
+destule cazuri practice – precum cele întîlnite în inteligența artificială – unde
+matricele cu care avem de lucrat sînt foarte mari, cu sute sau chiar mii de linii și
+coloane. Dar sîntem de părere că o înțelegere teoretică prealabilă, urmată de cîteva
+exemple de calcul manual și chiar implementare de la zero într-un limbaj de programare
+arată mai bine modul de funcționare al algoritmilor și în același timp, ne indică
+și eventuale metode de optimizare.</p>
+<section id="descompunerea-cu-valori-singulare-svd">
+<h2>Descompunerea cu valori singulare (SVD)<a class="headerlink" href="#descompunerea-cu-valori-singulare-svd" title="Permalink to this headline">#</a></h2>
+<p>Prezentarea noastră urmează §10.3 din <span id="id1">[<a class="reference internal" href="bibliografie.html#id12" title="John F. Hughes and Andries van Dam. Computer Graphics: Principles and Practice. Addison-Wesley, third edition, 2014.">Hughes and van Dam, 2014</a>]</span>.</p>
+<p>Această descompunere matriceală are numeroase aplicații în grafică și
+în prelucrarea imaginilor. Fiindcă detaliile tehnice pot părea contraintuitive
+la prima vedere, începem cu explicația intuitivă.</p>
+<p>Teorema de descompunere a valorilor singulare (eng. <em>singular value decomposition</em>, SVD)
+afirmă că dacă avem o transformare geometrică (aplicație liniară, în general), atunci,
+făcînd eventual schimbări de bază în spațiile-domeniu de definiție și codomeniu ale
+aplicației, atunci aceasta se reduce la o rescalare, uniformă sau nu. Cu alte cuvinte,
+făcînd această schimbare de baze, orice transformare aplicată unui vector devine
+o înmulțire cu scalari – uniformă, dacă se folosește același scalar pentru toate
+componentele vectorului sau neuniformă, în caz contrar.</p>
+<p>Definiția valorilor singulare este una destul de abstractă:</p>
+<div class="proof definition admonition" id="def-svd">
+<p class="admonition-title"><span class="caption-number">Definition 51 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Se numește <em>valoare singulară</em> a unei matrice <span class="math notranslate nohighlight">\( M \)</span> numărul <span class="math notranslate nohighlight">\( \sqrt{\lambda} \)</span>,
+unde <span class="math notranslate nohighlight">\( \lambda \in \sigma(M^T \cdot M) \)</span><a class="footnote-reference brackets" href="#vp-mmt" id="id2">1</a>.</p>
+</section>
+</div><p>Vom vedea unde apare exact această noțiune în descompunerea noastră.</p>
+<p>Să mai dăm și teorema principală, la fel de abstractă, după care vom vedea
+cum se obține această descompunere și cum o putem înțelege cît mai ușor.</p>
+<div class="proof theorem admonition" id="thm-svd">
+<p class="admonition-title"><span class="caption-number">Theorem 29 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( M \in M_{n,k}(\mathbb{R}) \)</span> o matrice oarecare. Atunci există
+3 matrice <span class="math notranslate nohighlight">\( U, D, V \)</span> astfel încît <span class="math notranslate nohighlight">\( M = UDV^t \)</span>, unde:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( U \in M_{n,r}(\mathbb{R}) \)</span>, cu <span class="math notranslate nohighlight">\( r = \min(n, k) \)</span> este o matrice care
+are <em>coloane ortonormale</em>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( D \in M_r(\mathbb{R}) \)</span> este o matrice diagonală;</p></li>
+<li><p><span class="math notranslate nohighlight">\( V \in M_{r,k}(\mathbb{R}) \)</span> este o matrice care are <em>coloane ortonormale</em>.</p></li>
+</ul>
+<p>Prin convenție, elementele nenule din <span class="math notranslate nohighlight">\( D \)</span> se scriu în ordine descrescătoare
+și se poate arăta că sînt tocmai valorile singulare ale matricei <span class="math notranslate nohighlight">\( M \)</span>.</p>
+<p>Mai mult, în cazul particular cînd <span class="math notranslate nohighlight">\( n = k \)</span>, deci matricele <span class="math notranslate nohighlight">\( U, V \)</span> sînt pătratice,
+ele descriu o schimbare de coordonate în domeniu și respectiv codomeniu, iar
+<span class="math notranslate nohighlight">\( D \)</span> reprezintă o rescalare, uniformă dacă valorile singulare sînt egale și
+neuniformă în caz contrar.</p>
+</section>
+</div><p>Procedura de obținere a descompunerii este prezentată sumar și clar în
+<span id="id3">[<a class="reference internal" href="bibliografie.html#id14" title="Emanuel Cismas. Descompunerea valorilor singulare. 2019. URL: https://cismasemanuel.files.wordpress.com/2019/11/descompunerea-svd.pdf.">Cismas, 2019</a>]</span>, p. 4:</p>
+<ul class="simple">
+<li><p>se calculează valorile singulare <span class="math notranslate nohighlight">\( \sigma_i \)</span>, ca fiind <span class="math notranslate nohighlight">\( \sigma_i = \sqrt{\lambda_i} \)</span>,
+cu <span class="math notranslate nohighlight">\( \lambda_i \in \sigma(M^t M) \)</span>;</p></li>
+<li><p>vectorii <span class="math notranslate nohighlight">\( v_i \)</span>, care reprezintă coloanele matricei <span class="math notranslate nohighlight">\( V \)</span>, sînt vectori
+proprii ortonormați, corespunzători valorilor proprii <span class="math notranslate nohighlight">\( \lambda_i \)</span> de mai sus:</p>
+<ul>
+<li><p>dacă sînt deja ortonormați, îi folosim direct pentru a alcătui matricea <span class="math notranslate nohighlight">\( V \)</span>;</p></li>
+<li><p>altfel, se obțin vectorii și se aplică <a class="reference internal" href="p2-s7-ortonormare.html#sec-gram-schmidt"><span class="std std-ref">procedura Gram-Schmidt</span></a> pentru a-i ortonorma;</p></li>
+</ul>
+</li>
+<li><p>vectorii-coloană <span class="math notranslate nohighlight">\( u_i \)</span> din matricea <span class="math notranslate nohighlight">\( U \)</span> se obțin cu formula <span class="math notranslate nohighlight">\( u_i = \dfrac{1}{\sigma_i} Av_i \)</span>.</p></li>
+</ul>
+<hr class="docutils" />
+<p>În cazul particular cînd <span class="math notranslate nohighlight">\( n = k \)</span>, adică atunci cînd toate matricele sînt
+pătratice, putem înțelege această descompunere intuitiv astfel. Presupunem
+că avem o aplicație liniară <span class="math notranslate nohighlight">\( T : \mathbb{R}^n \to \mathbb{R}^n \)</span>, dată
+prin matricea <span class="math notranslate nohighlight">\( M \)</span>, adică <span class="math notranslate nohighlight">\( T(x^t) = Mx^t, \forall x \in \mathbb{R}^n \)</span>.</p>
+<p>Dacă descompunem <span class="math notranslate nohighlight">\( M \)</span> sub forma SVD, i.e. <span class="math notranslate nohighlight">\( M = UDV^t \)</span>, rezultă
+<span class="math notranslate nohighlight">\( T(x^t) = U D V^t x^t \)</span> și, succesiv, putem gîndi transformările astfel:</p>
+<ul class="simple">
+<li><p>înmulțirea la stînga cu <span class="math notranslate nohighlight">\( V^t \)</span> înseamnă o schimbare de coordonate;</p></li>
+<li><p>înmulțirea rezultatului cu <span class="math notranslate nohighlight">\( D \)</span>, care este matrice diagonală, înseamnă
+o rescalare (uniformă sau nu);</p></li>
+<li><p>înmulțirea rezultatului cu <span class="math notranslate nohighlight">\( U \)</span> la stînga înseamnă o nouă rescalare.</p></li>
+</ul>
+<p>Rezultă că întreaga acțiune a lui <span class="math notranslate nohighlight">\( T \)</span> se reduce la transportul vectorului
+într-un spațiu izomorf cu <span class="math notranslate nohighlight">\( \mathbb{R}^n \)</span>, dar cu altă bază, prin matricea
+de trecere <span class="math notranslate nohighlight">\( V \)</span>, apoi în acel spațiu, vectorul se rescalează și în fine
+rezultatul este transportat tot într-un spațiu izomorf cu <span class="math notranslate nohighlight">\( \mathbb{R}^n \)</span>,
+dar cu altă bază, prin matricea <span class="math notranslate nohighlight">\( U \)</span>.</p>
+<p>O astfel de înțelegere intuitivă justifică afirmația de la începutul secțiunii,
+că folosind SVD, putem privi o transformare liniară ca pe o rescalare, împreună
+cu transportul în spații izomorfe, dar de baze diferite.</p>
+<section id="exemplu-de-calcul">
+<h3>Exemplu de calcul<a class="headerlink" href="#exemplu-de-calcul" title="Permalink to this headline">#</a></h3>
+<p>Fie matricea <span class="math notranslate nohighlight">\( A = \begin{pmatrix} 1 &amp; 1 \\ 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix} \)</span>.</p>
+<p>Determinăm descompunerea cu valori singulare.</p>
+<p>Mai întîi, determinăm valorile singulare ca fiind valorile proprii ale matricei:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A^t \cdot A = %
+\begin{pmatrix}
+1 &amp; 0 &amp; 1 \\
+1 &amp; 1 &amp; 0
+\end{pmatrix} \cdot %
+\begin{pmatrix}
+1 &amp; 1 \\
+0 &amp; 1 \\
+1 &amp; 0
+\end{pmatrix} = %
+\begin{pmatrix}
+2 &amp; 1 \\
+1 &amp; 2
+\end{pmatrix} = M\end{split}\]</div>
+<p>Calculăm polinomul caracteristic:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}P_M(X) = \det(M - XI_2) = \begin{vmatrix} 2-X &amp; 1 \\ 1 &amp; 2-X \end{vmatrix} = X^2 - 4X + 3\end{split}\]</div>
+<p>Rezultă <span class="math notranslate nohighlight">\( \lambda_1 = 3 \)</span> și <span class="math notranslate nohighlight">\( \lambda_2 = 1 \)</span> (le-am scris în ordine descrescătoare,
+în pregătire pentru matricea <span class="math notranslate nohighlight">\( D \)</span>). Așadar, valorile singulare sînt:</p>
+<div class="math notranslate nohighlight">
+\[\sigma_1 = \sqrt{\lambda_1} = \sqrt{3}, \quad \sigma_2 = \sqrt{\lambda_2} = 1.\]</div>
+<p>Deci știm componenta diagonală, <span class="math notranslate nohighlight">\( D = \mathrm{diag}(\sqrt{3}, 1) \)</span>.</p>
+<p>Vectorii proprii asociați <span class="math notranslate nohighlight">\( \lambda_1 \)</span> sînt de forma <span class="math notranslate nohighlight">\( \{ (\alpha, \alpha) \in \mathbb{R}^2 \} \)</span>,
+deci o bază în subspațiul invariant <span class="math notranslate nohighlight">\( V_{\lambda_1} \)</span> este <span class="math notranslate nohighlight">\( \{ v_1 = (1, 1) \} \)</span>.</p>
+<p>Apoi, pentru <span class="math notranslate nohighlight">\( \lambda_2 \)</span> găsim vectorii proprii de forma <span class="math notranslate nohighlight">\( \{ (\alpha, -\alpha) \in \mathbb{R}^2 \} \)</span>,
+deci o bază în <span class="math notranslate nohighlight">\( V_{\lambda_2} \)</span> este <span class="math notranslate nohighlight">\( \{ v_2 = (1, -1) \} \)</span>.</p>
+<p>Observăm că <span class="math notranslate nohighlight">\( v_1 \perp v_2 \)</span>, deci mai trebuie doar să-i normăm. Avem: <span class="math notranslate nohighlight">\( || v_1 || = \sqrt{2} \)</span>,
+deci schimbăm <span class="math notranslate nohighlight">\( v_1 \)</span> cu <span class="math notranslate nohighlight">\( \dfrac{1}{\sqrt{2}} (1, 1) \)</span> și similar, <span class="math notranslate nohighlight">\( ||v_2|| = \sqrt{2} \)</span>,
+deci schimbăm <span class="math notranslate nohighlight">\( v_2 \)</span> cu <span class="math notranslate nohighlight">\( \dfrac{1}{\sqrt{2}} (1, -1) \)</span>.</p>
+<p>Din formula de calcul pentru <span class="math notranslate nohighlight">\( u_{1,2} \)</span>, avem:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  u_1 &amp;= \dfrac{1}{\sigma_1} Av_1 = \dfrac{1}{\sqrt{3}} \cdot \begin{pmatrix} 1 &amp; 1 \\ 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix} \cdot %
+		 \begin{pmatrix} 1/\sqrt{2} &amp; 1/\sqrt{2} \end{pmatrix} = \begin{pmatrix} \sqrt{6}/3 \\ \sqrt{6}/6 \\ \sqrt{6}{6} \end{pmatrix} \\
+  u_2 &amp;= 1 \cdot \begin{pmatrix} 1 &amp; 1 \\ 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix} \cdot \begin{pmatrix} 1/\sqrt{2} \\ -1/\sqrt{2} \end{pmatrix} = %
+		 \begin{pmatrix} 0 \\ -\sqrt{2}/2 \\ -\sqrt{2}/2 \end{pmatrix}
+\end{align*}\end{split}\]</div>
+<p>În fine, descompunerea finală este:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{pmatrix}
+1 &amp; 1 \\
+0 &amp; 1 \\
+1 &amp; 0
+\end{pmatrix} \cdot %
+\begin{pmatrix}
+\sqrt{6}/3 &amp; 0 \\
+\sqrt{6}/6 &amp; -\sqrt{2}/2 \\
+\sqrt{6}/6 &amp; \sqrt{2}/2
+\end{pmatrix} \cdot %
+\begin{pmatrix}
+\sqrt{3} &amp; 0 \\
+0 &amp; 1 
+\end{pmatrix} \cdot %
+\begin{pmatrix}
+1/\sqrt{2} &amp; 1/\sqrt{2} \\
+1/\sqrt{2} &amp; -1/\sqrt{2}
+\end{pmatrix}\end{split}\]</div>
+</section>
+</section>
+<section id="eliminare-gaussiana">
+<h2>Eliminare gaussiană<a class="headerlink" href="#eliminare-gaussiana" title="Permalink to this headline">#</a></h2>
+<p>Metoda eliminării gaussiene este una care se dovedește foarte puternică
+pentru calcule matriceale și aplicații în sisteme liniare. Avantajul ei este
+că se bazează pe așa-numitele <em>transformări elementare</em> ale liniilor sau coloanelor
+unei matrice, adică acele operații care nu schimbă determinantul sau rangul matricei.
+Totodată, pașii pe care îi facem sînt ușor de implementat pe computer, dar procedura
+este, în general, laborioasă.</p>
+<p>Ideea de bază este aceasta:</p>
+<ul class="simple">
+<li><p>se pornește cu o matrice oarecare – pătratică sau nu;</p></li>
+<li><p>se aplică transformări elementare, prin operații cu linii<a class="footnote-reference brackets" href="#op-linii" id="id4">2</a>, pînă cînd matricea
+se aduce la formă triunghiulară. În această formă, ea are elemente nule deasupra sau
+dedesubtul diagonalei principale (după caz, adică dacă este <em>inferior</em>, respectiv <em>superior</em>
+<em>triunghiulară</em>);</p></li>
+<li><p>pașii de mai sus se pot aplica pentru orice matrice, iar pentru unele dintre ele,
+se poate merge mai departe pînă cînd se obține o <em>matrice diagonală</em>.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Atunci cînd facem operații elementare cu linii într-o matrice, vom folosi
+următoarele două convenții:</p>
+<ul class="simple">
+<li><p>notația <span class="math notranslate nohighlight">\( \alpha L_a + \beta L_b \)</span> înseamnă că linia <span class="math notranslate nohighlight">\( a \)</span> se modifică
+prin înmulțirea cu un scalar <span class="math notranslate nohighlight">\( \alpha \)</span> și adunarea cu elementele liniei <span class="math notranslate nohighlight">\( b \)</span>,
+înmulțite cu <span class="math notranslate nohighlight">\( \beta \)</span>. De exemplu, <span class="math notranslate nohighlight">\( 2L_2 - L_3 \)</span> înseamnă că linia a doua se
+modifică și i se dublează elementele, după care se scad elementele liniei 3
+(linia 3 nu se modifică!). Putem avea chiar și notații precum <span class="math notranslate nohighlight">\( \dfrac{1}{2} L_1 \)</span>,
+ceea ce înseamnă că elementele liniei 1 se înjumătățesc;</p></li>
+<li><p>pentru claritate, vom scrie transformările explicite, însă matricele care se obțin
+în procedura eliminării gaussiene <em>nu sînt egale</em> cu cea de pornire, ci doar au
+același determinant (sau rang) cu ele. De aceea, nu vom folosi semnul de egalitate
+și vom scrie, de pildă <span class="math notranslate nohighlight">\( A \xrightarrow{2L_1} B \)</span>, pentru a înțelege că matricea <span class="math notranslate nohighlight">\( A \)</span>
+se modifică prin dublarea elementelor liniei 1 și se ajunge la matricea <span class="math notranslate nohighlight">\( B \)</span>.</p></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Transformările pe care le facem <em>nu sînt unice</em>, nici neapărat optime.
+Aici rezidă simplitatea metodei lui Gauss: este ușor de implementat și este destul
+de evident care este pasul următor, însă nu neapărat eficient.</p>
+</div>
+<p>În această formă, determinantul, rangul sau diverse aplicații, precum cele din studiul
+sistemelor liniare, sînt ușor de calculat.</p>
+<hr class="docutils" />
+<p>Să luăm cazul cel mai des întîlnit, cel puțin în problemele de geometrie.
+Pornim cu o matrice pătratică <span class="math notranslate nohighlight">\( A = \begin{pmatrix} 1 &amp; -1 &amp; 2 \\ 3 &amp; 1 &amp; 2 \\ 2 &amp; -1 &amp; 1 \end{pmatrix} \)</span>.
+Scopul este să aducem această matrice la formă superior triunghiulară și, eventual, diagonală,
+folosind doar operații elementare cu linii.</p>
+<p>Se alege cîte un element din matrice pe care vrem să-l prelucrăm la pasul curent.
+În termeni de specialitate, acesta se numește <em>pivot</em>. De obicei, pivoții se aleg
+succesiv, pe coloane. În acest caz, se începe cu pivotul 1, care este primul element
+de pe prima coloană a matricei. Acesta face parte din diagonală, deci este permis să
+fie nenul, așa că mergem mai departe. Alegem acum pivotul 3, care este al doilea element
+al primei coloane. Fiind sub diagonală, vrem să-l anulăm, făcînd operații cu linii.
+De exemplu, putem aplica transformarea <span class="math notranslate nohighlight">\( L_2 - 3L_1 \)</span> și obținem:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix} 
+1 &amp; -1 &amp; 2 \\ 
+3 &amp; 1 &amp; 2 \\ 
+2 &amp; -1 &amp; 1 
+\end{pmatrix} \xrightarrow{L_2 - 3L_1} %
+\begin{pmatrix}
+1 &amp; -1 &amp; 2 \\
+0 &amp; 4 &amp; -4 \\
+2 &amp; -1 &amp; 1
+\end{pmatrix}\end{split}\]</div>
+<p>Următorul pivot este ultimul element al primei coloane, 2. Îl putem anula cu transformarea
+<span class="math notranslate nohighlight">\( L_3 - 2L_1 \)</span> și obținem:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}
+1 &amp; -1 &amp; 2 \\
+0 &amp; 4 &amp; -4 \\
+2 &amp; -1 &amp; 1
+\end{pmatrix} \xrightarrow{L_3 - 2L_1} %
+\begin{pmatrix}
+1 &amp; -1 &amp; 2 \\
+0 &amp; 4 &amp; -4 \\
+0 &amp; 1 &amp; -3
+\end{pmatrix}\end{split}\]</div>
+<p>Am terminat cu prima coloană, așa că alegem acum pivoții de pe coloana a doua.
+Mai adăugăm că, pentru simplificare, putem alege la orice moment și să împărțim
+sau să înmulțim elementele unei linii cu o constantă. În cazul de față, ar fi binevenit
+să aplicăm transformarea <span class="math notranslate nohighlight">\( \dfrac{1}{4} L_2 \)</span>.
+Continuăm, deci:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  \begin{pmatrix}
+    1 &amp; -1 &amp; 2 \\
+	0 &amp; 4 &amp; -4 \\
+	0 &amp; 1 &amp; -3
+  \end{pmatrix} &amp;\xrightarrow{\dfrac{1}{4} L_2} %
+  \begin{pmatrix}
+  1 &amp; -1 &amp; 2 \\
+  0 &amp; 1 &amp; -1 \\
+  0 &amp; 1 &amp; -3
+  \end{pmatrix} \xrightarrow{L_1 + L_2} %
+  \begin{pmatrix}
+  1 &amp; 0 &amp; 1 \\
+  0 &amp; 1 &amp; -1 \\
+  0 &amp; 1 &amp; -3
+  \end{pmatrix} \\
+  &amp;\xrightarrow{L_3 - L_2} %
+  \begin{pmatrix}
+  1 &amp; 0 &amp; 1 \\
+  0 &amp; 1 &amp; -1 \\
+  0 &amp; 0 &amp; -2
+  \end{pmatrix} \xrightarrow{L_1 + \dfrac{1}{2} L_3} %
+  \begin{pmatrix}
+  1 &amp; 0 &amp; 0 \\
+  0 &amp; 1 &amp; -1 \\
+  0 &amp; 0 &amp; -2
+  \end{pmatrix} \\
+  &amp;\xrightarrow{\dfrac{1}{2}L_3 \text{ și } L_2 - L_3} %
+  \begin{pmatrix}
+  1 &amp; 0 &amp; 0 \\
+  0 &amp; 1 &amp; 0 \\
+  0 &amp; 0 &amp; -1
+  \end{pmatrix} = B
+\end{align*}\end{split}\]</div>
+<p>și am terminat. Remarcăm că <span class="math notranslate nohighlight">\( B \)</span> este o matrice diagonală și
+<span class="math notranslate nohighlight">\( \det B = -1 \)</span>, ceea ce înseamnă că și <span class="math notranslate nohighlight">\( \det A = -1 \)</span>.</p>
+<p>O altă aplicație concretă ar fi să considerăm <span class="math notranslate nohighlight">\( A \)</span> ca matricea unui sistem liniar,
+de exemplu:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  x - y + 2z &amp;= 1 \\
+  3x + y + 2z &amp;= 4 \\
+  2x - y + z &amp;= 1
+\end{cases}\end{split}\]</div>
+<p>În acest caz, se parcurg pașii de mai sus folosind <em>matricea extinsă</em>, <span class="math notranslate nohighlight">\( \overline{A} \)</span>
+și obținem succesiv:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  \overline{A} &amp;= \begin{pmatrix} 1 &amp; -1 &amp; 2 &amp; 1 \\ 3 &amp; 1 &amp; 2 &amp; 4 \\ 2 &amp; -1 &amp; 1 &amp; 1 \end{pmatrix} \\
+			   &amp;\xrightarrow{L_2 - 3L_1} %
+			     \begin{pmatrix}
+				   1 &amp; -1 &amp; 2 &amp; 1 \\
+				   0 &amp; 4 &amp; -4 &amp; 1 \\
+				   2 &amp; -1 &amp; 1 &amp; 1 
+			     \end{pmatrix} \xrightarrow{L_3 - 2L_1} %
+				 \begin{pmatrix}
+				 1 &amp; -1 &amp; 2 &amp; 1 \\
+				 0 &amp; 4 &amp; -4 &amp; 1 \\
+				 0 &amp; 1 &amp; -3 &amp; -1
+				 \end{pmatrix} \\
+			 &amp;\xrightarrow{\dfrac{1}{4} L_2} %
+			   \begin{pmatrix}
+			     1 &amp; -1 &amp; 2 &amp; 1 \\
+				 0 &amp; 1 &amp; -1 &amp; 1/4 \\
+				 0 &amp; 1 &amp; -3 &amp; -1
+			   \end{pmatrix} \xrightarrow{L_1 + L_2} %
+			   \begin{pmatrix}
+			     1 &amp; 0 &amp; 1 &amp; 5/4 \\
+				 0 &amp; 1 &amp; -1 &amp; 1/4\\
+				 0 &amp; 1 &amp; -3 &amp; -1
+			   \end{pmatrix} \\
+		     &amp;\xrightarrow{L_3 - L_2} %
+			   \begin{pmatrix}
+			     1 &amp; 0 &amp; 1 &amp; 5/4 \\
+				 0 &amp; 1 &amp; -1 &amp; 1/4 \\
+				 0 &amp; 0 &amp; -2 &amp; -5/4
+			   \end{pmatrix} \xrightarrow{L_1 + \dfrac{1}{2} L_3} %
+			   \begin{pmatrix}
+			     1 &amp; 0 &amp; 0 &amp; 11/8 \\
+				 0 &amp; 1 &amp; -1 &amp; 1/4 \\
+				 0 &amp; 0 &amp; -2 &amp; -5/4
+			   \end{pmatrix} \\
+		     &amp;\xrightarrow{\dfrac{1}{2}L_3 \text{ și } L_2 - L_3} %
+			   \begin{pmatrix}
+			     1 &amp; 0 &amp; 0 &amp; 11/8 \\
+				 0 &amp; 1 &amp; 0 &amp; 7/8 \\
+				 0 &amp; 0 &amp; -1 &amp; -5/8
+			   \end{pmatrix}
+\end{align*}\end{split}\]</div>
+<p>Dacă ne uităm acum la ce sistem ar corespunde această ultimă matrice – sistem care
+va fi echivalent cu cel de pornire, întrucît operațiile cu linii corespund operațiilor
+cu ecuații, care sînt permise, ajungem direct la soluția lui:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  x &amp;= 11/8 \\
+  y &amp;= 7/8 \\
+  -z &amp;= -5/8 \Rightarrow z = 5/8
+\end{cases}\end{split}\]</div>
+<hr class="docutils" />
+<p>Conform <span id="id5">[<a class="reference internal" href="bibliografie.html#id15" title="G. W. Stewart. Matrix Algorithms. Volume 1, Basic Decompositions. SIAM, 1998.">Stewart, 1998</a>]</span>, procedura se poate formaliza și folosind înmulțirea cu matrice.
+Preluăm exemplul de la p. 151.</p>
+<p>Presupunem că avem o matrice <span class="math notranslate nohighlight">\( A = (a_{ij})_{1 \leq i,j \leq 4} \in M_4(\mathbb{R}) \)</span>
+și definim numerele <span class="math notranslate nohighlight">\( \ell_{i1} = \dfrac{a_{i1}}{a_{11}}, \forall 1 \leq i \leq 4 \)</span>,
+numite <em>multiplicatori</em>. Apoi definim matricea:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}L_1 = \begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+-\ell_{21} &amp; 1 &amp; 0 &amp; 0 \\
+-\ell_{31} &amp; 0 &amp; 1 &amp; 0 \\
+-\ell_{41} &amp; 0 &amp; 0 &amp; 1
+\end{pmatrix}\end{split}\]</div>
+<p>Se poate vedea că dacă înmulțim matricea <span class="math notranslate nohighlight">\( A \)</span> la stînga cu <span class="math notranslate nohighlight">\( L_1 \)</span>, obținem prima
+coloană în forma cautată:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}L_1 A = 
+\begin{pmatrix}
+a_{11} &amp; a_{12} &amp; a_{13} &amp; a_{14} \\
+0 &amp; a'_{22} &amp; a'_{23} &amp; a'_{24} \\
+0 &amp; a'_{32} &amp; a'_{33} &amp; a'_{34} \\
+0 &amp; a'_{42} &amp; a'_{43} &amp; a'_{44}
+\end{pmatrix}\end{split}\]</div>
+<p>Putem continua apoi, definind alți multiplicatori, corespunzători coloanei
+a doua: <span class="math notranslate nohighlight">\( \ell_{i2} = \dfrac{a'_{i2}}{a'_{22}}, 3 \leq i \leq 4 \)</span>, apoi
+definim matricea:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}L_2 = \begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; -\ell_{32} &amp; 1 &amp; 0 \\
+0 &amp; -\ell_{42} &amp; 0 &amp; 1 
+\end{pmatrix}\end{split}\]</div>
+<p>și înmulțim la stînga cu <span class="math notranslate nohighlight">\( L_2 \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}L_2L_1A =
+\begin{pmatrix}
+a_{11} &amp; a_{12} &amp; a_{13} &amp; a_{14} \\
+0 &amp; a'_{22} &amp; a'_{23} &amp; a'_{24} \\
+0 &amp; 0 &amp; a^{''}_{33} &amp; a^{''}_{34} \\
+0 &amp; 0 &amp; a^{''}_{43} &amp; a^{''}_{44} 
+\end{pmatrix}\end{split}\]</div>
+<p>În fine, definim <span class="math notranslate nohighlight">\( \ell_{43} = \dfrac{a^{''}_{43}}{a^{''}_{33}} \)</span> și matricea:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}L_3 = \begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; -\ell_{43} &amp; 1
+\end{pmatrix}\end{split}\]</div>
+<p>și ajungem la rezultatul căutat prin înmulțire cu <span class="math notranslate nohighlight">\( L_3 \)</span> la stînga:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}L_3L_2L_1A = \begin{pmatrix}
+a_{11} &amp; a_{12} &amp; a_{13} &amp; a_{14} \\
+0 &amp; a'_{22} &amp; a'_{23} &amp; a'_{24} \\
+0 &amp; 0 &amp; a^{''}_{33} &amp; a^{''}_{34} \\
+0 &amp; 0 &amp; 0 &amp; a^{'''}_{44}
+\end{pmatrix}\end{split}\]</div>
+<p>Evident, procedura poate fi generalizată și formalizată, dar ne vom opri aici,
+considerînd că exemplele oferite sînt destul de clare.</p>
+</section>
+<section id="descompunere-lu">
+<h2>Descompunere LU<a class="headerlink" href="#descompunere-lu" title="Permalink to this headline">#</a></h2>
+<p>Direct din eliminarea gaussiană putem obține și forma LU a unei matrice,
+care este alcătuită din:</p>
+<ul class="simple">
+<li><p>o matrice inferior (eng. <em>lower</em>) triunghiulară, <span class="math notranslate nohighlight">\( L \)</span>;</p></li>
+<li><p>o matrice superior (eng. <em>upper</em>) triunghiulară, <span class="math notranslate nohighlight">\( U \)</span>.
+Descompunerea LU afirmă că există două matrice cu aceste proprietăți astfel
+încît dată o matrice <span class="math notranslate nohighlight">\( A \)</span>, ea se poate scrie <span class="math notranslate nohighlight">\( A = L \cdot U \)</span>.</p></li>
+</ul>
+<p>Să remarcăm din exemplul anterior că rezultatul obținut este o matrice superior
+triunghiulară, fie ea <span class="math notranslate nohighlight">\( U \)</span>, deci <span class="math notranslate nohighlight">\( L_3 L_2 L_1 A = U \)</span>. Dar aceasta poate
+fi scris și sub forma <span class="math notranslate nohighlight">\( A = L_1^{-1} \cdot L_2^{-1} \cdot L_3^{-1} \cdot U \)</span>.
+Calculînd concret membrul stîng, găsim că <span class="math notranslate nohighlight">\( L = L_1^{-1} \cdot L_2^{-1} L_3^{-1} \)</span>
+este de fapt o matrice inferior triunghiulară, alcătuită din multiplicatorii
+<span class="math notranslate nohighlight">\( \ell_{ij} \)</span>, adică:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}L = \begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+\ell_{21} &amp; 1 &amp; 0 &amp; 0 \\
+\ell_{31} &amp; \ell_{32} &amp; 1 &amp; 0 \\
+\ell_{41} &amp; \ell_{42} &amp; \ell_{43} &amp; 1
+\end{pmatrix},\end{split}\]</div>
+<p>ceea ce ne oferă forma finală.</p>
+<p>E drept că, din punct de vedere practic, această descompunere este foarte greu
+de găsit. Matricea <span class="math notranslate nohighlight">\( L \)</span> se compune ușor, cu ajutorul multiplicatorilor <span class="math notranslate nohighlight">\( \ell_{ij} \)</span>,
+care se definesc numai în funcție de elementele matricei de pornire <span class="math notranslate nohighlight">\( A \)</span>.
+Dar matricea superior triunghiulară <span class="math notranslate nohighlight">\( U \)</span> are o formă greu de ghicit de la început.</p>
+<p>Putem, totuși, să aflăm matricea <span class="math notranslate nohighlight">\( U \)</span> folosindu-ne de următorul rezultat:</p>
+<div class="proof theorem admonition" id="thm-lu">
+<p class="admonition-title"><span class="caption-number">Theorem 30 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Dacă matricea <span class="math notranslate nohighlight">\( A \)</span> este inversabilă (deci și pătratică) și dacă are o descompunere
+<span class="math notranslate nohighlight">\( LU \)</span>, atunci aceasta este unică.</p>
+</section>
+</div><p>Rezultă de aici că putem trata relația <span class="math notranslate nohighlight">\( A = LU \)</span> ca pe o ecuație din care să
+aflăm matricea <span class="math notranslate nohighlight">\( U = L^{-1} \cdot A \)</span>.</p>
+<p>Totuși, trebuie să fim atenți, întrucît teorema afirmă că acest lucru este posibil
+numai cînd:</p>
+<ul class="simple">
+<li><p>există o descompunere LU a matricei date;</p></li>
+<li><p>matricea de pornire este inversabilă.</p></li>
+</ul>
+<p>Mai adăugăm că, în ipoteza că descompunerea LU există, faptul că <span class="math notranslate nohighlight">\( A \)</span> este
+inversabilă este echivalent cu <span class="math notranslate nohighlight">\( L \)</span> și <span class="math notranslate nohighlight">\( U \)</span> să fie inversabile.</p>
+</section>
+<section id="descompunere-qr">
+<h2>Descompunere QR<a class="headerlink" href="#descompunere-qr" title="Permalink to this headline">#</a></h2>
+<p>O altă descompunere particulară a unei matrice <span class="math notranslate nohighlight">\( A \)</span> se numește <em>descompunerea QR</em>,
+care are forma generală <span class="math notranslate nohighlight">\( A = QR \)</span>, unde:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( Q \)</span> este o <em>matrice ortogonală</em>, i.e. una în care coloanele și liniile, gîndite
+ca vectori în spațiul euclidian corespunzător, sînt ortonormale. Echivalent, acest
+lucru se poate scrie sub forma <span class="math notranslate nohighlight">\( Q^t = Q^{-1} \)</span>, folosind produsul scalar euclidian
+pe un spațiu de forma <span class="math notranslate nohighlight">\( \mathbb{R}^n \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( R \)</span> este o matrice superior triunghiulară.</p></li>
+</ul>
+<p>Descompunerea QR pentru o matrice pătratică se poate obține foarte ușor ca o consecință
+a <a class="reference internal" href="p2-s7-ortonormare.html#sec-gram-schmidt"><span class="std std-ref">algoritmului Gram-Schmidt</span></a>. Fie <span class="math notranslate nohighlight">\( A \in M_n(\mathbb{R}) \)</span>
+și fie coloanele matricei <span class="math notranslate nohighlight">\( a_1, \dots, a_n \)</span>, ca vectori din <span class="math notranslate nohighlight">\( \mathbb{R}^n \)</span>.</p>
+<p>Aplicăm algoritmul Gram-Schmidt pentru acești vectori, ca să obținem un sistem ortonormat
+<span class="math notranslate nohighlight">\( \{ u_1, \dots, u_n \} \)</span>. Definim:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  u_1 &amp;= a_1 \\
+  u_2 &amp;= a_2 - \mathrm{proj}_{u_1} a_2 \\
+  u_3 &amp;= a_3 - \mathrm{proj}_{u_1} a_3 - \mathrm{proj}_{u_2} a_3 \\
+      &amp;\vdots \\
+  u_n &amp;= a_n - \sum_{k=1}^{n-1} \mathrm{proj}_{u_k} a_n,
+\end{align*}\end{split}\]</div>
+<p>procedură în urma căreia obținem un sistem ortogonal. Pentru normare, definim
+<span class="math notranslate nohighlight">\( e_i = \dfrac{1}{||u_i||} u_i, \forall 1 \leq i \leq n \)</span>.</p>
+<p>Vedem, însă, că putem gîndi problema și invers, adică să definim <span class="math notranslate nohighlight">\( a_i \)</span> în funcție
+de <span class="math notranslate nohighlight">\( e_i \)</span> (implicit, <span class="math notranslate nohighlight">\( u_i \)</span>), astfel:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  a_1 &amp;= \langle e_1, a_1 \rangle e_1 \\
+  a_2 &amp;= \langle e_1, a_2 \rangle + \langle e_2, a_2 \rangle e_2 \\
+      &amp;\vdots \\
+  a_n &amp;= \sum_{k=1}^n \langle e_k, a_n \rangle e_k,
+\end{align*}\end{split}\]</div>
+<p>deoarece <span class="math notranslate nohighlight">\( \langle e_i, a_i \rangle = || u_i || \)</span>.</p>
+<p>Aceste relații pot fi puse sub forma matriceală <span class="math notranslate nohighlight">\( A = QR \)</span>, unde <span class="math notranslate nohighlight">\( Q \)</span> este matricea
+ce are drept coloane vectorii <span class="math notranslate nohighlight">\( \{ e_1, e_2, \dots, e_n \} \)</span>, care sînt ortonormați,
+iar <span class="math notranslate nohighlight">\( R \)</span> este următoarea matrice superior triunghiulară:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}R = \begin{pmatrix}
+\langle e_1, a_1 \rangle &amp; \langle e_1, a_2 \rangle &amp; \langle e_1, a_3 \rangle &amp; \dots &amp; \langle e_1, a_n \rangle \\
+0 &amp; \langle e_2, a_2 \rangle &amp; \langle e_2, a_3 \rangle &amp; \dots &amp; \langle e_2, a_n \rangle \\
+0 &amp; 0 &amp; \langle e_3, a_3 \rangle &amp; \dots &amp; \langle e_3, a_n \rangle \\
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\
+0 &amp; 0 &amp; 0 &amp; \dots &amp; \langle e_n, a_n \rangle
+\end{pmatrix},\end{split}\]</div>
+<p>care este exact forma căutată.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="vp-mmt"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p>Se poate arăta că valorile proprii ale unei matrice obținute
+sub forma <span class="math notranslate nohighlight">\( M^t \cdot M \)</span> sînt mereu nenegative, deci valorile singulare sînt
+corect definite.</p>
+</dd>
+<dt class="label" id="op-linii"><span class="brackets"><a class="fn-backref" href="#id4">2</a></span></dt>
+<dd><p>Conform proprietăților determinanților, putem face operații fie cu linii,
+fie cu coloane, fără ca valoarea determinantului să se schimbe. Însă, dacă vrem să
+aplicăm eliminarea gaussiană pentru rezolvarea sistemelor liniare, de exemplu, operațiile
+cu linii ar corespunde operațiilor între ecuații, în timp ce operațiile cu coloane ar
+corespunde operațiilor între variabile. A doua variantă nu este permisă, evident (nu are sens).</p>
+</dd>
+</dl>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="p2-s10-afin.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Spații afine</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="p2-s12-transf-mat.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Transformări matriceale în 2D și 3D</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Adrian Manea (Poligon Educational)<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

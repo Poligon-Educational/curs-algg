@@ -1,0 +1,1709 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Bază și dimensiune &#8212; Algebră liniară și aplicații</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/proof.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Operații cu subspații" href="p2-s5-op-subsp.html" />
+    <link rel="prev" title="Spații vectoriale" href="p2-s3-spvect.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo-light-poly-only.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Algebră liniară și aplicații</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Algebră liniară și aplicații
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Elemente de istoria și filosofia matematicii
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-istorie-fil-intro.html">
+   Generalități
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-s1-rationamente.html">
+   Abstractizare și raționamente
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-s2-ist-vsp.html">
+   Istoria spațiilor vectoriale
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algebră abstractă și algebră liniară
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="p2-abstract.html">
+   Algebră abstractă și algebră liniară
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s1-grupuri.html">
+     Monoizi și grupuri
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s1e-simetrii.html">
+     Grupuri de simetrie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s2-inele-corpuri.html">
+     Inele și corpuri
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s3-spvect.html">
+     Spații vectoriale
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Bază și dimensiune
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s5-op-subsp.html">
+     Operații cu subspații
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s6-morfisme-spvect.html">
+     Morfisme de spații vectoriale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s7-ortonormare.html">
+     Produs scalar și ortonormare
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s8-vvp.html">
+     Vectori și valori proprii
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s9-quat.html">
+     Cuaternioni
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s10-afin.html">
+     Spații afine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s11-mat-decomp.html">
+     Descompuneri matriceale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s12-transf-mat.html">
+     Transformări matriceale în 2D și 3D
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s13-arii-volume.html">
+     Arii și volume
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Aplicații și implementări în programare
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="p3-aplicatii.html">
+   Aplicații și implementări în programare
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Bibliografie și lecturi suplimentare
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliografie.html">
+   Bibliografie și lecturi suplimentare
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/adimanea/linalg"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/adimanea/linalg/issues/new?title=Issue%20on%20page%20%2Fp2-s4-baza.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/p2-s4-baza.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#intuitie">
+   Intuiție
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definitii-formale-independenta-liniara">
+   Definiții formale – Independență liniară
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#explicatie-intuitiva">
+     Explicație intuitivă
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-si-calcul">
+     Exemple și calcul
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#observatie-tehnica">
+     Observație tehnică
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#alte-exemple">
+     Alte exemple
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definitii-formale-sistem-de-generatori">
+   Definiții formale – Sistem de generatori
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Explicație intuitivă
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Exemple și calcul
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Observație tehnică
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Alte exemple
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definitii-formale-baza-si-dimensiune">
+   Definiții formale – Bază și dimensiune
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-baze-canonice">
+     Exemple: Baze canonice
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cum-gasim-o-baza">
+     Cum găsim o bază?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#schimbarea-de-baza">
+   Schimbarea de bază
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercitii-propuse">
+   Exerciții propuse
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Bază și dimensiune</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#intuitie">
+   Intuiție
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definitii-formale-independenta-liniara">
+   Definiții formale – Independență liniară
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#explicatie-intuitiva">
+     Explicație intuitivă
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-si-calcul">
+     Exemple și calcul
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#observatie-tehnica">
+     Observație tehnică
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#alte-exemple">
+     Alte exemple
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definitii-formale-sistem-de-generatori">
+   Definiții formale – Sistem de generatori
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Explicație intuitivă
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Exemple și calcul
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Observație tehnică
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Alte exemple
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definitii-formale-baza-si-dimensiune">
+   Definiții formale – Bază și dimensiune
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-baze-canonice">
+     Exemple: Baze canonice
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cum-gasim-o-baza">
+     Cum găsim o bază?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#schimbarea-de-baza">
+   Schimbarea de bază
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercitii-propuse">
+   Exerciții propuse
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="baza-si-dimensiune">
+<h1>Bază și dimensiune<a class="headerlink" href="#baza-si-dimensiune" title="Permalink to this headline">#</a></h1>
+<section id="intuitie">
+<h2>Intuiție<a class="headerlink" href="#intuitie" title="Permalink to this headline">#</a></h2>
+<p><em>Baza</em> unui spațiu vectorial este, într-un fel, „esența“ acestuia, așa cum
+arată și numele. Intuitiv, lucrurile sînt deja cunoscute, mai ales dacă
+vom detalia cele două componente care alcătuiesc o bază: sistemul liniar
+independent și sistemul de generatori.</p>
+<p>Dar să rămînem puțin la noțiunea de bază și să ne întoarcem la cazul
+<a class="reference internal" href="p2-s3-spvect.html#sec-intuitie-spvect"><span class="std std-ref">vectorilor din plan</span></a>. Am spus că preferăm să
+lucrăm cu vectorii descompuși în funcție de <em>versorii</em> <span class="math notranslate nohighlight">\( \vec{i} \)</span> și
+<span class="math notranslate nohighlight">\( \vec{j} \)</span>, știind că putem face asta pentru <em>orice</em> vector din plan.
+Cu alte cuvinte, indiferent de vectorul ales <span class="math notranslate nohighlight">\( \vec{v} \)</span>, cu siguranță
+există două numere reale (scalari, cum știm acum că se numesc)
+<span class="math notranslate nohighlight">\( \alpha, \beta \in \mathbb{R} \)</span> astfel încît vectorul <span class="math notranslate nohighlight">\( \vec{v} \)</span>
+să se scrie ca o <em>combinație liniară</em> a acestor vectori speciali
+<span class="math notranslate nohighlight">\( \vec{i} \)</span> și <span class="math notranslate nohighlight">\( \vec{j} \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\vec{v} = \alpha \vec{i} + \beta \vec{j}.\]</div>
+<p>Mai mult decît atît, o astfel de descompunere este <em>unică</em>, adică nu se poate
+să folosim alți scalari decît aceștia pentru a obține același vector.
+Altfel spus, egalitatea de mai jos este posibilă doar dacă scalarii sînt
+identici (<span class="math notranslate nohighlight">\(\alpha = \gamma\)</span> și <span class="math notranslate nohighlight">\( \beta = \delta \)</span>):</p>
+<div class="math notranslate nohighlight">
+\[\vec{v} = \alpha \vec{i} + \beta \vec{j} = \gamma \vec{i} + \delta \vec{k}.\]</div>
+<p>Aceasta este exact esența bazei:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>O <em>bază</em> a unui spațiu vectorial conține vectorii în funcție de care se pot scrie
+<em>în mod unic</em> toți vectorii spațiului.</p>
+</div>
+<p>Iar noțiunea de <em>dimensiune</em> oferă o caracterizare numerică a acestei situații:
+este numărul de vectori din bază.</p>
+<hr class="docutils" />
+<p>Puteam face această introducere și altfel. Vă propunem următoarea întrebare:
+Cum ați explica afirmațiile binecunoscute precum cea că linia este 1-dimensională,
+planul este bidimensional și un cub, de pildă, este tridimensional?
+Gîndiți-vă la propriile răspunsuri, apoi citiți mai departe.</p>
+<p>O posibilitate de a explica lucrurile este aceasta: figurile menționate se caracterizează
+prin cîte una, respectiv două sau trei trăsături:</p>
+<ul class="simple">
+<li><p>linia are o lungime, dar nu are lățime sau altă caracteristică;</p></li>
+<li><p>planul „se întinde“ pe lungime și lățime;</p></li>
+<li><p>cubul are lungime, lățime și înălțime.</p></li>
+</ul>
+<p>Sau, dacă ar fi să facem lucrurile și mai abstracte, am spune:</p>
+<ul class="simple">
+<li><p>linia (dreapta) poate reprezenta axa numerelor reale, unde fiecare punct se caracterizează
+printr-o singură componentă: valoarea sa. Punctele corespunzătoare numerelor reale <span class="math notranslate nohighlight">\( \pi \)</span>
+sau <span class="math notranslate nohighlight">\( \sqrt{2} \)</span> sînt complet caracterizate doar de aceste valori;</p></li>
+<li><p>planul corespunde sistemului de coordonate <span class="math notranslate nohighlight">\( XOY \)</span>, unde fiecare punct este caracterizat
+de cîte două informații: abscisa și ordonata sa, <span class="math notranslate nohighlight">\( P(x_P, y_P) \)</span>;</p></li>
+<li><p>cubul poate fi gîndit ca o versiune mărginită a sistemului de coordonate <span class="math notranslate nohighlight">\( Oxyz \)</span>, unde
+fiecare punct se caracterizează prin 3 informații: <span class="math notranslate nohighlight">\( P(x_P, y_P, z_P) \)</span>.</p></li>
+</ul>
+<p>Mai mult, în ambele caracterizări se adaugă o trăsătură de <em>unicitate</em>: punctele
+de pe dreaptă, din plan sau dintr-un cub nu pot fi scrise în mai multe moduri, cu informații
+diferite. În plan, nu putem avea, de pildă <span class="math notranslate nohighlight">\( P(x_P, y_P) = (x'_P, y'_{P}) \)</span>
+pentru un același punct <span class="math notranslate nohighlight">\( P \)</span>, cu <span class="math notranslate nohighlight">\( x_P \neq x'_P \)</span> și <span class="math notranslate nohighlight">\( y_P \neq y'_{P} \)</span>.</p>
+<p>Oricare ar fi răspunsul la care v-ați gîndit, cele două direcții de raționament
+de mai sus conțin exact informația principală:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Dimensiunea este numărul de componente (informații) de care avem nevoie pentru a caracteriza
+unic și complet orice obiect (vector) din spațiu.</p>
+</div>
+<p>Ieșind în afara matematicii, am putea spune că „spațiul“ oamenilor din România este 1-dimensional:
+orice persoană este unic și complet caracterizată de CNP.</p>
+<hr class="docutils" />
+<p>Vom vedea că o astfel de perspectivă nu este doar corectă, dar oferă și un grad de
+„dezvrăjire“ în ce privește așa-numitele <em>spații cu mai multe dimensiuni</em> (chiar o infinitate).
+În esență, un spațiu de dimensiune <span class="math notranslate nohighlight">\( n \)</span> este unul în care, pentru a ști precis despre
+ce obiect este vorba, avem nevoie de exact <span class="math notranslate nohighlight">\( n \)</span> informații.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Nu am adăugat explicit în remarcile de mai sus, dar ar trebui să fie clar că informațiile
+pe care le cerem pentru a preciza un obiect din spațiu trebuie să fie și <em>independente</em>.</p>
+<p>De pildă, dacă am cere CNP-ul și data nașterii unei persoane, am avea o redundanță,
+pentru că cele două informații nu sînt idependente: dat CNP-ul, se poate deduce data nașterii.</p>
+<p>Similar, în plan, de exemplu, nu este nevoie să precizăm și perechea (abscisă, ordonată)
+și distanța față de origine, pentru că informațiile nu sînt independente.</p>
+</div>
+<p>Mergem acum la definițiile riguroase, unde va fi foarte util să ținem cont de această
+caracterizare intuitivă, deoarece lucrurile nu vor fi mereu transparente, la prima vedere.</p>
+</section>
+<section id="definitii-formale-independenta-liniara">
+<h2>Definiții formale – Independență liniară<a class="headerlink" href="#definitii-formale-independenta-liniara" title="Permalink to this headline">#</a></h2>
+<p>Baza unui spațiu vectorial este o mulțime de vectori cu două trăsături importante. De obicei,
+acestea se prezintă separat, deoarece pot caracteriza și individual o mulțime de vectori.</p>
+<div class="proof definition admonition" id="def-indep">
+<p class="admonition-title"><span class="caption-number">Definition 27 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( V \)</span> un <span class="math notranslate nohighlight">\( K \)</span>-spațiu vectorial și <span class="math notranslate nohighlight">\( S = \{ x_1, x_2, \dots, x_n \} \)</span> o mulțime de vectori
+din <span class="math notranslate nohighlight">\( V \)</span>.</p>
+<p>Spunem că <span class="math notranslate nohighlight">\( S \)</span> este un <em>sistem liniar independent</em> (sau, mai simplu, că mulțimea <span class="math notranslate nohighlight">\( S \)</span> este
+independentă sau liberă) dacă orice combinație liniară nulă a vectorilor din <span class="math notranslate nohighlight">\( S \)</span> cu scalari
+din <span class="math notranslate nohighlight">\( K \)</span> este trivială. În simboluri, pentru <span class="math notranslate nohighlight">\( \alpha_i \in K, 1 \leq i \leq n \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+  \alpha_1 x_1 + \alpha_2 x_2 + \dots + \alpha_n x_n = 0 \Rightarrow \alpha_1 = \alpha_2 = \dots = \alpha_n = 0.
+\]</div>
+<p>Cu alte cuvinte, nu putem obține vectorul nul din vectorii din <span class="math notranslate nohighlight">\( S \)</span> decît în varianta trivială,
+anume cînd toți scalarii sînt nuli.</p>
+</section>
+</div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cum înmulțirea unui vector cu scalari produce un vector, rezultă că în definiție,
+combinația liniară <span class="math notranslate nohighlight">\( \displaystyle\sum_{1 \leq i \leq n} \alpha_i x_i = 0 \)</span>
+are drept rezultat <em>vectorul</em> nul, <span class="math notranslate nohighlight">\( 0_V \)</span>.</p>
+</div>
+<p>Prin negarea acestei definiții, obținem noțiunea de <em>sistem liniar dependent</em>. În acest caz,
+păstrînd notațiile anterioare, există scalarii <span class="math notranslate nohighlight">\( \alpha_1, \alpha_2, \dots, \alpha_n \)</span>,
+<em>nu toți nuli</em>, astfel încît să avem o combinație liniară nulă cu vectorii din <span class="math notranslate nohighlight">\( S \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\alpha_1 x_1 + \alpha_2 x_2 + \dots + \alpha_n x_n = 0.\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ar trebui să fie clar, dar notăm, totuși, faptul că <span class="math notranslate nohighlight">\( S \)</span> nu trebuie să fie <em>subspațiu</em> al lui <span class="math notranslate nohighlight">\( V \)</span>.
+Este pur și simplu o mulțime, o selecție de vectori. De asemenea, dacă în definiția formală
+am scris că <span class="math notranslate nohighlight">\( S \)</span> ar conține <span class="math notranslate nohighlight">\( n \)</span> vectori, adică un număr finit, precizăm, totuși, că este
+permis și ca <span class="math notranslate nohighlight">\( S \)</span> să fie infinită. Însă în exerciții și în secțiunile pe care le vom
+prezenta în continuare vom lucra doar cu mulțimi finite.</p>
+</div>
+<hr class="docutils" />
+<section id="explicatie-intuitiva">
+<h3>Explicație intuitivă<a class="headerlink" href="#explicatie-intuitiva" title="Permalink to this headline">#</a></h3>
+<p>Acum, facem o pauză de apel la intuiție. Dacă întîlniți într-un context oarecare o expresie
+precum <em>Variabilele (cantitățile) <span class="math notranslate nohighlight">\( x, y, z \)</span> sînt independente</em>, la ce vă gîndiți?</p>
+<p>În general, o astfel de expresie este înțeleasă prin faptul că nu putem obține niciuna dintre
+cele 3 variabile (cantități) în funcție de celelalte. Cu alte cuvinte, pentru scopul pentru
+care le-am obținut, cu siguranță avem nevoie de toate 3.</p>
+<p>Iată cum se leagă această înțelegere intuitivă de definiția – aparent opacă – de mai sus.</p>
+<p>Să presupunem că variabilele <span class="math notranslate nohighlight">\( x, y, z \)</span> sînt <em>dependente</em>, adică putem, totuși, să scriem
+una dintre ele în funcție de celelalte două, de pildă. Să zicem că avem o relație de forma:</p>
+<div class="math notranslate nohighlight">
+\[x = 3y - 2z.\]</div>
+<p>Vom arăta că, pornind de la aceasta, putem ajunge la definiția formală de mai sus a dependenței
+liniare. Avem succesiv:</p>
+<div class="math notranslate nohighlight">
+\[x = 3y - 2z \Leftrightarrow x - 3y + 2z = 0.\]</div>
+<p>Rezultă că am obținut o combinație liniară a celor 3 variabile (vectori) <span class="math notranslate nohighlight">\( \{ x, y, z \} \)</span>,
+cu scalari reali în cazul acesta, combinație liniară care este nulă. Însă în mod evident, nu toți
+scalarii sînt nuli. De fapt, preluînd notațiile din definiție, avem
+<span class="math notranslate nohighlight">\( \alpha_1 = 1, \alpha_2 = -3, \alpha_3 = 2 \)</span>. Or acest lucru este exact definiția dependenței liniare:
+avem o combinație liniară care folosește vectorii în cauză, combinație care este nulă, fără ca
+(toți) scalarii să fie nuli.</p>
+<p>Independența neagă acest lucru, deci face imposibilă obținerea oricărei relații de forma
+<span class="math notranslate nohighlight">\( x = ay + bz \)</span> sau altele, cu scalari (coeficienți) nenuli.</p>
+</section>
+<hr class="docutils" />
+<section id="exemple-si-calcul">
+<h3>Exemple și calcul<a class="headerlink" href="#exemple-si-calcul" title="Permalink to this headline">#</a></h3>
+<p>Acum să vedem cum am demonstra concret că o anume mulțime de vectori este liniar (in)dependentă.</p>
+<p><strong>Exemplu:</strong> Fie spațiul vectorial real <span class="math notranslate nohighlight">\( V = \mathbb{R}^3 \)</span> și mulțimea de vectori:</p>
+<div class="math notranslate nohighlight">
+\[S = \{ v_1 = (-1, 2, 0), v_2 = (2, 0, 1) \}.\]</div>
+<p>Să vedem dacă <span class="math notranslate nohighlight">\( S \)</span> este independentă.</p>
+<p>Aplicăm definiția: presupunem că am reușit să obținem o combinație liniară nulă, care folosește
+vectorii din <span class="math notranslate nohighlight">\( S \)</span> și scalarii reali <span class="math notranslate nohighlight">\( \alpha, \beta \)</span>, adică:</p>
+<div class="math notranslate nohighlight">
+\[\alpha v_1 + \beta v_2 = (-\alpha, 2\alpha, 0) + (2\beta, 0, \beta) = (-\alpha + 2\beta, 2\alpha, \beta) = 0 = (0, 0, 0).\]</div>
+<p>Dar egalitatea a doi vectori nu se poate realiza decît dacă cei doi vectori coincid pe componente,
+deci ajungem la:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  -\alpha + 2\beta &amp;= 0 \\
+  2\alpha &amp;= 0 \\
+  \beta &amp;= 0
+\end{cases}\end{split}\]</div>
+<p>Acest sistem de ecuații are evident soluția nulă, <span class="math notranslate nohighlight">\( \alpha = \beta = 0 \)</span>, deci am demonstrat
+că o combinație liniară a vectorilor din <span class="math notranslate nohighlight">\( S \)</span> cu scalari reali nu poate fi nulă decît
+în cazul trivial. Concluzia este că sistemul <span class="math notranslate nohighlight">\( S \)</span> este independent.</p>
+<p><strong>Exemplu:</strong> Folosim acum spațiul vectorial <span class="math notranslate nohighlight">\( V = \mathbb{R}^2 \)</span> și fie mulțimea de vectori:</p>
+<div class="math notranslate nohighlight">
+\[S = \{ v_1 = (-1, 2), v_2 = (3, 1), v_3 = (0, 5), v_4 = (2, -1) \}.\]</div>
+<p>Să verificăm dacă <span class="math notranslate nohighlight">\( S \)</span> ar putea fi independentă. Lucrăm tot cu definiția, deci presupunem că
+avem o combinație liniară nulă care folosește scalarii <span class="math notranslate nohighlight">\( \alpha_{1,2,3,4} \)</span> și cei 4 vectori
+din <span class="math notranslate nohighlight">\( S \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\alpha_1 v_1 + \alpha_2 v_2 + \alpha_3 v_3 + \alpha_4 v_4 = \dots = %
+(-\alpha_1 + 3\alpha_2 + 2\alpha_4, 2\alpha_1 + \alpha_2 + 5\alpha_3 - \alpha_4) = (0, 0).\]</div>
+<p>Ca mai devreme, sîntem conduși la sistemul:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  -\alpha_1 + 3\alpha_2 + 2\alpha_4  &amp;= 0 \\
+  2\alpha_1 + \alpha_2 + 5\alpha_3 - \alpha_4 &amp;= 0
+\end{cases}\end{split}\]</div>
+<p>Cum acesta este un sistem de 2 ecuații cu 4 necunoscute, rezultă că el este compatibil
+dublu nedeterminat. Deci cu siguranță are și soluții nenule, pe care le putem obține,
+de pildă, considerînd necunoscutele secundare <span class="math notranslate nohighlight">\( \alpha_3 \)</span> și <span class="math notranslate nohighlight">\( \alpha_4 \)</span>.</p>
+<p>Concluzia este că putem obține o combinație liniară a vectorilor din <span class="math notranslate nohighlight">\( S \)</span> cu scalari
+care să nu fie toți nuli, dar rezultatul să fie vectorul nul. Așadar, mulțimea <span class="math notranslate nohighlight">\( S \)</span>
+este <em>dependentă</em>.</p>
+<p><strong>Exemplu:</strong> Să luăm acum din nou <span class="math notranslate nohighlight">\( V = \mathbb{R}^3 \)</span> și sistemul:</p>
+<div class="math notranslate nohighlight">
+\[S = \{ v_1 = (-1, 2, 0), v_2 = (1, 1, 1), v_3 = (0, 3, 1) \}.\]</div>
+<p>Studiem independența ca pînă acum. Presupunem că avem scalarii <span class="math notranslate nohighlight">\( \alpha, \beta, \gamma \in \mathbb{R} \)</span>
+astfel încît:</p>
+<div class="math notranslate nohighlight">
+\[\alpha v_1 + \beta v_2 + \gamma v_3 = \dots = (-\alpha + \beta, 2\alpha + \beta + 3 \gamma, \beta + \gamma) = (0, 0, 0)\]</div>
+<p>și ajungem la:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  -\alpha + \beta &amp;= 0 \\
+  2\alpha + \beta + 3\gamma &amp;= 0 \\
+  \beta + \gamma &amp;= 0
+\end{cases}\end{split}\]</div>
+<p>Fiind vorba despre un sistem de 3 ecuații cu 3 necunoscute, să încercăm o abordare matriceală.
+Construim matricea sistemului:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{pmatrix}
+  -1 &amp; 1 &amp; 0 \\
+  2 &amp; 1 &amp; 3 \\
+  0 &amp; 1 &amp; 1
+\end{pmatrix}\end{split}\]</div>
+<p>și calculăm <span class="math notranslate nohighlight">\( \det(A) = 0 \)</span>. Rezultă că sistemul nu este Cramer, deci nu are soluție unică
+și, fiind omogen, rezultă că admite și soluții nenule. Așadar, pot exista scalari nenuli
+<span class="math notranslate nohighlight">\( \alpha, \beta, \gamma \)</span> care să conducă la o combinație liniară nulă. În concluzie,
+<span class="math notranslate nohighlight">\( S \)</span> este <em>dependentă</em>.</p>
+</section>
+<hr class="docutils" />
+<section id="observatie-tehnica">
+<h3>Observație tehnică<a class="headerlink" href="#observatie-tehnica" title="Permalink to this headline">#</a></h3>
+<p>Să analizăm mai atent acest exemplu și în special, metoda matriceală folosită.
+Motivul pentru care <span class="math notranslate nohighlight">\( \det(A) = 0 \)</span> este că a treia coloană a matricei este suma
+primelor două coloane. Ce constatați, însă, privitor la această matrice? O privire
+atentă arată că vectorii <span class="math notranslate nohighlight">\( v_1, v_2, v_3 \)</span> sînt tocmai coloanele matricei!
+Așadar, observația legăturii între coloane pe care am făcut-o înseamnă, de fapt,
+o legătură între vectorii din <span class="math notranslate nohighlight">\( S \)</span>: <span class="math notranslate nohighlight">\( v_3 = v_1 + v_2 \)</span>.</p>
+<p>Aceasta este o legătură foarte importantă între metodele matriceale și cele specifice
+spațiilor vectoriale. Vedem, de fapt, o aplicație directă a proprietăților determinanților.</p>
+<p>Și chiar mai mult, analizînd exemplul din <span class="math notranslate nohighlight">\( \mathbb{R}^2 \)</span>, vedem că, dacă am scrie
+matricea sistemului respectiv pentru <span class="math notranslate nohighlight">\( \alpha_{1,2,3,4} \)</span>, am obține o matrice de rang
+maximum 2. Aceasta înseamnă că cel mult 2 coloane sînt independente, iar cum coloanele
+sînt tocmai vectorii din <span class="math notranslate nohighlight">\( S \)</span>, rezultă că rangul matricei ne dă numărul maxim de vectori
+independenți!</p>
+<p>În exercițiile ulterioare, putem folosi aceste informații direct, pe care le colectăm mai jos:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Rangul matricei care se obține aranjînd vectorii din <span class="math notranslate nohighlight">\( S \)</span> <em>pe coloane</em> este numărul
+de vectori independenți din <span class="math notranslate nohighlight">\( S \)</span>. Mai mult, minorul care dă rangul ne arată și care
+sînt acești vectori independenți.</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="alte-exemple">
+<h3>Alte exemple<a class="headerlink" href="#alte-exemple" title="Permalink to this headline">#</a></h3>
+<p>Ce facem, însă, dacă nu lucrăm cu spații de forma <span class="math notranslate nohighlight">\( \mathbb{R}^n \)</span>, pentru a scrie direct
+matricea care conține vectorii din <span class="math notranslate nohighlight">\( S \)</span> pe coloane? După ce vom studia (izo)morfismele
+de spații vectoriale, răspunsul la această întrebare va fi imediat. Deocamdată, însă,
+continuăm cu astfel de exemple, pe care le rezolvăm cu definiția, fiind, totuși, atenți
+și la legătura cu metodele matriceale menționate anterior.</p>
+<p><strong>Exemplu:</strong> Fie spațiul <span class="math notranslate nohighlight">\( V = M_2(\mathbb{R}) \)</span> și mulțimea de vectori:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}S = \left\{ A = \begin{pmatrix} 1 &amp; -1 \\ 0 &amp; 2 \end{pmatrix}, %
+            B = \begin{pmatrix} 2 &amp; 0 \\ -1 &amp; 1 \end{pmatrix}, %
+            C = \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 1 \end{pmatrix} \right\}\end{split}\]</div>
+<p>Studiem independența lui <span class="math notranslate nohighlight">\( S \)</span>. Presupunem că avem scalarii <span class="math notranslate nohighlight">\( \alpha, \beta, \gamma \in \mathbb{R} \)</span>
+astfel încît:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\alpha A + \beta B + \gamma C = \dots = % 
+\begin{pmatrix}
+\alpha + 2 \beta &amp; -\alpha + \gamma \\
+-\beta + \gamma &amp; 2\alpha + \beta + \gamma
+\end{pmatrix} = 0 = \begin{pmatrix} 0 &amp; 0 \\ 0 &amp; 0 \end{pmatrix}\end{split}\]</div>
+<p>Ajungem la sistemul:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  \alpha + 2\beta &amp;= 0 \\\
+  -\alpha + \gamma &amp;= 0 \\
+  -\beta + \gamma &amp;= 0 \\
+  2\alpha + \beta + \gamma &amp;= 0
+\end{cases}.\end{split}\]</div>
+<p>Cum acesta este un sistem omogen cu 3 necunoscute și 4 ecuații, va fi compatibil. Scriem matricea
+sistemului, pentru a-i calcula rangul (de unde vom deduce dacă este Cramer sau nedeterminat):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}M = \begin{pmatrix}
+1 &amp; 2 &amp; 0 \\
+-1 &amp; 0 &amp; 1 \\
+0 &amp; -1 &amp; 1 \\
+2 &amp; 1 &amp; 1
+\end{pmatrix}\end{split}\]</div>
+<p>Observăm că <span class="math notranslate nohighlight">\( \mathrm{rang}(M) = 3 \)</span> și putem neglija, de exemplu, a treia ecuație.
+Cum rangul este maxim, rezultă că sistemul este Cramer și, cum este omogen, rezultă că are
+doar soluția nulă <span class="math notranslate nohighlight">\( \alpha = \beta = \gamma = 0 \)</span>. Așadar, <span class="math notranslate nohighlight">\( S \)</span> este independent.</p>
+<p>Dacă vrem, totuși, să înțelegem soluția folosind o metodă matriceală, trebuie doar
+să fim atenți la construcția matricei <span class="math notranslate nohighlight">\( M \)</span> în funcție de matricele <span class="math notranslate nohighlight">\( A, B, C \)</span>.
+Vom vedea că aceasta este obținută ca și cum am „desfășura“ cele trei matrice
+sau, altfel spus, ca și cum le-am considera matrice-coloană, de exemplu:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{pmatrix}
+1 &amp; -1 \\ 0 &amp; 2
+\end{pmatrix} \mapsto %
+\begin{pmatrix}
+1 \\ -1 \\ 0 \\ 2
+\end{pmatrix}\end{split}\]</div>
+<p>și similar cu celelalte.</p>
+<p>Există și o explicație riguroasă în acest sens, pe care o vom da de îndată ce lămurim
+definiția formală a bazei.</p>
+<p><strong>Exemplu:</strong> Fie acum <span class="math notranslate nohighlight">\( V = \mathbb{R}_2[X] \)</span> și mulțimea de vectori:</p>
+<div class="math notranslate nohighlight">
+\[S = \{ p_1 = 1 - X, p_2 = 3, p_3 = 2 + X - X^2 \}\]</div>
+<p>Verificăm independența liniară cu definiția. Presupunem că avem scalarii reali
+<span class="math notranslate nohighlight">\( \alpha_{1,2,3} \)</span> astfel încît:</p>
+<div class="math notranslate nohighlight">
+\[\alpha_1 p_1 + \alpha_2 p_2 + \alpha_3 p_3 = \dots = %
+\alpha_1 + 3\alpha_2 + 2\alpha_3 + (-\alpha_1 + \alpha_3) X + (-\alpha_3)X^2 = 0 = %
+0 + 0 \cdot X + 0 \cdot X^2.\]</div>
+<p>Rezultă:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  \alpha_1 + 3\alpha_2 + 2\alpha_3 &amp;= 0 \\
+  -\alpha_1 + \alpha_3 &amp;= 0 \\
+  -\alpha_3 &amp;= 0
+\end{cases}\end{split}\]</div>
+<p>Rezolvînd sistemul de la a treia ecuație în sus, ajungem imediat la soluția
+trivială <span class="math notranslate nohighlight">\( \alpha_1 = \alpha_2 = \alpha_3 = 0 \)</span>, deci <span class="math notranslate nohighlight">\( S \)</span> este independent.</p>
+<p>Dacă am scrie matricea sistemului de ecuații, am avea:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{pmatrix}
+  1 &amp; 3 &amp; 2 \\
+  -1 &amp; 0 &amp; 1 \\
+  0 &amp; 0 &amp; -1
+  \end{pmatrix}.\end{split}\]</div>
+<p>Se vede că pe coloanele matricei <span class="math notranslate nohighlight">\( A \)</span> avem coeficienții polinoamelor:
+coloana <span class="math notranslate nohighlight">\( (1, -1, 0) \)</span> corespunde polinomului <span class="math notranslate nohighlight">\( p_1 = 1 + (-1) \cdot X + 0 \cdot X^2 \)</span>
+și celelalte. Desigur, situația nu este accidentală și o vom detalia riguros
+odată cu definiția bazei.</p>
+</section>
+</section>
+<section id="definitii-formale-sistem-de-generatori">
+<h2>Definiții formale – Sistem de generatori<a class="headerlink" href="#definitii-formale-sistem-de-generatori" title="Permalink to this headline">#</a></h2>
+<p>A doua componentă de care avem nevoie pentru a defini o bază este <em>sistemul de generatori</em>.
+Începem cu definiția formală, apoi cîteva explicații intuitive.</p>
+<div class="proof definition admonition" id="def-sist-gen">
+<p class="admonition-title"><span class="caption-number">Definition 28 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( V \)</span> un <span class="math notranslate nohighlight">\( K \)</span>-spațiu vectorial și <span class="math notranslate nohighlight">\( S = \{ x_1, x_2, \dots x_n \} \)</span>
+o mulțime de vectori din <span class="math notranslate nohighlight">\( V \)</span>.</p>
+<p>Spunem că <span class="math notranslate nohighlight">\( S \)</span> este un <em>sistem de generatori</em> pentru <span class="math notranslate nohighlight">\( V \)</span> și notăm aceasta
+cu <span class="math notranslate nohighlight">\( \langle S \rangle = V \)</span> sau <span class="math notranslate nohighlight">\( V = \mathrm{Sp}(S) \)</span><a class="footnote-reference brackets" href="#span" id="id1">1</a> dacă orice
+vector din <span class="math notranslate nohighlight">\( V \)</span> poate fi scris ca o combinație liniară de vectori din <span class="math notranslate nohighlight">\( S \)</span>
+cu scalari din <span class="math notranslate nohighlight">\( K \)</span>.</p>
+<p>În simboluri:</p>
+<div class="math notranslate nohighlight">
+\[
+  \forall v \in V, \exists \alpha_i \in K, 1 \leq i \leq n, v = \sum_{1 \leq i \leq n} \alpha_i x_i.
+\]</div>
+</section>
+</div><hr class="docutils" />
+<section id="id2">
+<h3>Explicație intuitivă<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p>Cînd ne gîndim, în sens general, la un <em>generator</em> pentru un proces, un obiect sau o mulțime
+anume, avem în minte un element sau un obiect din care se pot obține toate celelalte elemente
+sau obiecte, folosind doar niște „reguli interne“, ca să ne exprimăm vag.</p>
+<p>De exemplu, un generator de curent electric este un obiect care produce (în principiu, oricît)
+curent electric, folosind regulile fizicii.</p>
+<p>În algebră, regulile pe care le folosim sînt impuse de operațiile utilizate. De pildă,
+orice număr întreg poate fi obținut din 1, cu adunări (și scăderi). Rezultă că 1 este un generator
+pentru întreaga mulțime <span class="math notranslate nohighlight">\( \mathbb{Z} \)</span>. În cazul înmulțirii, am putea spune că 2 <em>generează</em>
+toată mulțimea de puteri ale sale, <span class="math notranslate nohighlight">\( \{\dots, \dfrac{1}{4}, \dfrac{1}{2}, 1, 2, 4, \dots \} \)</span>.</p>
+<p>În cazul spațiilor vectoriale, avem mai multe operații. Dar, așa cum am precizat, putem gîndi
+că toate sînt concentrate în <em>combinații liniare</em>. Altfel spus, atunci cînd ne gîndim la a genera
+unul sau mai mulți vectori dintr-o mulțime fixată de vectori, avem în vedere o combinație liniară
+a vectorilor-generatori, din care obținem vectorii doriți. „Regula jocului“, așadar, este
+<em>combinația liniară</em>.</p>
+<p>De aceea, definiția ar trebui să fie clară: spunem că o mulțime fixată de vectori <span class="math notranslate nohighlight">\( S \)</span> generează
+(sau, echivalent, vectorii din <span class="math notranslate nohighlight">\( S \)</span> sînt generatori pentru) întreg spațiul <span class="math notranslate nohighlight">\( V \)</span> dacă, folosind
+numai „regulile jocului“ – adică combinațiile liniare cu scalari – putem obține orice vector din <span class="math notranslate nohighlight">\( V \)</span>.</p>
+<p>Evident, definiția are sens și într-un context mai puțin general: ne putem gîndi și la cazuri cînd
+o mulțime <span class="math notranslate nohighlight">\( S \)</span> generează doar un subspațiu al spațiului studiat. Și, într-adevăr, aceasta este
+o metodă simplă de a obține noi spații: se iau mulțimi arbitrare de vectori și li se calculează
+<em>acoperirea liniară</em>, adică mulțimea tuturor combinațiilor liniare care folosesc vectorii respectivi
+și scalari. Rezultatul este un subspațiu al spațiului inițial. Profităm de ocazie și vă invităm
+să completați cu detaliile riguroase, rezolvînd exercițiul de mai jos.</p>
+<p><strong>Exercițiu:</strong> Fie <span class="math notranslate nohighlight">\( V \)</span> un <span class="math notranslate nohighlight">\( K \)</span>-spațiu vectorial și <span class="math notranslate nohighlight">\( S = \{ x_1, x_2, \dots, x_n \} \)</span> o mulțime
+de vectori. Arătați că acoperirea liniară a lui <span class="math notranslate nohighlight">\( S \)</span>, adică mulțimea:</p>
+<div class="math notranslate nohighlight">
+\[\langle S \rangle = \left\{ \displaystyle\sum_{1 \leq i \leq n} \alpha_i x_i \mid \alpha_i \in K, 1 \leq i \leq n \right\}\]</div>
+<p>este un subspațiu al lui <span class="math notranslate nohighlight">\( V \)</span>.</p>
+<p>Puteți începe chiar cu condiția necesară: este adevărat că <span class="math notranslate nohighlight">\( 0_V \in \langle S \rangle \)</span>?</p>
+</section>
+<hr class="docutils" />
+<section id="id3">
+<h3>Exemple și calcul<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<p>În continuare, cîteva exemple rezolvate pentru a demonstra că o mulțime de vectori este
+un sistem de generatori pentru un spațiu vectorial.</p>
+<p><strong>Exemplu:</strong> Fie spațiul vectorial <span class="math notranslate nohighlight">\( V = \mathbb{R}^3 \)</span> și mulțimea de vectori:</p>
+<div class="math notranslate nohighlight">
+\[S = \{ v_1 = (-1, 1, 1), v_2 = (1, 0, 2), v_3 = (0, 1, -1) \}.\]</div>
+<p>Verificăm dacă <span class="math notranslate nohighlight">\( S \)</span> este sistem de generatori, cu definiția.
+Pentru aceasta, alegem un vector <em>arbitrar</em> <span class="math notranslate nohighlight">\( v = (a, b, c) \in V \)</span> și vrem să vedem
+dacă el poate fi obținut din vectorii din <span class="math notranslate nohighlight">\( S \)</span>. Ar trebui să existe scalarii
+<span class="math notranslate nohighlight">\( \alpha_{1,2,3} \in \mathbb{R} \)</span> astfel încît:</p>
+<div class="math notranslate nohighlight">
+\[v = (a, b, c) = \alpha_1 v_1 + \alpha_2 v_2 + \alpha_3 v_3 = \dots = %
+(-\alpha_1 + \alpha_2, \alpha_1 + \alpha_3, \alpha_1 + 2\alpha_2 - \alpha_3).\]</div>
+<p>Ajungem la sistemul:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  -\alpha_1 + \alpha_2 &amp;= a \\
+  \alpha_1 + \alpha_3 &amp;= b \\
+  \alpha_1 + 2\alpha_2 - \alpha_3 &amp;= c
+\end{cases}.\end{split}\]</div>
+<p>La prima vedere, sistemul arată intimidant, deoarece lasă impresia că are 3 ecuații
+și 6 necunoscute. Însă această observație este falsă, deoarece, dacă citim cu atenție
+procesul prin care am ajuns aici, vedem că vectorul <span class="math notranslate nohighlight">\( v \)</span> a fost <em>ales</em> (arbitrar),
+deci îl putem presupune cunoscut. Ceea ce căutăm în demonstrație sînt doar scalarii
+<span class="math notranslate nohighlight">\( \alpha_{1,2,3} \)</span>, deci acestea sînt necunoscutele sistemului.</p>
+<p>Mai mult decît atît, în principiu, a arăta că <span class="math notranslate nohighlight">\( S \)</span> este sistem de generatori nu înseamnă
+neapărat să și găsim scalarii – ci doar să arătăm că ei există, adică <em>ar putea fi</em> găsiți.
+Cu alte cuvinte, trebuie să arătăm că sistemul de ecuații de mai sus are soluție, i.e. este
+compatibil.</p>
+<p>Conform cunoștințelor din liceu, acest lucru este echivalent cu a arăta că
+rangul matricei sistemului este egal cu rangul matricei extinse. În cazul nostru, matricea
+sistemului fiind:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{pmatrix}
+-1 &amp; 2 &amp; 0 \\
+1 &amp; 0 &amp; 3 \\
+1 &amp; 2 &amp; -1
+\end{pmatrix},\end{split}\]</div>
+<p>rezultă că dacă <span class="math notranslate nohighlight">\( \mathrm{rang}(A) = 3 \)</span>, atunci am terminat, deoarece indiferent de valorile
+<span class="math notranslate nohighlight">\( a, b, c \)</span>, matricea extinsă nu poate avea rangul 4. Acest lucru este echivalent cu a arăta
+că <span class="math notranslate nohighlight">\( \det(A) \neq 0 \)</span> și, într-adevăr, avem <span class="math notranslate nohighlight">\( \det(A) = 14 \)</span>, deci avem concluzia.</p>
+<p>Evident, dacă vrem neapărat, putem rezolva efectiv sistemul și să găsim scalarii în funcție
+de <span class="math notranslate nohighlight">\( a, b, c \)</span>, adică să știm cum îi găsim în funcție de componentele unui vector. Dar în general,
+definiția sistemului de generatori ne spune că este suficient să arătăm că <em>există</em> acești scalari,
+indiferent de vectorul ales.</p>
+<p><strong>Exemplu:</strong> Fie acum același spațiu vectorial, <span class="math notranslate nohighlight">\( V = \mathbb{R}^3 \)</span> și mulțimea de vectori:</p>
+<div class="math notranslate nohighlight">
+\[S = \{ v_1 = (-1, 1, 1), v_2 = (3, 2, 1) \}.\]</div>
+<p>Pentru ca <span class="math notranslate nohighlight">\( S \)</span> să fie sistem de generatori, ar trebui să existe scalarii <span class="math notranslate nohighlight">\( \alpha_{1,2} \)</span> astfel
+încît pentru orice vector <span class="math notranslate nohighlight">\( v = (a, b, c) \in \mathbb{R}^3 \)</span> să avem:</p>
+<div class="math notranslate nohighlight">
+\[v = (a, b, c) = \alpha_1 v_1 + \alpha_2 v_2 = \dots = (-\alpha_1 + 3\alpha_2, \alpha_1 + 2\alpha_2, \alpha_1 + \alpha_2).\]</div>
+<p>Ajungem la sistemul:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  -\alpha_1 + 3\alpha_2 &amp;= a \\
+  \alpha_1 + 2\alpha_2 &amp;= b \\
+  \alpha_1 + \alpha_2 &amp;= c
+\end{cases}\end{split}\]</div>
+<p>a cărui matrice este <span class="math notranslate nohighlight">\( A = \begin{pmatrix} -1 &amp; 3 \\ 1 &amp; 2 \\ 1 &amp; 1 \end{pmatrix} \)</span>.</p>
+<p>În acest caz, nu mai este la fel de clară compatibilitatea sistemului. Aceasta deoarece, deși <span class="math notranslate nohighlight">\( \mathrm{rang}(A) = 2 \)</span>,
+este posibil ca <span class="math notranslate nohighlight">\( \mathrm{rang}(\overline{A}) = 3 \)</span>, unde matricea extinsă este:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\overline{A} = \begin{pmatrix}
+-1 &amp; 3 &amp; a \\
+1 &amp; 2 &amp; b \\
+1 &amp; 1 &amp; c
+\end{pmatrix}.\end{split}\]</div>
+<p>Totul se datorează arbitrarului coloanei <span class="math notranslate nohighlight">\( (a, b, c) \)</span>, care este tocmai vectorul <span class="math notranslate nohighlight">\( v \)</span>. Cu alte cuvinte,
+putem găsi cel puțin un triplet <span class="math notranslate nohighlight">\( (a, b, c) \)</span> care să facă <span class="math notranslate nohighlight">\( \det(\overline{A}) \neq 0 \)</span>, adică <span class="math notranslate nohighlight">\( \mathrm{rang}(\overline{A}) = 3 \)</span>,
+ceea ce ar face sistemul incompatibil.</p>
+<p>În particular, rezultă că acei vectori care fac sistemul incompatibil – adică acele valori pentru tripletele
+<span class="math notranslate nohighlight">\( (a, b, c) \)</span> pentru care <span class="math notranslate nohighlight">\( \det(\overline{A}) \neq 0 \)</span> – sînt tocmai vectorii care <em>nu</em> se pot obține din <span class="math notranslate nohighlight">\( S \)</span>,
+i.e. care nu se găsesc în acoperirea sa liniară.</p>
+</section>
+<hr class="docutils" />
+<section id="id4">
+<h3>Observație tehnică<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<p>Ca să nu mai lungim lucrurile și fiindcă avem deja experiența situației sistemului liniar
+independent, facem următoarea observație privitoare la metode matriceale pentru sisteme
+de generatori.</p>
+<p>Putem observa, ca și în cazul sistemelor liniar independente, că matricea sistemului
+de ecuații la care se ajunge se alcătuiește și de data aceasta din vectorii din mulțime,
+puși pe coloane.</p>
+<p>Cum scopul este să arătăm că sistemul la care ajungem are soluție – adică există scalarii
+căutați, cu ajutorul cărora se poate obține orice vector din spațiu – rezultă că problema
+se reduce la a demonstra compatibilitatea sistemului respectiv de ecuații. Aceasta, la rîndul
+ei, este echivalentă cu a arăta că rangul matricei sistemului este egal cu rangul matricei
+extinse. Dar:</p>
+<ul class="simple">
+<li><p>matricea sistemului conține vectorii din (posibilul) sistem de generatori, pe coloane;</p></li>
+<li><p>matricea extinsă adaugă coloana termenilor liberi, adică o <em>coloană arbitrară</em>, corespunzătoare
+unui vector oarecare, de obținut din generatori.</p></li>
+</ul>
+<p>De aceea, pentru a fi siguri că sistemul este compatibil, trebuie să impunem ca
+numărul de ecuații să fie <em>cel mult</em> egal cu numărul de necunoscute. Altfel spus, numărul
+de componente ale vectorilor să fie mai mic sau egal cu numărul de vectori din mulțimea
+(posibil) sistem de generatori.</p>
+<p>Puteți vedea acest lucru ilustrat chiar în exemplele de mai sus. Dar pentru claritate,
+reluăm simplu (și vă invităm să vă construiți exemple de lucru pentru a vă convinge):</p>
+<ul class="simple">
+<li><p>Dacă am avea, de pildă, în <span class="math notranslate nohighlight">\( V = \mathbb{R}^3 \)</span>, o mulțime <span class="math notranslate nohighlight">\( S \)</span> care conține 2 vectori
+(cu cîte 3 componente fiecare), am ajunge la un sistem de 2 ecuații cu 3 necunoscute.
+Sistemul cu siguranță va fi compatibil, deoarece matricea sistemului va avea 2 linii
+și 3 coloane. Rangul ei va fi cel mult 2, iar adăugarea unei coloane pentru a obține
+matricea extinsă nu poate conduce la un rang al matricei extinse diferit de 2.
+Rezultă că în acest caz, cu siguranță vom avea soluție, deci <span class="math notranslate nohighlight">\( S \)</span> va fi sistem de generatori.</p></li>
+<li><p>Dacă avem în <span class="math notranslate nohighlight">\( V = \mathbb{R}^7 \)</span> o mulțime <span class="math notranslate nohighlight">\( S \)</span> cu 5 vectori (cu cîte 7 componente
+fiecare), am ajunge la un sistem de 7 ecuații cu 5 necunoscute. Matricea sistemului
+va avea 7 linii și 5 coloane. Rangul maxim al matricei sistemului va fi 5. Dar, adăugînd
+coloana termenilor liberi, obținem o matrice cu 7 linii și 6 coloane, al cărei rang maxim
+poate fi 6. Și, de fapt, dat fiind arbitrarul coloanei termenilor liberi (provenind din
+componentele unui vector oarecare <span class="math notranslate nohighlight">\( v \in V \)</span>, cu siguranță găsim un astfel de vector
+care să dea un rang mai mare pentru matricea extinsă. Concluzia este că, în acest caz,
+sistemul <em>sigur</em> nu este compatibil, deci mulțimea nu poate fi sistem de generatori.</p></li>
+<li><p>Dacă în <span class="math notranslate nohighlight">\( V = \mathbb{R}^4 \)</span> avem o mulțime <span class="math notranslate nohighlight">\( S \)</span> cu 4 vectori (cu 4 componente fiecare),
+ajungem la un sistem cu 4 ecuații și 4 necunoscute. Aici rangul matricei sistemului
+(care va fi din <span class="math notranslate nohighlight">\( M_4(\mathbb{R}) \)</span>) este cel mult 4. Pentru a ne asigura că sistemul
+este compatibil, trebuie să cerem ca rangul să fie maxim – adică 4. Altfel, dacă,
+de exemplu, rangul ar fi 3, cu siguranță există un vector <span class="math notranslate nohighlight">\( v = (a, b, c, d) \in V \)</span>
+care să facă rangul matricei extinse 4, iar sistemul să devină incompatibil.</p></li>
+</ul>
+<p>Astfel de observații și exemple vor simplifica demonstrațiile ulterioare.
+Ne întoarcem și mai oferim cîteva exemple din afara spațiilor de tipul <span class="math notranslate nohighlight">\( \mathbb{R}^n \)</span>.</p>
+</section>
+<hr class="docutils" />
+<section id="id5">
+<h3>Alte exemple<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<p>Probabil intuiți cum vor funcționa lucrurile în cazul spațiilor de matrice
+și de polinoame, astfel că exemplele de mai jos ar trebui să fie clare.</p>
+<p><strong>Exemplu:</strong> Fie spațiul <span class="math notranslate nohighlight">\( V = M_2(\mathbb{R}) \)</span> și mulțimea:</p>
+<div class="math notranslate nohighlight">
+\[S = \left\{ A = \begin{pmatrix} 1 &amp; -1 &amp; 0 &amp; 0 \end{pmatrix}, %
+            B = \begin{pmatrix} 2 &amp; 0 &amp; 0 &amp; 2 \end{pmatrix}, %
+            C = \begin{pmatrix} 1 &amp; -1 &amp; 2 &amp; 1 \end{pmatrix}
+    \right\}\]</div>
+<p>Pentru a arăta că <span class="math notranslate nohighlight">\( S \)</span> este sistem de generatori, fie un vector
+arbitrar <span class="math notranslate nohighlight">\( M = \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} \in V \)</span>.
+Căutăm scalarii <span class="math notranslate nohighlight">\( \alpha, \beta, \gamma \in \mathbb{R} \)</span> astfel încît:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}M = \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} - %
+    \alpha A + \beta B + \gamma C = \dots = %
+    \begin{pmatrix}
+      \alpha + 2\beta + \gamma &amp; -\alpha - \gamma \\
+      2\gamma &amp; 2\beta + \gamma
+    \end{pmatrix}\end{split}\]</div>
+<p>Rezultă sistemul:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  \alpha + 2\beta + \gamma &amp;= a \\
+  -\alpha - \gamma &amp;= b \\
+  2\gamma &amp;= c \\
+  2\beta + \gamma &amp;= d
+\end{cases}\end{split}\]</div>
+<p>Am putea și să încercăm să-l rezolvăm, însă vom face observația că are 4 ecuații și
+3 necunoscute, deci o matrice a sistemului cu 3 coloane și 4 linii.
+Rangul acesteia va fi cel mult 3. Dar matricea extinsă adaugă o coloană
+(arbitrară <span class="math notranslate nohighlight">\( (a, b, c, d) \)</span>), ceea ce face posibil ca rangul acesteia să fie 4.
+Concluzia este că sistemul este incompatibil, deci <span class="math notranslate nohighlight">\( S \)</span> nu este sistem de generatori.</p>
+<p><strong>Exemplu:</strong> Fie spațiul <span class="math notranslate nohighlight">\( V = \mathbb{R}_2[X] \)</span> și mulțimea:</p>
+<div class="math notranslate nohighlight">
+\[S = \{ p_1 = X, p_2 = 1 - 3X, p_3 = 5X^2, p_4 = 2 + 7X^2 \}\]</div>
+<p>Căutăm scalarii <span class="math notranslate nohighlight">\( \alpha_{1,2,3,4} \in \mathbb{R} \)</span> astfel încît pentru orice
+vector (polinom) <span class="math notranslate nohighlight">\( v = a + bX + cX^2 \in V \)</span> să avem:</p>
+<div class="math notranslate nohighlight">
+\[v = a + bX + cX^2 = \alpha_1 p_1 + \alpha_2 p_2 + \alpha_3 p_3 + \alpha_4 p_4 = \dots = %
+(\alpha_2 + 2\alpha_4) + (\alpha_1 - 3\alpha_2)X + (5\alpha_3 + 7\alpha_4) X^2.\]</div>
+<p>Ajungem la sistemul:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  \alpha_2 + 2\alpha_4 &amp;= a \\
+  \alpha_1 - 3\alpha_2 &amp;= b \\
+  5\alpha_3 + 7\alpha_4 &amp;= c
+\end{cases}.\end{split}\]</div>
+<p>Cum sistemul are 3 ecuații și 4 necunoscute, el va avea o matrice asociată cu 3 linii și 4 coloane.
+Rangul maxim al acesteia va fi 3, care se și obține (verificați!). Rezultă că adăugarea coloanei
+<span class="math notranslate nohighlight">\( (a, b, c) \)</span> nu poate face ca rangul matricei extinse să fie diferit, așadar sistemul
+este compatibil, deci <span class="math notranslate nohighlight">\( S \)</span> este sistem de generatori.</p>
+</section>
+</section>
+<section id="definitii-formale-baza-si-dimensiune">
+<h2>Definiții formale – Bază și dimensiune<a class="headerlink" href="#definitii-formale-baza-si-dimensiune" title="Permalink to this headline">#</a></h2>
+<p>Am ajuns, în fine, la definiția principală.</p>
+<div class="proof definition admonition" id="def-baza-dim">
+<p class="admonition-title"><span class="caption-number">Definition 29 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( V \)</span> un <span class="math notranslate nohighlight">\( K \)</span>-spațiu vectorial și <span class="math notranslate nohighlight">\( S = \{ x_1, x_2, \dots, x_n \} \)</span>
+o mulțime de vectori din <span class="math notranslate nohighlight">\( V \)</span>.</p>
+<p>Spunem că <span class="math notranslate nohighlight">\( S \)</span> este <em>bază</em> a lui <span class="math notranslate nohighlight">\( V \)</span> dacă <span class="math notranslate nohighlight">\( S \)</span> este simultan sistem
+liniar independent și sistem de generatori.</p>
+<p>În acel caz, numărul de elemente ale lui <span class="math notranslate nohighlight">\( S \)</span> se numește <em>dimensiunea</em>
+spațiului <span class="math notranslate nohighlight">\( V \)</span> și se notează <span class="math notranslate nohighlight">\( \dim_K(V) = n \)</span>.</p>
+</section>
+</div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>În cazul în care vom lucra cu spații vectoriale reale – ca în majoritatea
+exemplelor – sau cînd nu există riscul de confuzie, vom omite indicele
+corespunzător corpului de scalari și vom scrie, de exemplu, <span class="math notranslate nohighlight">\( \dim(V) = n \)</span>.</p>
+</div>
+<p>Așadar, o bază a unui spațiu vectorial este o mulțime de vectori care sînt
+simultan independenți și generatori pentru vectorii din spațiu.</p>
+<p>Vedem acum formalizată intuiția din prezentarea de la început: o bază este alcătuită
+din vectorii care sînt strict necesari pentru a preciza în mod unic orice vector
+din spațiu:</p>
+<ul class="simple">
+<li><p>stricta necesitate este garantată de proprietatea de a fi sistem de generatori;</p></li>
+<li><p>unicitatea scrierii este obținută din independența liniară. Aceasta deoarece,
+dacă am avea, de exemplu, pentru un vector <span class="math notranslate nohighlight">\( v \)</span>, două scrieri diferite (adică folosind
+aceiași vectori din mulțime, dar scalari diferiți):</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[v = ax_1 + bx_2 + cx_3 = dx_1 + ex_2 + fx_3, \quad a \neq d \text{ sau } b \neq e \text{ sau } c \neq f,\]</div>
+<p>am obține că vectorii <span class="math notranslate nohighlight">\( \{ x_1, x_2, x_3 \} \)</span> nu sînt independenți, deoarece:</p>
+<div class="math notranslate nohighlight">
+\[(a - d)x_1 + (b - e)x_2 + (c - f)x_3 = 0,\]</div>
+<p>însă cel puțin una dintre paranteze este nenulă, din ipoteză. Deci am obținut o combinație
+liniară nulă a vectorilor <span class="math notranslate nohighlight">\( \{ x_1, x_2, x_3 \} \)</span>, dar cu scalari nenuli (cel puțin unul).</p>
+<p>De aici rezultă imediat:</p>
+<div class="proof theorem admonition" id="thm-desc-baza">
+<p class="admonition-title"><span class="caption-number">Theorem 13 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Dacă <span class="math notranslate nohighlight">\( B \)</span> este o bază a unui <span class="math notranslate nohighlight">\( K \)</span>-spațiu vectorial <span class="math notranslate nohighlight">\( V \)</span>, atunci orice vector <span class="math notranslate nohighlight">\( v \in V \)</span>
+are o descompunere unică sub forma unei combinații liniare de vectori din <span class="math notranslate nohighlight">\( B \)</span>,
+cu scalari din <span class="math notranslate nohighlight">\( K \)</span>.</p>
+<p>Scalarii care apar în descompunere se numesc <em>coordonatele</em> vectorului în baza <span class="math notranslate nohighlight">\( B \)</span>.</p>
+</section>
+</div><p>Fără demonstrație, mai enunțăm un rezultat foarte important:</p>
+<div class="proof theorem admonition" id="thm-exista-baza">
+<p class="admonition-title"><span class="caption-number">Theorem 14 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Orice spațiu vectorial are cel puțin o bază.</p>
+<p>În plus, dimensiunea unui spațiu vectorial este bine definită, adică dacă un spațiu
+admite cel puțin două baze, ele au același număr de elemente.</p>
+</section>
+</div><p>Acest rezultat ne asigură că, indiferent de spațiul cu care lucrăm, putem găsi cel puțin
+o bază a acestuia. Unele spații pot avea chiar o infinitate de baze și între ele vor
+exista legături pe care le detaliem ulterior. Cu siguranță, însă, toate bazele unui spațiu
+vectorial au același număr de elemente, care este dimensiunea spațiului.</p>
+<p>Cu această ocazie, putem face și o observație de terminologie foarte importantă:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Deoarece, riguros, dimensiunea unui spațiu vectorial este un număr, nu sînt corecte
+exprimări la plural precum „spațiu cu 3 <em>dimensiuni</em>“. Varianta corectă a acestei
+expresii este „spațiu de dimensiune 3“ sau „spațiu tridimensional“.</p>
+</div>
+<section id="exemple-baze-canonice">
+<span id="sec-baze-canonice"></span><h3>Exemple: Baze canonice<a class="headerlink" href="#exemple-baze-canonice" title="Permalink to this headline">#</a></h3>
+<p>În matematică, cel puțin, atributul „canonic“ înseamnă ceva foarte simplu,
+evident. De exemplu, spunem că <em>forma canonică</em> a unei funcții de gradul întîi este
+<span class="math notranslate nohighlight">\( f(x) = ax + b \)</span>. Evident că același lucru s-ar putea scrie, de exemplu, și sub forma
+<span class="math notranslate nohighlight">\( g(x) = a(x^2 + 2)^2 - a(x^2 + 3)^2 + 3ax + (b + 5) \)</span>, dar cu greu putem numi această
+formă „simplă“ sau „evidentă“.</p>
+<p>De aceea, <em>baze canonice</em> înseamnă cele mai simple exemple, pentru care aproape că nu este
+nevoie de demonstrație a independenței și generării.</p>
+<p><strong>Baza canonică a spațiilor <span class="math notranslate nohighlight">\( \mathbb{R}^n \)</span></strong> este:</p>
+<div class="math notranslate nohighlight">
+\[B = \{ e_1 = (1, 0, 0, \dots, 0), e_2 = (0, 1, 0, 0, \dots, 0), \dots, e_i = (0, 0, \dots, 0, 1, 0, \dots, 0), \dots (0, 0, \dots, 0, 1) \},\]</div>
+<p>unde fiecare vector are cîte <span class="math notranslate nohighlight">\( n \)</span> componente, iar vectorul <span class="math notranslate nohighlight">\( e_i \)</span> are componenta de pe poziția <span class="math notranslate nohighlight">\( i \)</span> egală cu <span class="math notranslate nohighlight">\( 1 \)</span>
+și în rest, <span class="math notranslate nohighlight">\( 0 \)</span>.</p>
+<p>O consecință simplă este că <span class="math notranslate nohighlight">\( \dim(\mathbb{R}^n) = n \)</span>.</p>
+<p><strong>Baza canonică a spațiului <span class="math notranslate nohighlight">\( M_2(\mathbb{R}) \)</span></strong> este:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}B = \left\{ E_1 = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix}, %
+       E_2 = \begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{pmatrix}, %
+       E_3 = \begin{pmatrix} 0 &amp; 0 \\ 1 &amp; 0 \end{pmatrix}, %
+       E_4 = \begin{pmatrix} 0 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}
+    \right\}\end{split}\]</div>
+<p>Rezultă, în particular, că <span class="math notranslate nohighlight">\( \dim(M_2(\mathbb{R}) = 4 \)</span>.</p>
+<p>Acest exemplu se poate generaliza imediat la matrice pătratice și nu numai,
+însă am preferat să scriem explicit pe acesta pentru simplitate.</p>
+<p>Cazul general este acesta: pentru spațiul <span class="math notranslate nohighlight">\( V = M_{m, n}(\mathbb{R}) \)</span>,
+baza canonică va conține matrice cu <span class="math notranslate nohighlight">\( m \)</span> linii și <span class="math notranslate nohighlight">\( n \)</span> coloane care au elemente
+nule, mai puțin un singur element egal cu <span class="math notranslate nohighlight">\( 1 \)</span>, pe toate pozițiile posibile.
+În total, vom avea <span class="math notranslate nohighlight">\( m \cdot n \)</span> matrice, deci <span class="math notranslate nohighlight">\( \dim(M_{m,n}(\mathbb{R})) = m \cdot n \)</span>.</p>
+<p><strong>Baza canonică a spațiului de polinoame</strong> <span class="math notranslate nohighlight">\( \mathbb{R}_n[X] \)</span> este:</p>
+<div class="math notranslate nohighlight">
+\[B = \{ 1, X, X^2, X^3, \dots, X^n \}\]</div>
+<p>Rezultă că <span class="math notranslate nohighlight">\( \dim(\mathbb{R}_{n}[X]) = n + 1 \)</span>.</p>
+<p>Iar dacă generalizăm și nu mai impunem un grad maxim pentru polinoame, obținem
+primul exemplu de spațiu <em>infinit dimensional</em>, anume <span class="math notranslate nohighlight">\( \mathbb{R}[X] \)</span>.
+Baza sa canonică va fi:</p>
+<div class="math notranslate nohighlight">
+\[B = \{ 1, X, X^2, X^3, \dots, X^n, X^{n+1}, \dots \}\]</div>
+<p>Intuitiv, ar trebui să fie clar: pentru a putea scrie <em>orice</em> polinom, de <em>orice</em> grad,
+trebuie să avem la dispoziție <em>orice</em> putere a lui <span class="math notranslate nohighlight">\( X \)</span>, adică, în principiu,
+o infinitate de elemente în bază. Așadar, <span class="math notranslate nohighlight">\( \dim(\mathbb{R}[X]) = \infty \)</span>.</p>
+</section>
+<section id="cum-gasim-o-baza">
+<h3>Cum găsim o bază?<a class="headerlink" href="#cum-gasim-o-baza" title="Permalink to this headline">#</a></h3>
+<p>Bazele canonice menționate mai sus vor fi utilizate foarte des, dar în unele exerciții,
+putem avea o cerința explicită de a găsi o bază <em>diferită de baza canonică</em>.
+Arătăm acum astfel de exemple, ilustrînd modul de utilizare a definiției și proprietăților.</p>
+<p><strong>Exemplu:</strong> Fie spațiul <span class="math notranslate nohighlight">\( V = \mathbb{R}^3 \)</span> și mulțimea:</p>
+<div class="math notranslate nohighlight">
+\[S = \{ v_1 = (-1, 0, 1), v_2 = (3, 1, -1), v_3 = (0, 0, 2) \}\]</div>
+<p>Arătăm că <span class="math notranslate nohighlight">\( S \)</span> este o bază a lui <span class="math notranslate nohighlight">\( V \)</span>.</p>
+<p>În principiu, am putea proceda cu definiția, adică să demonstrăm separat că <span class="math notranslate nohighlight">\( S \)</span> este
+sistem liniar independent și sistem de generatori. Dar dacă punem cap la cap metodele
+și mai ales dacă acordăm atenție deosebită utilizării matricelor, ajungem la concluzia
+că este suficient să arătăm că determinantul matricei care are vectorii din <span class="math notranslate nohighlight">\( S \)</span> drept
+coloane este nenul. Acest lucru ne va asigura că:</p>
+<ul class="simple">
+<li><p>vectorii sînt independenți, deoarece nu există nicio legătură algebrică între coloanele
+(sau liniile) matricei, care să facă determinantul nul;</p></li>
+<li><p>vectorii formează un sistem de generatori, deoarece dacă folosim definiția, am ajunge
+la un sistem cu 3 ecuații și 3 necunoscute, care este compatibil cu siguranță dacă
+rangul matricei sistemului este maxim, adică 3.</p></li>
+</ul>
+<p>Așadar, calculăm simplu:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{pmatrix}
+  -1 &amp; 3 &amp; 0 \\
+  0 &amp; 1 &amp; 0 \\
+  1 &amp; -1 &amp; 2
+  \end{pmatrix} \Rightarrow \det(A) = -2 \neq 0,\end{split}\]</div>
+<p>deci <span class="math notranslate nohighlight">\( S \)</span> formează o bază.</p>
+<p>Am obținut, astfel, o altă bază pentru spațiul <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span>, bază care are, bineînțeles,
+tot 3 elemente, cît este <span class="math notranslate nohighlight">\( \dim(\mathbb{R}^3) \)</span>.</p>
+<p><strong>Exemplu:</strong> Fie mulțimea:</p>
+<div class="math notranslate nohighlight">
+\[V = \{ (x, y, z) \in \mathbb{R}^3 \mid 2x - y = 0, x + y - z = 0 \}.\]</div>
+<p>Evident, aceasta este o submulțime a lui <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span> și este chiar subspațiu (demonstrați!).
+În particular, este un spațiu vectorial de sine stătător, deci are sens să-i căutăm o bază.</p>
+<p>Dar mai întîi, să aflăm cum arată elementele lui <span class="math notranslate nohighlight">\( V \)</span>. Pentru aceasta, trebuie să rezolvăm
+sistemul care-l definește:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  2x - y &amp;= 0 \\
+  x + y - z &amp;= 0
+\end{cases}.\end{split}\]</div>
+<p>Sistemul este compatibil nedeterminat, deci putem lua <span class="math notranslate nohighlight">\( x = \alpha \in \mathbb{R} \)</span> parametru
+(necunoscută secundară). Rezultă <span class="math notranslate nohighlight">\( y = 2\alpha \)</span> și <span class="math notranslate nohighlight">\( z = 3\alpha \)</span>.</p>
+<p>Așadar:</p>
+<div class="math notranslate nohighlight">
+\[V = \{ (\alpha, 2\alpha, 3\alpha) \in \mathbb{R}^3 \}.\]</div>
+<p>În căutarea bazei, putem face din start observația că, apelînd la înțelegerea intuitivă
+a conceptului, avem nevoie de o singură informație pentru a putea preciza în mod unic
+un vector din <span class="math notranslate nohighlight">\( V \)</span>, anume <span class="math notranslate nohighlight">\( \alpha \)</span>. Dat <span class="math notranslate nohighlight">\( \alpha \)</span>, obținem forma generală a unui
+vector din <span class="math notranslate nohighlight">\( V \)</span>. Așadar, <em>intuim</em> că <span class="math notranslate nohighlight">\( \dim(V) = 1 \)</span>, deci ar trebui să găsim un singur
+vector în bază.</p>
+<p>Într-adevăr, folosind aceste observații, putem scrie:</p>
+<div class="math notranslate nohighlight">
+\[(\alpha, 2\alpha, 3\alpha) = \alpha \cdot (1, 2, 3),\]</div>
+<p>deci dacă definim <span class="math notranslate nohighlight">\( B = \{ (1, 2, 3) \} \)</span>, egalitatea de mai sus ne arată că <span class="math notranslate nohighlight">\( B \)</span>
+este sistem de generatori pentru <span class="math notranslate nohighlight">\( V \)</span>. Cum este vorba despre un singur vector, nu avem
+de demonstrat independența, deci <span class="math notranslate nohighlight">\( B \)</span> este bază.</p>
+<p>Cu această ocazie, menționăm un rezultat foarte important, pe care îl formulăm fără demonstrație.</p>
+<div class="proof theorem admonition" id="thm-alt">
+<p class="admonition-title"><span class="caption-number">Theorem 15 </span> (Teorema alternativei)</p>
+<section class="theorem-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( V \)</span> un spațiu vectorial cu <span class="math notranslate nohighlight">\( \dim(V) = n \)</span> și <span class="math notranslate nohighlight">\( S = \{ x_1, x_2, \dots, x_n \} \)</span>
+o mulțime de <span class="math notranslate nohighlight">\( n \)</span> vectori din <span class="math notranslate nohighlight">\( V \)</span>.</p>
+<p>Atunci <span class="math notranslate nohighlight">\( S \)</span> este liniar independentă <span class="math notranslate nohighlight">\( \Leftrightarrow S \)</span> este sistem de generatori <span class="math notranslate nohighlight">\( \Leftrightarrow S \)</span> este bază.</p>
+</section>
+</div><p>Cu alte cuvinte, dacă avem o mulțime de vectori care conține exact atîtea elemente cît
+este dimensiunea spațiului, nu mai este nevoie să demonstrăm ambele proprietăți ale bazei.
+Ni se prezintă o alternativă: fie demonstrăm că este sistem liniar independent, fie că
+este sistem de generatori. Oricare dintre aceste două proprietăți o va implica pe cealaltă
+și va face ca mulțimea să fie bază.</p>
+<p>De fapt, fiindcă tot am ajuns la legătura între sisteme liniar independente, sisteme de generatori
+și baze, mai formulăm un rezultat foarte important.</p>
+<div class="proof theorem admonition" id="thm-extras-completat">
+<p class="admonition-title"><span class="caption-number">Theorem 16 </span></p>
+<section class="theorem-content" id="proof-content">
+<ul class="simple">
+<li><p>Orice sistem liniar independent poate fi completat pînă la o bază.</p></li>
+<li><p>Din orice sistem de generatori se poate extrage o bază.</p></li>
+</ul>
+</section>
+</div><p>Cu alte cuvinte, este posibil să avem într-un sistem liniar independent <em>mai puțini</em> vectori
+decît dimensiunea spațiului, iar într-un sistem de generatori, <em>mai mulți</em> vectori decît
+dimensiunea spațiului. Celelalte cazuri sînt excluse. În consecință, de exemplu:</p>
+<ul class="simple">
+<li><p>în spațiul <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span>, orice mulțime de 5 vectori nu poate fi liniar independentă,
+dar ar putea fi sistem de generatori;</p></li>
+<li><p>în spațiul <span class="math notranslate nohighlight">\( M_{3,5}(\mathbb{R}) \)</span>, orice mulțime de 12 vectori poate fi liniar independentă,
+dar nu poate fi sistem de generatori.</p></li>
+</ul>
+<p>Completarea, respectiv extragerea de elemente se face foarte simplu:</p>
+<ul class="simple">
+<li><p>putem adăuga vectori arbitrari la un sistem liniar independent pînă obținem o bază;</p></li>
+<li><p>din orice sistem de generatori, extragem doar vectorii care sînt independenți și obținem o bază.</p></li>
+</ul>
+<p>De exemplu: Fie mulțimea de vectori din <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span>: <span class="math notranslate nohighlight">\( S = \{ v_1 = (2, 1, 0), v_2 = (3, -1, 1) \} \)</span>.</p>
+<ul class="simple">
+<li><p>demonstrăm că ea este independentă: într-adevăr, rangul matricei obținute din vectorii <span class="math notranslate nohighlight">\( v_1 \)</span>
+și <span class="math notranslate nohighlight">\( v_2 \)</span> puși pe coloane este 2, adică maxim;</p></li>
+<li><p>mai avem nevoie de încă un vector pentru a obține o bază în <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span>. Putem alege
+cum dorim, de exemplu, <span class="math notranslate nohighlight">\( v_3 = (1, 0, 0) \)</span>;</p></li>
+<li><p>acum demonstrăm că mulțimea <span class="math notranslate nohighlight">\( \{ v_1, v_2, v_3 \} \)</span> este independentă, verificînd, de exemplu,
+că <em>determinantul</em> matricei ce are vectorii <span class="math notranslate nohighlight">\( v_1, v_2, v_3 \)</span> drept coloane este nenul
+și am terminat (din teorema alternativei).</p></li>
+</ul>
+<p>Pentru sisteme liniar independente, fie <span class="math notranslate nohighlight">\( S = \{ v_1 = (2, -1), v_2 = (3, 5), v_3 = (7, 2), v_4 = (1, 1) \} \)</span>
+o mulțime de vectori din <span class="math notranslate nohighlight">\( \mathbb{R}^2 \)</span>.</p>
+<ul class="simple">
+<li><p>demonstrăm imediat că <span class="math notranslate nohighlight">\( S \)</span> este sistem de generatori. Într-adevăr, sistemul de ecuații
+la care am ajunge ar avea 4 ecuații și 2 necunoscute, deci rangul matricei sistemului
+și rangul matricei extinse vor fi ambele 2;</p></li>
+<li><p>extragem din <span class="math notranslate nohighlight">\( S \)</span> vectori independenți. Avem nevoie de 2 dintre ei, conform
+teoremei alternativei, deci putem alege pe oricare 2 care se potrivesc. În particular,
+putem alege pe cei care au dat rangul 2 matricei sistemului de la pasul anterior.
+De pildă, <span class="math notranslate nohighlight">\( v_1 \)</span> și <span class="math notranslate nohighlight">\( v_2 \)</span>, pentru că</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{vmatrix} 2 &amp; -1 \\ 3 &amp; 5 \end{vmatrix} = 13 \neq 0\end{split}\]</div>
+<p>și am terminat.</p>
+<p><strong>Exemplu:</strong> Fie mulțimea:</p>
+<div class="math notranslate nohighlight">
+\[V = \{ p \in \mathbb{R}_2[X] \mid p(3) = 0 \}.\]</div>
+<p>Evident, <span class="math notranslate nohighlight">\( V \)</span> este submulțime a spațiului real de polinoame de grad cel mult <span class="math notranslate nohighlight">\( 2 \)</span>, cu coeficienți
+reali. Puteți demonstra chiar că este subspațiu. În particular, este un spațiu vectorial
+în sine. Să-i găsim o bază și dimensiunea.</p>
+<p>Mai întîi, să înțelegem cum arată elementele sale. Fie <span class="math notranslate nohighlight">\( p = a + bX + cX^2 \)</span> un polinom din <span class="math notranslate nohighlight">\( V \)</span>.
+Conform condiției <span class="math notranslate nohighlight">\( p(3) = 0 \)</span>, obținem:</p>
+<div class="math notranslate nohighlight">
+\[a + 3b + 9c = 0.\]</div>
+<p>Putem privi aceasta ca pe „un sistem“ cu o ecuație și 3 necunoscute. Rezultă că se poate
+rezolva cu 2 parametri (necunoscute secundare). Fie aceștia <span class="math notranslate nohighlight">\( b = \alpha \in \mathbb{R} \)</span> și
+<span class="math notranslate nohighlight">\( c = \beta \in \mathbb{R} \)</span>. Atunci <span class="math notranslate nohighlight">\( a = -3\alpha - 9\beta \)</span>, deci:</p>
+<div class="math notranslate nohighlight">
+\[V = \{ p = (-3\alpha -9\beta) + \alpha X + \beta X^2 \mid \alpha, \beta \in \mathbb{R} \}.\]</div>
+<p>În general, <span class="math notranslate nohighlight">\( \dim(V) &lt; 3 \)</span>, deoarece <span class="math notranslate nohighlight">\( V \leq \mathbb{R}_2[X] \)</span> și <span class="math notranslate nohighlight">\( \dim(\mathbb{R}_{2}[X]) = 3 \)</span>
+(cu baza canonică <span class="math notranslate nohighlight">\( \{ 1, X, X^2 \} \)</span>).</p>
+<p>Intuim că <span class="math notranslate nohighlight">\( \dim(V) = 2 \)</span>, deoarece orice polinom din <span class="math notranslate nohighlight">\( V \)</span> este determinat în mod unic de
+cei doi parametri <span class="math notranslate nohighlight">\( \alpha \)</span> și <span class="math notranslate nohighlight">\( \beta \)</span>. Într-adevăr, putem scrie pentru <span class="math notranslate nohighlight">\( p \in V \)</span> arbitrar:</p>
+<div class="math notranslate nohighlight">
+\[p = (-3\alpha - 9\beta) + \alpha X + \beta X^2 = \alpha(-3 + X) + \beta(-9 + X^2),\]</div>
+<p>de unde rezultă că dacă știm <span class="math notranslate nohighlight">\( \alpha \)</span> și <span class="math notranslate nohighlight">\( \beta \)</span>, trebuie să folosim vectorii din
+<span class="math notranslate nohighlight">\( B = \{ -3 + X, -9 + X^2 \} \)</span> și obținem orice polinom din <span class="math notranslate nohighlight">\( V \)</span>.</p>
+<p>Așadar, <span class="math notranslate nohighlight">\( B \)</span> este sistem de generatori și, folosind teorema alternativei, rezultă că este bază
+(<span class="math notranslate nohighlight">\(\dim(V) = 2\)</span>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Am putea argumenta că am dedus <span class="math notranslate nohighlight">\( \dim(V) = 2 \)</span> din motive intuitive, empirice,
+astfel că nu putem invoca teorema alternativei, ci ar trebui să demonstrăm că <span class="math notranslate nohighlight">\( B \)</span>
+este și liniar independentă.</p>
+<p>Însă observația pe care am făcut-o poate fi completată și de una riguroasă: evident,
+<span class="math notranslate nohighlight">\( V \)</span> nu poate conține polinoame constante de forma <span class="math notranslate nohighlight">\( p = a \)</span>, deoarece acestea
+nu satisfac <span class="math notranslate nohighlight">\( p(3) = 0 \)</span>, cu excepția polinomului nul.</p>
+<p>Așadar, de fapt, pornim cu <span class="math notranslate nohighlight">\( V = \{ aX + bX^2 \mid a, b \in \mathbb{R} \} \)</span>
+și de aceea, putem argumenta riguros că <span class="math notranslate nohighlight">\( 1 \)</span> nu poate face parte dintr-un
+sistem de generatori pentru <span class="math notranslate nohighlight">\( V \)</span>, de unde deducem că <span class="math notranslate nohighlight">\( V \)</span> „pierde“ o unitate
+de dimensiune față de spațiul polinoamelor de grad cel mult 2.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Dacă nu se precizează altfel, vom lucra de acum încolo numai cu spații vectoriale</strong>
+<strong>finit dimensionale</strong>.</p>
+</div>
+</section>
+</section>
+<section id="schimbarea-de-baza">
+<h2>Schimbarea de bază<a class="headerlink" href="#schimbarea-de-baza" title="Permalink to this headline">#</a></h2>
+<p>Am văzut că orice spațiu vectorial are (cel puțin) o bază. De asemenea, în cazuri
+simple precum <span class="math notranslate nohighlight">\( \mathbb{R}^2 \)</span> și <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span>, este ușor să construim baze
+noi, alegînd pur și simplu 2, respectiv 3 vectori liniar independenți și apoi folosind
+teorema alternativei.</p>
+<p>În plus, cînd lucrăm cu bazele canonice, coordonatele unui vector din plan sau din
+spațiu sînt pur și simplu „componentele“ sale.</p>
+<p>Ce se întîmplă, însă, dacă folosim o altă bază? Evident, ne așteptăm să aibă loc
+și o schimbare de coordonate. Acest lucru se întîmplă și are numeroase aplicații.
+În grafica pe computer, există cel puțin 3 spații vectoriale (izomorfe) pe care
+le folosim și care au baze diferite. Pentru grafica 3D, se folosesc 3 copii ale
+spațiului <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span>, anume:</p>
+<ul class="simple">
+<li><p>spațiul corespunzător mediului înconjurător (eng. <em>world space</em>), care rămîne fix
+și reprezintă peisajul, „lumea“, de obicei statică;</p></li>
+<li><p>spațiul corespunzător obiectului care traversează lumea (eng. <em>object space</em>).
+De exemplu, într-un joc, acesta corespunde personajului-jucător;</p></li>
+<li><p>spațiul corespunzător camerei, i.e. punctului de vedere (eng. <em>camera space</em>).
+De exemplu, în jocurile <em>first person</em>, camera coincide cu obiectul, pentru că
+punctul de vedere este direct al jucătorului. În jocurile <em>third person</em>, camera
+oferă o perspectivă de ansamblu și este externă jucătorului.</p></li>
+</ul>
+<p>În multe cazuri, sistemele de referință (i.e. bazele corespunzătoare spațiilor respective)
+coincid cu „centrul“ – centrul de greutate al obiectului, punctul central care oferă
+perspectiva camerei (cum ar fi poziția obiectivului unei camere foto-video) etc.
+Trecerea între aceste sisteme de referință și, respectiv, bazele corespunzătoare
+este justificată atunci cînd, de exemplu, se trece de la o perspectivă third person
+la una first person sau invers. De asemenea, pentru realism, cele trei sistem de
+referință nu sînt complet aleatorii, ci există legături între ele pe care programatorii
+sau modelatorii le iau în considerare.</p>
+<p>Cazul general este ușor de definit, dar laborios de utilizat.</p>
+<p>Fie <span class="math notranslate nohighlight">\( V \)</span> un spațiu vectorial și <span class="math notranslate nohighlight">\( B_1, B_2 \)</span> două baze ale sale.</p>
+<p>Presupunem că <span class="math notranslate nohighlight">\( B_1 = \{ e_1, e_2, \dots, e_n \} \)</span> și <span class="math notranslate nohighlight">\( B_2 = \{ f_1, f_2, \dots, f_n \} \)</span>.</p>
+<p><strong>Matricea de trecere</strong> de la baza <span class="math notranslate nohighlight">\( B_1 \)</span> la baza <span class="math notranslate nohighlight">\( B_2 \)</span> se obține astfel:</p>
+<ul class="simple">
+<li><p>se consideră baza <span class="math notranslate nohighlight">\( B_2 \)</span>, la care vrem să ajungem, drept „principală“, iar
+baza <span class="math notranslate nohighlight">\( B_1 \)</span> devine o simplă mulțime de vectori;</p></li>
+<li><p>de aceea, orice vector din baza <span class="math notranslate nohighlight">\( B_1 \)</span> se poate scrie acum în funcție de
+vectorii din baza <span class="math notranslate nohighlight">\( B_2 \)</span>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  e_1 &amp;= \alpha_{11}f_1 + \alpha_{12}f_2 + \alpha_{13}f_3 + \dots + \alpha_{1n}f_n \\
+  e_2 &amp;= \alpha_{21}f_1 + \alpha_{22}f_2 + \alpha_{23}f_3 + \dots + \alpha_{2n}f_n \\
+      &amp;\vdots \\
+  e_n &amp;= \alpha_{n1}f_1 + \alpha_{n2}f_2 + \alpha_{n3}f_3 + \dots + \alpha_{nn}f_n,
+\end{align*}\end{split}\]</div>
+<p>cu scalarii <span class="math notranslate nohighlight">\( \alpha_{ij} \in \mathbb{R}, 1 \leq i,j \leq n \)</span>.</p>
+<p>Matricea menționată se definește prin <span class="math notranslate nohighlight">\( M_{B_1 \to B_2} = (\alpha_{ij})_{1 \leq i, j \leq n} \)</span>.</p>
+<hr class="docutils" />
+<p>Pentru baze arbitrare, cum spuneam, matricea este incomod de calculat. Dar în multe cazuri
+practice, precum vom vedea în <a class="reference internal" href="p2-s8-vvp.html#sec-diagonalizare"><span class="std std-ref">secțiunea despre diagonalizare</span></a>
+se folosește trecerea de la baza canonică la o altă bază.</p>
+<p>Pentru această situație, calculul este simplu. Să luăm un exemplu din <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span>.
+Baza canonică este <span class="math notranslate nohighlight">\( E = \{ e_1 = (1, 0, 0), e_2 = (0, 1, 0), e_3 = (0, 0, 1) \} \)</span>
+și fie o altă bază, <span class="math notranslate nohighlight">\( B = \{ f_1 = (2, -1, 1), f_2 = (3, 0, 2), f_3 = (-1, 1, 2) \} \)</span>.</p>
+<p>Ne putem asigura mai întîi că <span class="math notranslate nohighlight">\( B \)</span> este într-adevăr bază:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{vmatrix}
+2 &amp; 3 &amp; -1 \\
+-1 &amp; 0 &amp; 1 \\
+1 &amp; 2 &amp; 2
+\end{vmatrix} = 7 \neq 0,\end{split}\]</div>
+<p>deci cei 3 vectori sînt independenți și, cu teorema alternativei, formează o bază.</p>
+<p>Acum, pentru a obține matricea de trecere, trebuie să exprimăm „vechii“ vectori
+<span class="math notranslate nohighlight">\( e_{1,2,3} \)</span> în funcție de cei „noi“, <span class="math notranslate nohighlight">\( f_{1,2,3} \)</span>. Deci căutăm scalarii
+<span class="math notranslate nohighlight">\( \alpha_{ij}, 1 \leq i,j \leq 3 \)</span>, cu:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  e_1 &amp;= (1, 0, 0) = \alpha_{11}(2, -1, 1) + \alpha_{12}(3, 0, 2) + \alpha_{13}(-1, 1, 2) \\
+  e_2 &amp;= (0, 1, 0) = \alpha_{21}(2, -1, 1) + \alpha_{22}(3, 0, 2) + \alpha_{23}(-1, 1, 2) \\
+  e_3 &amp;= (0, 0, 1) = \alpha_{31}(2, -1, 1) + \alpha_{32}(3, 0, 2) + \alpha_{33}(-1, 1, 2)
+\end{align*}\end{split}\]</div>
+<p>și ajungem 3 sisteme de ecuații, cîte unul pentru fiecare vector. Pentru <span class="math notranslate nohighlight">\( e_1 \)</span> obținem:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  2\alpha_{11} + 3\alpha_{12} - \alpha_{12} &amp;= 0 \\
+  -\alpha_{11} + \alpha_{13} &amp;= 0 \\
+  \alpha_{11} + 2\alpha_{12} + 2\alpha_{13} &amp;= 0
+\end{cases}\end{split}\]</div>
+<p>Similar pentru ceilalți doi vectori <span class="math notranslate nohighlight">\( e_2, e_3 \)</span>. Rezolvînd sistemele, obținem un rezultat
+general, de fapt: soluțiile vor fi:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  (\alpha_{11}, \alpha_{12}, \alpha_{13}) &amp;= f_1 \\
+  (\alpha_{12}, \alpha_{22}, \alpha_{23}) &amp;= f_2 \\
+  (\alpha_{13}, \alpha_{23}, \alpha_{33}) &amp;= f_3
+\end{align*}\end{split}\]</div>
+<p>Deci matricea <span class="math notranslate nohighlight">\( M_{E \to B} \)</span> conține direct „noii vectori“, pe coloane:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}M_{E \to B} = \begin{pmatrix}
+2 &amp; 3 &amp; -1 \\
+-1 &amp; 0 &amp; 1 \\
+1 &amp; 2 &amp; 2
+\end{pmatrix}\end{split}\]</div>
+<p>Avem, deci:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Dacă se trece de la baza canonică <span class="math notranslate nohighlight">\( E \)</span> la o bază arbitrară <span class="math notranslate nohighlight">\( B \)</span>, atunci
+matricea de trecere <span class="math notranslate nohighlight">\( M_{E \to B} \)</span> va conține componentele noilor vectori
+pe coloane.</p>
+</div>
+<p>De asemenea, cum probabil intuiți, <span class="math notranslate nohighlight">\( M_{B_1 \to B_2} = M_{B_2 \to B_1}^{-1} \)</span>,
+adică matricea care face trecerea inversă între două baze se obține ca inversa
+matricei care făcea trecerea directă între baze.</p>
+<p>Ce se întîmplă, însă, cu coordonatele vectorilor? Evident, odată cu schimbarea bazei,
+și acestea se schimbă, deoarece se exprimă în funcție de alți vectori. Putem obține
+pentru fiecare în parte noile coordonate, folosind definiția, dar avem și o scurtătură.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Fie <span class="math notranslate nohighlight">\( X_1 \)</span> matricea-coloană a coordonatelor unui vector într-o bază <span class="math notranslate nohighlight">\( B_1 \)</span>
+și <span class="math notranslate nohighlight">\( X_2 \)</span> matricea-coloană corespunzătoare în baza <span class="math notranslate nohighlight">\( B_2 \)</span>. Dacă <span class="math notranslate nohighlight">\( M = M_{B_1 \to B_2} \)</span>
+este matricea de trecere, atunci are loc relația:</p>
+<div class="math notranslate nohighlight">
+\[
+  X_2 = M^{-1} \cdot X_1 \Leftrightarrow X_1 = M \cdot X_2.
+\]</div>
+</div>
+<p>Rezultă că, știind matricea de trecere între două baze, putem transforma direct
+și coordonatele oricărui vector.</p>
+</section>
+<section id="exercitii-propuse">
+<h2>Exerciții propuse<a class="headerlink" href="#exercitii-propuse" title="Permalink to this headline">#</a></h2>
+<p>Pentru exercițiile de mai jos, vă încurajăm să vă gîndiți mai întîi la explicații intuitive,
+eventual geometrice, pe care să le demonstrați riguros ulterior.</p>
+<ol class="simple">
+<li><p>Fie mulțimea:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[V = \{ (x, y, z) \in \mathbb{R}^3 \mid 2x - y + z = 0 \}.\]</div>
+<p>Arătați că <span class="math notranslate nohighlight">\( V \leq \mathbb{R}^3 \)</span> și găsiți o bază și dimensiunea lui <span class="math notranslate nohighlight">\( V \)</span>.</p>
+<ol class="simple">
+<li><p>Aceeași cerință pentru mulțimea:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[V = \langle (1, -1, 2), (3, 1, 0) \rangle.\]</div>
+<p>Observați că, din definiție, cei doi vectori sînt deja sistem de generatori
+pentru spațiul <span class="math notranslate nohighlight">\( V \)</span> (după ce demonstrați că este subspațiu al lui <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span>).</p>
+<ol class="simple">
+<li><p>Aceeași cerință pentru mulțimea:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[V = \{ A \in M_2(\mathbb{R}) \mid A = A^t \},\]</div>
+<p>ca subspațiu al lui <span class="math notranslate nohighlight">\( M_2(\mathbb{R}) \)</span>.</p>
+<ol class="simple">
+<li><p>Aceeași cerință pentru mulțimea:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[V = \{ (x, y, z, t) \in \mathbb{R}^4 \mid 3x - y + z = 0 \text{ și } 5y - 2t = 0 \},\]</div>
+<p>ca subspațiu al lui <span class="math notranslate nohighlight">\( \mathbb{R}^4 \)</span>.</p>
+<ol class="simple">
+<li><p>Aceeași cerință pentru mulțimea:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[V = \{ p \in \mathbb{R}_3[X] \mid p'(1) = 0 \text{ și } p(2) = 0 \}\]</div>
+<p>ca subspațiu al lui <span class="math notranslate nohighlight">\( \mathbb{R}_3[X] \)</span>.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="span"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Notația <span class="math notranslate nohighlight">\( \mathrm{Sp}(S) \)</span> provine de la denumirea în engleză, <em>span</em>.
+De fapt, și în română, vectorii obținuți ca o combinație liniară a unora dintr-o
+mulțime fixată poartă numele de <em>acoperirea liniară</em> a mulțimii respective.
+În cazul sistemului de generatori, deci, spațiul întreg este acoperirea liniară
+a sistemului. Iar notația <span class="math notranslate nohighlight">\( \langle S \rangle = V \)</span> este folosită în mai multe contexte
+pentru a arăta generatorii. De pildă, putem scrie <span class="math notranslate nohighlight">\( \langle 1 \rangle = \mathbb{Z} \)</span>
+dacă ne referim la grupul aditiv al numerelor întregi, deoarece orice număr întreg
+poate fi obținut din 1, cu adunări (și scăderi).</p>
+</dd>
+</dl>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="p2-s3-spvect.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Spații vectoriale</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="p2-s5-op-subsp.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Operații cu subspații</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Adrian Manea (Poligon Educational)<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

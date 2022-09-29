@@ -1,0 +1,1258 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Produs scalar și ortonormare &#8212; Algebră liniară și aplicații</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/proof.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Vectori și valori proprii" href="p2-s8-vvp.html" />
+    <link rel="prev" title="Morfisme de spații vectoriale" href="p2-s6-morfisme-spvect.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo-light-poly-only.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Algebră liniară și aplicații</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Algebră liniară și aplicații
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Elemente de istoria și filosofia matematicii
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-istorie-fil-intro.html">
+   Generalități
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-s1-rationamente.html">
+   Abstractizare și raționamente
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-s2-ist-vsp.html">
+   Istoria spațiilor vectoriale
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algebră abstractă și algebră liniară
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="p2-abstract.html">
+   Algebră abstractă și algebră liniară
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s1-grupuri.html">
+     Monoizi și grupuri
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s1e-simetrii.html">
+     Grupuri de simetrie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s2-inele-corpuri.html">
+     Inele și corpuri
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s3-spvect.html">
+     Spații vectoriale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s4-baza.html">
+     Bază și dimensiune
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s5-op-subsp.html">
+     Operații cu subspații
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s6-morfisme-spvect.html">
+     Morfisme de spații vectoriale
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Produs scalar și ortonormare
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s8-vvp.html">
+     Vectori și valori proprii
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s9-quat.html">
+     Cuaternioni
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s10-afin.html">
+     Spații afine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s11-mat-decomp.html">
+     Descompuneri matriceale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s12-transf-mat.html">
+     Transformări matriceale în 2D și 3D
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s13-arii-volume.html">
+     Arii și volume
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Aplicații și implementări în programare
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="p3-aplicatii.html">
+   Aplicații și implementări în programare
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Bibliografie și lecturi suplimentare
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliografie.html">
+   Bibliografie și lecturi suplimentare
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/adimanea/linalg"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/adimanea/linalg/issues/new?title=Issue%20on%20page%20%2Fp2-s7-ortonormare.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/p2-s7-ortonormare.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#geometrie-euclidiana">
+   Geometrie euclidiană
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#planul-real">
+   Planul real
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spatii-euclidiene">
+   Spații euclidiene
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemplu-fundamental-mathbb-r-n">
+     Exemplu fundamental:
+     <span class="math notranslate nohighlight">
+      \( \mathbb{R}^n \)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#alte-exemple">
+     Alte exemple
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#versori">
+   Versori
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#distante">
+   Distanțe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#baze-de-versori-algoritmul-gram-schmidt">
+   Baze de versori: Algoritmul Gram-Schmidt
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#complement-ortogonal">
+   Complement ortogonal
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemplu-general">
+     Exemplu general
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemplu-geometric">
+     Exemplu geometric
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Produs scalar și ortonormare</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#geometrie-euclidiana">
+   Geometrie euclidiană
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#planul-real">
+   Planul real
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spatii-euclidiene">
+   Spații euclidiene
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemplu-fundamental-mathbb-r-n">
+     Exemplu fundamental:
+     <span class="math notranslate nohighlight">
+      \( \mathbb{R}^n \)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#alte-exemple">
+     Alte exemple
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#versori">
+   Versori
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#distante">
+   Distanțe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#baze-de-versori-algoritmul-gram-schmidt">
+   Baze de versori: Algoritmul Gram-Schmidt
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#complement-ortogonal">
+   Complement ortogonal
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemplu-general">
+     Exemplu general
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemplu-geometric">
+     Exemplu geometric
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="produs-scalar-si-ortonormare">
+<h1>Produs scalar și ortonormare<a class="headerlink" href="#produs-scalar-si-ortonormare" title="Permalink to this headline">#</a></h1>
+<p>Titlul este intimidant, însă vă vom convinge că noțiunile prezentate au origini
+binecunoscute și pornesc din nou de la geometria clasei a IX-a.</p>
+<p>Termenul-cheie pe care îl urmărim este acela de <em>versori</em>. Dacă vă sună cunoscut
+sau chiar vă amintiți ce sînt versorii, atunci veți intui direcția care ne
+interesează.</p>
+<section id="geometrie-euclidiana">
+<h2>Geometrie euclidiană<a class="headerlink" href="#geometrie-euclidiana" title="Permalink to this headline">#</a></h2>
+<p>Înaintea definițiilor concrete, să dăm cîteva explicații despre geometria euclidiană.
+Aceasta este o noțiune care se întîlnește des, iar de multe ori, apare într-un
+context împreună cu complementara sa, geometria <em>neeuclidiană</em>.</p>
+<p>Euclid din Alexandria (cca. sec. III î.e.n.) a fost unul dintre primii matematicieni
+moderni, am putea spune. Nu numai că a adus contribuții esențiale în geometrie
+(pentru care este cunoscută în special colecția sa de 13 volume intitulate
+generic <em>Elementele</em>, dar în aceeași lucrare găsim și primele exemple sistematice
+de teoreme însoțite de demonstrații, axiome și raționamente matematice complexe.</p>
+<p>În contextul actual, ne interesează contribuțiile lui la geometrie și, mai general,
+<em>ce fel de geometrie</em> a studiat și a propus Euclid – cea care a ajuns să-i poarte
+numele.</p>
+<p>În geometria euclidiană, două concepte sînt fundamentale: lungimile (distanțele)
+și unghiurile. Aceasta și prin faptul că în perioada respectivă, se lucra adesea
+la probleme de construcții cu rigla (negradată) și compasul. Astfel că dreptele
+și segmentele, împreună cu arcele de cerc erau prezente în majoritatea problemelor
+de matematică.</p>
+<p>Așadar, fără alte detalii pentru moment, reținem că pentru a studia geometrie
+euclidiană, avem nevoie să putem măsura lungimi (de segmente) și măsuri de unghiuri.</p>
+</section>
+<section id="planul-real">
+<h2>Planul real<a class="headerlink" href="#planul-real" title="Permalink to this headline">#</a></h2>
+<p>Am văzut că într-un spațiu vectorial este suficient să putem calcula <em>suma vectorilor</em>,
+pentru că în ce privește un produs al acestora, de pildă, există mai multe noțiuni.</p>
+<p>Una dintre acestea este <em>produsul scalar</em>, care, așa cum îi arată numele, produce
+un scalar din doi vectori. Noțiunea este cunoscută încă din clasa a IX-a și o
+recapitulăm aici, în contextul actual.</p>
+<p>Fie, așadar, doi vectori din plan, <span class="math notranslate nohighlight">\( \vec{v} = a \vec{i} + b \vec{j} \)</span> și
+<span class="math notranslate nohighlight">\( \vec{w} = c \vec{i} + d \vec{j} \)</span>, cu <span class="math notranslate nohighlight">\( a,b,c,d \in \mathbb{R} \)</span>.</p>
+<p>Produsul scalar al celor doi vectori se poate defini în două moduri:</p>
+<div class="math notranslate nohighlight">
+\[\vec{v} \cdot \vec{w} = ac + bd \quad \text{sau} \quad %
+\vec{v} \cdot \vec{w} = |\vec{v}| \cdot |\vec{w}| \cdot \cos \left( \widehat{\vec{v}, \vec{w}} \right),\]</div>
+<p>prima formulă folosind doar coordonatele vectorilor, iar cea de-a doua – care
+a fost întîlnită în special în lecțiile de mecanică – folosește modulul
+(sau lungimea) vectorilor și unghiul dintre dreptele lor suport.</p>
+<p>Deja vedem că în a doua formulă întîlnim cele două noțiuni din geometria euclidiană:
+lungimile și măsurile unghiurilor.</p>
+<p>Legătura între cele două formule se poate face folosind noțiunea de lungime
+definită tot cu ajutorul produsului scalar:</p>
+<div class="math notranslate nohighlight">
+\[|\vec{v}| = v = \sqrt{\vec{v} \cdot \vec{v}},\]</div>
+<p>adică pătratul lungimii unui vector este egal cu produsul scalar cu el însuși.</p>
+<p>Așadar, folosind doar produsul scalar, avem acces atît la lungimi, cît și la
+unghiuri, cu ajutorul funcției cosinus.</p>
+<p>De aici deducem și alte două cazuri speciale, privitoare la <em>versori</em>.
+Vectorii <span class="math notranslate nohighlight">\( \vec{i} \)</span> și <span class="math notranslate nohighlight">\( \vec{j} \)</span> pe care îi folosim pentru a descompune orice
+vectori din plan au două proprietăți importante:</p>
+<ul class="simple">
+<li><p>sînt perpendiculari<a class="footnote-reference brackets" href="#v-perp" id="id1">1</a>: <span class="math notranslate nohighlight">\( \vec{i} \perp \vec{j} \)</span>;</p></li>
+<li><p>au lungime <span class="math notranslate nohighlight">\( 1 \)</span>.</p></li>
+</ul>
+<p>Perpendicularitatea este o proprietate care rezultă imediat cu ajutorul produsului
+scalar. Dată fiind definiția cu ajutorul lungimilor și cosinusului și ținînd cont
+de faptul că <span class="math notranslate nohighlight">\( \cos \dfrac{\pi}{2} = 0 \)</span>, găsim:</p>
+<div class="math notranslate nohighlight">
+\[\vec{v} \perp \vec{w} \Leftrightarrow \vec{v} \cdot \vec{w} = 0,\]</div>
+<p>relație care, așa cum vom vedea, se extinde în orice spațiu vectorial.</p>
+<hr class="docutils" />
+<p>O modalitate foarte clară de vizualizare a produsului scalar dintre un vector
+arbitrar și un vector unitate, ca dependență de unghiul dintre ei, este
+în imaginea de mai jos, preluată de pe pagina de Twitter a Freya Holmér (<code class="docutils literal notranslate"><span class="pre">&#64;FreyaHolmer</span></code>):</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">dot product - visualized ⚪<br><br>the dot of two normalized vectors, as shown here, can say how similar they are<br><br>a • b = 1, same direction<br>a • b = 0, perpendicular<br>a • b = -1, opposite directions<br><br>you might also be able to see why it&#39;s sometimes called scalar projection~ <a href="https://t.co/vg8TwNZ8qs">pic.twitter.com/vg8TwNZ8qs</a></p>&mdash; Freya Holmér (@FreyaHolmer) <a href="https://twitter.com/FreyaHolmer/status/1200807790580768768?ref_src=twsrc%5Etfw">November 30, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<hr class="docutils" />
+<p>Așadar, reținem că încă din geometria în plan studiată în clasa a IX-a avem deja
+o definiție pentru produsul scalar, care ne ajută să obținem ingredientele
+necesare geometriei euclidiene. Vom vedea că putem extinde acest lucru foarte
+ușor pentru orice spațiu vectorial.</p>
+</section>
+<section id="spatii-euclidiene">
+<span id="sec-sp-eucl"></span><h2>Spații euclidiene<a class="headerlink" href="#spatii-euclidiene" title="Permalink to this headline">#</a></h2>
+<p>După introducerea de mai sus, trecem la cazul general. Disponibilitatea unui
+produs scalar am văzut că deschide posibilitatea studiului geometriei euclidiene
+în plan. La fel stau lucrurile în orice spațiu vectorial și de aceea, spațiile
+pe care putem defini un produs scalar se numesc <em>euclidiene</em>.</p>
+<p>Definiția generală a produsului scalar pare complicată la prima vedere, însă ea
+se inspiră destul de clar din cazul planului.</p>
+<p>Vom prezenta doar cazul spațiilor vectoriale reale, nu numai pentru că acesta va
+fi singurul pe care îl vom studia pentru aplicații, ci și pentru faptul că în
+cazul complex, de exemplu, definițiile sînt ușor diferite.</p>
+<div class="proof definition admonition" id="def-pr-scalar">
+<p class="admonition-title"><span class="caption-number">Definition 37 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( V \)</span> un spațiu vectorial real.</p>
+<p>O aplicație de forma:</p>
+<div class="math notranslate nohighlight">
+\[
+  \langle \cdot, \cdot \rangle : V \times V \to \mathbb{R}
+\]</div>
+<p>se numește <em>produs scalar</em> dacă are proprietățile:</p>
+<ol class="simple">
+<li><p><em>Pozitiv definire:</em> <span class="math notranslate nohighlight">\( \langle v, v \rangle \geq 0, \forall v \in V \)</span>, cu egalitate dacă și
+numai dacă <span class="math notranslate nohighlight">\( v = 0_V \)</span>;</p></li>
+<li><p><em>Simetrie:</em> <span class="math notranslate nohighlight">\( \langle v, w \rangle = \langle w, v \rangle, \forall v, w \in V \)</span>;</p></li>
+<li><p><em>Liniaritate în primul argument:</em> <span class="math notranslate nohighlight">\( \langle \alpha v + \beta w, u \rangle = \alpha \langle v, u \rangle + %
+\beta \langle w, u \rangle, \forall \alpha, \beta \in \mathbb{R}, v, w, u \in V \)</span>;</p></li>
+<li><p><em>Liniaritate în al doilea argument:</em>  <span class="math notranslate nohighlight">\( \langle v, \alpha w + \beta u \rangle = \alpha \langle v, u \rangle + %
+\beta \langle v, u \rangle, \forall \alpha, \beta in \mathbb{R}, v, w, u \in V \)</span>.</p></li>
+</ol>
+</section>
+</div><p>Dacă pe un spațiu vectorial real <span class="math notranslate nohighlight">\( V \)</span> putem defini o aplicație cu proprietățile
+de mai sus, atunci spațiul se numește <em>euclidian</em>.</p>
+<p>Se vede ușor că acest caz general se rezumă la binecunoscuta situație din plan prezentată
+mai sus. De fapt, este suficient să dăm un singur exemplu pentru spații vectoriale
+finit dimensionale, și, folosind corolarul <a class="reference internal" href="p2-s6-morfisme-spvect.html#cor-izom-dim">Corollary 1</a>, le vom avea pe
+toate pentru aceeași dimensiune.</p>
+<section id="exemplu-fundamental-mathbb-r-n">
+<h3>Exemplu fundamental: <span class="math notranslate nohighlight">\( \mathbb{R}^n \)</span><a class="headerlink" href="#exemplu-fundamental-mathbb-r-n" title="Permalink to this headline">#</a></h3>
+<p>Fie, așadar, spațiul vectorial real <span class="math notranslate nohighlight">\( \mathbb{R}^n \)</span>.</p>
+<p>Pentru orice doi vectori <span class="math notranslate nohighlight">\( v = (v_1, \dots, v_n), w = (w_1, \dots, w_n) \in \mathbb{R}^n \)</span>,
+se definește aplicația:</p>
+<div class="math notranslate nohighlight">
+\[\langle \cdot, \cdot \rangle : \mathbb{R}^n \times \mathbb{R}^n \to \mathbb{R}, \quad %
+\langle v, w \rangle = \sum_{i = 1}^n v_i w_i = v_1w_1 + v_2w_2 + \dots + v_nw_n.\]</div>
+<p>Un exercițiu simplu ar fi să demonstrați că această definiție corespunde produsului
+scalar, deci într-adevăr, <span class="math notranslate nohighlight">\( \mathbb{R}^n \)</span>, cu aplicația de mai sus, devine
+spațiu euclidian.</p>
+</section>
+<section id="alte-exemple">
+<span id="sec-alte-ex-prod-scalar"></span><h3>Alte exemple<a class="headerlink" href="#alte-exemple" title="Permalink to this headline">#</a></h3>
+<p>Pornind de la acest exemplu, obținem și alte cazuri, via izomorfisme canonice.</p>
+<p>De pildă, cum <span class="math notranslate nohighlight">\( \mathbb{R}^4 \simeq M_2(\mathbb{R}) \)</span> printr-o aplicație de forma:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}f : \mathbb{R}^4 \to M_2(\mathbb{R}), \quad f(a, b, c, d) = \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix},\end{split}\]</div>
+<p>găsim că și spațiul de matrice <span class="math notranslate nohighlight">\( 2 \times 2 \)</span> este euclidian, cu produsul scalar:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left\langle \begin{pmatrix} a_1 &amp; b_1 \\ c_1 &amp; d_1 \end{pmatrix}, %
+					 \begin{pmatrix} a_2 &amp; b_2 \\ c_2 &amp; d_2 \end{pmatrix} \right\rangle = a_1a_2 + b_1b_2 + c_1c_2 + d_1d_2.\end{split}\]</div>
+<hr class="docutils" />
+<p>Similar, de exemplu, deoarece <span class="math notranslate nohighlight">\( \mathbb{R}^3 \simeq \mathbb{R}_2[X] \)</span> printr-o aplicație de forma:</p>
+<div class="math notranslate nohighlight">
+\[f : \mathbb{R}^3 \to \mathbb{R}_2[X], \quad f(a, b, c) = a + bX + cX^2,\]</div>
+<p>avem și că spațiul de polinoame de grad cel mult 2 este euclidian, cu produsul scalar:</p>
+<div class="math notranslate nohighlight">
+\[\langle a_1 + b_1X + c_1X^2, a_2 + b_2X + c_2X^2 \rangle = a_1a_2 + b_1b_2 + c_1c_2.\]</div>
+<hr class="docutils" />
+<p>Astfel de structuri ne permit să obținem rezultate intuitiv ciudate, însă clare
+din punct de vedere matematic.</p>
+</section>
+</section>
+<section id="versori">
+<h2>Versori<a class="headerlink" href="#versori" title="Permalink to this headline">#</a></h2>
+<p>În plan, vectorii <span class="math notranslate nohighlight">\( \vec{i} \)</span> și <span class="math notranslate nohighlight">\( \vec{j} \)</span> sînt <em>versori</em>, adică perpendiculari și
+cu lungime 1. Putem generaliza aceste noțiuni, tot cu ajutorul produsului scalar.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Dacă nu se precizează altfel, vom presupune că produsul scalar se notează cu
+<span class="math notranslate nohighlight">\( \langle \cdot, \cdot \rangle \)</span> pe orice spațiu euclidian este definit.</p>
+</div>
+<div class="proof definition admonition" id="def-norma-perp">
+<p class="admonition-title"><span class="caption-number">Definition 38 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( V \)</span> un spațiu euclidian.</p>
+<ul class="simple">
+<li><p><em>Norma</em> unui vector – care generalizează conceptul de lungime – se definește prin:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+	|| v || = \sqrt{ \langle v, v \rangle }, \quad \forall v \in V.
+\]</div>
+<ul class="simple">
+<li><p>Doi vectori <span class="math notranslate nohighlight">\( v, w \in V \)</span> se numesc <em>perpendiculari</em> sau <em>ortogonali</em> dacă
+<span class="math notranslate nohighlight">\( \langle v, w \rangle = 0 \)</span>.</p></li>
+</ul>
+</section>
+</div><p>Generalizarea noțiunii de <em>versori</em> se găsește în conceptul de <em>ortonormare</em>:</p>
+<div class="proof definition admonition" id="def-ortonormare">
+<p class="admonition-title"><span class="caption-number">Definition 39 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( V \)</span> un spațiu euclidian și <span class="math notranslate nohighlight">\( O = \{ v_1, \dots, v_n \} \)</span> o mulțime de
+vectori din <span class="math notranslate nohighlight">\( V \)</span>.</p>
+<p>Spunem că mulțimea <span class="math notranslate nohighlight">\( O \)</span> este <em>ortonormată</em> dacă:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \langle v_i, v_j \rangle = 0, \forall 1 \leq i \neq j \leq n, v_i, v_j \in O \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( || v_i || = 1, \forall v_i \in O, 1 \leq i \leq n \)</span>.</p></li>
+</ul>
+</section>
+</div><p>Prima condiție mai poate fi scrisă concis folosind simbolul delta al lui Kronecker,
+<span class="math notranslate nohighlight">\( \delta_{ij} \)</span>. Acesta se definește astfel:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\delta_{ij} = \begin{cases} 1, &amp;i = j \\ 0, &amp;i\neq j \end{cases}.\end{split}\]</div>
+<p>Folosindu-l, prima condiție se poate scrie simplu:</p>
+<div class="math notranslate nohighlight">
+\[\langle v_i, v_j \rangle = \delta_{ij}, \quad \forall v_i, v_j \in O.\]</div>
+<p>Condiția de ortogonalitate de fapt provine dintr-o noțiune mai generală, inspirată
+tot din cazul plan:</p>
+<div class="proof definition admonition" id="def-cos">
+<p class="admonition-title"><span class="caption-number">Definition 40 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( V \)</span> un spațiu euclidian și <span class="math notranslate nohighlight">\( v, w \in V \)</span> doi vectori arbitrari.</p>
+<p>Se definește <em>cosinusul</em> unghiului dintre <span class="math notranslate nohighlight">\( v \)</span> și <span class="math notranslate nohighlight">\( w \)</span> numărul real<a class="footnote-reference brackets" href="#cos" id="id2">2</a>:</p>
+<div class="math notranslate nohighlight">
+\[
+	\cos(v, w) = \dfrac{\langle v, w \rangle}{||v|| \cdot ||w||}.
+\]</div>
+</section>
+</div><p>Evident, în acest caz nu mai avem o interpretare vizuală a unghiului dintre doi
+vectori ai unui spațiu euclidian arbitrar, dar în orice caz, noțiunea are sens
+și putem chiar extrage măsura unghiului dintre doi vectori arbitrari, folosind,
+eventual, un tabel de valori și/sau funcția <span class="math notranslate nohighlight">\( \arccos \)</span><a class="footnote-reference brackets" href="#sin-cpx" id="id3">3</a>.</p>
+<hr class="docutils" />
+<p>Revenind la exemple, putem acum să studiem chiar cazuri de <em>matrice ortogonale</em>
+sau <em>unghiul dintre două polinoame</em>, foarte simplu. Folosind produsul scalar
+<a class="reference internal" href="#sec-alte-ex-prod-scalar"><span class="std std-ref">de mai sus</span></a>, avem, de pildă, pentru două polinoame din <span class="math notranslate nohighlight">\( \mathbb{R}_2[X] \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+	&amp;p = 1 - X^2, \quad q = 1 + X + 2X^2 \\
+	&amp;\begin{cases}
+		\langle p,q \rangle &amp;= 1 \cdot 1 + 0 \cdot 1 + (-1) \cdot 2 = -1 \\
+		||p|| &amp;= \sqrt{1 \cdot 1 + 0 \cdot 0 + (-1) \cdot (-1)} = 2 \\
+		||q|| &amp;= \sqrt{1 \cdot 1 + 1 \cdot 1 + 2 \cdot 2} = \sqrt{6} 
+	\end{cases} \Rightarrow \cos(p,q) = \dfrac{-1}{2\sqrt{6}} \\
+\end{align*}\end{split}\]</div>
+<p>sau pentru două matrice din <span class="math notranslate nohighlight">\( M_2(\mathbb{R}) \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+	&amp;A = \begin{pmatrix} 1 &amp; 0 \\ -1 &amp; 1 \end{pmatrix}, \quad B = \begin{pmatrix} -1 &amp; 2 \\ 0 &amp; 1 \end{pmatrix} \\
+	&amp;\langle A, B \rangle = 1 \cdot (-1) + 0 \cdot 2 + (-1) \cdot 0 + 1 \cdot 1 = 0 \Rightarrow A \perp B
+\end{align*}\end{split}\]</div>
+<p>Remarcăm din nou că astfel de situații nu sînt neapărat intuitive, nu se pot vizualiza
+ca în cazul vectorilor din plan sau din spațiul tridimensional. Însă ele arată
+puterea pe care o are tehnica abstractizării: dacă definim cu atenție noțiuni
+precum lungime, unghi și altele, le putem aplica în tot mai multe cazuri.</p>
+</section>
+<section id="distante">
+<h2>Distanțe<a class="headerlink" href="#distante" title="Permalink to this headline">#</a></h2>
+<p>Pentru completitudine, să adăugăm și definiția generală a <em>distanței</em>. Ideea principală
+este, ca în cazul lungimilor și unghiurilor, să vedem cum o noțiune aparent adînc
+înrădăcinată în vizual, în geometrie în plan sau în spațiu, poate fi generalizată
+foarte ușor.</p>
+<p>În cazurile cunoscute, distanța se definește astfel:</p>
+<ul class="simple">
+<li><p>între două puncte: este lungimea segmentului care are cele două puncte drept capete;</p></li>
+<li><p>între un punct și o dreaptă: este lungimea perpendicularei dusă din punct pe dreaptă;</p></li>
+<li><p>între două drepte paralele: este distanța de la un punct arbitrar de pe una dintre drepte la cealaltă dreaptă;</p></li>
+<li><p>între două plane paralele: este distanța dintre două drepte incluse în plane.</p></li>
+</ul>
+<p>În vederea generalizării către un spațiu vectorial oarecare, avem cel puțin două obstacole:</p>
+<ul class="simple">
+<li><p>noțiuni precum „punct“, „dreaptă“, „plan“ nu se definesc în general;</p></li>
+<li><p>noțiunea de perpendicularitate (ortogonalitate, în general) este incomodă și, împreună cu
+primul obstacol, imposibil de utilizat.</p></li>
+</ul>
+<p>Așa că nu putem avea aceeași înțelegere a distanței pe baza intuiției geometrice
+și va trebui să ne rezumăm la a-i prelua <em>proprietățile</em>. Orice distanță între două obiecte
+(puncte, drepte, plane etc.):</p>
+<ul class="simple">
+<li><p>este nulă sau strict pozitivă;</p></li>
+<li><p>este simetrică (distanța de la obiectul <span class="math notranslate nohighlight">\( A \)</span> la obiectul <span class="math notranslate nohighlight">\( B \)</span> este aceeași cu distanța
+de la obiectul <span class="math notranslate nohighlight">\( B \)</span> la obiectul <span class="math notranslate nohighlight">\( A \)</span>);</p></li>
+<li><p>este, într-un anume sens, cel mai scurt drum între cele două obiecte<a class="footnote-reference brackets" href="#geodezica" id="id4">4</a>.</p></li>
+</ul>
+<p>Așadar, definiția generală a distanței urmează.</p>
+<div class="proof definition admonition" id="def-dist">
+<p class="admonition-title"><span class="caption-number">Definition 41 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( V \)</span> un spațiu euclidian și <span class="math notranslate nohighlight">\( d : V \times V \to [0, \infty) \)</span> o funcție.</p>
+<p><span class="math notranslate nohighlight">\( d \)</span> se numește <em>distanță</em> sau <em>metrică</em> dacă:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\( d(v, v) \geq 0, \forall v \in V \)</span>, cu egalitate dacă și numai dacă <span class="math notranslate nohighlight">\( v = 0_V \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( d(v, w) = d(w, v), \forall v, w \in V \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( d(v, w) \leq d(v, u) + d(u, w), \forall u, v, w \in V \)</span>.</p></li>
+</ol>
+</section>
+</div><p>A treia proprietate se mai numește <em>inegalitatea triunghiului</em>, deoarece se folosește
+și drept condiție de existență a unui triunghi: Putem vorbi despre <span class="math notranslate nohighlight">\( \Delta ABC \)</span>
+dacă și numai dacă <span class="math notranslate nohighlight">\( AB \leq AC + CB \)</span>.</p>
+<p>Așadar, orice funcție care transformă doi vectori într-un scalar și care are proprietățile
+de mai sus se numește <em>distanță</em>.</p>
+<p>De fapt, riguros vorbind, am trișat puțin. Distanțele se pot defini și pe spații
+care nu sînt euclidiene<a class="footnote-reference brackets" href="#sp-top" id="id5">5</a>, însă am preferat să ne mărginim la această situație
+pentru următoarea definiție relevantă în acest caz.</p>
+<div class="proof definition admonition" id="def-dist-eucl">
+<p class="admonition-title"><span class="caption-number">Definition 42 </span> (Distanța euclidiană)</p>
+<section class="definition-content" id="proof-content">
+<p>Dacă <span class="math notranslate nohighlight">\( V \)</span> este un spațiu euclidian, atunci funcția:</p>
+<div class="math notranslate nohighlight">
+\[
+  d : V \times V \to [0, \infty), \quad d(v, w) = || v - w ||, \forall v, w \in V
+\]</div>
+<p>este o distanță (metrică), numită <em>distanța euclidiană</em>.</p>
+</section>
+</div><p>Rezultă că pentru a defini o distanță pe un spațiu euclidian, este suficient
+să avem o noțiune de normă, care, la rîndul ei, se definește cu ajutorul
+produsului scalar – noțiunea esențială într-un spațiu euclidian.</p>
+<p>Cu aceasta, vedem că geometria euclidiană pe care o putem studia într-un spațiu
+vectorial real înzestrat cu un produs scalar este chiar mai bogată. Putem calcula
+nu doar lungimi ale vectorilor, ci și distanțe dintre ei, împreună cu unghiurile
+pe care le descriu.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Definiția generală a distanței (metricii) ne permite să dăm mai multe exemple,
+în afară de cea euclidiană, pe care le vom explora într-o altă secțiune.</p>
+<p>Un exemplu simplu și amuzant este așa-numita <em>distanță Manhattan</em>. Ea se definește
+în ipoteza că lucrăm cu o configurație similară unei foi cu pătrățele, ca a unui caiet
+de matematică, unde nu este permis să ne deplasăm decît pe laturi, făcînd de fiecare
+dată întoarceri de 90 grade. Denumirea provine de la faptul că în cartierul newyorkez
+Manhattan, majoritatea străzilor sînt proiectate perpendicular unele pe celalalte,
+astfel că harta cartierului arată aproape ca o foaie de matematică.</p>
+<p><img alt="Străzi din Manhattan" src="https://wp.zillowstatic.com/streeteasy/2/Screen-Shot-2019-03-13-at-5.16.37-PM-f094d1.png" /></p>
+</div>
+</section>
+<section id="baze-de-versori-algoritmul-gram-schmidt">
+<span id="sec-gram-schmidt"></span><h2>Baze de versori: Algoritmul Gram-Schmidt<a class="headerlink" href="#baze-de-versori-algoritmul-gram-schmidt" title="Permalink to this headline">#</a></h2>
+<p>Vom vedea numeroase aplicații în care este preferabil să lucrăm cu vectori normați,
+adică aceia care au norma egală cu 1. Intuitiv, unul dintre motive este acela că
+dacă folosim astfel de vectori, nu vom avea niciodată efecte precum rescalare,
+iar calculele vor fi de multe ori mai ușoare.</p>
+<p>Normarea este o operațiune care se poate aplica foarte ușor oricărui vector:
+dacă înmulțim un vector dat cu scalarul egal cu inversul normei sale, se obține
+un vector normat. Pentru cazul spațiului <span class="math notranslate nohighlight">\( V = \mathbb{R}^3 \)</span>, de exemplu, avem:</p>
+<div class="math notranslate nohighlight">
+\[v = (a, b, c) \Rightarrow || v || = \sqrt{a^2 + b^2 + c^2},\]</div>
+<p>pe care îl normăm astfel:</p>
+<div class="math notranslate nohighlight">
+\[w = \dfrac{1}{||v||} v = \left( \dfrac{a}{\sqrt{a^2 + b^2 + c^2}},%
+								\dfrac{b}{\sqrt{a^2 + b^2 + c^2}},%
+								\dfrac{c}{\sqrt{a^2 + b^2 + c^2}} \right)\]</div>
+<p>și obținem:</p>
+<div class="math notranslate nohighlight">
+\[||w|| = \sqrt{\dfrac{a^2}{a^2 + b^2 + c^2} + \dfrac{b^2}{a^2 + b^2 + c^2} + \dfrac{c^2}{a^2 + b^2 + c^2}} = 1.\]</div>
+<p>Unul dintre locurile unde este preferabil să lucrăm cu vectori normați este
+acela al bazelor spațiilor vectoriale. De fapt, ne putem inspira din nou
+din cazul planului real, unde <span class="math notranslate nohighlight">\( \{ \vec{i}, \vec{j} \} \)</span> formează chiar
+<em>o bază de versori</em>. Aceasta deoarece, în termeni generali, sînt <em>ortonormați</em>, adică</p>
+<ul class="simple">
+<li><p><em>ortogonali</em>: <span class="math notranslate nohighlight">\( \vec{i} \cdot \vec{j} = 0 \Rightarrow \vec{i} \perp \vec{j} \)</span> și</p></li>
+<li><p><em>normați</em>: <span class="math notranslate nohighlight">\( || \vec{i} || = || \vec{j} || = 1 \)</span>.</p></li>
+</ul>
+<hr class="docutils" />
+<p>Din nou, ne putem inspira din cazul geometriei plane sau din spațiul tridimensional.
+Acolo, versorii <span class="math notranslate nohighlight">\( \{ \vec{i}, \vec{j} \} \)</span>, respectiv <span class="math notranslate nohighlight">\( \{ \vec{i}, \vec{j}, \vec{k} \} \)</span>
+sînt ortonormați, dar formează și o bază, pentru că orice vector are o descompunere care
+să-i folosească, descompunerea fiind unică.</p>
+<hr class="docutils" />
+<p>Un rezultat remarcabil este acela că <em>putem transforma orice bază într-una de versori</em>.
+Altfel spus, avem o procedură – chiar algoritmică – prin care orice bază a unui
+spațiu vectorial, <span class="math notranslate nohighlight">\( B = \{ b_1, b_2, \dots, b_n \} \)</span> devine o <em>bază ortonormată</em>
+sau <em>bază de versori</em>, în care:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \langle b_i, b_j \rangle = \delta_{ij}, \forall 1 \leq i, j \leq n \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( || b_i || = 1, \forall 1 \leq i \leq n \)</span>.</p></li>
+</ul>
+<p>Pasul de normare din acest algoritm – adică acela prin care obținem vectori de lungime 1 –
+este foarte simplu: nu avem decît să înmulțim vectorii dați cu scalari egali cu inversul
+normei lor.</p>
+<p>Pasul de ortogonalizare este ceva mai complicat, iar procedura se numește
+<strong>algoritmul Gram-Schmidt</strong>, în onoarea matematicienilor secolului trecut,
+danezul Jørgen Pedersen Gram și germanul Erhard Schmidt. Cercetări ulterioare
+au arătat, însă, că procedura era cunoscută chiar și de Pierre Simon Laplace (1749-1827).</p>
+<p>Procedura de ortogonalizare folosește încă o noțiune care se obține prin generalizarea
+unei construcții simple din plan: proiecția. A proiecta un segment pe o dreaptă,
+de exemplu, înseamnă a trimite perpendiculare din capetele segmentului pe dreapta
+respectivă, iar punctele de intersecție ale perpendicularei cu dreapta devin capetele
+proiecției.</p>
+<figure class="align-default" id="fig-pr-segm-dreapta">
+<img alt="_images/proiecte-segment-dreapta.png" src="_images/proiecte-segment-dreapta.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Proiecția segmentului <span class="math notranslate nohighlight">\( AB \)</span> pe dreapta <span class="math notranslate nohighlight">\( d \)</span> este segmentul <span class="math notranslate nohighlight">\( EF \)</span></span><a class="headerlink" href="#fig-pr-segm-dreapta" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Într-un spațiu euclidian, avem următoarea definiție:</p>
+<div class="proof definition admonition" id="def-proiectie">
+<p class="admonition-title"><span class="caption-number">Definition 43 </span> (Proiecția unui vector pe alt vector)</p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( V \)</span> un spațiu euclidian și <span class="math notranslate nohighlight">\( v, w \in V \)</span> doi vectori oarecare.</p>
+<p>Se definește <em>proiecția lui <span class="math notranslate nohighlight">\( v \)</span> pe <span class="math notranslate nohighlight">\( w \)</span></em> prin:</p>
+<div class="math notranslate nohighlight">
+\[
+  \mathrm{proj}_w(v) = \dfrac{\langle w, v \rangle}{\langle w, w \rangle} \vec{w},
+\]</div>
+<p>adică vectorul care se obține prin înmulțirea lui <span class="math notranslate nohighlight">\( w \)</span> cu scalarul dat de
+acel raport de produse scalare.</p>
+</section>
+</div><p>Acum, procedura Gram-Schmidt este aceasta: Presupunem că pornim cu o mulțime de vectori
+<span class="math notranslate nohighlight">\( B = \{ v_1, v_2, \dots, v_n \} \)</span>, care formează o bază într-un spațiu vectorial <span class="math notranslate nohighlight">\( V \)</span>.
+Mulțimea <em>ortogonalizată</em>, obținută din <span class="math notranslate nohighlight">\( B \)</span> are elementele <span class="math notranslate nohighlight">\( B_o = \{ w_1, w_2, \dots, w_n \} \)</span>,
+definite prin:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( w_1 = v_1 \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( w_2 = v_2 - \mathrm{proj}_{w_1}(v_2) \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( w_3 = v_3 - \mathrm{proj}_{w_1}(v_3) - \mathrm{proj}_{w_2}(v_3) \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( \dots \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( w_n = v_n - \displaystyle\sum_{j = 1}^{n - 1} \mathrm{proj}_{w_j}(v_n) \)</span>.</p></li>
+</ul>
+<p>Calcule simple ne arată că mulțimea <span class="math notranslate nohighlight">\( B_o \)</span> este, într-adevăr, ortogonală, adică
+<span class="math notranslate nohighlight">\( \langle w_i, w_j \rangle = \delta_{ij}, \forall 1 \leq i,j \leq n \)</span>.</p>
+<p>Mai departe, normăm vectorii <span class="math notranslate nohighlight">\( w_i, 1 \leq i \leq n \)</span> cum am văzut anterior, adică:</p>
+<div class="math notranslate nohighlight">
+\[w_i \leadsto \dfrac{1}{||w_i||}w_i, \quad \forall 1 \leq i \leq n\]</div>
+<p>și avem o bază <em>ortonormată</em>, <span class="math notranslate nohighlight">\( \{ w_1, w_2, \dots, w_n \} \)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Nu este obligatoriu să lucrăm cu <em>baze</em> <span class="math notranslate nohighlight">\( \{ v_1, v_2, \dots, v_n \} \)</span> și să ajungem
+la <em>baze ortonormate</em>. Procedura are sens pentru orice sistem de vectori independenți.</p>
+<p>Dacă vectorii de pornire nu ar fi independenți, vom obține cel puțin un vector nul.
+Mai precis, dacă vectorul <span class="math notranslate nohighlight">\( v_i \)</span> din mulțimea de pornire este primul vector dependent
+de <span class="math notranslate nohighlight">\( \{ v_1, v_2, \dots, v_{i-1} \} \)</span>, atunci vom obține <span class="math notranslate nohighlight">\( w_i = 0 \)</span>. Evident, acesta
+este un semn al eșecului algoritmului, pentru că un vector nul nu poate fi normat.</p>
+<p>Totuși, dacă modificăm procedura și oricînd obținem un vector nul, îl ignorăm
+(în exemplul de mai sus, pur și simplu nu adăugăm <span class="math notranslate nohighlight">\( w_i = 0 \)</span> la mulțimea rezultată),
+ceea ce se obține va fi un sistem de generatori independenți pentru spațiul generat
+de mulțimea inițială <span class="math notranslate nohighlight">\( \{ v_1, v_2, \dots, v_n \} \)</span>.</p>
+<p>Aceste cazuri degenerate nu sînt folosite, de obicei, pentru că înseamnă că pornim cu
+vectori „în plus“, dar este bine să ținem cont de astfel de posibilități.</p>
+</div>
+<p>În partea a treia a materialului vom vedea și implementări ale algoritmului Gram-Schmidt
+în programare.</p>
+</section>
+<section id="complement-ortogonal">
+<h2>Complement ortogonal<a class="headerlink" href="#complement-ortogonal" title="Permalink to this headline">#</a></h2>
+<p>În cazul curbelor sau suprafețelor curbate, de foarte multe ori se folosesc
+aproximații cu segmente, respectiv plane, în vecinătăți arbitrar de mici
+ale unor puncte, obținînd așa-numitele <em>infinitezimale</em>. Acestea ne ajută, printre
+altele, să determinăm <em>tangentele</em> și <em>normalele</em> la curbe, respectiv suprafețe.
+Însăși definiția derivatei unei funcții într-un punct, de exemplu, presupune
+aproximarea curbei care reprezintă graficul funcției cu un segment, iar derivata
+se calculează ca ipotenuza unui triunghi dreptunghic foarte mic în vecinătatea
+punctului de derivare:</p>
+<div class="math notranslate nohighlight">
+\[f'(x_0) = \displaystyle\lim_{x \to x_0} \dfrac{f(x) - f(x_0)}{x - x_0}.\]</div>
+<p>Alternativ, în unele cărți, definiția se scrie:</p>
+<div class="math notranslate nohighlight">
+\[f'(x_0) = \displaystyle\lim_{h \to 0} \dfrac{f(x_0 + h) - f(h)}{x_0 - h}.\]</div>
+<p>Geometric, formula se interpretează în sensul că <em>secanta</em> care intersectează
+graficul funcției în două puncte tinde să devină <em>tangentă</em> atunci cînd <span class="math notranslate nohighlight">\( h \to 0 \)</span>.</p>
+<figure class="align-default" id="fig-def-derivata">
+<img alt="_images/def-derivata.png" src="_images/def-derivata.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text">Definiția derivatei ca secantă care tinde să devină tangentă</span><a class="headerlink" href="#fig-def-derivata" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Aproximații asemănătoare apar atunci cînd calculăm o integrală definită,
+de exemplu. Aria suprafeței de sub graficul funcției – care adesea are o formă
+curbă – este aproximată prin arii de dreptunghiuri.</p>
+<p>Iar dacă introducem în discuție și aspecte de fizică, precum direcția unor raze
+de lumină, care se comportă diferit pentru unghiuri de incidență de <span class="math notranslate nohighlight">\( 90^\circ \)</span>,
+vedem încă un argument pentru care este util să studiem <em>tangentele</em> și <em>normalele</em>
+la o suprafață sau curbă. De fapt, normala se definește în funcție de tangentă:
+nu are sens să vorbim despre „perpendiculara pe o curbă“, astfel că prin definiție,
+normala într-un punct al unei curbe se definește ca perpendiculara pe <em>tangenta</em> la
+curbă în acel punct.</p>
+<p>Contextul poate fi generalizat: curbele și suprafețele sînt (sub)spații vectoriale
+pentru <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span>, de exemplu, de dimensiune 1, respectiv 2. Dar așa cum am
+văzut în multe alte situații, unele noțiuni pot fi generalizate, iar în cazul de față,
+putem vorbi despre <em>normala la un (sub)spațiu vectorial</em>. În definitiv, o astfel de
+noțiune este de așteptat, dat fiind că avem deja o noțiune generală de perpendicularitate
+(ortogonalitate).</p>
+<p>Un punct potrivit de pornire este să ne gîndim la definiția <em>perpendicularei pe un plan</em>.
+Aceasta înseamnă o dreaptă care este perpendiculară pe <em>toate</em> dreptele din planul
+respectiv. Generalizînd, ajungem la:</p>
+<div class="proof definition admonition" id="def-compl-ort">
+<p class="admonition-title"><span class="caption-number">Definition 44 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( V \)</span> un spațiu vectorial și <span class="math notranslate nohighlight">\( W \)</span> un subspațiu al său.</p>
+<p>O mulțime de vectori, notată <span class="math notranslate nohighlight">\( W^\perp \)</span>, și definită prin:</p>
+<div class="math notranslate nohighlight">
+\[
+  W^\perp = \{ v \in V \mid v \perp W \Leftrightarrow v \perp w, \forall w \in W \}
+\]</div>
+<p>se numește <em>complementul ortogonal</em> al lui <span class="math notranslate nohighlight">\( W \)</span>.</p>
+</section>
+</div><p>Cu alte cuvinte, <span class="math notranslate nohighlight">\( W^\perp \)</span> generalizează exact perpendiculara pe un plan:
+conține toți vectorii din spațiul „mare“ care sînt perpendiculari pe fiecare
+vector din <span class="math notranslate nohighlight">\( W \)</span>.</p>
+<p>Acum, dat fiind rolul fundamental pe care îl are baza unui spațiu vectorial
+nu este ușor de văzut că:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Pentru ca un vector să fie perpendicular pe orice vector dintr-un (sub)spațiu
+vectorial, este suficient ca el să fie perpendicular pe baza acelui (sub)subspațiu.</p>
+</div>
+<p>Justificarea e simplă: perpendicularitatea înseamnă produs scalar nul, iar produsul
+scalar este liniar. Baza înseamnă că orice vector din (sub)spațiu se scrie ca o
+combinație liniară cu scalari a vectorilor din bază, iar aceasta implică nulitatea
+produsului scalar doar cu elementele bazei.</p>
+<p>Două proprietăți importante vor fi de folos:</p>
+<div class="proof theorem admonition" id="thm-compl-ort">
+<p class="admonition-title"><span class="caption-number">Theorem 25 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( V \)</span> un spațiu vectorial, <span class="math notranslate nohighlight">\( W \)</span> un subspațiu al său și <span class="math notranslate nohighlight">\( W^\perp \)</span>
+complementul său ortogonal.</p>
+<p>Atunci:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( W^\perp \)</span> este subspațiu al lui <span class="math notranslate nohighlight">\( V \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( W^\perp \oplus W \simeq V \)</span>.</p></li>
+</ul>
+</section>
+</div><p>A doua proprietate spune mult mai mult decît prima: nu doar că <span class="math notranslate nohighlight">\( W^\perp \)</span>
+este și el subspațiu, dar este chiar <em>complementul</em> lui <span class="math notranslate nohighlight">\( W \)</span> în <span class="math notranslate nohighlight">\( V \)</span>,
+adică îl completează pînă la un spațiu izomorf cu <span class="math notranslate nohighlight">\( V \)</span>. În particular, pentru
+că <span class="math notranslate nohighlight">\( W \)</span> și <span class="math notranslate nohighlight">\( W^\perp \)</span> formează sumă directă, rezultă că ei nu vor avea
+în comun decît vectorul nul.</p>
+<p>Exemplele de calcul folosesc direct definiția și teorema de mai sus.</p>
+<section id="exemplu-general">
+<h3>Exemplu general<a class="headerlink" href="#exemplu-general" title="Permalink to this headline">#</a></h3>
+<p>Fie <span class="math notranslate nohighlight">\( V = \mathbb{R^4} \)</span> și <span class="math notranslate nohighlight">\( W = \mathrm{Sp}\{ v_1 = (-1, 1, 3, 2), v_2 = (0, 0, 1, 1), v_3 = (2, 1, -1, 0) \} \)</span>
+un subspațiu al său.</p>
+<p>Să găsim <span class="math notranslate nohighlight">\( W^\perp \)</span>.</p>
+<p>Cum cei trei vectori din <span class="math notranslate nohighlight">\( W \)</span> sînt liniar independenți (verificați!) și formează sistem de
+generatori din definiție, rezultă că ei formează o bază pentru <span class="math notranslate nohighlight">\( W \)</span>, deci <span class="math notranslate nohighlight">\( \dim W = 3 \)</span>.</p>
+<p>Folosind teorema anterioară și teorema lui Grassmann (teorema <a class="reference internal" href="p2-s5-op-subsp.html#thm-grassmann">Theorem 19</a>):</p>
+<div class="math notranslate nohighlight">
+\[\dim \mathbb{R}^4 = 4 = \dim W + \dim W^\perp \Rightarrow \dim W^\perp = 1.\]</div>
+<p>Așadar, baza lui <span class="math notranslate nohighlight">\( W^\perp \)</span> este dată de un singur vector din <span class="math notranslate nohighlight">\( \mathbb{R}^4 \)</span>. Fie acesta
+<span class="math notranslate nohighlight">\( w = (a, b, c, d) \in \mathbb{R}^4 \)</span>.</p>
+<p>Folosind observația de mai sus, este suficient ca <span class="math notranslate nohighlight">\( w \perp v_{1,2,3} \)</span> pentru a obține
+că <span class="math notranslate nohighlight">\( w \perp W \)</span>. Avem succesiv:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+   w \perp v_1 &amp;\Rightarrow \langle w, v_1 \rangle = 0 \Rightarrow -a + b + 3c + 2d = 0 \\
+   w \perp v_2 &amp;\Rightarrow \langle w, v_2 \rangle = 0 \Rightarrow c + d = 0 \\
+   w \perp v_3 &amp;\Rightarrow \langle w, v_3 \rangle = 0 \Rightarrow 2a + b - c = 0.
+\end{align*}\end{split}\]</div>
+<p>Obținem un sistem cu 3 ecuații și 4 necunoscute, care este compatibil simplu nedeterminat.
+Soluția lui este</p>
+<div class="math notranslate nohighlight">
+\[(a, b, c, d) \in \left\{ \left( \dfrac{2\alpha}{3}, \dfrac{-\alpha}{3}, \alpha, -\alpha \right) \mid \alpha \in \mathbb{R} \right\}.\]</div>
+<p>Dacă vrem pur și simplu să găsim o bază în <span class="math notranslate nohighlight">\( W^\perp \)</span>, putem lua <span class="math notranslate nohighlight">\( \alpha = 3 \)</span>, pentru simplitate, și avem:</p>
+<div class="math notranslate nohighlight">
+\[W^\perp = \mathrm{Sp}\{ (2, -1, 3, -3) \}.\]</div>
+<p>Rezultă, deci, că vectorul <span class="math notranslate nohighlight">\( w = (2, -1, 3, -3) \)</span> este perpendicular pe toți vectorii din <span class="math notranslate nohighlight">\( W \)</span>,
+inclusiv pe cei din bază. Evident, putem găsi o infinitate de astfel de vectori, însă cu toții
+vor fi multipli ai acestui <span class="math notranslate nohighlight">\( w \)</span>, care alcătuiește baza.</p>
+</section>
+<section id="exemplu-geometric">
+<h3>Exemplu geometric<a class="headerlink" href="#exemplu-geometric" title="Permalink to this headline">#</a></h3>
+<p>Să găsim dreapta perpendiculară pe un plan.</p>
+<p>Există mai multe moduri de a specifica un plan, iar unul dintre acestea
+este cu ajutorul a doi vectori necoliniari. Plasăm, așadar, problema
+în <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span>, planul fiind un subspațiu de dimensiune 2, iar dreapta
+căutată, un subspațiu de dimensiune 1.</p>
+<p>Deci: Fie planul <span class="math notranslate nohighlight">\( P = \mathrm{Sp}\{ v_1 = (2, 0, 1), v_2 = (-1, 1, 1) \} \)</span>,
+ca subspațiu al lui <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span>. Să-i căutăm complementul ortogonal.</p>
+<p>Din considerațiile geometrice sau din simpla aplicare a teoremei lui Grassmann,
+deoarece <span class="math notranslate nohighlight">\( \dim P = 2 \)</span>, rezultă <span class="math notranslate nohighlight">\( \dim P^\perp = 1 \)</span>, deci va fi generat de un singur
+vector din <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span>. Fie acesta <span class="math notranslate nohighlight">\( w = (a, b, c) \in \mathbb{R}^3 \)</span>.</p>
+<p>Din definiția complementului ortogonal, <span class="math notranslate nohighlight">\( w \perp P \)</span>, deci:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  w \perp v_1 &amp;\Rightarrow \langle w, v_1 \rangle = 0 \Rightarrow 2a + c = 0 \\
+  w \perp v_2 &amp;\Rightarrow \langle w, v_2 \rangle = 0 \Rightarrow -a + b + c = 0
+\end{align*}\end{split}\]</div>
+<p>de unde obținem un sistem cu 2 ecuații și 3 necunoscute, cu soluția:</p>
+<div class="math notranslate nohighlight">
+\[(a, b, c) \in \{ (\alpha, 3\alpha , -2\alpha) \mid \alpha \in \mathbb{R} \}.\]</div>
+<p>Rezultă, deci, că <span class="math notranslate nohighlight">\( P^\perp = \{ (\alpha, 3\alpha, -2\alpha) \mid \alpha \in \mathbb{R} \} \)</span>,
+iar dacă vrem o bază în <span class="math notranslate nohighlight">\( P^\perp \)</span>, luăm <span class="math notranslate nohighlight">\( \alpha = 1 \)</span>, de exemplu, și găsim
+<span class="math notranslate nohighlight">\( w = (1, 3, -2) \)</span>. Rezultă că toate dreptele care au acest vector drept director,
+adică toate dreptele paralele cu dreapta suport a acestui vector, vor fi perpendiculare
+pe planul <span class="math notranslate nohighlight">\( P \)</span> dat.</p>
+<p><img alt="Desen GeoGebra" src="_images/geogebra-perp-plan.png" /></p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="v-perp"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Formal, <em>dreptele suport</em> ale vectorilor sînt perpendiculare, dar putem
+folosi aceeași expresie și pentru vectorii înșiși.</p>
+</dd>
+<dt class="label" id="cos"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>În principiu, trebuie demonstrat că definiția este corectă, adică faptul
+că ea produce un număr real din <span class="math notranslate nohighlight">\( [-1, 1] \)</span>. Un rezultat în acest sens există
+și este binecunoscut: <strong>inegalitatea Cauchy-(Buniakovski)-Schwarz</strong>:
+<span class="math notranslate nohighlight">\( \langle v, w \rangle \leq \langle v, v \rangle \cdot \langle w, w \rangle, \)</span>
+pentru orice vectori <span class="math notranslate nohighlight">\( v, w \)</span> dintr-un spațiu euclidian, cu egalitate dacă
+și numai dacă cei doi vectori sînt liniar dependenți. Fiind vorba doar de
+2 vectori, acest lucru se reduce la <span class="math notranslate nohighlight">\( v = \alpha w, \alpha \in \mathbb{R} \)</span>.</p>
+</dd>
+<dt class="label" id="sin-cpx"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>Ca fapt divers, dincolo de scopurile acestui curs, mai adăugăm
+că mulțimea de valori pentru funcțiile sinus și cosinus din cazul real, <span class="math notranslate nohighlight">\( [-1, 1] \)</span>, nu se
+păstrează dacă lucrăm cu numere complexe. Așadar, pentru cazul
+<span class="math notranslate nohighlight">\( \sin, \cos : \mathbb{C} \to \mathbb{C}, \)</span> găsim că <span class="math notranslate nohighlight">\( \mathrm{Im}(\sin,\cos) = \mathbb{R}, \)</span>
+deci au sens chiar și egalități de forma <span class="math notranslate nohighlight">\( \sin z = 20 \)</span> ori <span class="math notranslate nohighlight">\( \cos z = -\pi \)</span>,
+pentru <span class="math notranslate nohighlight">\( z \in \mathbb{C} \)</span>.</p>
+</dd>
+<dt class="label" id="geodezica"><span class="brackets"><a class="fn-backref" href="#id4">4</a></span></dt>
+<dd><p>Un scurt comentariu abstract și fascinant. În general, drumul cel mai scurt
+între două obiecte ale unui spațiu se numește în geometrie <em>geodezică</em>. În spațiile euclidiene,
+această noțiune coincide cu lungimea perpendicularei. Dar se pot imagina spații (de exemplu,
+cele în care geometria euclidiană nu poate fi folosită) în care geodezica să fie un arc de cerc.
+O astfel de situație este, de exemplu, pe o sferă (fără interior): între două puncte ale unei
+sfere nu putem ajunge decît după arce de cerc; noțiunea de „dreaptă“ nu are sens în acest caz.
+Astfel de detalii nu vor fi folosite mai departe, însă am făcut observația pentru a vedea
+că inclusiv noțiunea de „drum cel mai scurt“ este, de fapt, un caz concret pe care îl folosim
+(prin lungimea perpendicularei), care poate fi abstractizat spre utilizări mai generale.</p>
+</dd>
+<dt class="label" id="sp-top"><span class="brackets"><a class="fn-backref" href="#id5">5</a></span></dt>
+<dd><p>Contextul general în care se pot defini distanțele (metricile) este acela
+al <em>spațiilor topologice</em>. Intuitiv, un astfel de spațiu este o mulțime pe care putem
+generaliza analiza matematică a clasei a XI-a. Adică un spațiu în care putem defini
+noțiuni precum vecinătăți, intervale, limite și funcții cu proprietăți relevante în
+analiza matematică, precum continuitatea și derivabilitatea.</p>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="p2-s6-morfisme-spvect.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Morfisme de spații vectoriale</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="p2-s8-vvp.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Vectori și valori proprii</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Adrian Manea (Poligon Educational)<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

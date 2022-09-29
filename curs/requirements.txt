@@ -1,0 +1,5 @@
+jupyter-book
+matplotlib
+numpy
+sphinx-proof
+sphinxcontrib-proof

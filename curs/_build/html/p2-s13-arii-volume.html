@@ -1,0 +1,852 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Arii și volume &#8212; Algebră liniară și aplicații</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/proof.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Aplicații și implementări în programare" href="p3-aplicatii.html" />
+    <link rel="prev" title="Transformări matriceale în 2D și 3D" href="p2-s12-transf-mat.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo-light-poly-only.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Algebră liniară și aplicații</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Algebră liniară și aplicații
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Elemente de istoria și filosofia matematicii
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-istorie-fil-intro.html">
+   Generalități
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-s1-rationamente.html">
+   Abstractizare și raționamente
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-s2-ist-vsp.html">
+   Istoria spațiilor vectoriale
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algebră abstractă și algebră liniară
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="p2-abstract.html">
+   Algebră abstractă și algebră liniară
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s1-grupuri.html">
+     Monoizi și grupuri
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s1e-simetrii.html">
+     Grupuri de simetrie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s2-inele-corpuri.html">
+     Inele și corpuri
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s3-spvect.html">
+     Spații vectoriale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s4-baza.html">
+     Bază și dimensiune
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s5-op-subsp.html">
+     Operații cu subspații
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s6-morfisme-spvect.html">
+     Morfisme de spații vectoriale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s7-ortonormare.html">
+     Produs scalar și ortonormare
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s8-vvp.html">
+     Vectori și valori proprii
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s9-quat.html">
+     Cuaternioni
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s10-afin.html">
+     Spații afine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s11-mat-decomp.html">
+     Descompuneri matriceale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s12-transf-mat.html">
+     Transformări matriceale în 2D și 3D
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Arii și volume
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Aplicații și implementări în programare
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="p3-aplicatii.html">
+   Aplicații și implementări în programare
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Bibliografie și lecturi suplimentare
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliografie.html">
+   Bibliografie și lecturi suplimentare
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/adimanea/linalg"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/adimanea/linalg/issues/new?title=Issue%20on%20page%20%2Fp2-s13-arii-volume.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/p2-s13-arii-volume.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#produsul-vectorial">
+   Produsul vectorial
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#orientare-handedness">
+     Orientare (Handedness)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aplicatii-si-generalizari">
+     Aplicații și generalizări
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Arii și volume</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#produsul-vectorial">
+   Produsul vectorial
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#orientare-handedness">
+     Orientare (Handedness)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aplicatii-si-generalizari">
+     Aplicații și generalizări
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="arii-si-volume">
+<h1>Arii și volume<a class="headerlink" href="#arii-si-volume" title="Permalink to this headline">#</a></h1>
+<p>Pornind de la reprezentări și transformări, care reprezintă partea <em>calitativă</em>
+a studiului spațiilor vectoriale, putem face și un studiu <em>cantitativ</em>.
+Astfel de probleme se referă la lungimi, arii, volume. Precum vom detalia într-o
+altă secțiune, acestea sînt, de fapt, fațete ale aceluiași concept, cel de
+<em>măsură</em>. Teoria măsurii este o ramură a matematicii care pornește de la
+lungimi (în dimensiune 1), arii (în dimensiune 2) și volume (în dimensiune 3)
+și le generalizează, le abstractizează către spații vectoriale și chiar obiecte
+matematice de tipuri și dimensiuni arbitrare. De exemplu, vom vedea că în spațiile
+vectoriale este suficient să lucrăm cu produse scalare și produse vectoriale pentru
+a calcula aceste măsuri, însă pentru figuri <em>drepte</em>, cum sînt cuburi, paralelipipede,
+prisme, piramide etc. Astfel de noțiuni se pot generaliza ușor în spații vectoriale
+euclidiene, adică în care există un produs scalar, iar produsul vectorial se poate
+generaliza către <em>produs exterior</em> fără mare dificultate.</p>
+<p>Însă dacă avem nevoie de <em>curbe</em>, corpuri rotunde ș.a.m.d., este necesar să putem
+lucra cu instrumente de analiză matematică (limite, derivate, integrale), deci
+astfel de construcții sînt ceva mai restrictive.</p>
+<p>Ne vom rezuma aici la a prezenta aplicații ale produsul vectorial pentru calculul
+ariilor și volumelor.</p>
+<p>Înainte de aceasta, facem observația că, în ce privește lungimile, cel puțin,
+adică măsuri ale obiectelor 1-dimensionale. Aceasta se definește în spații euclidiene
+așa cum am arătat <a class="reference internal" href="p2-s7-ortonormare.html#def-dist-eucl">aici</a>, unde am introdus <em>metrica</em> sau
+<em>funcția distanță</em> dintre doi vectori ai unui spațiu euclidian. În particular,
+aceasta se poate extinde la funcția <em>normă</em> imediat:</p>
+<div class="math notranslate nohighlight">
+\[||v|| = \sqrt{ \langle v, v \rangle}, \quad \forall v \in V,\]</div>
+<p>unde <span class="math notranslate nohighlight">\( V \)</span> este un spațiu euclidian.</p>
+<p>Mai departe, noțiunile anunțate de arie și volum.</p>
+<p>Spațiile cu care vom lucra sînt în continuare <span class="math notranslate nohighlight">\( \mathbb{R}^2 \)</span> și <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span>,
+ca spații reale.</p>
+<section id="produsul-vectorial">
+<h2>Produsul vectorial<a class="headerlink" href="#produsul-vectorial" title="Permalink to this headline">#</a></h2>
+<p>Am văzut că doi vectori se pot „înmulți“ și pot produce un scalar cu ajutorul
+produsului scalar. Acesta se poate defini pe orice spațiu vectorial dacă satisface
+axiomele din definiția <a class="reference internal" href="p2-s7-ortonormare.html#def-pr-scalar">Definition 37</a>.</p>
+<p>Produsul vectorial, așa cum îl vom prezenta acum, este o altă variantă de a
+înmulți doi vectori, dar se va aplica doar pentru vectori din <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span>.
+Noțiunea poate fi generalizată către așa-numitul <em>produs exterior</em>, pe care îl
+vom schița ceva mai încolo, însă pentru aplicațiile geometrice care ne interesează,
+cazul standard din <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span> este suficient.</p>
+<p>Prin definiția, produsul vectorial al vectorilor din spațiu
+<span class="math notranslate nohighlight">\( \vec{a} = (a_1, a_2, a_3) = a_1 \vec{i} + a_2 \vec{j} + a_3 \vec{k} \)</span>
+și <span class="math notranslate nohighlight">\( \vec{b} = (b_1, b_2, b_3) = b_1 \vec{i} + b_2 \vec{j} + b_3 \vec{k} \)</span>
+este un vector perpendicular pe planul determinat de <span class="math notranslate nohighlight">\( \vec{a} \)</span> și <span class="math notranslate nohighlight">\( \vec{b} \)</span>.
+De aceea avem nevoie să lucrăm în dimensiune 3, pentru că însăși operația de produs
+vectorial „adaugă dimensiune“, ca să ne exprimăm informal: de la o figură bidimensională
+(plan) se ajunge la una tridimensională (prismă).</p>
+<p>Vectorul produs vectorial, notat <span class="math notranslate nohighlight">\( \vec{a} \times \vec{b} \)</span> se calculează cel mai ușor
+printr-un determinant formal:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\vec{a} \times \vec{b} = \begin{vmatrix} %
+\vec{i} &amp; \vec{j} &amp; \vec{k} \\
+a_1 &amp; a_2 &amp; a_3 \\
+b_1 &amp; b_2 &amp; b_3
+\end{vmatrix}\end{split}\]</div>
+<p>În unele cărți, determinantul este dezvoltat și se returnează direct componentele:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  (\vec{a} \times \vec{b})_x &amp;= a_2 b_3 - a_3 b_2 \\
+  (\vec{a} \times \vec{b})_y &amp;= -a_1 b_3 + a_3 b_1 \\
+  (\vec{a} \times \vec{b})_z &amp;= a_1 b_2 - a_2 b_1
+\end{align*}\end{split}\]</div>
+<p>De asemenea, <em>modulul</em> (lungimea) vectorului calculat de produsul vectorial este dat de:</p>
+<div class="math notranslate nohighlight">
+\[|| \vec{a} \times \vec{b} || = ||\vec{a}|| \cdot ||\vec{b}|| \cdot \sin (\widehat{\vec{a}, \vec{b}}).\]</div>
+<p>Mai adăugăm că, dacă produsul scalar se anulează atunci cînd vectorii sînt
+ortogonali (perpendiculari), din cauza anulării funcției cosinus pentru
+unghiuri de <span class="math notranslate nohighlight">\( \dfrac{\pi}{2} \)</span>, în cazul produsului vectorial, nulitatea
+lui asigură <em>paralelismul</em> vectorilor, întrucît sinusul se anulează
+la unghiuri nule. Am obținut, deci:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<div class="math notranslate nohighlight">
+\[ \vec{a} || \vec{b} \Leftrightarrow \vec{a} \times \vec{b} = \vec{0}. \]</div>
+</div>
+<p>Rezultatul a fost notat ca fiind <em>vectorul</em> nul, pentru că produsul vectorial
+returnează un vector. Evident că modulul vectorului nul este (<em>scalarul</em>) 0,
+dar pentru rigoare, în egalitatea de mai sus apare vectorul nul.</p>
+<section id="orientare-handedness">
+<h3>Orientare (Handedness)<a class="headerlink" href="#orientare-handedness" title="Permalink to this headline">#</a></h3>
+<p>Pînă acum, nu am vorbit deloc despre <em>orientarea</em> vectorului obținut ca produs
+vectorial. Aceasta deoarece în general, modul de determinare este ușor delicat.</p>
+<p>În educația din România cel puțin, se folosește așa-numita <em>regulă a burghiului drept</em>,
+sumarizată mai jos.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Direcția produsului vectorial <span class="math notranslate nohighlight">\( \vec{a} \times \vec{b} \)</span> este perpendiculară pe planul
+determinat de cei doi factori, iar sensul este acela în care s-ar deplasa un burghiu
+(șurub) cînd primul factor (<span class="math notranslate nohighlight">\(\vec{a}\)</span>) se rotește peste al doilea (<span class="math notranslate nohighlight">\( \vec{b} \)</span>).</p>
+</div>
+<figure class="align-default" id="fig-burghiu">
+<img alt="_images/burghiu.jpg" src="_images/burghiu.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 51 </span><span class="caption-text">Regula burghiului drept</span><a class="headerlink" href="#fig-burghiu" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>#TODO: De găsit/făcut o poză mai bună</strong></p>
+<p>Această regulă se mai numește și <em>regula mîinii drepte</em> (eng. <em>right hand rule</em>),
+pentru că mai poate fi formulată astfel:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Direcția produsului vectorial <span class="math notranslate nohighlight">\( \vec{a} \times \vec{b} \)</span> este perpendiculară pe planul
+determinat de cei doi factori, iar sensul se obține astfel: se așează mîna dreaptă
+astfel încît</p>
+<ul class="simple">
+<li><p>arătătorul să fie paralel cu primul factor (<span class="math notranslate nohighlight">\( \vec{a} \)</span>);</p></li>
+<li><p>degetul mijlociu să fie paralel cu al doilea factor (<span class="math notranslate nohighlight">\( \vec{b} \)</span>).</p></li>
+</ul>
+<p>Atunci degetul mare dă sensul produsului vectorial.</p>
+</div>
+<figure class="align-default" id="fig-right-hand">
+<img alt="_images/right-hand-rule.png" src="_images/right-hand-rule.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 52 </span><span class="caption-text">Regula mîinii drepte (via <a class="reference external" href="https://en.wikipedia.org/wiki/Right-hand_rule">Wikipedia</a>)</span><a class="headerlink" href="#fig-right-hand" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Una dintre cele mai importante aplicații ale produsului vectorial este chiar în ce
+privește orientarea versorilor bazei spațiului euclidian <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span>. Cu alte
+cuvinte, versorii trebuie să respecte o regulă care seamănă cu cea de la
+<a class="reference internal" href="p2-s9-quat.html#sec-multimea-h"><span class="std std-ref">unitățile imaginare ale cuaternionilor</span></a>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  \vec{i} \times \vec{j} &amp;= -\vec{j} \times \vec{i} = \vec{k}, \\
+  \vec{j} \times \vec{k} &amp;= -\vec{k} \times \vec{j} = \vec{i}, \\
+  \vec{k} \times \vec{i} &amp;= -\vec{i} \times \vec{k} = \vec{j}
+\end{align*}\end{split}\]</div>
+<p>Aceste egalități ne arată, printre altele, că produsul vectorial este <em>anticomutativ</em>.</p>
+<p>Se obține așa-numitul <em>sistem drept</em> (<em>right handed system</em>), ca în figura de mai jos.</p>
+<figure class="align-default" id="fig-sistem-drept">
+<img alt="_images/sistem-drept.png" src="_images/sistem-drept.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 53 </span><span class="caption-text">Sistem drept de coordonate (<em>right handed</em>)</span><a class="headerlink" href="#fig-sistem-drept" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Alte sistem educaționale și chiar unele produse software, precum Unity,
+Unreal Engine, DirectX, OpenGL folosesc și alte orientări, precum
+<em>sistemele stîngi</em>. Pentru acestea, se folosește același raționament,
+doar că mîna dreaptă este înlocuită cu mîna stîngă. În esență, aceasta
+se reduce la inversarea axelor <span class="math notranslate nohighlight">\( OX \)</span> și <span class="math notranslate nohighlight">\( OY \)</span>, plus, eventual, rotații
+după axa <span class="math notranslate nohighlight">\( OZ \)</span> (în funcție de poziția particulară a mîinii. Imaginea
+de mai jos, preluată din articolul <span id="id1">[<a class="reference internal" href="bibliografie.html#id19" title="Tsuneo Ichiguchi. Confusion in electromagnetism and implications of CPT symmetry – system of units associated with symmetry. Sci. Tech. Trends Quart. Rev., 2010. URL: https://arxiv.org/abs/1008.3005.">Ichiguchi, 2010</a>]</span>, arată o comparație
+între sistemul stîng (subfigura (a)) și sistemul drept (subfigura (b)):</p>
+<figure class="align-default" id="fig-handedness">
+<img alt="_images/right-left-handed-systems.png" src="_images/right-left-handed-systems.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 54 </span><span class="caption-text">Sistemul stîng (a) și sistemul drept (b) de coordonate (via <span id="id2">[<a class="reference internal" href="bibliografie.html#id19" title="Tsuneo Ichiguchi. Confusion in electromagnetism and implications of CPT symmetry – system of units associated with symmetry. Sci. Tech. Trends Quart. Rev., 2010. URL: https://arxiv.org/abs/1008.3005.">Ichiguchi, 2010</a>]</span>)</span><a class="headerlink" href="#fig-handedness" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Dacă nu se precizează altfel, vom presupune că lucrăm cu un sistem drept
+de coordonate.</p>
+</div>
+<p>Vizualizarea vectorului produs vectorial, împreună cu modulul și orientarea
+sa atunci cînd este înmulțit cu vectorul unitate este reprezentată foarte
+clar și simplu în animația de mai jos (via pagina de Twitter a Freya Holmér (<code class="docutils literal notranslate"><span class="pre">&#64;FreyaHolmer</span></code>)):</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">cross product - visualized ⚔<br><br>the cross product A × B is a super useful way to take two 3D vectors, and get a third vector *perpendicular to both*, shown in blue (with its length shown in gray)! <a href="https://t.co/d3NZoLEUtq">pic.twitter.com/d3NZoLEUtq</a></p>&mdash; Freya Holmér (@FreyaHolmer) <a href="https://twitter.com/FreyaHolmer/status/1203059678705602562?ref_src=twsrc%5Etfw">December 6, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p><img alt="Produs vectorial vizualizat" src="https://twitter.com/i/status/120305967870560256" />2</p>
+</section>
+<section id="aplicatii-si-generalizari">
+<h3>Aplicații și generalizări<a class="headerlink" href="#aplicatii-si-generalizari" title="Permalink to this headline">#</a></h3>
+<p>Produsul vectorial are 2 aplicații relevante în discuția de față: una pentru
+calculul ariilor și una pentru calculul volumelor.</p>
+<p>Să amintim o formulă elementară de liceu: Dat un triunghiu <span class="math notranslate nohighlight">\( \Delta ABC \)</span>, aria
+sa poate fi calculată ca <span class="math notranslate nohighlight">\( \mathrm{A}(ABC) = \dfrac{1}{2} AB \cdot AC \cdot \sin \widehat{A} \)</span>.</p>
+<figure class="align-default" id="fig-aria-triunghiului">
+<img alt="_images/aria-triunghiului.png" src="_images/aria-triunghiului.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 55 </span><span class="caption-text">Aria triunghiului <span class="math notranslate nohighlight">\( \Delta ABC \)</span></span><a class="headerlink" href="#fig-aria-triunghiului" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Acum, dacă considerăm un paralelogram <span class="math notranslate nohighlight">\( ABCD \)</span>, el poate fi gîndit ca fiind alcătuit din
+două triunghiuri, <span class="math notranslate nohighlight">\( \Delta ABC \)</span> și <span class="math notranslate nohighlight">\( \Delta BCD \)</span>. Se poate arăta foarte ușor că cele două
+triunghiuri sînt, de fapt, congruente, astfel că au arii egale și deci aria paralelogramului
+este dublul ariei unuia dintre triunghiuri.</p>
+<figure class="align-default" id="fig-aria-plg">
+<img alt="_images/aria-plg.png" src="_images/aria-plg.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 56 </span><span class="caption-text">Aria paralelogramului <span class="math notranslate nohighlight">\( ABCD \)</span></span><a class="headerlink" href="#fig-aria-plg" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Formula ar trebui să vă pară familiară. Dacă <span class="math notranslate nohighlight">\( \vec{AB} \)</span> și <span class="math notranslate nohighlight">\( \vec{AD} \)</span> sînt gîndiți
+ca doi vectori din plan și dacă notăm <span class="math notranslate nohighlight">\( AB = ||\vec{AB}|| \)</span> și respectiv <span class="math notranslate nohighlight">\( AD \)</span> pentru
+<span class="math notranslate nohighlight">\( || \vec{AD} || \)</span>, atunci aria paralelogramului este egală cu norma (lungimea)
+produsului vectorial <span class="math notranslate nohighlight">\( \vec{AB} \times \vec{AD} \)</span>. Chiar dacă acest vector nu este
+în planul paralelogramului, modulul său este de folos în acest context.</p>
+<p>Am obținut, deci;</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Aria paralelogramului cu laturile neparalele <span class="math notranslate nohighlight">\( a \)</span> și <span class="math notranslate nohighlight">\( b \)</span> este egală cu modulul
+produsului vectorial <span class="math notranslate nohighlight">\( \vec{a} \times \vec{b} \)</span>.</p>
+</div>
+<p>O aplicație pentru calculul volumelor se obține introducînd <strong>produsul mixt</strong>
+al trei vectori.</p>
+<div class="proof definition admonition" id="def-prod-mixt">
+<p class="admonition-title"><span class="caption-number">Definition 52 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie vectorii <span class="math notranslate nohighlight">\( \vec{a}, \vec{b}, \vec{c} \in \mathbb{R}^3 \)</span>. Fie componentele lor
+<span class="math notranslate nohighlight">\( \{ a_i, b_i, c_i \}_{1 \leq i \leq 3} \)</span>.</p>
+<p>Se definește <em>produsul lor mixt</em> ca fiind <em>scalarul</em> notat <span class="math notranslate nohighlight">\( (\vec{a},\vec{b},\vec{c}) \)</span>,
+definit prin:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  (\vec{a}, \vec{b}, \vec{c}) = \vec{a} \cdot (\vec{b} \times \vec{c}) = %
+  \begin{pmatrix}
+    a_1 &amp; a_2 &amp; a_3 \\
+	b_1 &amp; b_2 &amp; b_3 \\
+	c_1 &amp; c_2 &amp; c_3
+  \end{pmatrix}.
+\end{split}\]</div>
+</section>
+</div><p>Acum, ca să înțelegem produsul mixt din punct de vedere geometric, remarcăm că
+produsul vectorial <span class="math notranslate nohighlight">\( \vec{b} \times \vec{c} \)</span>, care trebuie calculat primul,
+returnează un vector perpendicular pe planul determinat de cei doi factori.
+Să-l notăm cu <span class="math notranslate nohighlight">\( \vec{v} \)</span>. În particular, cum perpendicularitatea pe plan înseamnă
+perpendicularitate pe orice dreaptă (vector) din plan, rezultă că <span class="math notranslate nohighlight">\( \vec{v} \perp \vec{b} \)</span>
+și <span class="math notranslate nohighlight">\( \vec{v} \perp \vec{c} \)</span> (pînă la o eventuală translație). Apoi, anularea acestui
+produs mixt înseamnă că al treilea factor care apare, vectorul <span class="math notranslate nohighlight">\( \vec{a} \)</span>, ar trebui
+să fie perpendicular pe acest rezultat provizoriu <span class="math notranslate nohighlight">\( \vec{v} \)</span><a class="footnote-reference brackets" href="#pr-mixt-nul" id="id3">1</a>. Dar cum <span class="math notranslate nohighlight">\( \vec{v} \)</span>
+era deja perpendicular pe planul <span class="math notranslate nohighlight">\( (\vec{b}, \vec{c}) \)</span> și chiar pe cei doi factori,
+dubla perpendicularitate înseamnă paralelism, deci <span class="math notranslate nohighlight">\( \vec{a} || \vec{b} \)</span> și
+<span class="math notranslate nohighlight">\( \vec{a} || \vec{c} \)</span>. Concluzia este că vectorii <span class="math notranslate nohighlight">\( \vec{a}, \vec{b} \)</span> și <span class="math notranslate nohighlight">\( \vec{c} \)</span>
+sînt <em>coplanari</em> (se găsesc în același plan).</p>
+<p>Una dintre aplicațiile imediate ale produsului mixt – care se poate justifica folosind
+geometrie elementară în spațiu, este aceasta:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Volumul tetraedrului generat de vectorii neparaleli și necoplanari <span class="math notranslate nohighlight">\( \vec{a}, \vec{b}, \vec{c} \)</span>
+se calculează prin:</p>
+<div class="math notranslate nohighlight">
+\[
+  V = \dfrac{1}{6} \left( \vec{a}, \vec{b}, \vec{c} \right).
+\]</div>
+</div>
+<figure class="align-default" id="fig-vol-piramida">
+<img alt="_images/volum-piramida.png" src="_images/volum-piramida.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 57 </span><span class="caption-text">Volumul piramidei generate de vectorii neparaleli și necoplanari <span class="math notranslate nohighlight">\( \vec{a}, \vec{b}, \vec{c} \)</span></span><a class="headerlink" href="#fig-vol-piramida" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Putem ajunge și la o formulă de calcul al volumului unei <em>prisme triunghiulare</em>. Știm deja
+că aria triunghiului este jumătate din modulul produsului vectorial al două laturi.
+Volumul unui corp drept se calculează ca aria bazei înmulțită cu înălțimea, deci în prisma
+de mai jos, volumul este aria triunghiului <span class="math notranslate nohighlight">\( \Delta ABC \)</span> înmulțită cu înălțimea <span class="math notranslate nohighlight">\( BE \)</span>,
+de exemplu. Dar această înălțime este perpendiculara pe planul determinat de vectorii <span class="math notranslate nohighlight">\( \vec{AB} \)</span>
+și <span class="math notranslate nohighlight">\( \vec{AC} \)</span>, adică este paralelă cu produsul vectorial <span class="math notranslate nohighlight">\( \vec{AB} \times \vec{AC} \)</span>.
+Este suficient să rescalăm acest produs vectorial și obținem înălțimea sub forma</p>
+<div class="math notranslate nohighlight">
+\[  \vec{BE} \cdot (\vec{AB} \times \vec{AC}) \cdot \dfrac{1}{||\vec{AB} \times \vec{AC}||}.\]</div>
+<p>Produsul scalar al doi vectori coliniari este pur și simplu egal cu produsul modulelor lor,
+de aceea a trebuit să înmulțim cu modulul (norma) produsului vectorial, pentru a rămîne
+doar cu înălțimea <span class="math notranslate nohighlight">\( BE \)</span>.</p>
+<p>Punînd informațiile cap la cap, obținem:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  V(ABCDEF) &amp;= \dfrac{1}{2} || \vec{AB} \times \vec{AC}|| \cdot \vec{BE} \cdot (\vec{AB} \times \vec{AC}) \cdot \dfrac{1}{||\vec{AB} \times \vec{AC}||} \\
+	        &amp;=\dfrac{1}{2} \vec{BE} \cdot (\vec{AB} \times \vec{AC}).
+\end{align*}\end{split}\]</div>
+<p>Ajungem la concluzia:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Volumul unei prisme triunghiulare drepte <span class="math notranslate nohighlight">\( ABCDEF \)</span>, cu bazele paralele
+triunghiurile <span class="math notranslate nohighlight">\( \Delta ABC \)</span> și <span class="math notranslate nohighlight">\( \Delta DEF \)</span>, este egal cu:</p>
+<div class="math notranslate nohighlight">
+\[
+  V(ABCDEF) = \dfrac{1}{2} \vec{BE} \cdot (\vec{AB} \times \vec{AC}).
+\]</div>
+</div>
+<figure class="align-default" id="fig-vol-prisma">
+<img alt="_images/volum-prisma.png" src="_images/volum-prisma.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 58 </span><span class="caption-text">Volumul prismei triunghiulare drepte <span class="math notranslate nohighlight">\( ABCDEF \)</span></span><a class="headerlink" href="#fig-vol-prisma" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="pr-mixt-nul"><span class="brackets"><a class="fn-backref" href="#id3">1</a></span></dt>
+<dd><p>Evident, produsul mixt se anulează și dacă produsul vectorial este
+deja nul, adică dacă <span class="math notranslate nohighlight">\( \vec{b} || \vec{c} \)</span>. În acest caz degenerat, concluzia se păstrează,
+totuși. Dacă <span class="math notranslate nohighlight">\( \vec{b} || \vec{c} \)</span>, înseamnă că cei doi vectori coincid (pînă la o translație
+paralelă). Atunci vectorul <span class="math notranslate nohighlight">\( \vec{a} \)</span> este un al doilea vector (posibi) diferit de aceștia
+și cum doi vectori determină un plan, înseamnă că vectorii <span class="math notranslate nohighlight">\( (\vec{a}, \vec{b} = \vec{c}) \)</span>
+sînt coplanari.</p>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="p2-s12-transf-mat.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Transformări matriceale în 2D și 3D</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="p3-aplicatii.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Aplicații și implementări în programare</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Adrian Manea (Poligon Educational)<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

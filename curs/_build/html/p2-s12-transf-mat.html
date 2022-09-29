@@ -1,0 +1,1589 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Transformări matriceale în 2D și 3D &#8212; Algebră liniară și aplicații</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/proof.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Arii și volume" href="p2-s13-arii-volume.html" />
+    <link rel="prev" title="Descompuneri matriceale" href="p2-s11-mat-decomp.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo-light-poly-only.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Algebră liniară și aplicații</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Algebră liniară și aplicații
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Elemente de istoria și filosofia matematicii
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-istorie-fil-intro.html">
+   Generalități
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-s1-rationamente.html">
+   Abstractizare și raționamente
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-s2-ist-vsp.html">
+   Istoria spațiilor vectoriale
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algebră abstractă și algebră liniară
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="p2-abstract.html">
+   Algebră abstractă și algebră liniară
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s1-grupuri.html">
+     Monoizi și grupuri
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s1e-simetrii.html">
+     Grupuri de simetrie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s2-inele-corpuri.html">
+     Inele și corpuri
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s3-spvect.html">
+     Spații vectoriale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s4-baza.html">
+     Bază și dimensiune
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s5-op-subsp.html">
+     Operații cu subspații
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s6-morfisme-spvect.html">
+     Morfisme de spații vectoriale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s7-ortonormare.html">
+     Produs scalar și ortonormare
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s8-vvp.html">
+     Vectori și valori proprii
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s9-quat.html">
+     Cuaternioni
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s10-afin.html">
+     Spații afine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s11-mat-decomp.html">
+     Descompuneri matriceale
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Transformări matriceale în 2D și 3D
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s13-arii-volume.html">
+     Arii și volume
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Aplicații și implementări în programare
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="p3-aplicatii.html">
+   Aplicații și implementări în programare
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Bibliografie și lecturi suplimentare
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliografie.html">
+   Bibliografie și lecturi suplimentare
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/adimanea/linalg"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/adimanea/linalg/issues/new?title=Issue%20on%20page%20%2Fp2-s12-transf-mat.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/p2-s12-transf-mat.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motivatie-exemple">
+   Motivație: Exemple
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cazul-general-in-plan">
+   Cazul general în plan
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#trecerea-la-3d">
+   Trecerea la 3D
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rotatii-in-spatiu">
+   Rotații în spațiu
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unghiuri-euler">
+     Unghiuri Euler
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#coordonate-sferice-si-cilindrice">
+     Coordonate sferice și cilindrice
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matrice-de-rotatie">
+     Matrice de rotație
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemplu-in-spatiu">
+     Exemplu în spațiu
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cuaternioni-din-nou">
+   Cuaternioni din nou
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aplicatie-interpolare-cuaternionica-slerp">
+     Aplicație: Interpolare cuaternionică (SLERP)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#explicatie-unghiul-de-rotatie">
+     Explicație: Unghiul de rotație
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Transformări matriceale în 2D și 3D</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motivatie-exemple">
+   Motivație: Exemple
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cazul-general-in-plan">
+   Cazul general în plan
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#trecerea-la-3d">
+   Trecerea la 3D
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rotatii-in-spatiu">
+   Rotații în spațiu
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unghiuri-euler">
+     Unghiuri Euler
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#coordonate-sferice-si-cilindrice">
+     Coordonate sferice și cilindrice
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matrice-de-rotatie">
+     Matrice de rotație
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemplu-in-spatiu">
+     Exemplu în spațiu
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cuaternioni-din-nou">
+   Cuaternioni din nou
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aplicatie-interpolare-cuaternionica-slerp">
+     Aplicație: Interpolare cuaternionică (SLERP)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#explicatie-unghiul-de-rotatie">
+     Explicație: Unghiul de rotație
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="transformari-matriceale-in-2d-si-3d">
+<h1>Transformări matriceale în 2D și 3D<a class="headerlink" href="#transformari-matriceale-in-2d-si-3d" title="Permalink to this headline">#</a></h1>
+<p>Ne îndreptăm acum către aplicații, în special în geometrie și în grafică,
+motiv pentru care exemplele pe care le vom prezenta vor fi doar în plan
+și în spațiul tridimensional. Ne vom concentra pe transformările cele mai
+des întîlnite: translații, rotații, rescalări, oglindiri și forfecări.</p>
+<p>Amintim că orice astfel de transformare înseamnă o aplicație liniară și,
+din moment ce nu se pierde sau se adaugă vreo componentă, e.g. figurile
+tridimensionale să devină bidimensionale sau invers, este vorba despre
+<em>endomorfisme</em> de forma <span class="math notranslate nohighlight">\( T : \mathbb{R}^2 \to \mathbb{R}^2 \)</span> pentru
+transformările în plan și <span class="math notranslate nohighlight">\( T : \mathbb{R}^3 \to \mathbb{R}^3 \)</span> pentru cele
+în spațiul tridimensional<a class="footnote-reference brackets" href="#spatiu" id="id1">1</a>.</p>
+<p>De asemenea, orice aplicație liniară se caracterizează unic prin matricea sa
+într-o bază fixată. Și, dacă nu există o motivație suplimentară, vom folosi
+bazele canonice de fiecare dată.</p>
+<p>Apoi, aplicarea <em>funcției</em> <span class="math notranslate nohighlight">\( T \)</span> este echivalentă cu înmulțirea cu <em>matricea</em>
+lui <span class="math notranslate nohighlight">\( T \)</span> în bazele canonice, <span class="math notranslate nohighlight">\( M_T \)</span>. În plus, funcția inversă <span class="math notranslate nohighlight">\( T^{-1} \)</span>, care este
+caracterizată de matricea inversă <span class="math notranslate nohighlight">\( M_T^{-1} \)</span>.</p>
+<section id="motivatie-exemple">
+<h2>Motivație: Exemple<a class="headerlink" href="#motivatie-exemple" title="Permalink to this headline">#</a></h2>
+<p>Începem cu cîteva transformări în plan, pe care le exemplificăm pe un triunghi
+concret, pentru a căpăta ceva intuiție și înțelegere de bază a situației.</p>
+<p>Exemplele sînt inspirate din §10 <span id="id2">[<a class="reference internal" href="bibliografie.html#id12" title="John F. Hughes and Andries van Dam. Computer Graphics: Principles and Practice. Addison-Wesley, third edition, 2014.">Hughes and van Dam, 2014</a>]</span>.</p>
+<p>Pornim cu un triunghi în plan, <span class="math notranslate nohighlight">\( \Delta ABC \)</span>, cu vîrfurile <span class="math notranslate nohighlight">\( A(1,1), B(7,1) \)</span>
+și <span class="math notranslate nohighlight">\( C(4,6) \)</span>, din figura de mai jos. Am ales triunghiul astfel încît să aibă
+latura <span class="math notranslate nohighlight">\( AB \)</span> paralelă cu axa <span class="math notranslate nohighlight">\( OX \)</span>, pentru a o urmări ușor și în cazul în care
+își schimbă înclinarea.</p>
+<figure class="align-default" id="fig-triunghi-2d">
+<img alt="_images/triunghi-2d.png" src="_images/triunghi-2d.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 29 </span><span class="caption-text"><span class="math notranslate nohighlight">\( \Delta ABC \)</span> căruia îi vom aplica transformări geometrice în plan</span><a class="headerlink" href="#fig-triunghi-2d" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<hr class="docutils" />
+<p>Începem cu ceea ce vom constata că este o <strong>rotație</strong>. Alegem un unghi
+<span class="math notranslate nohighlight">\( \theta = \dfrac{\pi}{6} \)</span> și definim matricea:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}R = \begin{pmatrix}
+\cos \theta &amp; -\sin \theta \\
+\sin \theta &amp; \cos \theta
+\end{pmatrix} = %
+\begin{pmatrix}
+\sqrt{3}/2 &amp; -1/2 \\
+1/2 &amp; \sqrt{3}/2
+\end{pmatrix}\end{split}\]</div>
+<p>Apoi definim transformarea plană care să aibă matricea <span class="math notranslate nohighlight">\( R \)</span> drept matrice
+în bazele canonice. De aceea, o putem defini direct matriceal:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}T_1 : \mathbb{R}^2 \to \mathbb{R}^2, \quad %
+T_1 \begin{pmatrix} x \\ y \end{pmatrix} = R \begin{pmatrix} x \\ y \end{pmatrix}\end{split}\]</div>
+<p>Acum să aplicăm această transformare vîrfurilor triunghiului <span class="math notranslate nohighlight">\( \Delta ABC \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  A &amp;\mapsto R \cdot \begin{pmatrix} 1 \\ 1 \end{pmatrix} = \begin{pmatrix} \dfrac{\sqrt{3} - 1}{2} \\ \dfrac{\sqrt{3} + 1}{2} \end{pmatrix} \\
+  B &amp;\mapsto R \cdot \begin{pmatrix} 7 \\ 1 \end{pmatrix} = \begin{pmatrix} \dfrac{7\sqrt{3} - 1}{2} \\ \dfrac{7 + \sqrt{3}}{2} \end{pmatrix} \\
+  C &amp;\mapsto R \cdot \begin{pmatrix} 4 \\ 6 \end{pmatrix} = \begin{pmatrix} \dfrac{4\sqrt{3} - 6}{2} \\ \dfrac{4 + 6\sqrt{3}}{2} \end{pmatrix} = %
+  \begin{pmatrix} 2\sqrt{3} - 3 \\ 2 + 3\sqrt{3} \end{pmatrix}
+\end{align*}.\end{split}\]</div>
+<p>Triunghiul care are noile vîrfuri obținute mai sus este reprezentat în figura următoare.</p>
+<figure class="align-default" id="fig-triunghi-rotit">
+<img alt="_images/triunghi-rotit.png" src="_images/triunghi-rotit.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 30 </span><span class="caption-text">Triunghiul <span class="math notranslate nohighlight">\( \Delta ABC \)</span> a fost rotit cu <span class="math notranslate nohighlight">\( \dfrac{\pi}{6} \)</span> în jurul originii și s-a obținut <span class="math notranslate nohighlight">\( \Delta A_R B_R C_R \)</span></span><a class="headerlink" href="#fig-triunghi-rotit" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<hr class="docutils" />
+<p>Considerăm acum o transformare <span class="math notranslate nohighlight">\( T_2 \)</span> dată de matricea <span class="math notranslate nohighlight">\( S = \begin{pmatrix} 3 &amp; 0 \\ 0 &amp; 2 \end{pmatrix} \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}T_2 : \mathbb{R}^2 \to \mathbb{R}^2, T_2 \begin{pmatrix} x \\ y \end{pmatrix} = S \begin{pmatrix} x \\ y \end{pmatrix}.\end{split}\]</div>
+<p>Aplicăm transformarea vîrfurilor triunghiului:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  A &amp;\mapsto S \cdot \begin{pmatrix} 1 \\ 1 \end{pmatrix} = \begin{pmatrix} 3 \\ 2 \end{pmatrix} \\
+  B &amp;\mapsto S \cdot \begin{pmatrix} 7 \\ 1 \end{pmatrix} = \begin{pmatrix} 21 \\ 2 \end{pmatrix} \\
+  C &amp;\mapsto S \cdot \begin{pmatrix} 4 \\ 6 \end{pmatrix} = \begin{pmatrix} 12 \\ 12 \end{pmatrix}
+\end{align*}\end{split}\]</div>
+<p>Ceea ce se obține este triunghiul din figura de mai jos.</p>
+<figure class="align-default" id="fig-triunghi-rescalat">
+<img alt="_images/triunghi-rescalat.png" src="_images/triunghi-rescalat.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 31 </span><span class="caption-text">Triunghiul <span class="math notranslate nohighlight">\( \Delta ABC \)</span> a fost rescalat neuniform cu un raport <span class="math notranslate nohighlight">\( \dfrac{3}{2} \)</span> și s-a obținut <span class="math notranslate nohighlight">\( \Delta A_S B_S C_S \)</span></span><a class="headerlink" href="#fig-triunghi-rescalat" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Se observă că triunghiul nu a fost rotit, însă coordonatele tuturor punctelor au fost rescalate
+<em>neuniform</em>. Din cauza elementelor de pe diagonala matricei <span class="math notranslate nohighlight">\( S \)</span>, abscisele punctelor
+s-au triplat, iar ordonatele, s-au dublat. De aceea, triunghiul s-a „lățit“ mai mult decît
+s-a „alungit“, cu un raport de <span class="math notranslate nohighlight">\( \dfrac{3}{2} \)</span> între transformări, de fapt.</p>
+<hr class="docutils" />
+<p>Fie acum transformarea <span class="math notranslate nohighlight">\( T_3 \)</span> dată de matricea <span class="math notranslate nohighlight">\( F = \begin{pmatrix} 1 &amp; 2 \\ 0 &amp; 1 \end{pmatrix} \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}T_3 : \mathbb{R}^2 \to \mathbb{R}^2, T_3 \begin{pmatrix} x \\ y \end{pmatrix} = F \begin{pmatrix} x \\ y \end{pmatrix}.\end{split}\]</div>
+<p>Pe vîrfurile <span class="math notranslate nohighlight">\( \Delta ABC \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  A &amp;\mapsto F \cdot \begin{pmatrix} 1 \\ 1 \end{pmatrix} = \begin{pmatrix} 3 \\ 1 \end{pmatrix} \\
+  B &amp;\mapsto F \cdot \begin{pmatrix} 7 \\ 1 \end{pmatrix} = \begin{pmatrix} 9 \\ 1 \end{pmatrix} \\
+  C &amp;\mapsto F \cdot \begin{pmatrix} 4 \\ 6 \end{pmatrix} = \begin{pmatrix} 16 \\ 6 \end{pmatrix}
+\end{align*}\end{split}\]</div>
+<p>Se obține triunghiul de mai jos.</p>
+<figure class="align-default" id="fig-triunghi-forfecat">
+<img alt="_images/triunghi-forfecat.png" src="_images/triunghi-forfecat.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Triunghiul <span class="math notranslate nohighlight">\( \Delta ABC \)</span> a fost forfecat în raport cu axa <span class="math notranslate nohighlight">\( OY \)</span> și s-a obținut <span class="math notranslate nohighlight">\( \Delta A_F B_F C_F \)</span></span><a class="headerlink" href="#fig-triunghi-forfecat" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Transformarea păstrează înălțimea triunghiului și îi mută (neuniform) coordonatele vîrfurilor
+<em>pe orizontală</em>, adică paralel cu axa <span class="math notranslate nohighlight">\( OX \)</span>. O astfel de transformare se numește
+<em>forfecare</em> (eng. <em>shearing</em>).</p>
+<hr class="docutils" />
+<p>Considerăm acum o matrice oarecare <span class="math notranslate nohighlight">\( G = \begin{pmatrix} 1 &amp; -1 \\ 2 &amp; 3 \end{pmatrix} \)</span> și transformarea
+<span class="math notranslate nohighlight">\( T_4 \)</span> definită de ea:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}T_4 : \mathbb{R}^2 \to \mathbb{R}^2, T_4 \begin{pmatrix} x \\ y \end{pmatrix} = G \begin{pmatrix} x \\ y \end{pmatrix}.\end{split}\]</div>
+<p>Vîrfurile triunghiului devin:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  A &amp;\mapsto G \cdot \begin{pmatrix} 1 \\ 1 \end{pmatrix} = \begin{pmatrix} 0 \\ 5 \end{pmatrix} \\
+  B &amp;\mapsto G \cdot \begin{pmatrix} 7 \\ 1 \end{pmatrix} = \begin{pmatrix} 6 \\ 17 \end{pmatrix} \\
+  C &amp;\mapsto G \cdot \begin{pmatrix} 4 \\ 6 \end{pmatrix} = \begin{pmatrix} -2 \\ -10 \end{pmatrix}
+\end{align*}\end{split}\]</div>
+<p>Se obține:</p>
+<figure class="align-default" id="fig-triunghi-transf-general">
+<img alt="_images/triunghi-transf-general.png" src="_images/triunghi-transf-general.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 33 </span><span class="caption-text">Triunghiul <span class="math notranslate nohighlight">\( \Delta ABC \)</span> a suferit o <em>transformare generală</em> și a ajuns <span class="math notranslate nohighlight">\( \Delta A_G B_G C_G \)</span></span><a class="headerlink" href="#fig-triunghi-transf-general" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>O astfel de situație este greu de descris, întrucît triunghiul s-a transformat prin rotație, rescalare
+neuniformă și translație (cel puțin), iar cazul se numește <em>transformare generală</em>.</p>
+<hr class="docutils" />
+<p>În fine, considerăm matricea <span class="math notranslate nohighlight">\( D = \begin{pmatrix} 1 &amp; -1 \\ 2 &amp; -2 \end{pmatrix} \)</span> și transformarea:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}T_5 : \mathbb{R}^2 \to \mathbb{R}^2, T_5 \begin{pmatrix} x \\ y \end{pmatrix} = D \begin{pmatrix} x \\ y \end{pmatrix}.\end{split}\]</div>
+<p>Vîrfurile triunghiului devin:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  A &amp;\mapsto D \cdot \begin{pmatrix} 1 \\ 1 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix} \\
+  B &amp;\mapsto D \cdot \begin{pmatrix} 7 \\ 1 \end{pmatrix} = \begin{pmatrix} 6 \\ 12 \end{pmatrix} \\
+  C &amp;\mapsto D \cdot \begin{pmatrix} 4 \\ 6 \end{pmatrix} = \begin{pmatrix} -2 \\ -4 \end{pmatrix}
+\end{align*}\end{split}\]</div>
+<p>Ajungem la:</p>
+<figure class="align-default" id="fig-triunghi-degenerat">
+<img alt="_images/triunghi-degenerat.png" src="_images/triunghi-degenerat.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 34 </span><span class="caption-text">Triunghiul <span class="math notranslate nohighlight">\( \Delta ABC \)</span> a fost transformat cu o matrice singulară și a ajuns degenerat: <em>segmentul</em> <span class="math notranslate nohighlight">\( E-D-F \)</span></span><a class="headerlink" href="#fig-triunghi-degenerat" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>În acest caz, matricea care caracterizează transformarea este singulară: se poate vedea că liniile sale
+sînt proporționale, ceea ce o face neinversabilă: <span class="math notranslate nohighlight">\( \det D = 0 \)</span>. De aceea, transformarea pe care
+o induce se numește <em>degenerată</em> sau <em>singulară</em> și vedem că, într-adevăr, produce o schimbare
+a formei triunghiului și se ajunge la un segment (vîrfurile triunghiului devin 3 puncte coliniare).</p>
+<hr class="docutils" />
+<p>Veți fi constatat că dintre toate transformările, lipsește chiar cea mai simplă: <em>translația</em>.
+Aceasta deoarece tratamentul ei matriceal este surprinzător de sofisticat și îl detaliem mai jos.</p>
+</section>
+<section id="cazul-general-in-plan">
+<h2>Cazul general în plan<a class="headerlink" href="#cazul-general-in-plan" title="Permalink to this headline">#</a></h2>
+<p>Putem extrage formulele generale din exemplele de mai sus:</p>
+<p><strong>Rotația de unghi <span class="math notranslate nohighlight">\( \theta \)</span></strong>, în sens trigonometric și în jurul originii
+este dată de o matrice de rotație cu forma generală:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}R_\theta = \begin{pmatrix} \cos \theta &amp; -\sin \theta \\ \sin \theta &amp; \cos \theta \end{pmatrix}\end{split}\]</div>
+<p>Două remarci:</p>
+<ul class="simple">
+<li><p>observăm că <span class="math notranslate nohighlight">\( \det R_\theta = 1 \)</span>, indiferent de unghiul de rotație;</p></li>
+<li><p>dacă vrem să facem rotația în jurul unui alt punct, iar nu în jurul originii,
+avem nevoie să facem mai întîi o translație în centrul de rotație (astfel încît
+acel punct să devină „noua origine“) și apoi să aplicăm rotația.</p></li>
+</ul>
+<p><strong>Translația</strong> unui vector din plan <span class="math notranslate nohighlight">\( (a, b) \)</span> cu vectorul <span class="math notranslate nohighlight">\( (t_x, t_y) \)</span> înseamnă vectorul
+<span class="math notranslate nohighlight">\( (a + t_x, b + t_y) \)</span>. Însă acesta nu se poate obține lucrînd cu matrice <span class="math notranslate nohighlight">\( 2 \times 2 \)</span>.
+De aceea, trebuie să aplicăm un artificiu de calcul și să lucrăm cu matrice <span class="math notranslate nohighlight">\( 3 \times 3 \)</span>.
+Astfel, vectorul din plan devine <span class="math notranslate nohighlight">\( (a, b, 1)^t \)</span>, iar <strong>matricea de translație</strong> devine:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}
+1 &amp; 0 &amp; t_x \\
+0 &amp; 1 &amp; t_y \\
+0 &amp; 0 &amp; 1 
+\end{pmatrix} \Rightarrow
+\begin{pmatrix}
+a \\ b \\ 1
+\end{pmatrix} \cdot
+\begin{pmatrix}
+1 &amp; 0 &amp; t_x \\
+0 &amp; 1 &amp; t_y \\
+0 &amp; 0 &amp; 1 
+\end{pmatrix} = \begin{pmatrix} a + t_x \\ b + t_y \\ 1 \end{pmatrix}\end{split}\]</div>
+<p>din care extragem primele două componente și obținem punctul (vectorul) translatat.</p>
+<p><strong>Rescalarea</strong> se face cu o matrice diagonală, în care, dacă elementele de pe diagonală
+sînt egale, rescalarea este <em>uniformă</em>, adică cu aceleași proporții în toate direcțiile,
+iar dacă elementele sînt diferite, atunci rescalarea este <em>neuniformă</em>, cum am văzut
+în exemplul de mai sus. În general, o matrice de forma:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}S = \begin{pmatrix}
+s_x &amp; 0 \\
+0 &amp; s_y
+\end{pmatrix}\end{split}\]</div>
+<p>aplică o rescalare de raport <span class="math notranslate nohighlight">\( s_x \)</span> pe abscisă și de raport <span class="math notranslate nohighlight">\( s_y \)</span> pe ordonată.
+Dacă <span class="math notranslate nohighlight">\( s_x = s_y \)</span>, rescalarea este uniformă; altfel, este neuniformă.</p>
+<p><strong>Forfecarea</strong> este o transformare care păstrează o direcție fixată și mută
+punctele paralel cu direcția respectivă. O forfecare după <span class="math notranslate nohighlight">\( OY \)</span> păstrează
+înălțimea figurii, deci transformarea are loc între minimele și maximele de
+înălțime ale figurii inițiale. Mai mult, una dintre baze rămîne fixată și se
+modifică cealaltă, paralel cu baza.</p>
+<p>Pentru a păstra înălțimea (ordonata), este necesar să avem linia a doua a
+matricei de forfecare egală cu <span class="math notranslate nohighlight">\( (0 \ 1) \)</span>. Prima linie este cea care dă
+„modulul“ forfecării. Așadar, în general, o matrice de forfecare după <span class="math notranslate nohighlight">\( OX \)</span>
+(i.e. care păstrează înălțimea) are forma generală:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}F_x = \begin{pmatrix} a &amp; b \\ 0 &amp; 1 \end{pmatrix}\end{split}\]</div>
+<p>Similar, o forfecare după axa <span class="math notranslate nohighlight">\( OY \)</span> trebuie să păstreze abscisa, deci are
+prima linie egală cu <span class="math notranslate nohighlight">\( (0 \ 1) \)</span> și a doua linie arbitrară.</p>
+<p>În fine, o <strong>transformare generală</strong> este una dată de o matrice arbitrară,
+iar dacă matricea este singulară, transformarea se numește <strong>degenerată</strong>
+sau <strong>singulară</strong> și se obține o figură în dimensiune inferioară
+(în plan, dacă se pornește cu un poligon, se ajunge la un segment).</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Nu am luat în considerare cazurile cînd matricele transformărilor conțin
+și numere negative. Situația poate fi tratată astfel: punctele din plan
+pe care le-am transformat (cum sînt vîrfurile triunghiului, în cazurile
+concrete din exemple) se gîndesc, de fapt, ca <em>vectori de poziție</em>.
+Astfel, vîrful <span class="math notranslate nohighlight">\( A(1, 1) \)</span> înseamnă vectorul <span class="math notranslate nohighlight">\( \vec{v} = \vec{i} + \vec{j} \)</span>,
+folosind notațiile specifice din plan.</p>
+<p>Rezultă, deci, că o transformare care ar folosi valori negative, precum
+o rescalare sau o translație sau o forfecare ar schimba și <em>direcția</em>
+acestor vectori.</p>
+</div>
+<p>Iată în figura de mai jos rescalarea dată de matricea
+<span class="math notranslate nohighlight">\( S = \begin{pmatrix} 3 &amp; 0 \\ 0 &amp; 2 \end{pmatrix} \)</span> anterioară,
+obținîndu-se triunghiul <span class="math notranslate nohighlight">\( \Delta A_S B_S C_S \)</span>, dar și rescalarea
+dată de matricea <span class="math notranslate nohighlight">\( -S \)</span>, obținîndu-se triunghiul <span class="math notranslate nohighlight">\( \Delta DEF \)</span>.</p>
+<figure class="align-default" id="fig-triunghi-rescalat-neg">
+<img alt="_images/triunghi-rescalat-negativ.png" src="_images/triunghi-rescalat-negativ.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 35 </span><span class="caption-text">Triunghiul <span class="math notranslate nohighlight">\( \Delta ABC \)</span> rescalat cu matricea <span class="math notranslate nohighlight">\( S \Rightarrow \Delta A_S B_S C_S \)</span> și cu
+matricea <span class="math notranslate nohighlight">\( -S \Rightarrow \Delta DEF \)</span></span><a class="headerlink" href="#fig-triunghi-rescalat-neg" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Remarcăm, de asemenea, că <span class="math notranslate nohighlight">\( \Delta DEF \)</span> este simetricul (oglinditul)
+<span class="math notranslate nohighlight">\( \Delta A_S B_S C_S \)</span> față de origine, o legătură pe care o vom explora mai
+tîrziu, în simetriile de reflexie. Deocamdată, vă invităm să revedeți
+secțiunea despre <a class="reference internal" href="p2-s1e-simetrii.html#sec-gr-klein"><span class="std std-ref">grupul lui Klein</span></a>, înțeles ca grup
+de reflexii.</p>
+</section>
+<section id="trecerea-la-3d">
+<h2>Trecerea la 3D<a class="headerlink" href="#trecerea-la-3d" title="Permalink to this headline">#</a></h2>
+<p>O parte a transformărilor din plan poate fi trecută în spațiu foarte ușor.
+De exemplu, <em>rescalarea</em> va folosi tot o matrice diagonală, cu elementele
+egale dacă este uniformă și diferite, în caz contrar:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}S_{3D} = \begin{pmatrix}
+a &amp; 0 &amp; 0 \\
+0 &amp; b &amp; 0 \\
+0 &amp; 0 &amp; c
+\end{pmatrix}, \quad a, b, c \in \mathbb{R},\end{split}\]</div>
+<p>cu <span class="math notranslate nohighlight">\( a = b = c \)</span> pentru uniformitate.</p>
+<p>Similar, forfecarea în 3D înseamnă o matrice superior triunghiulară, cu 1 pe diagonala
+principală, de forma:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}F_{3D} = \begin{pmatrix}
+1 &amp; a &amp; b \\
+0 &amp; 1 &amp; c \\
+0 &amp; 0 &amp; 1
+\end{pmatrix}\end{split}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>În general, trecerea la spațiul tridimensional ne aduce și control suplimentar
+asupra celor 3 direcții. În plan, o forfecare, de exemplu, fixează una dintre
+direcții și o modifică pe cealaltă. În spațiu, putem fixa una <em>sau două</em> dintre
+direcții și putem modifica pe celelalte două <em>sau una</em>.</p>
+<p>Nu insistăm pe aceste detalii tehnice pe cazul general, deoarece credem că se vor
+înțelege cel mai bine atunci cînd le vom vedea pe exemple grafice. Mai mult, folosind
+puterea de calcul dintr-un limbaj de programare, vom putea modifica figuri mai
+sofisticate, nu doar triunghiuri sau cuburi.</p>
+</div>
+<p>Desigur, transformarea generală are sens și în spațiu, fiind dată de o matrice arbitrară,
+iar dacă matricea este singulară, se obține o transformare degenerată, care face
+ca figura spațială să devină plană.</p>
+<hr class="docutils" />
+<p>Totuși, chiar dacă nu vom insista pe detalii teoretice generale, ne oprim să discutăm
+despre rotațiile din spațiu, deoarece vom întîlni concepte teoretice de mare importanță,
+printre care și aplicații ale cuaternionilor.</p>
+</section>
+<section id="rotatii-in-spatiu">
+<h2>Rotații în spațiu<a class="headerlink" href="#rotatii-in-spatiu" title="Permalink to this headline">#</a></h2>
+<p>Cazul rotațiilor din spațiu este mai dificil de tratat pe cazul general, deoarece
+avem cele 3 grade de libertate, care ne permit să avem rotații în jurul mai multor
+axe sau chiar plane.</p>
+<section id="unghiuri-euler">
+<h3>Unghiuri Euler<a class="headerlink" href="#unghiuri-euler" title="Permalink to this headline">#</a></h3>
+<p>În termeni de specialitate, folosiți în programarea grafică și împrumutați din
+industria aeronautică, cele 3 feluri de rotații des întîlnite se numesc, în engleză,
+<em>pitch, yaw</em> și <em>roll</em>. În cazul general, arată așa (via <a class="reference external" href="https://simple.wikipedia.org/wiki/Pitch,_yaw,_and_roll">Wikipedia</a>):</p>
+<figure class="align-default" id="fig-pitch-yaw-roll-general">
+<img alt="_images/pitch-yaw-roll-general.jpeg" src="_images/pitch-yaw-roll-general.jpeg" />
+<figcaption>
+<p><span class="caption-number">Fig. 36 </span><span class="caption-text">Rotațiile <em>pitch, yaw</em> și <em>roll</em> într-un sistem de axe, împreună cu celelalte grade de libertate</span><a class="headerlink" href="#fig-pitch-yaw-roll-general" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>iar în cazul unui avion, astfel:</p>
+<figure class="align-default" id="fig-pitch-yaw-roll-avion">
+<img alt="_images/pitch-yaw-roll-avion.png" src="_images/pitch-yaw-roll-avion.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 37 </span><span class="caption-text">Rotațiile <em>pitch, yaw</em> și <em>roll</em> asupra unui avion</span><a class="headerlink" href="#fig-pitch-yaw-roll-avion" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>În §8.3 (pp. 229-243)  din <span id="id3">[<a class="reference internal" href="bibliografie.html#id16" title="Fletcher Dunn and Ian Parberry. 3D Math Primer for Graphics and Game Development. CRC Press, second edition, 2011.">Dunn and Parberry, 2011</a>]</span> se prezintă o discuție foarte detaliată
+și bine documentată privitoare la reprezentarea în spațiu folosind 3 unghiuri.
+Printre altele, se arată că terminologia <em>pitch-yaw-roll</em> este moștenită din
+navigație și că, din punct de vedere matematic, își are originea într-un alt
+triplet, denumit <em>pitch-heading-bank</em>, cu semnificațiile:</p>
+<ul class="simple">
+<li><p>rotația <em>heading</em> se face în jurul axei perpendiculare pe planul obiectului (corespunde <em>yaw</em>);</p></li>
+<li><p>rotația <em>pitch</em> se face după axa laterală (transversală) față de obiect (corespunde <em>pitch</em>);</p></li>
+<li><p>rotația <em>bank</em> se face după axa longitudinală a obiectului (corespunde <em>roll</em>).</p></li>
+</ul>
+<p>Unul dintre avantajele utilizării unghiurilor Euler este acela că folosește
+minimum de informații: un triplet de numere reale. Mai mult chiar, acestea nu au
+vreo condiție de existență (în afara faptului că trebuie să fie numere reale),
+spre deosebire de forma matriceală pe care o vom vedea, unde rotația se reprezintă
+prin matrice care au forme impuse.</p>
+<p>Unghiurile Euler au, însă, un dezavantaj major: <em>nu formează o bază pentru <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span></em>;
+cu alte cuvinte, nu identifică unic un punct din spațiu. Un exemplu de astfel de confuzie
+în care două seturi de unghiuri Euler diferite precizează același punct<a class="footnote-reference brackets" href="#aliasing" id="id4">2</a> este
+numit <em>Gimbal lock</em> și are o istorie fascinantă. Mai întîi, partea matematică.</p>
+<p>Cel mai simplu este să prezentăm o ilustrație, preluată din articolul <span id="id5">[<a class="reference internal" href="bibliografie.html#id17" title="Xiangyu Zhu, Xiaoming Liu, Zhen Lei, and Stan Z. Li. Face alignment in full pose range: a 3d total solution. IEEE Transactions on Pattern Analysis and Machine Intelligence, 2017. URL: https://www.researchgate.net/publication/321351929_Face_Alignment_in_Full_Pose_Range_A_3D_Total_Solution, doi:10.1109/TPAMI.2017.2778152.">Zhu <em>et al.</em>, 2017</a>]</span>:</p>
+<figure class="align-default" id="fig-gimbal-face">
+<img alt="_images/gimbal-lock-face.jpeg" src="_images/gimbal-lock-face.jpeg" />
+<figcaption>
+<p><span class="caption-number">Fig. 38 </span><span class="caption-text">Două seturi diferite de unghiuri Euler pot produce aceeași transformare (cf. <span id="id6">[<a class="reference internal" href="bibliografie.html#id17" title="Xiangyu Zhu, Xiaoming Liu, Zhen Lei, and Stan Z. Li. Face alignment in full pose range: a 3d total solution. IEEE Transactions on Pattern Analysis and Machine Intelligence, 2017. URL: https://www.researchgate.net/publication/321351929_Face_Alignment_in_Full_Pose_Range_A_3D_Total_Solution, doi:10.1109/TPAMI.2017.2778152.">Zhu <em>et al.</em>, 2017</a>]</span>)</span><a class="headerlink" href="#fig-gimbal-face" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Istoria conceptului și a denumirii este fascinantă. În general, astăzi se numește <em>gimbal</em>
+un dispozitiv a cărui schemă probabil ați mai văzut-o:</p>
+<figure class="align-default" id="fig-gimbal-gif">
+<img alt="_images/gimbal.gif" src="_images/gimbal.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 39 </span><span class="caption-text">Gimbal (via <a class="reference external" href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Gyroscope_operation.gif/220px-Gyroscope_operation.gif">Wikipedia</a>)</span><a class="headerlink" href="#fig-gimbal-gif" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Acesta are multiple aplicații, pornind de la dispozitive de navigație și giroscop.
+Se folosește în stabilizarea diverselor componente industriale și nu numai, stă la
+baza sistemului <em>Steadicam</em> pentru stabilizarea imaginii în camerele video,
+este o componentă importantă a funcționării aparatelor de zbor etc.</p>
+<p>Istoria gimbal-ului este surprinzător de veche. Așa cum apare astăzi, cu cele
+3 cercuri concentrice, a fost descris în secolul al XVI-lea de către italianul
+Gerolamo Cardano (1501-1576), în cadrul lucrărilor sale despre ceea ce astăzi
+numim <em>arbore cardanic</em> și care este o componentă importantă a autoturismelor
+și nu numai. Însă Cardano recunoaște că ideea nu este chiar originală și i-o
+atribuie lui Filo din Bizanț, tocmai în secolul al treilea înaintea erei noastre!
+Filo construise un fel de călimară cu cerneală care avea 8 găuri astfel încît
+tocul cu care scria putea fi înmuiat din aproape orice poziție. S-au găsit apoi
+și alte ilustrații care să menționeze utilizarea unor astfel de cercuri concentrice,
+eventual însoțite de busole, astfel încît astăzi nu există un consens dacă gimbal-ul
+a fost inventat de cineva sau se atribuie „culturii populare“.</p>
+<figure class="align-default" id="fig-gimbal-1230">
+<img alt="_images/gimbal-1230.jpg" src="_images/gimbal-1230.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 40 </span><span class="caption-text">Ilustrație a unei variații de <em>gimbal</em> din jurul anului 1230 (via <a class="reference external" href="https://en.wikipedia.org/wiki/Gimbal#/media/File:Villard_de_Honnecourt_-_Sketchbook_-_17.jpg">Wikipedia</a>)</span><a class="headerlink" href="#fig-gimbal-1230" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="coordonate-sferice-si-cilindrice">
+<h3>Coordonate sferice și cilindrice<a class="headerlink" href="#coordonate-sferice-si-cilindrice" title="Permalink to this headline">#</a></h3>
+<p>În plus, lucrurile se complică și pentru că avem mai multe moduri de a ne referi la
+coordonate în 3D. Cubul euclidian <span class="math notranslate nohighlight">\( Oxyz \)</span> se poate transforma într-o sferă
+sau într-un cilindru, pentru a menționa cele mai cunoscute schimbări de coordonate.</p>
+<p>Cazul <strong>coordonatelor sferice</strong> este și cel mai ușor de înțeles, fiindcă se folosește,
+de exemplu, atunci cînd ne gîndit la Globul Pămîntesc. Un punct de pe Pămînt se poate
+specifica prin <em>latitudine</em> și <em>longitudine</em>, însă aceasta numai dacă știm că se află
+la nivelul mării. În caz contrar, am avea nevoie și de <em>înălțimea</em> sau <em>adîncimea</em>
+la care se află – în general, distanța față de centrul planetei. Un punct de pe mare
+sau dintr-o peșteră sau de pe un munte nu identifică precis locul pînă nu se știe
+și adîncimea sau înălțimea.</p>
+<p>Coordonatele sferice sînt <span class="math notranslate nohighlight">\( (\rho, \theta, \phi) \)</span>, reprezentate grafic astfel:</p>
+<figure class="align-default" id="fig-coord-sf">
+<img alt="_images/coordonate-sferice.png" src="_images/coordonate-sferice.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 41 </span><span class="caption-text">Coordonatele sferice <span class="math notranslate nohighlight">\( (\rho, \theta, \phi) \)</span></span><a class="headerlink" href="#fig-coord-sf" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Putem face legătura cu coordonatele polare din plan, <span class="math notranslate nohighlight">\( (r, \theta) \)</span>, care sînt date
+de distanța de la origine și unghiul cu axa <span class="math notranslate nohighlight">\( OX \)</span>, în sens trigonometric. Însă
+descoperim exact dificultatea menționată la începutul secțiunii: avînd 3 grade de
+libertate, putem considera mai multe unghiuri de rotație. De aceea, se consideră
+cele două unghiuri <span class="math notranslate nohighlight">\( \theta \)</span> și <span class="math notranslate nohighlight">\( \phi \)</span> în cazul sferic.</p>
+<p>În imagine, puteți vedea că <span class="math notranslate nohighlight">\( \theta \)</span> caracterizează ceea ce în geografie numim
+<em>latitudinea</em> – distanța unghiulară față de meridianul de <span class="math notranslate nohighlight">\( 0^\circ \)</span>, cum este
+cunoscută – și <span class="math notranslate nohighlight">\( \phi \)</span> măsoară <em>longitudinea</em> – distanța unghiulară față de Ecuator.</p>
+<p>Trecerea de la coordonatele carteziene <span class="math notranslate nohighlight">\( (x, y, z) \)</span> la cele sferice <span class="math notranslate nohighlight">\( (\rho, \theta, \phi) \)</span>
+se poate face cu formule trigonometrice destul de simple:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  x &amp;= \rho \sin \theta \cos \phi \\
+  y &amp;= \rho \sin \theta \sin \phi \\
+  z &amp;= \rho \cos \theta
+\end{cases}\end{split}\]</div>
+<p>și mai trebuie să remarcăm că domeniile de definiție sînt:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( r \in [0, \infty) \)</span>, deoarece reprezintă o „rază“ (i.e. distanța față de centru);</p></li>
+<li><p><span class="math notranslate nohighlight">\( \theta \in [0, 2\pi] \)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\( \phi \in [0, \pi] \)</span>, deoarece dacă <span class="math notranslate nohighlight">\( \theta &gt; \pi \)</span>, ne aflăm deja „în spate“, adică
+în sensul negativ al axei <span class="math notranslate nohighlight">\( Ox \)</span> și luînd din nou <span class="math notranslate nohighlight">\( \phi \in [0, pi] \)</span>, obținem toate punctele.</p></li>
+</ul>
+<hr class="docutils" />
+<p>Celălalt mod de a ne referi la un punct din spațiu folosind coordonate care nu sînt
+carteziene este prin <strong>coordonate cilindrice</strong>. Acestea nu sînt altceva decît coordonatele
+polare din plan <span class="math notranslate nohighlight">\( (r, \theta) \)</span>, cărora li se adaugă o componentă de „înălțime“, <span class="math notranslate nohighlight">\( z \)</span>.
+În fapt, dacă ne gîndim la un cilindru drept, adică avînd generatoarele paralele cu una
+dintre axele de coordonate, el ar putea fi caracterizat exact așa: este un disc, pe care
+îl „mutăm“ paralel în lungul generatoarelor, adică „pe înălțime“.</p>
+<figure class="align-default" id="fig-coord-cil">
+<img alt="_images/coordonate-cilindrice.png" src="_images/coordonate-cilindrice.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 42 </span><span class="caption-text">Coordonatele cilindrice <span class="math notranslate nohighlight">\( (r, \theta, z) \)</span></span><a class="headerlink" href="#fig-coord-cil" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Astfel, coordonatele cilindrice se exprimă în funcție de cele carteziene în modul așteptat:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  x &amp;= r \cos \theta \\
+  y &amp;= r \sin \theta \\
+  z &amp; = z
+\end{cases}\end{split}\]</div>
+<p>Ultima „transformare“ arată că, de fapt, coordonata <span class="math notranslate nohighlight">\( z \)</span>, numită ingineresc <em>cotă</em>
+sau <em>înălțime</em> rămîne neschimbată. Așadar, în înțelegerea standard a coordonatelor,
+este vorba despre un cilindru cu generatoarele paralele cu axa <span class="math notranslate nohighlight">\( Oz \)</span> și discul-bază
+aflat într-un plan paralel cu <span class="math notranslate nohighlight">\( XOY \)</span>.</p>
+<p>Evident, putem considera și cazul în care cilindrul are generatoarele paralele cu
+axa <span class="math notranslate nohighlight">\( OY \)</span> sau <span class="math notranslate nohighlight">\( OX \)</span>, caz în care coordonatele <span class="math notranslate nohighlight">\( y \)</span>, respectiv <span class="math notranslate nohighlight">\( x \)</span> rămîn
+neschimbate și celelalte două devin coordonatele polare din plan.</p>
+<hr class="docutils" />
+<p>Revenim acum la reprezentarea rotațiilor în spațiu. Preluăm discuția care urmează
+din §8 al <span id="id7">[<a class="reference internal" href="bibliografie.html#id16" title="Fletcher Dunn and Ian Parberry. 3D Math Primer for Graphics and Game Development. CRC Press, second edition, 2011.">Dunn and Parberry, 2011</a>]</span>.</p>
+</section>
+<section id="matrice-de-rotatie">
+<h3>Matrice de rotație<a class="headerlink" href="#matrice-de-rotatie" title="Permalink to this headline">#</a></h3>
+<p>Transformarea prin rotație cu ajutorul unei matrice are avantajul practic dat de
+faptul că este modul standard de reprezentare al acestei transformări în multe
+produse software și biblioteci ale limbajelor de programare. Așadar, fie că folosiți
+software-uri ca Blender sau Godot ori biblioteci C++ precum <code class="docutils literal notranslate"><span class="pre">glm</span></code>, veți întîlni
+implementări ale rotațiilor cu ajutorul matricelor. În plus, din punct de vedere
+matematic, lucrul cu matrice are avantajul că permite manipularea simultană a
+mai multor date și totodată, prin structura algebrică subiacentă, putem compune
+sau inversa astfel de transformări.</p>
+<p>Pragmatic și computațional, matricele sînt mai dificil de manipulat și de aceea,
+produsele software menționate și bibliotecile care extind limbajele de programare
+sînt adesea extrem de bine optimizate.</p>
+<p>Totuși, ne putem inspira din cazul din plan și să formulăm matricele de rotație
+în spațiu în jurul uneia dintre axe, centrul de rotație fiind, din nou, în originea
+sistemului de axe, iar sensul rotației fiind cel trigonometric. Astfel, o rotație
+de unghi <span class="math notranslate nohighlight">\( \alpha \)</span> de tip <em>roll</em>, adică în jurul axei <span class="math notranslate nohighlight">\( OX \)</span> se prezintă astfel:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}R_x(\theta) = \begin{pmatrix}
+1 &amp; 0 &amp; 0 \\
+0 \cos \theta &amp; -\sin \theta \\
+0 &amp; \sin \theta &amp; \cos \theta
+\end{pmatrix}.\end{split}\]</div>
+<p>Comparînd această matrice cu cea din plan, constatăm că s-a adăugat doar o linie
+și coloană care să aibă rolul de a păstra axa <span class="math notranslate nohighlight">\( OX \)</span> fixă.</p>
+<p>Similar, o rotație de tip <em>pitch</em>, adică în jurul axei <span class="math notranslate nohighlight">\( OY \)</span> are matricea:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}R_y(\theta) = \begin{pmatrix}
+\cos \theta &amp; 0 &amp; \sin \theta \\
+0 &amp; 1 &amp; 0 \\
+-\sin \theta &amp; 0 &amp; \cos \theta
+\end{pmatrix},\end{split}\]</div>
+<p>iar o rotație de tip <em>yaw</em>, adică în jurul axei <span class="math notranslate nohighlight">\( OZ \)</span> are matricea:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}R_z(\theta) = \begin{pmatrix}
+\cos \theta &amp; -\sin \theta &amp; 0 \\
+\sin \theta &amp; \cos \theta &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{pmatrix}\end{split}\]</div>
+<hr class="docutils" />
+<p>Trebuie menționat că, din cauza problemelor aduse de cele 3 grade de libertate
+și a celor de aliasing, precum <em>Gimbal lock</em>, s-au construit mai multe formalisme
+care să descrie rotațiile, mai mult sau mai puțin precis. Altfel spus, există
+situații cînd se poate accepta o oarecare imprecizie sau o posibilă problemă ori
+fisură în formalismul teoretic construit dacă problema respectivă poate apărea
+doar foarte rar sau poate afecta doar cazuri extreme de interes în subiectul
+respectiv. Nu intrăm în mai multe detalii, însă o privire de ansamblu asupra
+formalismelor care descriu rotațiile în spațiu puteți găsi
+<a class="reference external" href="https://en.wikipedia.org/wiki/Rotation_formalisms_in_three_dimensions">aici</a>.</p>
+</section>
+<section id="exemplu-in-spatiu">
+<h3>Exemplu în spațiu<a class="headerlink" href="#exemplu-in-spatiu" title="Permalink to this headline">#</a></h3>
+<p>Să luăm acum un exemplu și în spațiu, prin care să arătăm acțiunea matricelor
+de transformare și chiar a inverselor acestora.</p>
+<p>Pornim cu o piramidă triunghiulară (tetraedru), cu baza în planul XOY.
+Vîrfurile sale sînt <span class="math notranslate nohighlight">\( A(2, 1, 0), B(15,2,0), C(3, 10, 0), D(5,5,5) \)</span>.</p>
+<figure class="align-default" id="fig-piramida-exemplu">
+<img alt="_images/piramida-exemplu.png" src="_images/piramida-exemplu.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 43 </span><span class="caption-text">Tetraedrul de pornire din exemplu</span><a class="headerlink" href="#fig-piramida-exemplu" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Îi vom aplica succesiv o operație de forfecare în raport cu planul bazei
+(care este, de fapt, planul <span class="math notranslate nohighlight">\( XOY \)</span>), apoi o rotație.</p>
+<p>Pentru forfecarea după planul <span class="math notranslate nohighlight">\( XOY \)</span>, vom considera matricea:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}F_{XOY} = \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{pmatrix}.\end{split}\]</div>
+<p>Aplicăm această transformare fiecăruia dintre cele 4 vîrfuri ale tetraedrului
+și obținem:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  A &amp;\mapsto A_F = F_{XOY} \cdot \begin{pmatrix} 2 \\ 1 \\ 0 \end{pmatrix} = %
+    \begin{pmatrix} 4 \\ 1 \\ 0 \end{pmatrix} \\
+  B &amp;\mapsto B_F = F_{XOY} \cdot \begin{pmatrix} 15 \\ 2 \\ 0 \end{pmatrix} = %
+    \begin{pmatrix} 19 \\ 2 \\ 0 \end{pmatrix} \\
+  C &amp;\mapsto C_F = F_{XOY} \cdot \begin{pmatrix} 3 \\ 10 \\ 0 \end{pmatrix} = %
+    \begin{pmatrix} 23 \\ 10 \\ 0 \end{pmatrix} \\
+  D &amp;\mapsto D_F = F_{XOY} \cdot \begin{pmatrix} 5 \\ 5 \\ 5 \end{pmatrix} = %
+    \begin{pmatrix} 30 \\ 5 \\ 5 \end{pmatrix}
+\end{align*}\end{split}\]</div>
+<p>Figura obținută este piramida albastră din reprezentarea de mai jos.</p>
+<figure class="align-default" id="fig-piramida-forfecare">
+<img alt="_images/piramida-forfecare.png" src="_images/piramida-forfecare.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 44 </span><span class="caption-text">Piramida <span class="math notranslate nohighlight">\( DABC \)</span> după o transformare de forfecare cu planul <span class="math notranslate nohighlight">\( XOY \)</span> fix devine <span class="math notranslate nohighlight">\( D_F A_F B_F C_F \)</span></span><a class="headerlink" href="#fig-piramida-forfecare" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Acum să considerăm și o transformare de rotație aplicată rezultatului forfecării.
+Fie rotația de unghi <span class="math notranslate nohighlight">\( \theta = \dfrac{2\pi}{3} \)</span>, reprezentată de matricea:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}R_y\left( \dfrac{2\pi}{3} \right) = \begin{pmatrix} %
+-1/2 &amp; 0 &amp; \sqrt{3}/2 \\
+0 &amp; 1 &amp; 0 \\
+-\sqrt{3}/2 &amp; 0 &amp; -1/2
+\end{pmatrix},\end{split}\]</div>
+<p>deoarece <span class="math notranslate nohighlight">\( \cos \dfrac{2\pi}{3} = -\dfrac{1}{2} \)</span> și <span class="math notranslate nohighlight">\( \sin \dfrac{2\pi}{3} = \dfrac{1}{2} \)</span>.</p>
+<p>Aplicăm această transformare fiecăruia dintre cele 4 vîrfuri ale tetraedrului forfecat și obținem:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  A_F &amp;\mapsto A_{FR} = R_y \left( \dfrac{2\pi}{3} \right) \cdot \begin{pmatrix} 4 \\ 1 \\ 0 \end{pmatrix} = %
+    \begin{pmatrix} -2 \\ 1 \\ -2\sqrt{3} \end{pmatrix} \\
+  B_F &amp;\mapsto B_{FR} = R_y \left( \dfrac{2\pi}{3} \right) \cdot \begin{pmatrix} 19 \\ 2 \\ 0 \end{pmatrix} = %
+    \begin{pmatrix} -19/2 \\ 2 \\ - 19\sqrt{3}/2 \end{pmatrix} \\
+  C_F &amp;\mapsto C_{FR} = R_y \left( \dfrac{2\pi}{3} \right) \cdot \begin{pmatrix} 23 \\ 10 \\ 0 \end{pmatrix} = %
+    \begin{pmatrix} -23/2 \\ 10 \\ - 23\sqrt{3}/2 \end{pmatrix} \\
+  D_F &amp;\mapsto D_{FR} = R_y \left( \dfrac{2\pi}{3} \right) \cdot \begin{pmatrix} 30 \\ 5 \\ 5 \end{pmatrix} = %
+    \begin{pmatrix} 5(\sqrt{3} - 6)/2 \\ 5 \\ 5(-1 - 6\sqrt{3})/2 \end{pmatrix}
+\end{align*}\end{split}\]</div>
+<p>Piramida rezultată este colorată cu verde în figura de mai jos.</p>
+<figure class="align-default" id="fig-piramida-forfecata-rotita">
+<img alt="_images/piramida-forfecata-rotita.png" src="_images/piramida-forfecata-rotita.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 45 </span><span class="caption-text">Piramida forfecată <span class="math notranslate nohighlight">\( D_F A_F B_F C_F \)</span> rotită cu <span class="math notranslate nohighlight">\( \dfrac{2\pi}{3} \)</span> în jurul axei <span class="math notranslate nohighlight">\( OY \Rightarrow D_{FR} A_{FR} B_{FR} C_{FR} \)</span></span><a class="headerlink" href="#fig-piramida-forfecata-rotita" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<hr class="docutils" />
+<p><strong>Observație:</strong> Este un exemplu foarte bun să ilustrăm faptul că înmulțirea matricelor,
+deci și compunerea transformărilor geometrice nu este, în general, comutativă.</p>
+<p>Dacă am fi aplicat mai întîi rotația și apoi forfecarea, am fi obținut
+figura de mai jos.</p>
+<figure class="align-default" id="fig-piramida-rotita-forfecata">
+<img alt="_images/piramida-rotita-forfecata.png" src="_images/piramida-rotita-forfecata.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 46 </span><span class="caption-text">Piramida mai întîi rotită, apoi forfecată</span><a class="headerlink" href="#fig-piramida-rotita-forfecata" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Pe lîngă faptul că este evident că piramida <span class="math notranslate nohighlight">\( D_{RF} A_{RF} B_{RF} C_{RF} \)</span> este diferită
+de <span class="math notranslate nohighlight">\( D_{FR} A_{FR} B_{FR} C_{FR} \)</span>, mai constatăm și că forfecarea se comportă
+complet diferit. Matricea <span class="math notranslate nohighlight">\( F_{XOY} \)</span> de mai sus nu mai are aceeași acțiune
+predictibilă asupra piramidei rotite, pentru că, dacă în piramida inițială,
+planul bazei <span class="math notranslate nohighlight">\( (ABC) \)</span> era chiar inclus în planul <span class="math notranslate nohighlight">\( XOY \)</span>, deci forfecarea se putea face
+paralel cu acest plan și rezultatul ar fi fost clar, piramida rotită nu mai are
+nicio față paralelă cu planul <span class="math notranslate nohighlight">\( XOY \)</span>. De aceea, forfecarea, care acționează tot
+paralel cu planul <span class="math notranslate nohighlight">\( XOY \)</span>, nu mai are un efect vizibil intuitiv asupra piramidei rotite.
+În acest caz, ar fi trebuit să găsim ecuația uneia dintre fețele piramidei rotite
+și să aplicăm forfecarea în raport cu planul respectiv – unul oarecare, în principiu –
+lucru care ar fi fost mult mai dificil.</p>
+<hr class="docutils" />
+<p>O altă observație importantă este că succesiunea transformărilor se poate reprezenta direct
+și prin înmulțire cu matricea care este egală cu produsul matricelor transformărilor,
+în ordinea dorită. Așadar, pentru a ajunge la piramida mai întîi rotită și apoi forfecată
+putem înmulți la stînga vectorii-coloană ai vîrfurilor cu matricea
+<span class="math notranslate nohighlight">\( R_y \left( \dfrac{2\pi}{3} \right) \cdot F_{XOY} \)</span>, iar pentru cealaltă ordine a transformărilor,
+înmulțim cu <span class="math notranslate nohighlight">\( F_{XOY} \cdot R_Y \left( \dfrac{2\pi}{3} \right) \)</span>.</p>
+<p>Rezultatele, evident, coincid cu cele obținute mai sus în cazul aplicării succesive.</p>
+<hr class="docutils" />
+<p>Acum vrem să inversăm transformările, folosind matricele inverse, în ordinea
+corectă. Însă pînă atunci, să arătăm cum putem „strica“ această succesiune,
+aplicînd în final o transformare singulară.</p>
+<p>Considerăm o matrice evident neinversabilă:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}S = \begin{pmatrix} 1 &amp; 1 &amp; 1 \\ 2 &amp; 2 &amp; 2 \\ -3 &amp; -3 &amp; -3 \end{pmatrix}\end{split}\]</div>
+<p>cu care acționăm asupra piramidei <span class="math notranslate nohighlight">\( D_{FR} A_{FR} B_{FR} C_{FR} \)</span> și obținem:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  A_{FR} &amp;\mapsto A_S = S \cdot \begin{pmatrix} -2 \\ 1 \\ -2\sqrt{3} \end{pmatrix} = %
+    \begin{pmatrix} -1-2\sqrt{3} \\ -2-4\sqrt{3} \\ 3 + 6 \sqrt{3} \end{pmatrix} \\
+  B_{FR} &amp;\mapsto B_S = S \cdot \begin{pmatrix} -19/2 \\ 2 \\ -19\sqrt{3}/2 \end{pmatrix} = %
+    \begin{pmatrix} (-15-19\sqrt{3})/2 \\ -15-19\sqrt{3} \\ (45 + 57\sqrt{3})/2 \end{pmatrix} \\
+  C_{FR} &amp;\mapsto C_S = S \cdot \begin{pmatrix} -23/2 \\ 10 \\ -23\sqrt{3}/2 \end{pmatrix} = %
+    \begin{pmatrix} (-3-23\sqrt{3})/2 \\ -3-23\sqrt{3} \\ (9 + 69\sqrt{3})/2 \end{pmatrix} \\
+  D_{FR} &amp;\mapsto D_S = S \cdot \begin{pmatrix} 5(\sqrt{3} - 6)/2 \\ 5 \\ 5(-1-6\sqrt{3})/2 \end{pmatrix} = %
+    \begin{pmatrix} (-25-25\sqrt{3})/2 \\ -25-25\sqrt{3} \\ (75 + 75\sqrt{3})/2 \end{pmatrix}
+\end{align*}\end{split}\]</div>
+<p>Figura, în acest caz, devine:</p>
+<figure class="align-default" id="fig-piramida-degenerata">
+<img alt="_images/piramida-degenerata.png" src="_images/piramida-degenerata.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 47 </span><span class="caption-text">Piramida degenerează într-o dreaptă (vîrfurile sale devin coliniare)</span><a class="headerlink" href="#fig-piramida-degenerata" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<hr class="docutils" />
+<p>Acum să inversăm transformările, adică vom realiza transformările:</p>
+<div class="math notranslate nohighlight">
+\[D_{FR} A_{FR} B_{FR} C_{FR} \xrightarrow{R_y\left( \dfrac{2\pi}{3} \right)^{-1}} D_F A_F B_F C_F %
+\xrightarrow{F_{XOY}^{-1}} DABC.\]</div>
+<p>De fapt, putem chiar ilustra compunerea transformărilor sus-menționată
+și înmulțim direct cu produsul inverselor matricelor în ordinea corespunzătoare.</p>
+<p>Mai întîi, să calculăm aceste inverse. Pentru simplificarea notației, vom scrie
+simplu <span class="math notranslate nohighlight">\( R \)</span> pentru matricea de rotație de mai sus și <span class="math notranslate nohighlight">\( F \)</span> pentru cea de forfecare.</p>
+<p>Cum <span class="math notranslate nohighlight">\( \det R = \det F = 1 \)</span>, rezultă că inversele coincid cu adjunctele, adică
+<span class="math notranslate nohighlight">\( R^{-1} = R^\ast \)</span> și <span class="math notranslate nohighlight">\( F^{-1} = F^\ast \)</span>. Calculăm succesiv:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}R^\ast = \begin{pmatrix}
+-1/2 &amp; 0 &amp; -\sqrt{3}/2 \\
+0 &amp; 1 &amp; 0 \\
+\sqrt{3}/2 &amp; 0 &amp; -1/2
+\end{pmatrix}, \quad %
+F^\ast = \begin{pmatrix}
+1 &amp; -2 &amp; -3 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{pmatrix}\end{split}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ambele inverse (adjuncte) pot fi interpretate geometric, desigur.
+Inversa rotației de unghi <span class="math notranslate nohighlight">\( \dfrac{2\pi}{3} \)</span> este rotația de unghi
+<span class="math notranslate nohighlight">\( \dfrac{4\pi}{3} \)</span>, deoarece unghiurile se adună la aplicări succesive,
+iar inversa forfecării cu factorii <span class="math notranslate nohighlight">\( 2 \)</span> și <span class="math notranslate nohighlight">\( 3 \)</span> este una care
+„aduce înapoi“ punctele, adică are factorii <span class="math notranslate nohighlight">\( -2 \)</span> și <span class="math notranslate nohighlight">\( -3 \)</span>.</p>
+<p>Aceasta ne oferă încă o metodă de verificare a calculelor.</p>
+</div>
+<p>Acum, inversarea completă a transformării înseamnă înmulțirea cu matricea
+<span class="math notranslate nohighlight">\( F^{-1} \cdot R^{-1} \)</span> a coloanelor corespunzătoare punctelor
+<span class="math notranslate nohighlight">\( \{ A, B, C, D \}_{FR} \)</span>. Avem:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  F^{-1} \cdot R^{-1} &amp;= \begin{pmatrix} %
+    (-1-3\sqrt{3})/2 &amp; -2 &amp; (3 - \sqrt{3})/2 \\
+	0 &amp; 1 &amp; 0 \\
+	\sqrt{3}/2 &amp; 0 &amp; -1/2
+	\end{pmatrix} \stackrel{\text{not.}}{=} T \\
+  A_{FR} &amp;\mapsto T \cdot \begin{pmatrix} -2 \\ 1 \\ -2\sqrt{3} \end{pmatrix} = %
+    \begin{pmatrix} 2 \\ 1 \\ 0 = A \end{pmatrix} \\
+  B_{FR} &amp;\mapsto T \cdot \begin{pmatrix} -19/2 \\ 2 \\ -19\sqrt{3}/2 \end{pmatrix} = %
+    \begin{pmatrix} 15 \\ 2 \\ 0 \end{pmatrix} = B \\
+  C_{FR} &amp;\mapsto T \cdot \begin{pmatrix} -23/2 \\ 10 \\ -23\sqrt{3}/2 \end{pmatrix} = %
+    \begin{pmatrix} 3 \\ 10 \\ 0 \end{pmatrix} = C \\
+  D_{FR} &amp;\mapsto T \cdot \begin{pmatrix} 5(\sqrt{3} - 6)/2 \\ 5 \\ 5(-1-6\sqrt{3})/2 \end{pmatrix} = %
+    \begin{pmatrix} 5 \\ 5 \\ 5 \end{pmatrix} = D
+\end{align*}\end{split}\]</div>
+<p>Așadar, am ajuns la piramida inițială, conform așteptărilor.</p>
+</section>
+</section>
+<section id="cuaternioni-din-nou">
+<h2>Cuaternioni din nou<a class="headerlink" href="#cuaternioni-din-nou" title="Permalink to this headline">#</a></h2>
+<p>Am dedicat <a class="reference internal" href="p2-s9-quat.html#cap-cuat"><span class="std std-ref">o întreagă secțiune</span></a> introducerii cuaternionilor
+și diverselor generalizări către numere hipercomplexe, însă atunci am insistat
+pe proprietățile lor algebrice.</p>
+<p>Ne reîntîlnim cu cuaternionii aici, accentul fiind de data aceasta pe proprietățile
+lor geometrice și modul în care se leagă de rotații și alte transformări în spațiu.</p>
+<p>Amintim: mulțimea cuaternionilor, notată cu <span class="math notranslate nohighlight">\( \mathbb{H} \)</span>, în onoarea matematicianului
+irlandez William Rowan Hamilton, care i-a introdus formal în matematică în secolul
+al XIX-lea, conține numere de forma:</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{H} = \{ q = a + bi + cj + dj \mid a,b,c,d \in \mathbb{R} \}\]</div>
+<p>unde <em>unitățile imaginare</em> <span class="math notranslate nohighlight">\( i, j, k \)</span> au proprietățile:</p>
+<div class="math notranslate nohighlight">
+\[i^2 = j^2 = k^2 = -1, \quad ij = -ji = k, ik = -ki = j, jk = -kj = i.\]</div>
+<p>Înmulțirea cuaternionilor este, prin aceasta, <em>anticomutativă</em>,
+adică <span class="math notranslate nohighlight">\( q_1 q_2 = -q_2 q_2, \forall q_1, q_2 \in \mathbb{H} \)</span>.</p>
+<p>Putem modela cuaternionii într-o variantă ceva mai apropiată de geometrie.
+Astfel, un cuaternion <span class="math notranslate nohighlight">\( q = a + bi + cj + dk \)</span> poate fi gîndit ca o pereche
+alcătuită dintr-un scalar real <span class="math notranslate nohighlight">\( a \in \mathbb{R} \)</span> și un vector
+<span class="math notranslate nohighlight">\( \vec{v} = bi + cj + dk \in \mathbb{R}^3 \)</span>. De aceea, <span class="math notranslate nohighlight">\( a \)</span> se mai numește
+<em>partea scalară</em> a cuaternionului, iar tripletul <span class="math notranslate nohighlight">\( (b, c, d) \)</span> se mai numește
+<em>partea vectorială</em> (în comparație cu partea reală și partea imaginară a unui
+număr complex). Această prezentare are multe avantaje care ne permit aproape să
+tratăm separat cele două părți ale cuaternionului. De exemplu, cum avem izomorfismul
+<span class="math notranslate nohighlight">\( \mathbb{H} \simeq \mathbb{R}^4 \)</span>, ca spații vectoriale reale, putem defini
+o structură de spațiu euclidian pe <span class="math notranslate nohighlight">\( \mathbb{H} \)</span>, produsul scalar al doi cuaternioni
+pe care îi putem scrie <span class="math notranslate nohighlight">\( q_1 = (a_1, \vec{v}_1) \)</span> și <span class="math notranslate nohighlight">\( q_2 = (a_2, \vec{v}_2) \)</span> fiind:</p>
+<div class="math notranslate nohighlight">
+\[\langle q_1, q_2 \rangle = a_1a_2 + \vec{v}_1 \cdot \vec{v}_2.\]</div>
+<p>Similar, operația de conjugare a cuaternionilor se poate înțelege pur și simplu prin
+inversarea sensului părții vectoriale:</p>
+<div class="math notranslate nohighlight">
+\[q = a + bi + cj + dk = a + \vec{v} \Rightarrow q^\ast = a - \vec{v}.\]</div>
+<hr class="docutils" />
+<p>În ce privește aplicații geometrice ale cuaternionilor, putem începe cu o nouă
+perspectivă asupra numerelor complexe. Un număr complex scris în forma algebrică
+<span class="math notranslate nohighlight">\( z = a + bi \)</span> are forma matriceală:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}z \mapsto \begin{pmatrix} a &amp; -b \\ b &amp; a \end{pmatrix}\end{split}\]</div>
+<p>printr-o corespondență care realizează un izomorfism de grupuri multiplicative.
+Acesta nu este și izomorfism de spații vectoriale, deoarece, așa cum am văzut,
+<span class="math notranslate nohighlight">\( \dim \mathbb{C} = 2 \)</span>, ca spațiu vectorial real, iar <span class="math notranslate nohighlight">\( \dim M_2(\mathbb{R}) = 4 \)</span>.</p>
+<p>Dar, dacă facem apel și la forma trigonometrică a numerelor complexe,
+<span class="math notranslate nohighlight">\( z = r (\cos \theta + i \sin \theta) \)</span>, matricea de mai sus se poate scrie:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}z \mapsto \begin{pmatrix} \cos \theta &amp; -\sin \theta \\ \sin \theta &amp; \cos \theta \end{pmatrix},\end{split}\]</div>
+<p><em>dacă impunem restricția ca <span class="math notranslate nohighlight">\( | z | = 1 \)</span></em>. Această restricție nu este greu de îndeplinit,
+deoarece în geometria din plan sau spațiu, foarte des se folosesc vectori ortonormați.</p>
+<p>Totodată, matricea de mai sus are o proprietate specială: este chiar matricea de rotație
+în plan, de unghi <span class="math notranslate nohighlight">\( \theta \)</span>! Rezultă că <em>un număr complex de modul 1 corespunde unei rotații în plan</em>,
+de unghi egal cu argumentul său principal.</p>
+<p>Putem porni de aici și să facem legătura cu cuaternionii. Cum din start un cuaternion
+are o parte scalară și una vectorială, ne așteptăm ca el să corespundă unei transformări
+în spațiu sau poate chiar în <span class="math notranslate nohighlight">\( \mathbb{R}^4 \)</span>. Ajungem la interpretarea corectă după
+ce introducem încă o metodă (formalism) de a privi rotațiile în spațiu.</p>
+<p>O rotație în <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span> poate fi prezentată sub forma <strong>unghi-axă</strong>.
+Aceasta înseamnă o pereche <span class="math notranslate nohighlight">\( (\theta, \vec{v}) \)</span>, unde <span class="math notranslate nohighlight">\( \theta \)</span> este unghiul de rotație
+<em>în raport cu axa dată de dreapta-suport a vectorului <span class="math notranslate nohighlight">\( \vec{v} \)</span></em>. De pildă, o rotație
+de unghi <span class="math notranslate nohighlight">\( \dfrac{\pi}{3} \)</span> de tip <em>yaw</em>, adică în lungul axei <span class="math notranslate nohighlight">\( OZ \)</span> se prezintă
+ca perechea <span class="math notranslate nohighlight">\( \left( \dfrac{\pi}{2}, \vec{k} \right) \)</span>, în același context sus-menționat
+în care folosim vectori ortonormați – de aceea am apelat la versorul <span class="math notranslate nohighlight">\( \vec{k} \)</span>,
+corespunzător axei <span class="math notranslate nohighlight">\( OZ \)</span>.</p>
+<p>În acest context, un cuaternion <em>normat</em> (<em>unitar</em>), adică de modul 1, corespunde unei rotații
+scrisă în forma unghi-axă, unde partea sa scalară este unghiul, iar partea sa vectorială,
+axa. Pentru motive pe care le vom clarifica ulterior, forma exactă a acestei reprezentări
+este:</p>
+<div class="math notranslate nohighlight">
+\[q = (w, x, y, z) \mapsto %
+\left( \cos \dfrac{\theta}{2}, \sin \dfrac{\theta}{2} \vec{r}_x, \sin \dfrac{\theta}{2} \vec{r}_y \sin\dfrac{\theta}{2} \vec{r}_z \right),\]</div>
+<p>unde <span class="math notranslate nohighlight">\( \vec{r}_x, \vec{r}_y, \vec{r}_z \)</span> sînt proiecțiile pe axele de coordonate
+ale axei generale de rotație <em>dată de un vector normat</em> <span class="math notranslate nohighlight">\( \vec{r} \)</span>.</p>
+<p>Într-o formă compactă, dacă notăm <span class="math notranslate nohighlight">\( \alpha = \dfrac{\theta}{2} \)</span>, putem scrie un cuaternion
+<span class="math notranslate nohighlight">\( q = (\cos \alpha, \sin\alpha \vec{r}) \)</span>. Faptul că <span class="math notranslate nohighlight">\( \vec{r} \)</span> trebuie să fie normat
+se vede acum din calculul modulului cuaternionului:</p>
+<div class="math notranslate nohighlight">
+\[|q| = \sqrt{\cos^2 \alpha + \sin^2 \alpha |\vec{r}|} = 1.\]</div>
+<p>De remarcat că în cazul în care lucrăm cu cuaternioni unitari, conjugatul
+coincide cu inversul. Fie <span class="math notranslate nohighlight">\( q = a + bi + cj + dk \in \mathbb{H} \)</span>, atunci,
+dacă scriem:</p>
+<div class="math notranslate nohighlight">
+\[q^{-1} = \dfrac{1}{a + bi + cj + dk},\]</div>
+<p>nu mai avem aceeași formulă de calcul pentru raționalizarea numitorului ca în
+cazul numerelor complexe. De aceea, se <em>definește</em> inversul unui cuaternion (nenul!)
+prin:</p>
+<div class="math notranslate nohighlight">
+\[q^{-1} = \dfrac{q^\ast}{||q||^2}.\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Adăugăm o observație de intuiție geometrică: dacă un cuaternion unitar <span class="math notranslate nohighlight">\( q \)</span> reprezintă
+o rotație de un unghi anume (modul în care se face această corespondență va fi explicat
+un pic mai tîrziu), atunci conjugatul său, <span class="math notranslate nohighlight">\( q^\ast \)</span>, reprezintă o rotație de același
+unghi, dar în sens opus. Alternativ, reprezintă o rotație de <em>unghi opus</em>. Pentru a
+vedea acest lucru, este suficient sa folosim interpretarea unui cuaternion prin
+partea reală – care reprezintă un unghi de rotație – și partea vectorială – care
+reprezintă axa de rotație. Conjugarea schimbă sensul părții vectoriale, așadar
+reprezintă o rotație după o axă opusă celei inițiale.</p>
+</div>
+<p><em>Strict pentru scopuri geometrice</em>, am fi putut defini conjugarea unui cuaternion
+<span class="math notranslate nohighlight">\( q = (a, \vec{v}) \)</span> prin <span class="math notranslate nohighlight">\( q^\ast = (-a, \vec{v}) \)</span>, deoarece ar fi avut același
+efect de rotație. Însă vom păstra definiția standard, întrucît are o legătură
+mult mai profundă cu alte structuri matematice decît aplicațiile în geometrie.</p>
+<hr class="docutils" />
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Dacă nu se precizează altfel, vom lucra în continuare numai cu cuaternioni unitari.</p>
+<p>De altfel, orice cuaternion se poate norma, înmulțindu-l cu scalarul egal cu
+inversul normei sale, deci putem presupune, pînă la un factor comun, că toți
+cuaternionii sînt unitari.</p>
+</div>
+<p>Continuăm acum cu definiția altor operații cu cuaternioni, pe care le vom folosi
+în transformări geometrice. Utilizăm din nou notația <span class="math notranslate nohighlight">\( \alpha = \dfrac{\theta}{2} \)</span>,
+deci un cuaternion se scrie <span class="math notranslate nohighlight">\( q = (\cos \alpha, \sin \alpha \vec{r}) \)</span>.</p>
+<p>Făcînd analogia cu cazul numerelor complexe, <span class="math notranslate nohighlight">\( z = |z| \cdot \exp(i\theta) \)</span>,
+unde <span class="math notranslate nohighlight">\( \theta = \mathrm{Arg}(z) \)</span>, obținem <span class="math notranslate nohighlight">\( \ln z = \ln |z| + i\theta \)</span>,
+iar dacă lucrăm cu numere complexe unitare, rezultă <span class="math notranslate nohighlight">\( \ln z = i\theta \)</span>, o cantitate
+pur imaginară (partea reală se anulează).</p>
+<p>Similar acum, <strong>logaritmul unui cuaternion</strong> <span class="math notranslate nohighlight">\( q \)</span> se definește prin:</p>
+<div class="math notranslate nohighlight">
+\[\log q = (0, \alpha \vec{r}),\]</div>
+<p>unde vedem din nou că partea scalară se anulează (în ipoteza de lucru, anume că
+avem un cuaternion unitar), iar partea vectorială scoate unghiul în locul unei
+funcții trigonometrice.</p>
+<p><strong>Exponențiala unui cuaternion</strong> <span class="math notranslate nohighlight">\( q \)</span> se poate defini ținînd cont de faptul că
+este transformarea inversă logaritmării. Rezultă că exponențiala unui cuaternion
+se definește doar pentru cuaternioni cu parte scalară nulă, iar acțiunea trebuie
+să „întoarcă“ <span class="math notranslate nohighlight">\( (0, \alpha \vec{r}) \)</span> în cuaternionul inițial. Rezultă:</p>
+<div class="math notranslate nohighlight">
+\[\exp(0, \alpha \vec{r}) = (\cos \alpha, \sin \alpha \vec{r}).\]</div>
+<p>O discuție generală privitoare la funcția exponențială definită pe <span class="math notranslate nohighlight">\( \mathbb{H} \)</span>
+depășește scopurile acestei lucrări, însă menționăm doar că definiția acestei
+funcții se face într-o manieră similară identității lui Euler pentru numere complexe,
+adică folosind definiția funcției exponențiale cu ajutorul seriei Taylor.</p>
+<p>Cu ajutorul funcției exponențiale putem defini <strong>ridicarea la putere pe cuaternioni</strong>,
+pe baza formulei <span class="math notranslate nohighlight">\( a^b = \exp(b \log a) \)</span> care se preia identic și pentru cuaternioni.</p>
+<section id="aplicatie-interpolare-cuaternionica-slerp">
+<h3>Aplicație: Interpolare cuaternionică (SLERP)<a class="headerlink" href="#aplicatie-interpolare-cuaternionica-slerp" title="Permalink to this headline">#</a></h3>
+<p>Una dintre principalele aplicații ale cuaternionilor în grafică tridimensională
+este aceea a <em>interpolării sferice liniare</em>, numită în engleză <em>spherical linear interpolation</em>,
+de unde acronimul <em>slerp</em>.</p>
+<p>În general, interpolarea în problemele de matematică înseamnă a găsi cea mai potrivită
+cantitate care se potrivește „între“ (<em>inter</em>) două cantități date. De exemplu,
+un caz des întîlnit este <em>interpolarea liniară</em>, numită și <em>dreaptă de regresie</em>.
+Pentru un set de puncte date în plan, interpolarea liniară găsește cea mai bună
+dreaptă care este „între“ toate punctele date, ca în figura de mai jos:</p>
+<figure class="align-default" id="fig-regresie-liniara">
+<img alt="_images/regresie-liniara.png" src="_images/regresie-liniara.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 48 </span><span class="caption-text">Dreapta de regresie (interpolare liniară) între un set de puncte (via <a class="reference external" href="https://simple.wikipedia.org/wiki/Linear_regression">Wikipedia</a>)</span><a class="headerlink" href="#fig-regresie-liniara" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Intuitiv, dacă un cuaternion definește o direcție unghiulară, adică un fel de
+unghi de rotație în forma axă-unghi, operația slerp este una ternară:</p>
+<ul class="simple">
+<li><p>primele două argumente sînt cele două unghiuri între care trebuie să interpolăm;</p></li>
+<li><p>al treilea argument <span class="math notranslate nohighlight">\( t \)</span> este un parametru între 0 și 1, care controlează rezultatul.
+Pentru valorile extreme, se obțin cele două unghiuri date, adică dacă <span class="math notranslate nohighlight">\( t = 0 \)</span>, se obține
+primul unghi, iar dacă <span class="math notranslate nohighlight">\( t = 1 \)</span>, al doilea.</p></li>
+</ul>
+<figure class="align-default" id="fig-slerp">
+<img alt="_images/slerp.webp" src="_images/slerp.webp" />
+<figcaption>
+<p><span class="caption-number">Fig. 49 </span><span class="caption-text">Interpolare liniară și interpolare sferică liniară (via <span id="id8">[<a class="reference internal" href="bibliografie.html#id18" title="Roberto G. Valenti, Ivan Dryanovski, and Jizhong Xiao. Keeping a good attitude: a quaternion-based orientation filter for IMUs and MARGs. Sensors, 2015. URL: https://www.mdpi.com/1424-8220/15/8/19302/htm, doi:10.3390/s150819302.">Valenti <em>et al.</em>, 2015</a>]</span>)</span><a class="headerlink" href="#fig-slerp" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Vedem în figură că interpolarea liniară (<em>lerp</em>) trasează segmentul dintre cei
+doi cuaternioni și găsește pe al treilea pe acest segment, în timp ce interpolarea
+sferică liniară (slerp) îl returnează pe cel care se află pe arcul descris
+de primii doi.</p>
+<p>Acum, pașii pentru a obține cuaternionul care interpolează doi cuaternioni <span class="math notranslate nohighlight">\( q_0, q_1 \)</span>
+dați sînt:</p>
+<ol class="simple">
+<li><p>Se calculează distanța unghiulară între cei doi cuaternioni: <span class="math notranslate nohighlight">\( \Delta q = q_1 q_0^{-1} \)</span>;</p></li>
+<li><p>Se aplică parametrul <span class="math notranslate nohighlight">\( t \)</span>, care ne arată „fracțiunea“ din această distanță unghiulară: <span class="math notranslate nohighlight">\( (\Delta q)^t \)</span>;</p></li>
+<li><p>Se ajustează primul cuaternion cu această diferență, adică se deplasează unghiular: <span class="math notranslate nohighlight">\( q_0 \mapsto (\Delta q)^t q_0 \)</span>.</p></li>
+</ol>
+<p>În concluzie:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{slerp}(q_0, q_1, t) = (q_1 q_0^{-1})^t q_0.\]</div>
+<p>Însă ne întrebăm dacă acest calcul poate fi făcut și mai ușor, în primul rînd pentru
+aplicații practice. Lucrul cu cuaternioni este, în general, scump din punct de
+vedere computațional. Și în plus, problema seamănă cu o interpolare liniară:
+intuitiv, am vrea să găsim un fel de „combinație liniară“ a celor doi cuaternioni
+dați, care să se potrivească „între“ ei.</p>
+<p>Se poate arăta (v. <span id="id9">[<a class="reference internal" href="bibliografie.html#id16" title="Fletcher Dunn and Ian Parberry. 3D Math Primer for Graphics and Game Development. CRC Press, second edition, 2011.">Dunn and Parberry, 2011</a>]</span>, pp. 260-262) că formula eficientă căutată este:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{slerp}(q_0, q_1, t) = \dfrac{\sin(1 - t)\omega}{\sin \omega} q_0 + \dfrac{\sin (t\omega)}{\sin \omega} q_1,\]</div>
+<p>unde unghiul <span class="math notranslate nohighlight">\( \omega \)</span> se poate determina din produsul scalar între cuaternioni
+(amintim, lucrăm cu cuaternioni unitari):</p>
+<div class="math notranslate nohighlight">
+\[\cos \omega = \langle q_0, q_1 \rangle.\]</div>
+<hr class="docutils" />
+<p>În concluzie, unul dintre avantajele cuaternionilor este că rezolvă o problemă
+dificilă din cazul unghiurilor Euler, anume Gimbal lock. Prețul plătit este doar
+o creștere cu o treime a memoriei: în loc de 3 numere reale pentru unghiurile Euler,
+folosim 4 numere reale pentru componentele unui cuaternion. Un dezavantaj, pe lîngă
+o oarecare dificultate de a-i înțelege și manipula, ca obiecte 4-dimensionale,
+este acela că implică și condiții de validare. Orice triplet de numere reale poate
+fi un triplet de unghiuri Euler, însă nu orice cvadruplu de numere reale poate fi
+un cuaternion unitar.</p>
+</section>
+<hr class="docutils" />
+<section id="explicatie-unghiul-de-rotatie">
+<h3>Explicație: Unghiul de rotație<a class="headerlink" href="#explicatie-unghiul-de-rotatie" title="Permalink to this headline">#</a></h3>
+<p>Am văzut în prima parte a secțiunii că dacă vrem să scriem un cuaternion
+(unitar) cu semnificație geometrică, acesta este <span class="math notranslate nohighlight">\( q = (\cos \alpha, \sin \alpha \vec{r}) \)</span>,
+unde <span class="math notranslate nohighlight">\( \alpha = \dfrac{\theta}{2} \)</span>, iar <span class="math notranslate nohighlight">\( \theta \)</span> reprezintă unghiul rotației
+induse de cuaternionul <span class="math notranslate nohighlight">\( q \)</span> (în formalismul unghi-axă). De ce folosim, totuși,
+<em>jumătatea</em> unghiului rotației în această reprezentare?</p>
+<p>Răspunsul este detaliat în pp. 269-270 al <span id="id10">[<a class="reference internal" href="bibliografie.html#id16" title="Fletcher Dunn and Ian Parberry. 3D Math Primer for Graphics and Game Development. CRC Press, second edition, 2011.">Dunn and Parberry, 2011</a>]</span> și-l explicăm pe scurt aici.
+Dacă ne inspirăm din cazul complex, am văzut că o înmulțire cu <span class="math notranslate nohighlight">\( i \)</span>, adică cu
+numărul complex scris algebrice <span class="math notranslate nohighlight">\( 0 + 1 \cdot i \)</span> sau trigonometric,
+<span class="math notranslate nohighlight">\( \cos \dfrac{\pi}{2} + i \sin \dfrac{\pi}{2} \)</span>, obținem o rotație cu <span class="math notranslate nohighlight">\( \dfrac{\pi}{2} \)</span>,
+în sens trigonometric:</p>
+<figure class="align-default" id="fig-rotatie-complex">
+<img alt="_images/rotatie-complex.png" src="_images/rotatie-complex.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 50 </span><span class="caption-text">Înmulțirea cu <span class="math notranslate nohighlight">\( i \)</span> produce o rotație în sens direct cu <span class="math notranslate nohighlight">\( \dfrac{\pi}{2} \)</span></span><a class="headerlink" href="#fig-rotatie-complex" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Putem încerca un calcul similar și cu cuaternioni. Pentru simplitate, vom
+presupune doar un cuaternion pur imaginar. În calculul:</p>
+<div class="math notranslate nohighlight">
+\[(\cos \theta + k \sin \theta)i = i \cos \theta + ki \sin \theta = i \cos \theta + j \sin \theta\]</div>
+<p>am pornit cu cuaternionul <span class="math notranslate nohighlight">\( i \)</span> pe care am încercat să-l rotim în jurul axei
+<span class="math notranslate nohighlight">\( OZ \)</span> (corespunzătoare cuaternionului <span class="math notranslate nohighlight">\( k \)</span>) și am obținut cuaternionul
+<span class="math notranslate nohighlight">\( (0, \cos \theta, \sin \theta, 0) \)</span>, adică unul care se află în planul <span class="math notranslate nohighlight">\( XOY \)</span>
+(avînd componenta <span class="math notranslate nohighlight">\( k \)</span> nulă).</p>
+<p>Dar dacă încercăm să rotim, de exemplu, cuaternionul <span class="math notranslate nohighlight">\( i + k \)</span>, am obține:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  (\cos \theta + k \sin \theta)(i + k) &amp;= i \cos \theta + k \cos \theta + ki \sin \theta + k^2 \sin \theta \\
+									   &amp;= i \cos \theta + j \sin \theta + k \cos \theta - \sin \theta
+\end{align*}\end{split}\]</div>
+<p>care corespunde cuaternionului <span class="math notranslate nohighlight">\( (-\sin \theta, \cos \theta, \sin \theta, \cos \theta) \)</span>, unul
+general, deloc așteptat. Am pornit cu un cuaternion de pe axa <span class="math notranslate nohighlight">\( OZ \)</span> și l-am rotit
+(teoretic) corespunzător axelor <span class="math notranslate nohighlight">\( OX \)</span> și apoi <span class="math notranslate nohighlight">\( OZ \)</span>, dar am obținut unul arbitrar.</p>
+<p>Ca să ajungem la direct concluzie, ținînd cont și de faptul că înmulțirea
+cuaternionilor nu este comutativă, rotația așteptată se obține din calculul:</p>
+<div class="math notranslate nohighlight">
+\[(\cos \theta + k \sin \theta)(i + k)(\cos \theta - k \sin \theta) = i \cos 2 \theta + j \sin 2 \theta + k.\]</div>
+<p>Să analizăm:</p>
+<ul class="simple">
+<li><p>am pornit cu cuaternionul <span class="math notranslate nohighlight">\( i + k \)</span>, adică unul corespunzător unui punct din planul <span class="math notranslate nohighlight">\( XOZ \)</span>.
+Mai precis, îl gîndim ca pe vectorul <span class="math notranslate nohighlight">\( \vec{i} + \vec{k} \in \mathbb{R}^3 \)</span>, asimilat unui
+cuaternion cu parte scalară nulă.</p></li>
+<li><p>l-am rotit cu cuaternionul <span class="math notranslate nohighlight">\( \cos \theta + k \sin \theta \)</span>, adică una în jurul axei <span class="math notranslate nohighlight">\( OZ \)</span>.</p></li>
+<li><p>am obținut un cuaternion care are toate componentele <em>vectoriale</em> nenule.</p></li>
+</ul>
+<p>Rotația, însă, nu s-a făcut prin înmulțire directă și nici nu a ținut cont de unghiul
+inițial: a trebuit să facem înmulțirea cu cuaternionul și cu conjugatul său,
+iar unghiul de rotație obținut a fost dublu.</p>
+<p>Concluzia este sumarizată mai jos.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Rotația indusă de cuaternionul (unitar) <span class="math notranslate nohighlight">\( q = (\cos \theta, \sin\theta \vec{r}) \)</span>
+pentru vectorul <span class="math notranslate nohighlight">\( v \in \mathbb{R}^3 \)</span> se obține gîndit <span class="math notranslate nohighlight">\( v \)</span> ca pe un
+cuaternion cu parte scalară nulă și apoi făcînd înmulțirea <span class="math notranslate nohighlight">\( qvq^\ast \)</span>.</p>
+<p>Unghiul de rotație obținut din această procedură este <span class="math notranslate nohighlight">\( 2 \theta \)</span>.</p>
+</div>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="spatiu"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Făcînd un oarecare abuz de limbaj, vom denumi în continuare
+„cubul euclidian“ <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span> „spațiu“, așa cum este cunoscut în general.
+Așadar, capitolul curent tratează transformări <em>în plan și în spațiu</em>.</p>
+</dd>
+<dt class="label" id="aliasing"><span class="brackets"><a class="fn-backref" href="#id4">2</a></span></dt>
+<dd><p>În mai multe discipline ale ingineriei (prelucrarea semnalelor, grafică,
+imagistică etc.) se folosește termenul <em>aliasing</em> pentru a descrie o situație cînd
+două configurații sau transformări diferite par identice. De exemplu, gimbal lock-ul
+prezentat în curs este o situație de <em>aliasing</em>, dar termenul se folosește ușor
+relaxat și în grafică și inginerie de sunet. Atunci cînd vocea înregistrată prin
+microfon sună aproape dublată, spunem că are loc un efect de aliasing. În grafică
+și prelucrarea imaginilor, se folosesc tehnici de <em>antialiasing</em>, care „aproximează“
+între 2 pixeli care prezintă aliasing, producînd o imagine mai puțin precisă, însă
+care ține cont de toate alias-urile. <img alt="Aliasing grafic" src="_images/aliasing-graphics.jpg" /></p>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="p2-s11-mat-decomp.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Descompuneri matriceale</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="p2-s13-arii-volume.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Arii și volume</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Adrian Manea (Poligon Educational)<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

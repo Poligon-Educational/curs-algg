@@ -1,0 +1,58 @@
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title: Algebră liniară și aplicații
+author: Adrian Manea (Poligon Educational)
+logo: ./img/logo-light-poly-only.png
+
+only_build_toc_files: true
+
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: force
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: book.tex
+
+# Add a bibtex file so that we can create citations
+bibtex_bibfiles:
+  - bibliografie.bib
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/adimanea/linalg # Online location of your book
+  path_to_book: tree/main/linalg-book  # Optional path to your book, relative to the repository root
+  branch: master  # Which branch of the repository should be used when creating links (optional)
+
+# Add GitHub buttons to your book
+# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+html:
+  use_issues_button: true
+  use_repository_button: true
+
+# MyST Extensions
+# parse:
+#   myst_enable_extensions:
+#     - amsmath
+
+sphinx:
+  extra_extensions:
+    - sphinx_proof
+    - 'sphinxcontrib.proof'
+  config:
+    bibtex_reference_style: author_year
+    proof_theorem_types: {
+      "algorithm": "Algoritm",
+      "conjecture": "Conjectură",
+      "corollary": "Corolar",
+      "definition": "Definiție",
+      "example": "Exemplu",
+      "lemma": "Lemă",
+      "observation": "Observație",
+      "proof": "Demonstrație",
+      "property": "Proprietate",
+      "theorem": "Teoremă",
+      }

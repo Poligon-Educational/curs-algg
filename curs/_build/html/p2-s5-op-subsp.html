@@ -1,0 +1,720 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Operații cu subspații &#8212; Algebră liniară și aplicații</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/proof.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Morfisme de spații vectoriale" href="p2-s6-morfisme-spvect.html" />
+    <link rel="prev" title="Bază și dimensiune" href="p2-s4-baza.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo-light-poly-only.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Algebră liniară și aplicații</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Algebră liniară și aplicații
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Elemente de istoria și filosofia matematicii
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-istorie-fil-intro.html">
+   Generalități
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-s1-rationamente.html">
+   Abstractizare și raționamente
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="p1-s2-ist-vsp.html">
+   Istoria spațiilor vectoriale
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algebră abstractă și algebră liniară
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="p2-abstract.html">
+   Algebră abstractă și algebră liniară
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s1-grupuri.html">
+     Monoizi și grupuri
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s1e-simetrii.html">
+     Grupuri de simetrie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s2-inele-corpuri.html">
+     Inele și corpuri
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s3-spvect.html">
+     Spații vectoriale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s4-baza.html">
+     Bază și dimensiune
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Operații cu subspații
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s6-morfisme-spvect.html">
+     Morfisme de spații vectoriale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s7-ortonormare.html">
+     Produs scalar și ortonormare
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s8-vvp.html">
+     Vectori și valori proprii
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s9-quat.html">
+     Cuaternioni
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s10-afin.html">
+     Spații afine
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s11-mat-decomp.html">
+     Descompuneri matriceale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s12-transf-mat.html">
+     Transformări matriceale în 2D și 3D
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="p2-s13-arii-volume.html">
+     Arii și volume
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Aplicații și implementări în programare
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="p3-aplicatii.html">
+   Aplicații și implementări în programare
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Bibliografie și lecturi suplimentare
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliografie.html">
+   Bibliografie și lecturi suplimentare
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/adimanea/linalg"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/adimanea/linalg/issues/new?title=Issue%20on%20page%20%2Fp2-s5-op-subsp.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/p2-s5-op-subsp.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reuniunea-intersectia-si-suma">
+   Reuniunea, intersecția și suma
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Operații cu subspații</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reuniunea-intersectia-si-suma">
+   Reuniunea, intersecția și suma
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="operatii-cu-subspatii">
+<h1>Operații cu subspații<a class="headerlink" href="#operatii-cu-subspatii" title="Permalink to this headline">#</a></h1>
+<p><strong>#TODO: De găsit aplicații – preferabil în afară de suma directă</strong></p>
+<p><strong>#TODO: De găsit legături cu Grassmann</strong></p>
+<section id="reuniunea-intersectia-si-suma">
+<h2>Reuniunea, intersecția și suma<a class="headerlink" href="#reuniunea-intersectia-si-suma" title="Permalink to this headline">#</a></h2>
+<p>Date două sau mai multe (sub)spații vectoriale, ne întrebăm cum putem obține
+unele noi din ele sau, dacă este cazul, cum putem să le „descompunem“, scopul
+fiind, din nou, obținerea unor (sub)spații noi, cu efort minim.</p>
+<p>În plus, este natural să ne gîndim la operații între (sub)spații pornind de la
+operații între (sub)mulțimi. Sîntem familiarizați cu reuniunea și intersecția
+a două mulțimi, de exemplu – de ce nu ar funcționa aceeași construcție și în
+cazul spațiilor vectoriale? Cum probabil intuiți, problema principală este
+structura algebrică. Dacă între <em>mulțimile</em> subiacente spațiilor vectoriale
+putem face operațiile cunoscute cu mulțimi, nu înseamnă neapărat că se va păstra
+structura de spațiu vectorial pe mulțimea rezultată. Trebuie să impunem anume
+condiții asupra unor operații, iar la alte operații să renunțăm cu totul.</p>
+<p>Amintim definițiile reuniunii și intersecției dintre două mulțimi <span class="math notranslate nohighlight">\( A \)</span> și <span class="math notranslate nohighlight">\( B \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  A \cap B &amp;= \{ x \mid x \in A \text{ și } x \in B \} \\
+  A \cup B &amp;= \{ x \mid x \in A \text{ sau } x \in B \}
+\end{align*}\end{split}\]</div>
+<p>Aceleași sînt și operațiile pe care le aplicăm între (sub)spații, însă dacă
+ne uităm la rezultat, din punct de vedere algebric, vom constata următoarele:</p>
+<div class="proof theorem admonition" id="thm-op-subsp">
+<p class="admonition-title"><span class="caption-number">Theorem 17 </span></p>
+<section class="theorem-content" id="proof-content">
+<ul class="simple">
+<li><p>Reuniunea a două spații vectoriale <em>nu</em> are în general structură de spațiu vectorial.</p></li>
+<li><p>Intersecția a două spații vectoriale este spațiu vectorial.</p></li>
+</ul>
+<p>În plus,</p>
+<ul class="simple">
+<li><p>Reuniunea a două subspații vectoriale ale unui spațiu <em>nu</em> este subspațiu.</p></li>
+<li><p>Intersecția a două subspații vectoriale ale unui spațiu este subspațiu al aceluiași spațiu.</p></li>
+</ul>
+</section>
+</div><p>Demonstrațiile sînt destul de tehnice și le omitem, însă putem ilustra situația
+cu exemple.</p>
+<p>Considerăm <span class="math notranslate nohighlight">\( V = \mathbb{R}^3 \)</span>, pentru simplitate și pentru că putem să vizualizăm
+grafic. Fie subspațiile date de cele două axe de coordonate:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  W_1 &amp;= \{ (x, 0) \mid x \in \mathbb{R} \} \\
+  W_2 &amp;= \{ (0, y) \mid y \in \mathbb{R} \}
+\end{align*}\end{split}\]</div>
+<p>Reuniunea celor două subspații, <span class="math notranslate nohighlight">\( W_1 \cup W_2 \)</span>, conține punctele care se găsesc
+pe oricare dintre cele două axe, adică:</p>
+<div class="math notranslate nohighlight">
+\[W_1 \cap W_2 = \{ (x, y) \mid x = 0 \text{ sau } y = 0 \}\]</div>
+<p>De exemplu, avem <span class="math notranslate nohighlight">\( (1, 0), (0, -3) \in W_1 \cup W_2 \)</span>. Însă aproape orice combinație
+liniară a acestora <em>nu</em> mai se găsește în reuniune. Într-adevăr, chiar suma celor
+doi vectori este în afară:</p>
+<div class="math notranslate nohighlight">
+\[(1, 0) + (0, -3) = (1, -3) \notin W_1 \cup W_2,\]</div>
+<p>deoarece nu are cel puțin o componentă nulă.</p>
+<p>Vedem, așadar, că <span class="math notranslate nohighlight">\( W_1 \cup W_2 \)</span> nu este nici măcar (sub)grup aditiv, cu atît mai puțin
+subspațiu vectorial al lui <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span>.</p>
+<p>Pe de altă parte, intersecția celor două subspații este trivială:</p>
+<div class="math notranslate nohighlight">
+\[W_1 \cap W_2 = \{ (x, y) \mid x = 0 \text{ și } y = 0 \} = \{ (0, 0) \},\]</div>
+<p>care este (sub)spațiu vectorial banal.</p>
+<p>Dar putem avea și un exemplu netrivial de intersecție: Considerăm <span class="math notranslate nohighlight">\( W_1 \)</span> și <span class="math notranslate nohighlight">\( W_2 \)</span>
+două plane care conțin originea spațiului <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span>. Intersecția lor
+va fi o dreaptă care trece prin origine, deci este subspațiu al lui <span class="math notranslate nohighlight">\( \mathbb{R}^3 \)</span>.</p>
+<p>Și pentru că o parte importantă a spațiilor vectoriale o constituie combinațiile
+liniare, avem și o operație specială, numită <em>suma</em> (sub)spațiilor:</p>
+<div class="proof definition admonition" id="def-suma-sp">
+<p class="admonition-title"><span class="caption-number">Definition 30 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( U, V \)</span> două spații vectoriale peste același corp.</p>
+<p>Se definește <em>suma</em> spațiilor, notată <span class="math notranslate nohighlight">\( U + V \)</span>, ca fiind mulțimea
+alcătuită din vectorii care pot fi scriși ca sumă dintre un vector din <span class="math notranslate nohighlight">\( U \)</span>
+și unul din <span class="math notranslate nohighlight">\( V \)</span>. În simboluri:</p>
+<div class="math notranslate nohighlight">
+\[
+  U + V = \{ x \mid \exists u \in U, v \in V, x = u + v \}.
+\]</div>
+</section>
+</div><p>Se poate demonstra că <em>suma a două (sub)spații este (sub)spațiu</em>.</p>
+<p>Dăm un exemplu ilustrativ: fie <span class="math notranslate nohighlight">\( U = \{ (a, 3a) \mid a \in \mathbb{R} \} \)</span>
+și <span class="math notranslate nohighlight">\( V = \{ (2b, 0) \mid b \in \mathbb{R} \} \)</span>. Ambele sînt subspații ale
+planului <span class="math notranslate nohighlight">\( \mathbb{R}^2 \)</span>, iar suma lor este:</p>
+<div class="math notranslate nohighlight">
+\[U + V = \{ (a + 2b, 3a) \mid a, b \in \mathbb{R} \}.\]</div>
+<p>Din punct de vedere geometric, lucrurile stau astfel:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( U \)</span> este dreapta de ecuație <span class="math notranslate nohighlight">\( y = \dfrac{1}{3} x \)</span>, care trece prin origine;</p></li>
+<li><p><span class="math notranslate nohighlight">\( V \)</span> este axa <span class="math notranslate nohighlight">\( OX \)</span>, pentru că a doua componentă (ordonata) este mereu nulă;</p></li>
+<li><p>suma <span class="math notranslate nohighlight">\( U + V \)</span> este, de fapt, <em>întreg planul</em>. Aceasta deoarece, cum <span class="math notranslate nohighlight">\( a \)</span> și <span class="math notranslate nohighlight">\( b \)</span>
+sînt numere reale, se poate vedea ușor că pentru <em>orice</em> pereche de numere reale <span class="math notranslate nohighlight">\( (x, y) \)</span>
+se pot găsi <span class="math notranslate nohighlight">\( a, b \)</span> astfel încît <span class="math notranslate nohighlight">\( (x, y) = (a + 2b, 3a) \)</span>. Putem da și soluția:
+<span class="math notranslate nohighlight">\( a = \dfrac{1}{3}y \)</span> și <span class="math notranslate nohighlight">\( b = \dfrac{x - a}{2} = \dfrac{3x - y - a}{6} \)</span>. Așadar,
+pentru <span class="math notranslate nohighlight">\( (x, y) \)</span> date, putem găsi <span class="math notranslate nohighlight">\( a, b \)</span> cu proprietatea cerută.</p></li>
+</ul>
+<p>Similar stau lucrurile și dacă luăm <span class="math notranslate nohighlight">\( W_1 \)</span> și <span class="math notranslate nohighlight">\( W_2 \)</span> de mai sus, axele de coordonate.
+Suma lor conține toți vectorii din plan (convingeți-vă!), deci se obține întreg planul.</p>
+<p>De fapt, în acest caz, avem o situație particulară, probabil cea mai importantă
+aplicație a sumei spațiilor vectoriale.</p>
+<div class="proof definition admonition" id="def-oplus">
+<p class="admonition-title"><span class="caption-number">Definition 31 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Spunem că două subspații vectoriale <span class="math notranslate nohighlight">\( W_1 \)</span> și <span class="math notranslate nohighlight">\( W_2 \)</span> ale unui spațiu <span class="math notranslate nohighlight">\( V \)</span>
+sînt în <em>sumă directă</em>, notat <span class="math notranslate nohighlight">\( W_1 \oplus W_2 \)</span>, dacă <span class="math notranslate nohighlight">\( W_1 \cap W_2 = \{ 0_V \} \)</span>,
+adică nu au în comun decît vectorul nul.</p>
+</section>
+</div><p>De exemplu, este cazul axelor de coordonate, ca subspații ale planului real:
+ele nu au în comun decît originea, adică vectorul nul, așadar formează sumă directă.</p>
+<p>Avem două proprietăți importante ale sumei directe, pe care le prezentăm pe scurt:</p>
+<div class="proof theorem admonition" id="thm-oplus">
+<p class="admonition-title"><span class="caption-number">Theorem 18 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Presupunem că subspațiile <span class="math notranslate nohighlight">\( W_1, W_2 \)</span> ale spațiului <span class="math notranslate nohighlight">\( V \)</span> alcătuiesc sumă directă.</p>
+<p>Atunci are loc:</p>
+<div class="math notranslate nohighlight">
+\[
+  W_1 \oplus W_2 = \{ x \in V \mid \exists! w_1 \in W_1, w_2 \in W_2, x = w_1 + w_2 \}
+\]</div>
+<p>În cuvinte, un vector din suma directă se scrie <em>unic</em> drept sumă a componentelor
+din cele două subspații.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Faptul că <span class="math notranslate nohighlight">\( x \in V \)</span> se descompune ca sumă de componente din <span class="math notranslate nohighlight">\( W_1 \)</span> și <span class="math notranslate nohighlight">\( W_2 \)</span>
+este garantat de definiția sumei de subspații.</p>
+<p>Unicitatea descompunerii rezultă astfel. Presupunem că <span class="math notranslate nohighlight">\( x \)</span> ar avea două descompuneri
+diferite:</p>
+<div class="math notranslate nohighlight">
+\[
+  x = a + b = c + d, \quad a, c \in W_1, b, d \in W_2.
+\]</div>
+<p>Atunci obținem:</p>
+<div class="math notranslate nohighlight">
+\[
+  a - c = d - b \in W_1 \cap W_2 = \{ 0_V \} \Rightarrow a = c, d = b,
+\]</div>
+<p>așadar descompunerile coincid.</p>
+</div>
+<p>A doua proprietate o prezentăm fără demonstrație:</p>
+<div class="proof theorem admonition" id="thm-grassmann">
+<p class="admonition-title"><span class="caption-number">Theorem 19 </span> (Hermann Grassmann)</p>
+<section class="theorem-content" id="proof-content">
+<p>Fie <span class="math notranslate nohighlight">\( W_1, W_2 \)</span> două subspații ale unui spațiu vectorial <span class="math notranslate nohighlight">\( V \)</span>. Atunci:</p>
+<div class="math notranslate nohighlight">
+\[
+  \dim (W_1 + W_2) = \dim(W_1) + \dim(W_2) - \dim(W_1 \cap W_2).
+\]</div>
+<p>În particular, dacă <span class="math notranslate nohighlight">\( W_1 \oplus W_2 \)</span>, avem:</p>
+<div class="math notranslate nohighlight">
+\[
+  \dim (W_1 \oplus W_2) = \dim(W_1) + \dim(W_2).
+\]</div>
+</section>
+</div><p>Aici este cheia faptului că planul real <span class="math notranslate nohighlight">\( \mathbb{R}^2 \)</span> se poate scrie
+ca suma directă a axelor de coordonate. Anticipăm un rezultat pe care îl vom
+prezenta detaliat în secțiunea următoare:</p>
+<div class="proof theorem admonition" id="theorem-5">
+<p class="admonition-title"><span class="caption-number">Theorem 20 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Două spații vectoriale sînt izomorfe („la fel“ din punct de vedere algebric)
+dacă și numai dacă au aceeași dimensiune.</p>
+</section>
+</div><p>În cazul nostru, dimensiunea spațiilor care descriu axele de coordonate este 1
+(fiecare dintre ele este, de fapt, o copie a lui <span class="math notranslate nohighlight">\( \mathbb{R} \)</span>). Cum ele formează
+sumă directă, rezultă, din teorema lui Grassmann, că dimensiunea sumei este <span class="math notranslate nohighlight">\( 1 + 1 = 2 \)</span>,
+adică exact dimensiunea planului real. Concluzia este că suma directă a axelor de
+coordonate alcătuiește planul real (pînă la un izomorfism, adică alcătuiește <em>o copie</em>
+a planului real).</p>
+<p>Putem generaliza această observație, de fapt. Dacă considerăm <span class="math notranslate nohighlight">\( V_i \)</span> ca fiind un spațiu
+alcătuit din vectori cu <span class="math notranslate nohighlight">\( n \)</span> componente, dintre care doar una – cea de pe poziția <span class="math notranslate nohighlight">\( i \)</span> –
+este nenulă, adică:</p>
+<div class="math notranslate nohighlight">
+\[V_i = \{ (0, 0, 0, \dots, 0, 1, 0, \dots, n) \in \mathbb{R}^n \},\]</div>
+<p>unde <span class="math notranslate nohighlight">\( 1 \)</span> apare pe poziția <span class="math notranslate nohighlight">\( i \)</span>, atunci găsim, în general:</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{R}^n = V_1 \oplus V_2 \oplus V_3 \oplus \dots \oplus V_n,\]</div>
+<p>egalitate care are loc pînă la un izomorfism.</p>
+<p>Vom explora mai multe astfel de descompuneri după ce detaliem noțiunile specifice
+morfismelor și izomorfismelor de spații vectoriale.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="p2-s4-baza.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Bază și dimensiune</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="p2-s6-morfisme-spvect.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Morfisme de spații vectoriale</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Adrian Manea (Poligon Educational)<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
