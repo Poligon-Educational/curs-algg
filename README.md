@@ -31,7 +31,7 @@ $ python -m venv .venv
 
 El trebuie activat la fiecare utilizare nouă a directorului:
 ```sh
-(linalg) $ source .venv/bin/activate
+(curs) $ source .venv/bin/activate
 ```
 
 Acolo am toate pachetele necesare în `requirements.txt`:
